@@ -1,0 +1,5 @@
+
+[submodule "main_microros/micro_ros_stm32cubemx_utils"]
+	path = main_microros/micro_ros_stm32cubemx_utils
+	url = https://github.com/BoxOnBot/micro_ros_stm32cubemx_utils
+	branch = foxy

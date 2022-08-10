@@ -1,0 +1,14 @@
+{
+    "cortex-debug.armToolchainPath": "/usr/bin",
+    "cortex-debug.openocdPath": "/usr/local/bin/openocd",
+    "files.associations": {
+        "config.h": "c",
+        "rcl.h": "c",
+        "error_handling.h": "c",
+        "rclc.h": "c",
+        "executor.h": "c",
+        "transport.h": "c",
+        "rmw_microros.h": "c",
+        "custom_transport.h": "c"
+    }
+}

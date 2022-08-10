@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/main_microros.elf",
+            "name": "Debug BluePill",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "gdbPath": "/usr/bin/gdb",
+            "configFiles": [
+                "openocd.cfg"
+            ],
+            "searchDir": [],
+            "runToEntryPoint": "main",
+            "runToMain": true,
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}
