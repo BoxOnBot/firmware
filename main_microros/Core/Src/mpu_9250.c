@@ -1,8 +1,9 @@
 #include "mpu_9250.h"
+#include "i2c.h"
 
-static void MPU_9250_Init(void){
+void MPU_9250_Init(void){
 	uint8_t tmp = 0;
-	// uint8_t buffer[3];
+	uint8_t buffer[3];
 
 	// user_ctrl, signal reset
 	tmp = 0x01;
@@ -12,10 +13,6 @@ static void MPU_9250_Init(void){
 	// WHO_AM_I
 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x75, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
 	HAL_Delay(5);
-//	if (tmp == 0x71){
-//		static char msgTest[] = "MPU9250 initialising\r\n";
-//		USART2_print(msgTest);
-//	}
 
 	// pwr_mgmt_1, clock source config
 	tmp = 0x01;
@@ -63,13 +60,13 @@ static void MPU_9250_Init(void){
 	HAL_Delay(5);
 
 	// magneto sensitivity adjustment
-	// if (mag_sens == 1){
-	// 	HAL_I2C_Mem_Read(&hi2c1, AK8963_SLAVE_ADDRESS, 0x10, I2C_MEMADD_SIZE_8BIT, buffer, 0x3, 1000);
+	if (mag_sens == 1){
+		HAL_I2C_Mem_Read(&hi2c1, AK8963_SLAVE_ADDRESS, 0x10, I2C_MEMADD_SIZE_8BIT, buffer, 0x3, 1000);
 
-	// 	for (int i = 0; i < 3; i++){
-	// 		sensAdjMag[i] = (((buffer[i] - 128) * 0.5)/128) + 1;
-	// 	}
-	// }
+		for (int i = 0; i < 3; i++){
+			sensAdjMag[i] = (((buffer[i] - 128) * 0.5)/128) + 1;
+		}
+	}
 
 	// checking accel scale
 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1C, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
@@ -112,7 +109,7 @@ static void MPU_9250_Init(void){
 	}
 }
 
-static void Accel_readXYZ(float* data){
+void Accel_readXYZ(dataHandleIMU* data){
 	uint8_t buffer[6];
 	int16_t rawData[3];
 
@@ -126,12 +123,12 @@ static void Accel_readXYZ(float* data){
 	}
 
 	// scaling to appropriate unit
-	for (int i = 0; i < 3; i++){
-		data[i] = (float)(rawData[i] / sensAccel);
-	}
+	data->ax = (float)(rawData[0] / sensAccel);
+	data->ay = (float)(rawData[1] / sensAccel);
+	data->az = (float)(rawData[2] / sensAccel);
 }
 
-static void Gyro_readXYZ(float *data){
+void Gyro_readXYZ(dataHandleIMU *data){
 	uint8_t buffer[6];
 	int16_t rawData[3];
 
@@ -145,16 +142,15 @@ static void Gyro_readXYZ(float *data){
 	}
 
 	// scaling to appropriate unit
-	for (int i = 0; i < 3; i++){
-		data[i] = (float)(rawData[i] / sensGyro);
-	}
+	data->gx = (float)(rawData[0] / sensGyro);
+	data->gy = (float)(rawData[1] / sensGyro);
+	data->gz = (float)(rawData[2] / sensGyro);
 }
 
 // Y, X, -Z
-static void Magneto_readXYZ(float *data){
+void Magneto_readXYZ(dataHandleIMU *data){
 	uint8_t buffer[6];
-	int16_t rawData[3];
-	float tmp;
+	int16_t rawData[3]; 
 
 	// read gyro values
 	HAL_I2C_Mem_Read(&hi2c1, AK8963_SLAVE_ADDRESS, 0x03, I2C_MEMADD_SIZE_8BIT, buffer, 0x6, 1000);
@@ -165,14 +161,14 @@ static void Magneto_readXYZ(float *data){
 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
 	}
 
-	// scaling to appropriate unit
-	for (int i = 0; i < 3; i++){
-		data[i] = (float)(rawData[i] * sensMag);
-	}
+	// scaling to appropriate unit and correcting axis
+	data->mx = (float)(rawData[1] / sensMag);
+	data->my = (float)(rawData[0] / sensMag);
+	data->mz = -(float)(rawData[2] / sensMag);
+}
 
-	// correcting axis
-	tmp = data[0];
-	data[0] = data[1];
-	data[1] = tmp;
-	data[2] = -data[2];
+void IMU_measure(dataHandleIMU* data){
+	Accel_readXYZ(data);
+	Gyro_readXYZ(data);
+	Magneto_readXYZ(data);
 }

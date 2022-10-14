@@ -1,0 +1,770 @@
+ARM GAS  /tmp/ccMq5j0H.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"FusionOffset.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_ui2f
+  16              		.global	__aeabi_fdiv
+  17              		.global	__aeabi_fmul
+  18              		.section	.text.FusionOffsetInitialise,"ax",%progbits
+  19              		.align	1
+  20              		.global	FusionOffsetInitialise
+  21              		.arch armv7-m
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  25              		.fpu softvfp
+  27              	FusionOffsetInitialise:
+  28              	.LVL0:
+  29              	.LFB21:
+  30              		.file 1 "Core/Src/Fusion/FusionOffset.c"
+   1:Core/Src/Fusion/FusionOffset.c **** /**
+   2:Core/Src/Fusion/FusionOffset.c ****  * @file FusionOffset.c
+   3:Core/Src/Fusion/FusionOffset.c ****  * @author Seb Madgwick
+   4:Core/Src/Fusion/FusionOffset.c ****  * @brief Gyroscope offset correction algorithm for run-time calibration of the
+   5:Core/Src/Fusion/FusionOffset.c ****  * gyroscope offset.
+   6:Core/Src/Fusion/FusionOffset.c ****  */
+   7:Core/Src/Fusion/FusionOffset.c **** 
+   8:Core/Src/Fusion/FusionOffset.c **** //------------------------------------------------------------------------------
+   9:Core/Src/Fusion/FusionOffset.c **** // Includes
+  10:Core/Src/Fusion/FusionOffset.c **** 
+  11:Core/Src/Fusion/FusionOffset.c **** #include "FusionOffset.h"
+  12:Core/Src/Fusion/FusionOffset.c **** #include <math.h> // fabs
+  13:Core/Src/Fusion/FusionOffset.c **** 
+  14:Core/Src/Fusion/FusionOffset.c **** //------------------------------------------------------------------------------
+  15:Core/Src/Fusion/FusionOffset.c **** // Definitions
+  16:Core/Src/Fusion/FusionOffset.c **** 
+  17:Core/Src/Fusion/FusionOffset.c **** /**
+  18:Core/Src/Fusion/FusionOffset.c ****  * @brief Cutoff frequency in Hz.
+  19:Core/Src/Fusion/FusionOffset.c ****  */
+  20:Core/Src/Fusion/FusionOffset.c **** #define CUTOFF_FREQUENCY (0.02f)
+  21:Core/Src/Fusion/FusionOffset.c **** 
+  22:Core/Src/Fusion/FusionOffset.c **** /**
+  23:Core/Src/Fusion/FusionOffset.c ****  * @brief Timeout in seconds.
+  24:Core/Src/Fusion/FusionOffset.c ****  */
+  25:Core/Src/Fusion/FusionOffset.c **** #define TIMEOUT (5)
+  26:Core/Src/Fusion/FusionOffset.c **** 
+  27:Core/Src/Fusion/FusionOffset.c **** /**
+  28:Core/Src/Fusion/FusionOffset.c ****  * @brief Threshold in degrees per second.
+ARM GAS  /tmp/ccMq5j0H.s 			page 2
+
+
+  29:Core/Src/Fusion/FusionOffset.c ****  */
+  30:Core/Src/Fusion/FusionOffset.c **** #define THRESHOLD (3.0f)
+  31:Core/Src/Fusion/FusionOffset.c **** 
+  32:Core/Src/Fusion/FusionOffset.c **** //------------------------------------------------------------------------------
+  33:Core/Src/Fusion/FusionOffset.c **** // Functions
+  34:Core/Src/Fusion/FusionOffset.c **** 
+  35:Core/Src/Fusion/FusionOffset.c **** /**
+  36:Core/Src/Fusion/FusionOffset.c ****  * @brief Initialises the gyroscope offset algorithm.
+  37:Core/Src/Fusion/FusionOffset.c ****  * @param offset Gyroscope offset algorithm structure.
+  38:Core/Src/Fusion/FusionOffset.c ****  * @param sampleRate Sample rate in Hz.
+  39:Core/Src/Fusion/FusionOffset.c ****  */
+  40:Core/Src/Fusion/FusionOffset.c **** void FusionOffsetInitialise(FusionOffset *const offset, const unsigned int sampleRate) {
+  31              		.loc 1 40 88 view -0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		.loc 1 40 88 is_stmt 0 view .LVU1
+  36 0000 38B5     		push	{r3, r4, r5, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 3, -16
+  40              		.cfi_offset 4, -12
+  41              		.cfi_offset 5, -8
+  42              		.cfi_offset 14, -4
+  43 0002 0446     		mov	r4, r0
+  44 0004 0D46     		mov	r5, r1
+  41:Core/Src/Fusion/FusionOffset.c ****     offset->filterCoefficient = 2.0f * (float) M_PI * CUTOFF_FREQUENCY * (1.0f / (float) sampleRate
+  45              		.loc 1 41 5 is_stmt 1 view .LVU2
+  46              		.loc 1 41 82 is_stmt 0 view .LVU3
+  47 0006 0846     		mov	r0, r1
+  48              	.LVL1:
+  49              		.loc 1 41 82 view .LVU4
+  50 0008 FFF7FEFF 		bl	__aeabi_ui2f
+  51              	.LVL2:
+  52              		.loc 1 41 82 view .LVU5
+  53 000c 0146     		mov	r1, r0
+  54              		.loc 1 41 80 view .LVU6
+  55 000e 4FF07E50 		mov	r0, #1065353216
+  56 0012 FFF7FEFF 		bl	__aeabi_fdiv
+  57              	.LVL3:
+  58              		.loc 1 41 72 view .LVU7
+  59 0016 0749     		ldr	r1, .L3
+  60 0018 FFF7FEFF 		bl	__aeabi_fmul
+  61              	.LVL4:
+  62              		.loc 1 41 31 view .LVU8
+  63 001c 2060     		str	r0, [r4]	@ float
+  42:Core/Src/Fusion/FusionOffset.c ****     offset->timeout = TIMEOUT * sampleRate;
+  64              		.loc 1 42 5 is_stmt 1 view .LVU9
+  65              		.loc 1 42 31 is_stmt 0 view .LVU10
+  66 001e 05EB8505 		add	r5, r5, r5, lsl #2
+  67              	.LVL5:
+  68              		.loc 1 42 21 view .LVU11
+  69 0022 6560     		str	r5, [r4, #4]
+  43:Core/Src/Fusion/FusionOffset.c ****     offset->timer = 0;
+  70              		.loc 1 43 5 is_stmt 1 view .LVU12
+  71              		.loc 1 43 19 is_stmt 0 view .LVU13
+  72 0024 0023     		movs	r3, #0
+ARM GAS  /tmp/ccMq5j0H.s 			page 3
+
+
+  73 0026 A360     		str	r3, [r4, #8]
+  44:Core/Src/Fusion/FusionOffset.c ****     offset->gyroscopeOffset = FUSION_VECTOR_ZERO;
+  74              		.loc 1 44 5 is_stmt 1 view .LVU14
+  75              		.loc 1 44 29 is_stmt 0 view .LVU15
+  76 0028 0023     		movs	r3, #0
+  77 002a E360     		str	r3, [r4, #12]	@ float
+  78 002c 2361     		str	r3, [r4, #16]	@ float
+  79 002e 6361     		str	r3, [r4, #20]	@ float
+  45:Core/Src/Fusion/FusionOffset.c **** }
+  80              		.loc 1 45 1 view .LVU16
+  81 0030 38BD     		pop	{r3, r4, r5, pc}
+  82              	.LVL6:
+  83              	.L4:
+  84              		.loc 1 45 1 view .LVU17
+  85 0032 00BF     		.align	2
+  86              	.L3:
+  87 0034 FDAD003E 		.word	1040231933
+  88              		.cfi_endproc
+  89              	.LFE21:
+  91              		.global	__aeabi_fsub
+  92              		.global	__aeabi_fcmpgt
+  93              		.global	__aeabi_fadd
+  94              		.section	.text.FusionOffsetUpdate,"ax",%progbits
+  95              		.align	1
+  96              		.global	FusionOffsetUpdate
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.fpu softvfp
+ 102              	FusionOffsetUpdate:
+ 103              	.LVL7:
+ 104              	.LFB22:
+  46:Core/Src/Fusion/FusionOffset.c **** 
+  47:Core/Src/Fusion/FusionOffset.c **** /**
+  48:Core/Src/Fusion/FusionOffset.c ****  * @brief Updates the gyroscope offset algorithm and returns the corrected
+  49:Core/Src/Fusion/FusionOffset.c ****  * gyroscope measurement.
+  50:Core/Src/Fusion/FusionOffset.c ****  * @param offset Gyroscope offset algorithm structure.
+  51:Core/Src/Fusion/FusionOffset.c ****  * @param gyroscope Gyroscope measurement in degrees per second.
+  52:Core/Src/Fusion/FusionOffset.c ****  * @return Corrected gyroscope measurement in degrees per second.
+  53:Core/Src/Fusion/FusionOffset.c ****  */
+  54:Core/Src/Fusion/FusionOffset.c **** FusionVector FusionOffsetUpdate(FusionOffset *const offset, FusionVector gyroscope) {
+ 105              		.loc 1 54 85 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ args = 12, pretend = 8, frame = 64
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		.loc 1 54 85 is_stmt 0 view .LVU19
+ 110 0000 82B0     		sub	sp, sp, #8
+ 111              	.LCFI1:
+ 112              		.cfi_def_cfa_offset 8
+ 113 0002 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 114              	.LCFI2:
+ 115              		.cfi_def_cfa_offset 44
+ 116              		.cfi_offset 4, -44
+ 117              		.cfi_offset 5, -40
+ 118              		.cfi_offset 6, -36
+ 119              		.cfi_offset 7, -32
+ 120              		.cfi_offset 8, -28
+ARM GAS  /tmp/ccMq5j0H.s 			page 4
+
+
+ 121              		.cfi_offset 9, -24
+ 122              		.cfi_offset 10, -20
+ 123              		.cfi_offset 11, -16
+ 124              		.cfi_offset 14, -12
+ 125 0006 91B0     		sub	sp, sp, #68
+ 126              	.LCFI3:
+ 127              		.cfi_def_cfa_offset 112
+ 128 0008 0546     		mov	r5, r0
+ 129 000a 0C46     		mov	r4, r1
+ 130 000c 1AA9     		add	r1, sp, #104
+ 131 000e 81E80C00 		stm	r1, {r2, r3}
+  55:Core/Src/Fusion/FusionOffset.c **** 
+  56:Core/Src/Fusion/FusionOffset.c ****     // Subtract offset from gyroscope measurement
+  57:Core/Src/Fusion/FusionOffset.c ****     gyroscope = FusionVectorSubtract(gyroscope, offset->gyroscopeOffset);
+ 132              		.loc 1 57 5 is_stmt 1 view .LVU20
+ 133 0012 01AB     		add	r3, sp, #4
+ 134 0014 07C9     		ldm	r1, {r0, r1, r2}
+ 135              	.LVL8:
+ 136              		.loc 1 57 5 is_stmt 0 view .LVU21
+ 137 0016 83E80700 		stm	r3, {r0, r1, r2}
+ 138 001a 04AB     		add	r3, sp, #16
+ 139 001c 04F10C02 		add	r2, r4, #12
+ 140 0020 07CA     		ldm	r2, {r0, r1, r2}
+ 141 0022 83E80700 		stm	r3, {r0, r1, r2}
+ 142              	.LBB8:
+ 143              	.LBI8:
+ 144              		.file 2 "Core/Inc/Fusion/FusionMath.h"
+   1:Core/Inc/Fusion/FusionMath.h **** /**
+   2:Core/Inc/Fusion/FusionMath.h ****  * @file FusionMath.h
+   3:Core/Inc/Fusion/FusionMath.h ****  * @author Seb Madgwick
+   4:Core/Inc/Fusion/FusionMath.h ****  * @brief Math library.
+   5:Core/Inc/Fusion/FusionMath.h ****  */
+   6:Core/Inc/Fusion/FusionMath.h **** 
+   7:Core/Inc/Fusion/FusionMath.h **** #ifndef FUSION_MATH_H
+   8:Core/Inc/Fusion/FusionMath.h **** #define FUSION_MATH_H
+   9:Core/Inc/Fusion/FusionMath.h **** 
+  10:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+  11:Core/Inc/Fusion/FusionMath.h **** // Includes
+  12:Core/Inc/Fusion/FusionMath.h **** 
+  13:Core/Inc/Fusion/FusionMath.h **** #include <math.h> // M_PI, sqrtf, atan2f, asinf
+  14:Core/Inc/Fusion/FusionMath.h **** #include <stdbool.h>
+  15:Core/Inc/Fusion/FusionMath.h **** #include <stdint.h>
+  16:Core/Inc/Fusion/FusionMath.h **** 
+  17:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+  18:Core/Inc/Fusion/FusionMath.h **** // Definitions
+  19:Core/Inc/Fusion/FusionMath.h **** 
+  20:Core/Inc/Fusion/FusionMath.h **** /**
+  21:Core/Inc/Fusion/FusionMath.h ****  * @brief 3D vector.
+  22:Core/Inc/Fusion/FusionMath.h ****  */
+  23:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  24:Core/Inc/Fusion/FusionMath.h ****     float array[3];
+  25:Core/Inc/Fusion/FusionMath.h **** 
+  26:Core/Inc/Fusion/FusionMath.h ****     struct {
+  27:Core/Inc/Fusion/FusionMath.h ****         float x;
+  28:Core/Inc/Fusion/FusionMath.h ****         float y;
+  29:Core/Inc/Fusion/FusionMath.h ****         float z;
+  30:Core/Inc/Fusion/FusionMath.h ****     } axis;
+ARM GAS  /tmp/ccMq5j0H.s 			page 5
+
+
+  31:Core/Inc/Fusion/FusionMath.h **** } FusionVector;
+  32:Core/Inc/Fusion/FusionMath.h **** 
+  33:Core/Inc/Fusion/FusionMath.h **** /**
+  34:Core/Inc/Fusion/FusionMath.h ****  * @brief Quaternion.
+  35:Core/Inc/Fusion/FusionMath.h ****  */
+  36:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  37:Core/Inc/Fusion/FusionMath.h ****     float array[4];
+  38:Core/Inc/Fusion/FusionMath.h **** 
+  39:Core/Inc/Fusion/FusionMath.h ****     struct {
+  40:Core/Inc/Fusion/FusionMath.h ****         float w;
+  41:Core/Inc/Fusion/FusionMath.h ****         float x;
+  42:Core/Inc/Fusion/FusionMath.h ****         float y;
+  43:Core/Inc/Fusion/FusionMath.h ****         float z;
+  44:Core/Inc/Fusion/FusionMath.h ****     } element;
+  45:Core/Inc/Fusion/FusionMath.h **** } FusionQuaternion;
+  46:Core/Inc/Fusion/FusionMath.h **** 
+  47:Core/Inc/Fusion/FusionMath.h **** /**
+  48:Core/Inc/Fusion/FusionMath.h ****  * @brief 3x3 matrix in row-major order.
+  49:Core/Inc/Fusion/FusionMath.h ****  * See http://en.wikipedia.org/wiki/Row-major_order
+  50:Core/Inc/Fusion/FusionMath.h ****  */
+  51:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  52:Core/Inc/Fusion/FusionMath.h ****     float array[3][3];
+  53:Core/Inc/Fusion/FusionMath.h **** 
+  54:Core/Inc/Fusion/FusionMath.h ****     struct {
+  55:Core/Inc/Fusion/FusionMath.h ****         float xx;
+  56:Core/Inc/Fusion/FusionMath.h ****         float xy;
+  57:Core/Inc/Fusion/FusionMath.h ****         float xz;
+  58:Core/Inc/Fusion/FusionMath.h ****         float yx;
+  59:Core/Inc/Fusion/FusionMath.h ****         float yy;
+  60:Core/Inc/Fusion/FusionMath.h ****         float yz;
+  61:Core/Inc/Fusion/FusionMath.h ****         float zx;
+  62:Core/Inc/Fusion/FusionMath.h ****         float zy;
+  63:Core/Inc/Fusion/FusionMath.h ****         float zz;
+  64:Core/Inc/Fusion/FusionMath.h ****     } element;
+  65:Core/Inc/Fusion/FusionMath.h **** } FusionMatrix;
+  66:Core/Inc/Fusion/FusionMath.h **** 
+  67:Core/Inc/Fusion/FusionMath.h **** /**
+  68:Core/Inc/Fusion/FusionMath.h ****  * @brief Euler angles.  Roll, pitch, and yaw correspond to rotations around
+  69:Core/Inc/Fusion/FusionMath.h ****  * X, Y, and Z respectively.
+  70:Core/Inc/Fusion/FusionMath.h ****  */
+  71:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  72:Core/Inc/Fusion/FusionMath.h ****     float array[3];
+  73:Core/Inc/Fusion/FusionMath.h **** 
+  74:Core/Inc/Fusion/FusionMath.h ****     struct {
+  75:Core/Inc/Fusion/FusionMath.h ****         float roll;
+  76:Core/Inc/Fusion/FusionMath.h ****         float pitch;
+  77:Core/Inc/Fusion/FusionMath.h ****         float yaw;
+  78:Core/Inc/Fusion/FusionMath.h ****     } angle;
+  79:Core/Inc/Fusion/FusionMath.h **** } FusionEuler;
+  80:Core/Inc/Fusion/FusionMath.h **** 
+  81:Core/Inc/Fusion/FusionMath.h **** /**
+  82:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of zeros.
+  83:Core/Inc/Fusion/FusionMath.h ****  */
+  84:Core/Inc/Fusion/FusionMath.h **** #define FUSION_VECTOR_ZERO ((FusionVector){ .array = {0.0f, 0.0f, 0.0f} })
+  85:Core/Inc/Fusion/FusionMath.h **** 
+  86:Core/Inc/Fusion/FusionMath.h **** /**
+  87:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of ones.
+ARM GAS  /tmp/ccMq5j0H.s 			page 6
+
+
+  88:Core/Inc/Fusion/FusionMath.h ****  */
+  89:Core/Inc/Fusion/FusionMath.h **** #define FUSION_VECTOR_ONES ((FusionVector){ .array = {1.0f, 1.0f, 1.0f} })
+  90:Core/Inc/Fusion/FusionMath.h **** 
+  91:Core/Inc/Fusion/FusionMath.h **** /**
+  92:Core/Inc/Fusion/FusionMath.h ****  * @brief Identity quaternion.
+  93:Core/Inc/Fusion/FusionMath.h ****  */
+  94:Core/Inc/Fusion/FusionMath.h **** #define FUSION_IDENTITY_QUATERNION ((FusionQuaternion){ .array = {1.0f, 0.0f, 0.0f, 0.0f} })
+  95:Core/Inc/Fusion/FusionMath.h **** 
+  96:Core/Inc/Fusion/FusionMath.h **** /**
+  97:Core/Inc/Fusion/FusionMath.h ****  * @brief Identity matrix.
+  98:Core/Inc/Fusion/FusionMath.h ****  */
+  99:Core/Inc/Fusion/FusionMath.h **** #define FUSION_IDENTITY_MATRIX ((FusionMatrix){ .array = {{1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {
+ 100:Core/Inc/Fusion/FusionMath.h **** 
+ 101:Core/Inc/Fusion/FusionMath.h **** /**
+ 102:Core/Inc/Fusion/FusionMath.h ****  * @brief Euler angles of zero.
+ 103:Core/Inc/Fusion/FusionMath.h ****  */
+ 104:Core/Inc/Fusion/FusionMath.h **** #define FUSION_EULER_ZERO ((FusionEuler){ .array = {0.0f, 0.0f, 0.0f} })
+ 105:Core/Inc/Fusion/FusionMath.h **** 
+ 106:Core/Inc/Fusion/FusionMath.h **** /**
+ 107:Core/Inc/Fusion/FusionMath.h ****  * @brief Pi. May not be defined in math.h.
+ 108:Core/Inc/Fusion/FusionMath.h ****  */
+ 109:Core/Inc/Fusion/FusionMath.h **** #ifndef M_PI
+ 110:Core/Inc/Fusion/FusionMath.h **** #define M_PI (3.14159265358979323846)
+ 111:Core/Inc/Fusion/FusionMath.h **** #endif
+ 112:Core/Inc/Fusion/FusionMath.h **** 
+ 113:Core/Inc/Fusion/FusionMath.h **** /**
+ 114:Core/Inc/Fusion/FusionMath.h ****  * @brief Include this definition or add as a preprocessor definition to use
+ 115:Core/Inc/Fusion/FusionMath.h ****  * normal square root operations.
+ 116:Core/Inc/Fusion/FusionMath.h ****  */
+ 117:Core/Inc/Fusion/FusionMath.h **** //#define FUSION_USE_NORMAL_SQRT
+ 118:Core/Inc/Fusion/FusionMath.h **** 
+ 119:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 120:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Degrees and radians conversion
+ 121:Core/Inc/Fusion/FusionMath.h **** 
+ 122:Core/Inc/Fusion/FusionMath.h **** /**
+ 123:Core/Inc/Fusion/FusionMath.h ****  * @brief Converts degrees to radians.
+ 124:Core/Inc/Fusion/FusionMath.h ****  * @param degrees Degrees.
+ 125:Core/Inc/Fusion/FusionMath.h ****  * @return Radians.
+ 126:Core/Inc/Fusion/FusionMath.h ****  */
+ 127:Core/Inc/Fusion/FusionMath.h **** static inline float FusionDegreesToRadians(const float degrees) {
+ 128:Core/Inc/Fusion/FusionMath.h ****     return degrees * ((float) M_PI / 180.0f);
+ 129:Core/Inc/Fusion/FusionMath.h **** }
+ 130:Core/Inc/Fusion/FusionMath.h **** 
+ 131:Core/Inc/Fusion/FusionMath.h **** /**
+ 132:Core/Inc/Fusion/FusionMath.h ****  * @brief Converts radians to degrees.
+ 133:Core/Inc/Fusion/FusionMath.h ****  * @param radians Radians.
+ 134:Core/Inc/Fusion/FusionMath.h ****  * @return Degrees.
+ 135:Core/Inc/Fusion/FusionMath.h ****  */
+ 136:Core/Inc/Fusion/FusionMath.h **** static inline float FusionRadiansToDegrees(const float radians) {
+ 137:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
+ 138:Core/Inc/Fusion/FusionMath.h **** }
+ 139:Core/Inc/Fusion/FusionMath.h **** 
+ 140:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 141:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Arc sine
+ 142:Core/Inc/Fusion/FusionMath.h **** 
+ 143:Core/Inc/Fusion/FusionMath.h **** /**
+ 144:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the arc sine of the value.
+ARM GAS  /tmp/ccMq5j0H.s 			page 7
+
+
+ 145:Core/Inc/Fusion/FusionMath.h ****  * @param value Value.
+ 146:Core/Inc/Fusion/FusionMath.h ****  * @return Arc sine of the value.
+ 147:Core/Inc/Fusion/FusionMath.h ****  */
+ 148:Core/Inc/Fusion/FusionMath.h **** static inline float FusionAsin(const float value) {
+ 149:Core/Inc/Fusion/FusionMath.h ****     if (value <= -1.0f) {
+ 150:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / -2.0f;
+ 151:Core/Inc/Fusion/FusionMath.h ****     }
+ 152:Core/Inc/Fusion/FusionMath.h ****     if (value >= 1.0f) {
+ 153:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / 2.0f;
+ 154:Core/Inc/Fusion/FusionMath.h ****     }
+ 155:Core/Inc/Fusion/FusionMath.h ****     return asinf(value);
+ 156:Core/Inc/Fusion/FusionMath.h **** }
+ 157:Core/Inc/Fusion/FusionMath.h **** 
+ 158:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 159:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Fast inverse square root
+ 160:Core/Inc/Fusion/FusionMath.h **** 
+ 161:Core/Inc/Fusion/FusionMath.h **** #ifndef FUSION_USE_NORMAL_SQRT
+ 162:Core/Inc/Fusion/FusionMath.h **** 
+ 163:Core/Inc/Fusion/FusionMath.h **** /**
+ 164:Core/Inc/Fusion/FusionMath.h ****  * @brief Calculates the reciprocal of the square root.
+ 165:Core/Inc/Fusion/FusionMath.h ****  * See https://pizer.wordpress.com/2008/10/12/fast-inverse-square-root/
+ 166:Core/Inc/Fusion/FusionMath.h ****  * @param x Operand.
+ 167:Core/Inc/Fusion/FusionMath.h ****  * @return Reciprocal of the square root of x.
+ 168:Core/Inc/Fusion/FusionMath.h ****  */
+ 169:Core/Inc/Fusion/FusionMath.h **** static inline float FusionFastInverseSqrt(const float x) {
+ 170:Core/Inc/Fusion/FusionMath.h **** 
+ 171:Core/Inc/Fusion/FusionMath.h ****     typedef union {
+ 172:Core/Inc/Fusion/FusionMath.h ****         float f;
+ 173:Core/Inc/Fusion/FusionMath.h ****         int32_t i;
+ 174:Core/Inc/Fusion/FusionMath.h ****     } Union32;
+ 175:Core/Inc/Fusion/FusionMath.h **** 
+ 176:Core/Inc/Fusion/FusionMath.h ****     Union32 union32 = {.f = x};
+ 177:Core/Inc/Fusion/FusionMath.h ****     union32.i = 0x5F1F1412 - (union32.i >> 1);
+ 178:Core/Inc/Fusion/FusionMath.h ****     return union32.f * (1.69000231f - 0.714158168f * x * union32.f * union32.f);
+ 179:Core/Inc/Fusion/FusionMath.h **** }
+ 180:Core/Inc/Fusion/FusionMath.h **** 
+ 181:Core/Inc/Fusion/FusionMath.h **** #endif
+ 182:Core/Inc/Fusion/FusionMath.h **** 
+ 183:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 184:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Vector operations
+ 185:Core/Inc/Fusion/FusionMath.h **** 
+ 186:Core/Inc/Fusion/FusionMath.h **** /**
+ 187:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns true if the vector is zero.
+ 188:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 189:Core/Inc/Fusion/FusionMath.h ****  * @return True if the vector is zero.
+ 190:Core/Inc/Fusion/FusionMath.h ****  */
+ 191:Core/Inc/Fusion/FusionMath.h **** static inline bool FusionVectorIsZero(const FusionVector vector) {
+ 192:Core/Inc/Fusion/FusionMath.h ****     return (vector.axis.x == 0.0f) && (vector.axis.y == 0.0f) && (vector.axis.z == 0.0f);
+ 193:Core/Inc/Fusion/FusionMath.h **** }
+ 194:Core/Inc/Fusion/FusionMath.h **** 
+ 195:Core/Inc/Fusion/FusionMath.h **** /**
+ 196:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of two vectors.
+ 197:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 198:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 199:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of two vectors.
+ 200:Core/Inc/Fusion/FusionMath.h ****  */
+ 201:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorAdd(const FusionVector vectorA, const FusionVector vectorB) 
+ARM GAS  /tmp/ccMq5j0H.s 			page 8
+
+
+ 202:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 203:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x + vectorB.axis.x;
+ 204:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
+ 205:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z + vectorB.axis.z;
+ 206:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 207:Core/Inc/Fusion/FusionMath.h **** }
+ 208:Core/Inc/Fusion/FusionMath.h **** 
+ 209:Core/Inc/Fusion/FusionMath.h **** /**
+ 210:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns vector B subtracted from vector A.
+ 211:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 212:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 213:Core/Inc/Fusion/FusionMath.h ****  * @return Vector B subtracted from vector A.
+ 214:Core/Inc/Fusion/FusionMath.h ****  */
+ 215:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorSubtract(const FusionVector vectorA, const FusionVector vect
+ 145              		.loc 2 215 28 is_stmt 1 view .LVU22
+ 146              	.LBB9:
+ 216:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 147              		.loc 2 216 5 view .LVU23
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x - vectorB.axis.x;
+ 148              		.loc 2 217 5 view .LVU24
+ 149              		.loc 2 217 36 is_stmt 0 view .LVU25
+ 150 0026 0499     		ldr	r1, [sp, #16]	@ float
+ 151 0028 0198     		ldr	r0, [sp, #4]	@ float
+ 152 002a FFF7FEFF 		bl	__aeabi_fsub
+ 153              	.LVL9:
+ 154 002e 0646     		mov	r6, r0
+ 155              		.loc 2 217 19 view .LVU26
+ 156 0030 0790     		str	r0, [sp, #28]	@ float
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+ 157              		.loc 2 218 5 is_stmt 1 view .LVU27
+ 158              		.loc 2 218 36 is_stmt 0 view .LVU28
+ 159 0032 0599     		ldr	r1, [sp, #20]	@ float
+ 160 0034 0298     		ldr	r0, [sp, #8]	@ float
+ 161 0036 FFF7FEFF 		bl	__aeabi_fsub
+ 162              	.LVL10:
+ 163 003a 0746     		mov	r7, r0
+ 164              		.loc 2 218 19 view .LVU29
+ 165 003c 0890     		str	r0, [sp, #32]	@ float
+ 219:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 166              		.loc 2 219 5 is_stmt 1 view .LVU30
+ 167              		.loc 2 219 36 is_stmt 0 view .LVU31
+ 168 003e 0699     		ldr	r1, [sp, #24]	@ float
+ 169 0040 0398     		ldr	r0, [sp, #12]	@ float
+ 170 0042 FFF7FEFF 		bl	__aeabi_fsub
+ 171              	.LVL11:
+ 172 0046 8046     		mov	r8, r0
+ 173              		.loc 2 219 19 view .LVU32
+ 174 0048 0990     		str	r0, [sp, #36]	@ float
+ 220:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 175              		.loc 2 220 5 is_stmt 1 view .LVU33
+ 176              		.loc 2 220 12 is_stmt 0 view .LVU34
+ 177 004a 07AB     		add	r3, sp, #28
+ 178 004c 93E80700 		ldm	r3, {r0, r1, r2}
+ 179 0050 1AAB     		add	r3, sp, #104
+ 180 0052 83E80700 		stm	r3, {r0, r1, r2}
+ 181              	.LBE9:
+ 182              	.LBE8:
+ARM GAS  /tmp/ccMq5j0H.s 			page 9
+
+
+  58:Core/Src/Fusion/FusionOffset.c **** 
+  59:Core/Src/Fusion/FusionOffset.c ****     // Reset timer if gyroscope not stationary
+  60:Core/Src/Fusion/FusionOffset.c ****     if ((fabs(gyroscope.axis.x) > THRESHOLD) || (fabs(gyroscope.axis.y) > THRESHOLD) || (fabs(gyros
+ 183              		.loc 1 60 5 is_stmt 1 view .LVU35
+ 184              		.loc 1 60 10 is_stmt 0 view .LVU36
+ 185 0056 26F00040 		bic	r0, r6, #-2147483648
+ 186              		.loc 1 60 8 view .LVU37
+ 187 005a 3949     		ldr	r1, .L14
+ 188 005c FFF7FEFF 		bl	__aeabi_fcmpgt
+ 189              	.LVL12:
+ 190 0060 0028     		cmp	r0, #0
+ 191 0062 58D1     		bne	.L6
+ 192              		.loc 1 60 50 discriminator 1 view .LVU38
+ 193 0064 27F00040 		bic	r0, r7, #-2147483648
+ 194              		.loc 1 60 46 discriminator 1 view .LVU39
+ 195 0068 3549     		ldr	r1, .L14
+ 196 006a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 197              	.LVL13:
+ 198 006e 0028     		cmp	r0, #0
+ 199 0070 51D1     		bne	.L6
+ 200              		.loc 1 60 90 discriminator 2 view .LVU40
+ 201 0072 28F00040 		bic	r0, r8, #-2147483648
+ 202              		.loc 1 60 86 discriminator 2 view .LVU41
+ 203 0076 3249     		ldr	r1, .L14
+ 204 0078 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 205              	.LVL14:
+ 206 007c 0028     		cmp	r0, #0
+ 207 007e 4AD1     		bne	.L6
+  61:Core/Src/Fusion/FusionOffset.c ****         offset->timer = 0;
+  62:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+  63:Core/Src/Fusion/FusionOffset.c ****     }
+  64:Core/Src/Fusion/FusionOffset.c **** 
+  65:Core/Src/Fusion/FusionOffset.c ****     // Increment timer while gyroscope stationary
+  66:Core/Src/Fusion/FusionOffset.c ****     if (offset->timer < offset->timeout) {
+ 208              		.loc 1 66 5 is_stmt 1 view .LVU42
+ 209              		.loc 1 66 15 is_stmt 0 view .LVU43
+ 210 0080 A368     		ldr	r3, [r4, #8]
+ 211              		.loc 1 66 31 view .LVU44
+ 212 0082 6268     		ldr	r2, [r4, #4]
+ 213              		.loc 1 66 8 view .LVU45
+ 214 0084 9342     		cmp	r3, r2
+ 215 0086 53D3     		bcc	.L13
+  67:Core/Src/Fusion/FusionOffset.c ****         offset->timer++;
+  68:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+  69:Core/Src/Fusion/FusionOffset.c ****     }
+  70:Core/Src/Fusion/FusionOffset.c **** 
+  71:Core/Src/Fusion/FusionOffset.c ****     // Adjust offset if timer has elapsed
+  72:Core/Src/Fusion/FusionOffset.c ****     offset->gyroscopeOffset = FusionVectorAdd(offset->gyroscopeOffset, FusionVectorMultiplyScalar(g
+ 216              		.loc 1 72 5 is_stmt 1 view .LVU46
+ 217              		.loc 1 72 31 is_stmt 0 view .LVU47
+ 218 0088 54F80CBB 		ldr	fp, [r4], #12	@ float
+ 219              	.LVL15:
+ 220              		.loc 1 72 31 view .LVU48
+ 221 008c 0DF11009 		add	r9, sp, #16
+ 222 0090 1AAB     		add	r3, sp, #104
+ 223 0092 93E80700 		ldm	r3, {r0, r1, r2}
+ 224 0096 89E80700 		stm	r9, {r0, r1, r2}
+ARM GAS  /tmp/ccMq5j0H.s 			page 10
+
+
+ 225              	.LVL16:
+ 226              	.LBB10:
+ 227              	.LBI10:
+ 221:Core/Inc/Fusion/FusionMath.h **** }
+ 222:Core/Inc/Fusion/FusionMath.h **** 
+ 223:Core/Inc/Fusion/FusionMath.h **** /**
+ 224:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of the elements.
+ 225:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 226:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of the elements.
+ 227:Core/Inc/Fusion/FusionMath.h ****  */
+ 228:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorSum(const FusionVector vector) {
+ 229:Core/Inc/Fusion/FusionMath.h ****     return vector.axis.x + vector.axis.y + vector.axis.z;
+ 230:Core/Inc/Fusion/FusionMath.h **** }
+ 231:Core/Inc/Fusion/FusionMath.h **** 
+ 232:Core/Inc/Fusion/FusionMath.h **** /**
+ 233:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the multiplication of a vector by a scalar.
+ 234:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 235:Core/Inc/Fusion/FusionMath.h ****  * @param scalar Scalar.
+ 236:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of a vector by a scalar.
+ 237:Core/Inc/Fusion/FusionMath.h ****  */
+ 238:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorMultiplyScalar(const FusionVector vector, const float scalar
+ 228              		.loc 2 238 28 is_stmt 1 view .LVU49
+ 229              	.LBB11:
+ 239:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 230              		.loc 2 239 5 view .LVU50
+ 240:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vector.axis.x * scalar;
+ 231              		.loc 2 240 5 view .LVU51
+ 232              		.loc 2 240 35 is_stmt 0 view .LVU52
+ 233 009a 3146     		mov	r1, r6
+ 234 009c 5846     		mov	r0, fp
+ 235 009e FFF7FEFF 		bl	__aeabi_fmul
+ 236              	.LVL17:
+ 237 00a2 8246     		mov	r10, r0
+ 238              		.loc 2 240 19 view .LVU53
+ 239 00a4 0790     		str	r0, [sp, #28]	@ float
+ 241:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vector.axis.y * scalar;
+ 240              		.loc 2 241 5 is_stmt 1 view .LVU54
+ 241              		.loc 2 241 35 is_stmt 0 view .LVU55
+ 242 00a6 3946     		mov	r1, r7
+ 243 00a8 5846     		mov	r0, fp
+ 244 00aa FFF7FEFF 		bl	__aeabi_fmul
+ 245              	.LVL18:
+ 246 00ae 0746     		mov	r7, r0
+ 247              		.loc 2 241 19 view .LVU56
+ 248 00b0 0890     		str	r0, [sp, #32]	@ float
+ 242:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vector.axis.z * scalar;
+ 249              		.loc 2 242 5 is_stmt 1 view .LVU57
+ 250              		.loc 2 242 35 is_stmt 0 view .LVU58
+ 251 00b2 4146     		mov	r1, r8
+ 252 00b4 5846     		mov	r0, fp
+ 253 00b6 FFF7FEFF 		bl	__aeabi_fmul
+ 254              	.LVL19:
+ 255 00ba 8046     		mov	r8, r0
+ 256              		.loc 2 242 19 view .LVU59
+ 257 00bc 0990     		str	r0, [sp, #36]	@ float
+ 243:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 258              		.loc 2 243 5 is_stmt 1 view .LVU60
+ARM GAS  /tmp/ccMq5j0H.s 			page 11
+
+
+ 259              		.loc 2 243 12 is_stmt 0 view .LVU61
+ 260 00be 0AAB     		add	r3, sp, #40
+ 261 00c0 07AE     		add	r6, sp, #28
+ 262 00c2 96E80700 		ldm	r6, {r0, r1, r2}
+ 263 00c6 83E80700 		stm	r3, {r0, r1, r2}
+ 264              	.LVL20:
+ 265              		.loc 2 243 12 view .LVU62
+ 266 00ca 0DF1040C 		add	ip, sp, #4
+ 267 00ce 94E80700 		ldm	r4, {r0, r1, r2}
+ 268 00d2 8CE80700 		stm	ip, {r0, r1, r2}
+ 269 00d6 93E80700 		ldm	r3, {r0, r1, r2}
+ 270 00da 89E80700 		stm	r9, {r0, r1, r2}
+ 271              	.LBE11:
+ 272              	.LBE10:
+ 273              	.LBB12:
+ 274              	.LBI12:
+ 201:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 275              		.loc 2 201 28 is_stmt 1 view .LVU63
+ 276              	.LBB13:
+ 202:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x + vectorB.axis.x;
+ 277              		.loc 2 202 5 view .LVU64
+ 203:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
+ 278              		.loc 2 203 5 view .LVU65
+ 203:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
+ 279              		.loc 2 203 36 is_stmt 0 view .LVU66
+ 280 00de 5146     		mov	r1, r10
+ 281 00e0 0198     		ldr	r0, [sp, #4]	@ float
+ 282 00e2 FFF7FEFF 		bl	__aeabi_fadd
+ 283              	.LVL21:
+ 203:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
+ 284              		.loc 2 203 19 view .LVU67
+ 285 00e6 0790     		str	r0, [sp, #28]	@ float
+ 204:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z + vectorB.axis.z;
+ 286              		.loc 2 204 5 is_stmt 1 view .LVU68
+ 204:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z + vectorB.axis.z;
+ 287              		.loc 2 204 36 is_stmt 0 view .LVU69
+ 288 00e8 3946     		mov	r1, r7
+ 289 00ea 0298     		ldr	r0, [sp, #8]	@ float
+ 290 00ec FFF7FEFF 		bl	__aeabi_fadd
+ 291              	.LVL22:
+ 204:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z + vectorB.axis.z;
+ 292              		.loc 2 204 19 view .LVU70
+ 293 00f0 0890     		str	r0, [sp, #32]	@ float
+ 205:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 294              		.loc 2 205 5 is_stmt 1 view .LVU71
+ 205:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 295              		.loc 2 205 36 is_stmt 0 view .LVU72
+ 296 00f2 4146     		mov	r1, r8
+ 297 00f4 0398     		ldr	r0, [sp, #12]	@ float
+ 298 00f6 FFF7FEFF 		bl	__aeabi_fadd
+ 299              	.LVL23:
+ 205:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 300              		.loc 2 205 19 view .LVU73
+ 301 00fa 0990     		str	r0, [sp, #36]	@ float
+ 206:Core/Inc/Fusion/FusionMath.h **** }
+ 302              		.loc 2 206 5 is_stmt 1 view .LVU74
+ 206:Core/Inc/Fusion/FusionMath.h **** }
+ARM GAS  /tmp/ccMq5j0H.s 			page 12
+
+
+ 303              		.loc 2 206 12 is_stmt 0 view .LVU75
+ 304 00fc 0DAB     		add	r3, sp, #52
+ 305 00fe 96E80700 		ldm	r6, {r0, r1, r2}
+ 306 0102 83E80700 		stm	r3, {r0, r1, r2}
+ 307              	.LBE13:
+ 308              	.LBE12:
+ 309              		.loc 1 72 31 view .LVU76
+ 310 0106 84E80700 		stm	r4, {r0, r1, r2}
+  73:Core/Src/Fusion/FusionOffset.c ****     return gyroscope;
+ 311              		.loc 1 73 5 is_stmt 1 view .LVU77
+ 312              		.loc 1 73 12 is_stmt 0 view .LVU78
+ 313 010a 1AAB     		add	r3, sp, #104
+ 314 010c 93E80700 		ldm	r3, {r0, r1, r2}
+ 315 0110 85E80700 		stm	r5, {r0, r1, r2}
+ 316 0114 06E0     		b	.L5
+ 317              	.LVL24:
+ 318              	.L6:
+  61:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+ 319              		.loc 1 61 9 is_stmt 1 view .LVU79
+  61:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+ 320              		.loc 1 61 23 is_stmt 0 view .LVU80
+ 321 0116 0023     		movs	r3, #0
+ 322 0118 A360     		str	r3, [r4, #8]
+  62:Core/Src/Fusion/FusionOffset.c ****     }
+ 323              		.loc 1 62 9 is_stmt 1 view .LVU81
+  62:Core/Src/Fusion/FusionOffset.c ****     }
+ 324              		.loc 1 62 16 is_stmt 0 view .LVU82
+ 325 011a 1AAB     		add	r3, sp, #104
+ 326 011c 93E80700 		ldm	r3, {r0, r1, r2}
+ 327 0120 85E80700 		stm	r5, {r0, r1, r2}
+ 328              	.LVL25:
+ 329              	.L5:
+  74:Core/Src/Fusion/FusionOffset.c **** }
+ 330              		.loc 1 74 1 view .LVU83
+ 331 0124 2846     		mov	r0, r5
+ 332 0126 11B0     		add	sp, sp, #68
+ 333              	.LCFI4:
+ 334              		.cfi_remember_state
+ 335              		.cfi_def_cfa_offset 44
+ 336              		@ sp needed
+ 337 0128 BDE8F04F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 338              	.LCFI5:
+ 339              		.cfi_restore 14
+ 340              		.cfi_restore 11
+ 341              		.cfi_restore 10
+ 342              		.cfi_restore 9
+ 343              		.cfi_restore 8
+ 344              		.cfi_restore 7
+ 345              		.cfi_restore 6
+ 346              		.cfi_restore 5
+ 347              		.cfi_restore 4
+ 348              		.cfi_def_cfa_offset 8
+ 349              	.LVL26:
+ 350              		.loc 1 74 1 view .LVU84
+ 351 012c 02B0     		add	sp, sp, #8
+ 352              	.LCFI6:
+ 353              		.cfi_def_cfa_offset 0
+ARM GAS  /tmp/ccMq5j0H.s 			page 13
+
+
+ 354 012e 7047     		bx	lr
+ 355              	.LVL27:
+ 356              	.L13:
+ 357              	.LCFI7:
+ 358              		.cfi_restore_state
+  67:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+ 359              		.loc 1 67 9 is_stmt 1 view .LVU85
+  67:Core/Src/Fusion/FusionOffset.c ****         return gyroscope;
+ 360              		.loc 1 67 22 is_stmt 0 view .LVU86
+ 361 0130 0133     		adds	r3, r3, #1
+ 362 0132 A360     		str	r3, [r4, #8]
+  68:Core/Src/Fusion/FusionOffset.c ****     }
+ 363              		.loc 1 68 9 is_stmt 1 view .LVU87
+  68:Core/Src/Fusion/FusionOffset.c ****     }
+ 364              		.loc 1 68 16 is_stmt 0 view .LVU88
+ 365 0134 1AAB     		add	r3, sp, #104
+ 366 0136 93E80700 		ldm	r3, {r0, r1, r2}
+ 367 013a 85E80700 		stm	r5, {r0, r1, r2}
+ 368 013e F1E7     		b	.L5
+ 369              	.L15:
+ 370              		.align	2
+ 371              	.L14:
+ 372 0140 00004040 		.word	1077936128
+ 373              		.cfi_endproc
+ 374              	.LFE22:
+ 376              		.text
+ 377              	.Letext0:
+ 378              		.file 3 "Core/Inc/Fusion/FusionOffset.h"
+ARM GAS  /tmp/ccMq5j0H.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 FusionOffset.c
+     /tmp/ccMq5j0H.s:19     .text.FusionOffsetInitialise:0000000000000000 $t
+     /tmp/ccMq5j0H.s:27     .text.FusionOffsetInitialise:0000000000000000 FusionOffsetInitialise
+     /tmp/ccMq5j0H.s:87     .text.FusionOffsetInitialise:0000000000000034 $d
+     /tmp/ccMq5j0H.s:95     .text.FusionOffsetUpdate:0000000000000000 $t
+     /tmp/ccMq5j0H.s:102    .text.FusionOffsetUpdate:0000000000000000 FusionOffsetUpdate
+     /tmp/ccMq5j0H.s:372    .text.FusionOffsetUpdate:0000000000000140 $d
+
+UNDEFINED SYMBOLS
+__aeabi_ui2f
+__aeabi_fdiv
+__aeabi_fmul
+__aeabi_fsub
+__aeabi_fcmpgt
+__aeabi_fadd

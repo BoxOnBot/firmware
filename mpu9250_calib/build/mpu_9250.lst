@@ -1,0 +1,1162 @@
+ARM GAS  /tmp/ccESrA8Z.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"mpu_9250.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.MPU_9250_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MPU_9250_Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	MPU_9250_Init:
+  27              	.LFB123:
+  28              		.file 1 "Core/Src/mpu_9250.c"
+   1:Core/Src/mpu_9250.c **** #include "mpu_9250.h"
+   2:Core/Src/mpu_9250.c **** #include "i2c.h"
+   3:Core/Src/mpu_9250.c **** 
+   4:Core/Src/mpu_9250.c **** void MPU_9250_Init(void){
+  29              		.loc 1 4 25 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 28
+  36              		.cfi_offset 4, -28
+  37              		.cfi_offset 5, -24
+  38              		.cfi_offset 6, -20
+  39              		.cfi_offset 7, -16
+  40              		.cfi_offset 8, -12
+  41              		.cfi_offset 9, -8
+  42              		.cfi_offset 14, -4
+  43 0004 87B0     		sub	sp, sp, #28
+  44              	.LCFI1:
+  45              		.cfi_def_cfa_offset 56
+   5:Core/Src/mpu_9250.c **** 	uint8_t tmp = 0;
+  46              		.loc 1 5 2 view .LVU1
+  47              		.loc 1 5 10 is_stmt 0 view .LVU2
+  48 0006 4FF00008 		mov	r8, #0
+  49 000a 8DF81780 		strb	r8, [sp, #23]
+   6:Core/Src/mpu_9250.c **** 	uint8_t buffer[3];
+  50              		.loc 1 6 2 is_stmt 1 view .LVU3
+   7:Core/Src/mpu_9250.c **** 
+   8:Core/Src/mpu_9250.c **** 	// user_ctrl, signal reset
+ARM GAS  /tmp/ccESrA8Z.s 			page 2
+
+
+   9:Core/Src/mpu_9250.c **** 	tmp = 0x01;
+  51              		.loc 1 9 2 view .LVU4
+  52              		.loc 1 9 6 is_stmt 0 view .LVU5
+  53 000e 0124     		movs	r4, #1
+  54 0010 8DF81740 		strb	r4, [sp, #23]
+  10:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x6A, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+  55              		.loc 1 10 2 is_stmt 1 view .LVU6
+  56 0014 844D     		ldr	r5, .L15
+  57 0016 4FF47A77 		mov	r7, #1000
+  58 001a 0297     		str	r7, [sp, #8]
+  59 001c 0194     		str	r4, [sp, #4]
+  60 001e 0DF11706 		add	r6, sp, #23
+  61 0022 0096     		str	r6, [sp]
+  62 0024 2346     		mov	r3, r4
+  63 0026 6A22     		movs	r2, #106
+  64 0028 D021     		movs	r1, #208
+  65 002a 2846     		mov	r0, r5
+  66 002c FFF7FEFF 		bl	HAL_I2C_Mem_Write
+  67              	.LVL0:
+  11:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+  68              		.loc 1 11 2 view .LVU7
+  69 0030 0520     		movs	r0, #5
+  70 0032 FFF7FEFF 		bl	HAL_Delay
+  71              	.LVL1:
+  12:Core/Src/mpu_9250.c **** 
+  13:Core/Src/mpu_9250.c **** 	// WHO_AM_I
+  14:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x75, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+  72              		.loc 1 14 2 view .LVU8
+  73 0036 0297     		str	r7, [sp, #8]
+  74 0038 0194     		str	r4, [sp, #4]
+  75 003a 0096     		str	r6, [sp]
+  76 003c 2346     		mov	r3, r4
+  77 003e 7522     		movs	r2, #117
+  78 0040 D021     		movs	r1, #208
+  79 0042 2846     		mov	r0, r5
+  80 0044 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+  81              	.LVL2:
+  15:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+  82              		.loc 1 15 2 view .LVU9
+  83 0048 0520     		movs	r0, #5
+  84 004a FFF7FEFF 		bl	HAL_Delay
+  85              	.LVL3:
+  16:Core/Src/mpu_9250.c **** 
+  17:Core/Src/mpu_9250.c **** 	// pwr_mgmt_1, clock source config
+  18:Core/Src/mpu_9250.c **** 	tmp = 0x01;
+  86              		.loc 1 18 2 view .LVU10
+  87              		.loc 1 18 6 is_stmt 0 view .LVU11
+  88 004e 8DF81740 		strb	r4, [sp, #23]
+  19:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x6B, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+  89              		.loc 1 19 2 is_stmt 1 view .LVU12
+  90 0052 0297     		str	r7, [sp, #8]
+  91 0054 0194     		str	r4, [sp, #4]
+  92 0056 0096     		str	r6, [sp]
+  93 0058 2346     		mov	r3, r4
+  94 005a 6B22     		movs	r2, #107
+  95 005c D021     		movs	r1, #208
+  96 005e 2846     		mov	r0, r5
+ARM GAS  /tmp/ccESrA8Z.s 			page 3
+
+
+  97 0060 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+  98              	.LVL4:
+  20:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+  99              		.loc 1 20 2 view .LVU13
+ 100 0064 0520     		movs	r0, #5
+ 101 0066 FFF7FEFF 		bl	HAL_Delay
+ 102              	.LVL5:
+  21:Core/Src/mpu_9250.c **** 
+  22:Core/Src/mpu_9250.c **** 	// config
+  23:Core/Src/mpu_9250.c **** 	tmp = 0x00;
+ 103              		.loc 1 23 2 view .LVU14
+ 104              		.loc 1 23 6 is_stmt 0 view .LVU15
+ 105 006a 8DF81780 		strb	r8, [sp, #23]
+  24:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1A, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 106              		.loc 1 24 2 is_stmt 1 view .LVU16
+ 107 006e 0297     		str	r7, [sp, #8]
+ 108 0070 0194     		str	r4, [sp, #4]
+ 109 0072 0096     		str	r6, [sp]
+ 110 0074 2346     		mov	r3, r4
+ 111 0076 1A22     		movs	r2, #26
+ 112 0078 D021     		movs	r1, #208
+ 113 007a 2846     		mov	r0, r5
+ 114 007c FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 115              	.LVL6:
+  25:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 116              		.loc 1 25 2 view .LVU17
+ 117 0080 0520     		movs	r0, #5
+ 118 0082 FFF7FEFF 		bl	HAL_Delay
+ 119              	.LVL7:
+  26:Core/Src/mpu_9250.c **** 
+  27:Core/Src/mpu_9250.c **** 	// gyro_config, 500 dps, filter
+  28:Core/Src/mpu_9250.c **** 	tmp = 0x08;
+ 120              		.loc 1 28 2 view .LVU18
+ 121              		.loc 1 28 6 is_stmt 0 view .LVU19
+ 122 0086 4FF00809 		mov	r9, #8
+ 123 008a 8DF81790 		strb	r9, [sp, #23]
+  29:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1B, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 124              		.loc 1 29 2 is_stmt 1 view .LVU20
+ 125 008e 0297     		str	r7, [sp, #8]
+ 126 0090 0194     		str	r4, [sp, #4]
+ 127 0092 0096     		str	r6, [sp]
+ 128 0094 2346     		mov	r3, r4
+ 129 0096 1B22     		movs	r2, #27
+ 130 0098 D021     		movs	r1, #208
+ 131 009a 2846     		mov	r0, r5
+ 132 009c FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 133              	.LVL8:
+  30:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 134              		.loc 1 30 2 view .LVU21
+ 135 00a0 0520     		movs	r0, #5
+ 136 00a2 FFF7FEFF 		bl	HAL_Delay
+ 137              	.LVL9:
+  31:Core/Src/mpu_9250.c **** 
+  32:Core/Src/mpu_9250.c **** 	// accel_config, 2g
+  33:Core/Src/mpu_9250.c **** 	tmp = 0x08;
+ 138              		.loc 1 33 2 view .LVU22
+ 139              		.loc 1 33 6 is_stmt 0 view .LVU23
+ARM GAS  /tmp/ccESrA8Z.s 			page 4
+
+
+ 140 00a6 8DF81790 		strb	r9, [sp, #23]
+  34:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1C, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 141              		.loc 1 34 2 is_stmt 1 view .LVU24
+ 142 00aa 0297     		str	r7, [sp, #8]
+ 143 00ac 0194     		str	r4, [sp, #4]
+ 144 00ae 0096     		str	r6, [sp]
+ 145 00b0 2346     		mov	r3, r4
+ 146 00b2 1C22     		movs	r2, #28
+ 147 00b4 D021     		movs	r1, #208
+ 148 00b6 2846     		mov	r0, r5
+ 149 00b8 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 150              	.LVL10:
+  35:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 151              		.loc 1 35 2 view .LVU25
+ 152 00bc 0520     		movs	r0, #5
+ 153 00be FFF7FEFF 		bl	HAL_Delay
+ 154              	.LVL11:
+  36:Core/Src/mpu_9250.c **** 
+  37:Core/Src/mpu_9250.c **** 	// accel_config_2, filter
+  38:Core/Src/mpu_9250.c **** 	tmp = 0x08;
+ 155              		.loc 1 38 2 view .LVU26
+ 156              		.loc 1 38 6 is_stmt 0 view .LVU27
+ 157 00c2 8DF81790 		strb	r9, [sp, #23]
+  39:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1D, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 158              		.loc 1 39 2 is_stmt 1 view .LVU28
+ 159 00c6 0297     		str	r7, [sp, #8]
+ 160 00c8 0194     		str	r4, [sp, #4]
+ 161 00ca 0096     		str	r6, [sp]
+ 162 00cc 2346     		mov	r3, r4
+ 163 00ce 1D22     		movs	r2, #29
+ 164 00d0 D021     		movs	r1, #208
+ 165 00d2 2846     		mov	r0, r5
+ 166 00d4 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 167              	.LVL12:
+  40:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 168              		.loc 1 40 2 view .LVU29
+ 169 00d8 0520     		movs	r0, #5
+ 170 00da FFF7FEFF 		bl	HAL_Delay
+ 171              	.LVL13:
+  41:Core/Src/mpu_9250.c **** 
+  42:Core/Src/mpu_9250.c **** 	// int_pin_cfg, bypass enabled
+  43:Core/Src/mpu_9250.c **** 	tmp = 0x02;
+ 172              		.loc 1 43 2 view .LVU30
+ 173              		.loc 1 43 6 is_stmt 0 view .LVU31
+ 174 00de 0223     		movs	r3, #2
+ 175 00e0 8DF81730 		strb	r3, [sp, #23]
+  44:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x37, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 176              		.loc 1 44 2 is_stmt 1 view .LVU32
+ 177 00e4 0297     		str	r7, [sp, #8]
+ 178 00e6 0194     		str	r4, [sp, #4]
+ 179 00e8 0096     		str	r6, [sp]
+ 180 00ea 2346     		mov	r3, r4
+ 181 00ec 3722     		movs	r2, #55
+ 182 00ee D021     		movs	r1, #208
+ 183 00f0 2846     		mov	r0, r5
+ 184 00f2 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 185              	.LVL14:
+ARM GAS  /tmp/ccESrA8Z.s 			page 5
+
+
+  45:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 186              		.loc 1 45 2 view .LVU33
+ 187 00f6 0520     		movs	r0, #5
+ 188 00f8 FFF7FEFF 		bl	HAL_Delay
+ 189              	.LVL15:
+  46:Core/Src/mpu_9250.c **** 
+  47:Core/Src/mpu_9250.c **** 	// pwr_mgmt_2, enable accelerometer and gyroscope
+  48:Core/Src/mpu_9250.c **** 	tmp = 0x00;
+ 190              		.loc 1 48 2 view .LVU34
+ 191              		.loc 1 48 6 is_stmt 0 view .LVU35
+ 192 00fc 8DF81780 		strb	r8, [sp, #23]
+  49:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x6C, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 193              		.loc 1 49 2 is_stmt 1 view .LVU36
+ 194 0100 0297     		str	r7, [sp, #8]
+ 195 0102 0194     		str	r4, [sp, #4]
+ 196 0104 0096     		str	r6, [sp]
+ 197 0106 2346     		mov	r3, r4
+ 198 0108 6C22     		movs	r2, #108
+ 199 010a D021     		movs	r1, #208
+ 200 010c 2846     		mov	r0, r5
+ 201 010e FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 202              	.LVL16:
+  50:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 203              		.loc 1 50 2 view .LVU37
+ 204 0112 0520     		movs	r0, #5
+ 205 0114 FFF7FEFF 		bl	HAL_Delay
+ 206              	.LVL17:
+  51:Core/Src/mpu_9250.c **** 
+  52:Core/Src/mpu_9250.c **** 	// magneto cntl2, soft reset
+  53:Core/Src/mpu_9250.c **** 	tmp = 0x00;
+ 207              		.loc 1 53 2 view .LVU38
+ 208              		.loc 1 53 6 is_stmt 0 view .LVU39
+ 209 0118 8DF81780 		strb	r8, [sp, #23]
+  54:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, AK8963_SLAVE_ADDRESS, 0x0B, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 210              		.loc 1 54 2 is_stmt 1 view .LVU40
+ 211 011c 0297     		str	r7, [sp, #8]
+ 212 011e 0194     		str	r4, [sp, #4]
+ 213 0120 0096     		str	r6, [sp]
+ 214 0122 2346     		mov	r3, r4
+ 215 0124 0B22     		movs	r2, #11
+ 216 0126 1821     		movs	r1, #24
+ 217 0128 2846     		mov	r0, r5
+ 218 012a FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 219              	.LVL18:
+  55:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 220              		.loc 1 55 2 view .LVU41
+ 221 012e 0520     		movs	r0, #5
+ 222 0130 FFF7FEFF 		bl	HAL_Delay
+ 223              	.LVL19:
+  56:Core/Src/mpu_9250.c **** 
+  57:Core/Src/mpu_9250.c **** 	// magneto cntl1, continuous mode 1, 16 bit output
+  58:Core/Src/mpu_9250.c **** 	tmp = 0x12;
+ 224              		.loc 1 58 2 view .LVU42
+ 225              		.loc 1 58 6 is_stmt 0 view .LVU43
+ 226 0134 1223     		movs	r3, #18
+ 227 0136 8DF81730 		strb	r3, [sp, #23]
+  59:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Write(&hi2c1, AK8963_SLAVE_ADDRESS, 0x0A, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ARM GAS  /tmp/ccESrA8Z.s 			page 6
+
+
+ 228              		.loc 1 59 2 is_stmt 1 view .LVU44
+ 229 013a 0297     		str	r7, [sp, #8]
+ 230 013c 0194     		str	r4, [sp, #4]
+ 231 013e 0096     		str	r6, [sp]
+ 232 0140 2346     		mov	r3, r4
+ 233 0142 0A22     		movs	r2, #10
+ 234 0144 1821     		movs	r1, #24
+ 235 0146 2846     		mov	r0, r5
+ 236 0148 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 237              	.LVL20:
+  60:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 238              		.loc 1 60 2 view .LVU45
+ 239 014c 0520     		movs	r0, #5
+ 240 014e FFF7FEFF 		bl	HAL_Delay
+ 241              	.LVL21:
+  61:Core/Src/mpu_9250.c **** 
+  62:Core/Src/mpu_9250.c **** 	// magneto sensitivity adjustment
+  63:Core/Src/mpu_9250.c **** 	if (mag_sens == 1){
+ 242              		.loc 1 63 2 view .LVU46
+  64:Core/Src/mpu_9250.c **** 		HAL_I2C_Mem_Read(&hi2c1, AK8963_SLAVE_ADDRESS, 0x10, I2C_MEMADD_SIZE_8BIT, buffer, 0x3, 1000);
+  65:Core/Src/mpu_9250.c **** 
+  66:Core/Src/mpu_9250.c **** 		for (int i = 0; i < 3; i++){
+  67:Core/Src/mpu_9250.c **** 			sensAdjMag[i] = (((buffer[i] - 128) * 0.5)/128) + 1;
+  68:Core/Src/mpu_9250.c **** 		}
+  69:Core/Src/mpu_9250.c **** 	}
+  70:Core/Src/mpu_9250.c **** 
+  71:Core/Src/mpu_9250.c **** 	// checking accel scale
+  72:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1C, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 243              		.loc 1 72 2 view .LVU47
+ 244 0152 0297     		str	r7, [sp, #8]
+ 245 0154 0194     		str	r4, [sp, #4]
+ 246 0156 0096     		str	r6, [sp]
+ 247 0158 2346     		mov	r3, r4
+ 248 015a 1C22     		movs	r2, #28
+ 249 015c D021     		movs	r1, #208
+ 250 015e 2846     		mov	r0, r5
+ 251 0160 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 252              	.LVL22:
+  73:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 253              		.loc 1 73 2 view .LVU48
+ 254 0164 0520     		movs	r0, #5
+ 255 0166 FFF7FEFF 		bl	HAL_Delay
+ 256              	.LVL23:
+  74:Core/Src/mpu_9250.c **** 
+  75:Core/Src/mpu_9250.c **** 	// select accel sensitivity for respective scale
+  76:Core/Src/mpu_9250.c **** 	switch(tmp & 0x18){
+ 257              		.loc 1 76 2 view .LVU49
+ 258              		.loc 1 76 13 is_stmt 0 view .LVU50
+ 259 016a 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 260              		.loc 1 76 2 view .LVU51
+ 261 016e 03F01803 		and	r3, r3, #24
+ 262 0172 182B     		cmp	r3, #24
+ 263 0174 12D8     		bhi	.L2
+ 264 0176 DFE803F0 		tbb	[pc, r3]
+ 265              	.L4:
+ 266 017a 0D       		.byte	(.L7-.L4)/2
+ 267 017b 11       		.byte	(.L2-.L4)/2
+ARM GAS  /tmp/ccESrA8Z.s 			page 7
+
+
+ 268 017c 11       		.byte	(.L2-.L4)/2
+ 269 017d 11       		.byte	(.L2-.L4)/2
+ 270 017e 11       		.byte	(.L2-.L4)/2
+ 271 017f 11       		.byte	(.L2-.L4)/2
+ 272 0180 11       		.byte	(.L2-.L4)/2
+ 273 0181 11       		.byte	(.L2-.L4)/2
+ 274 0182 36       		.byte	(.L6-.L4)/2
+ 275 0183 11       		.byte	(.L2-.L4)/2
+ 276 0184 11       		.byte	(.L2-.L4)/2
+ 277 0185 11       		.byte	(.L2-.L4)/2
+ 278 0186 11       		.byte	(.L2-.L4)/2
+ 279 0187 11       		.byte	(.L2-.L4)/2
+ 280 0188 11       		.byte	(.L2-.L4)/2
+ 281 0189 11       		.byte	(.L2-.L4)/2
+ 282 018a 3B       		.byte	(.L5-.L4)/2
+ 283 018b 11       		.byte	(.L2-.L4)/2
+ 284 018c 11       		.byte	(.L2-.L4)/2
+ 285 018d 11       		.byte	(.L2-.L4)/2
+ 286 018e 11       		.byte	(.L2-.L4)/2
+ 287 018f 11       		.byte	(.L2-.L4)/2
+ 288 0190 11       		.byte	(.L2-.L4)/2
+ 289 0191 11       		.byte	(.L2-.L4)/2
+ 290 0192 40       		.byte	(.L3-.L4)/2
+ 291 0193 00       		.p2align 1
+ 292              	.L7:
+  77:Core/Src/mpu_9250.c **** 	case 0x00:
+  78:Core/Src/mpu_9250.c **** 		sensAccel = 16384.0f;
+ 293              		.loc 1 78 3 is_stmt 1 view .LVU52
+ 294              		.loc 1 78 13 is_stmt 0 view .LVU53
+ 295 0194 254B     		ldr	r3, .L15+4
+ 296 0196 4FF08D42 		mov	r2, #1182793728
+ 297 019a 1A60     		str	r2, [r3]	@ float
+  79:Core/Src/mpu_9250.c **** 		break;
+ 298              		.loc 1 79 3 is_stmt 1 view .LVU54
+ 299              	.L2:
+  80:Core/Src/mpu_9250.c **** 	case 0x08:
+  81:Core/Src/mpu_9250.c **** 		sensAccel = 8192.0f;
+  82:Core/Src/mpu_9250.c **** 		break;
+  83:Core/Src/mpu_9250.c **** 	case 0x10:
+  84:Core/Src/mpu_9250.c **** 		sensAccel = 4096.0f;
+  85:Core/Src/mpu_9250.c **** 		break;
+  86:Core/Src/mpu_9250.c **** 	case 0x18:
+  87:Core/Src/mpu_9250.c **** 		sensAccel = 2048.0f;
+  88:Core/Src/mpu_9250.c **** 		break;
+  89:Core/Src/mpu_9250.c **** 	}
+  90:Core/Src/mpu_9250.c **** 
+  91:Core/Src/mpu_9250.c **** 	// checking gyro scale
+  92:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1B, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
+ 300              		.loc 1 92 2 view .LVU55
+ 301 019c 4FF47A73 		mov	r3, #1000
+ 302 01a0 0293     		str	r3, [sp, #8]
+ 303 01a2 0123     		movs	r3, #1
+ 304 01a4 0193     		str	r3, [sp, #4]
+ 305 01a6 0DF11702 		add	r2, sp, #23
+ 306 01aa 0092     		str	r2, [sp]
+ 307 01ac 1B22     		movs	r2, #27
+ 308 01ae D021     		movs	r1, #208
+ARM GAS  /tmp/ccESrA8Z.s 			page 8
+
+
+ 309 01b0 1D48     		ldr	r0, .L15
+ 310 01b2 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 311              	.LVL24:
+  93:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 312              		.loc 1 93 2 view .LVU56
+ 313 01b6 0520     		movs	r0, #5
+ 314 01b8 FFF7FEFF 		bl	HAL_Delay
+ 315              	.LVL25:
+  94:Core/Src/mpu_9250.c **** 
+  95:Core/Src/mpu_9250.c **** 	// select gyro sens
+  96:Core/Src/mpu_9250.c **** 	switch(tmp & 0x18){
+ 316              		.loc 1 96 2 view .LVU57
+ 317              		.loc 1 96 13 is_stmt 0 view .LVU58
+ 318 01bc 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 319              		.loc 1 96 2 view .LVU59
+ 320 01c0 03F01803 		and	r3, r3, #24
+ 321 01c4 182B     		cmp	r3, #24
+ 322 01c6 20D8     		bhi	.L1
+ 323 01c8 DFE803F0 		tbb	[pc, r3]
+ 324              	.L10:
+ 325 01cc 1C       		.byte	(.L13-.L10)/2
+ 326 01cd 1F       		.byte	(.L1-.L10)/2
+ 327 01ce 1F       		.byte	(.L1-.L10)/2
+ 328 01cf 1F       		.byte	(.L1-.L10)/2
+ 329 01d0 1F       		.byte	(.L1-.L10)/2
+ 330 01d1 1F       		.byte	(.L1-.L10)/2
+ 331 01d2 1F       		.byte	(.L1-.L10)/2
+ 332 01d3 1F       		.byte	(.L1-.L10)/2
+ 333 01d4 22       		.byte	(.L12-.L10)/2
+ 334 01d5 1F       		.byte	(.L1-.L10)/2
+ 335 01d6 1F       		.byte	(.L1-.L10)/2
+ 336 01d7 1F       		.byte	(.L1-.L10)/2
+ 337 01d8 1F       		.byte	(.L1-.L10)/2
+ 338 01d9 1F       		.byte	(.L1-.L10)/2
+ 339 01da 1F       		.byte	(.L1-.L10)/2
+ 340 01db 1F       		.byte	(.L1-.L10)/2
+ 341 01dc 26       		.byte	(.L11-.L10)/2
+ 342 01dd 1F       		.byte	(.L1-.L10)/2
+ 343 01de 1F       		.byte	(.L1-.L10)/2
+ 344 01df 1F       		.byte	(.L1-.L10)/2
+ 345 01e0 1F       		.byte	(.L1-.L10)/2
+ 346 01e1 1F       		.byte	(.L1-.L10)/2
+ 347 01e2 1F       		.byte	(.L1-.L10)/2
+ 348 01e3 1F       		.byte	(.L1-.L10)/2
+ 349 01e4 2A       		.byte	(.L9-.L10)/2
+ 350 01e5 00       		.p2align 1
+ 351              	.L6:
+  81:Core/Src/mpu_9250.c **** 		break;
+ 352              		.loc 1 81 3 is_stmt 1 view .LVU60
+  81:Core/Src/mpu_9250.c **** 		break;
+ 353              		.loc 1 81 13 is_stmt 0 view .LVU61
+ 354 01e6 114B     		ldr	r3, .L15+4
+ 355 01e8 4FF08C42 		mov	r2, #1174405120
+ 356 01ec 1A60     		str	r2, [r3]	@ float
+  82:Core/Src/mpu_9250.c **** 	case 0x10:
+ 357              		.loc 1 82 3 is_stmt 1 view .LVU62
+ 358 01ee D5E7     		b	.L2
+ARM GAS  /tmp/ccESrA8Z.s 			page 9
+
+
+ 359              	.L5:
+  84:Core/Src/mpu_9250.c **** 		break;
+ 360              		.loc 1 84 3 view .LVU63
+  84:Core/Src/mpu_9250.c **** 		break;
+ 361              		.loc 1 84 13 is_stmt 0 view .LVU64
+ 362 01f0 0E4B     		ldr	r3, .L15+4
+ 363 01f2 4FF08B42 		mov	r2, #1166016512
+ 364 01f6 1A60     		str	r2, [r3]	@ float
+  85:Core/Src/mpu_9250.c **** 	case 0x18:
+ 365              		.loc 1 85 3 is_stmt 1 view .LVU65
+ 366 01f8 D0E7     		b	.L2
+ 367              	.L3:
+  87:Core/Src/mpu_9250.c **** 		break;
+ 368              		.loc 1 87 3 view .LVU66
+  87:Core/Src/mpu_9250.c **** 		break;
+ 369              		.loc 1 87 13 is_stmt 0 view .LVU67
+ 370 01fa 0C4B     		ldr	r3, .L15+4
+ 371 01fc 4FF08A42 		mov	r2, #1157627904
+ 372 0200 1A60     		str	r2, [r3]	@ float
+  88:Core/Src/mpu_9250.c **** 	}
+ 373              		.loc 1 88 3 is_stmt 1 view .LVU68
+ 374 0202 CBE7     		b	.L2
+ 375              	.L13:
+  97:Core/Src/mpu_9250.c **** 	case 0x00:
+  98:Core/Src/mpu_9250.c **** 		sensGyro = 131.0f;
+ 376              		.loc 1 98 3 view .LVU69
+ 377              		.loc 1 98 12 is_stmt 0 view .LVU70
+ 378 0204 0A4B     		ldr	r3, .L15+8
+ 379 0206 0B4A     		ldr	r2, .L15+12
+ 380 0208 1A60     		str	r2, [r3]	@ float
+  99:Core/Src/mpu_9250.c **** 		break;
+ 381              		.loc 1 99 3 is_stmt 1 view .LVU71
+ 382              	.L1:
+ 100:Core/Src/mpu_9250.c **** 	case 0x08:
+ 101:Core/Src/mpu_9250.c **** 		sensGyro = 65.5f;
+ 102:Core/Src/mpu_9250.c **** 		break;
+ 103:Core/Src/mpu_9250.c **** 	case 0x10:
+ 104:Core/Src/mpu_9250.c **** 		sensGyro = 32.8f;
+ 105:Core/Src/mpu_9250.c **** 		break;
+ 106:Core/Src/mpu_9250.c **** 	case 0x18:
+ 107:Core/Src/mpu_9250.c **** 		sensGyro = 16.4f;
+ 108:Core/Src/mpu_9250.c **** 		break;
+ 109:Core/Src/mpu_9250.c **** 	}
+ 110:Core/Src/mpu_9250.c **** }
+ 383              		.loc 1 110 1 is_stmt 0 view .LVU72
+ 384 020a 07B0     		add	sp, sp, #28
+ 385              	.LCFI2:
+ 386              		.cfi_remember_state
+ 387              		.cfi_def_cfa_offset 28
+ 388              		@ sp needed
+ 389 020c BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 390              	.L12:
+ 391              	.LCFI3:
+ 392              		.cfi_restore_state
+ 101:Core/Src/mpu_9250.c **** 		break;
+ 393              		.loc 1 101 3 is_stmt 1 view .LVU73
+ 101:Core/Src/mpu_9250.c **** 		break;
+ARM GAS  /tmp/ccESrA8Z.s 			page 10
+
+
+ 394              		.loc 1 101 12 is_stmt 0 view .LVU74
+ 395 0210 074B     		ldr	r3, .L15+8
+ 396 0212 094A     		ldr	r2, .L15+16
+ 397 0214 1A60     		str	r2, [r3]	@ float
+ 102:Core/Src/mpu_9250.c **** 	case 0x10:
+ 398              		.loc 1 102 3 is_stmt 1 view .LVU75
+ 399 0216 F8E7     		b	.L1
+ 400              	.L11:
+ 104:Core/Src/mpu_9250.c **** 		break;
+ 401              		.loc 1 104 3 view .LVU76
+ 104:Core/Src/mpu_9250.c **** 		break;
+ 402              		.loc 1 104 12 is_stmt 0 view .LVU77
+ 403 0218 054B     		ldr	r3, .L15+8
+ 404 021a 084A     		ldr	r2, .L15+20
+ 405 021c 1A60     		str	r2, [r3]	@ float
+ 105:Core/Src/mpu_9250.c **** 	case 0x18:
+ 406              		.loc 1 105 3 is_stmt 1 view .LVU78
+ 407 021e F4E7     		b	.L1
+ 408              	.L9:
+ 107:Core/Src/mpu_9250.c **** 		break;
+ 409              		.loc 1 107 3 view .LVU79
+ 107:Core/Src/mpu_9250.c **** 		break;
+ 410              		.loc 1 107 12 is_stmt 0 view .LVU80
+ 411 0220 034B     		ldr	r3, .L15+8
+ 412 0222 074A     		ldr	r2, .L15+24
+ 413 0224 1A60     		str	r2, [r3]	@ float
+ 108:Core/Src/mpu_9250.c **** 	}
+ 414              		.loc 1 108 3 is_stmt 1 view .LVU81
+ 415              		.loc 1 110 1 is_stmt 0 view .LVU82
+ 416 0226 F0E7     		b	.L1
+ 417              	.L16:
+ 418              		.align	2
+ 419              	.L15:
+ 420 0228 00000000 		.word	hi2c1
+ 421 022c 00000000 		.word	.LANCHOR0
+ 422 0230 00000000 		.word	.LANCHOR1
+ 423 0234 00000343 		.word	1124270080
+ 424 0238 00008342 		.word	1115881472
+ 425 023c 33330342 		.word	1107505971
+ 426 0240 33338341 		.word	1099117363
+ 427              		.cfi_endproc
+ 428              	.LFE123:
+ 430              		.section	.text.Accel_readXYZ,"ax",%progbits
+ 431              		.align	1
+ 432              		.global	Accel_readXYZ
+ 433              		.syntax unified
+ 434              		.thumb
+ 435              		.thumb_func
+ 436              		.fpu fpv4-sp-d16
+ 438              	Accel_readXYZ:
+ 439              	.LVL26:
+ 440              	.LFB124:
+ 111:Core/Src/mpu_9250.c **** 
+ 112:Core/Src/mpu_9250.c **** void Accel_readXYZ(dataHandleIMU* data){
+ 441              		.loc 1 112 40 is_stmt 1 view -0
+ 442              		.cfi_startproc
+ 443              		@ args = 0, pretend = 0, frame = 16
+ARM GAS  /tmp/ccESrA8Z.s 			page 11
+
+
+ 444              		@ frame_needed = 0, uses_anonymous_args = 0
+ 445              		.loc 1 112 40 is_stmt 0 view .LVU84
+ 446 0000 10B5     		push	{r4, lr}
+ 447              	.LCFI4:
+ 448              		.cfi_def_cfa_offset 8
+ 449              		.cfi_offset 4, -8
+ 450              		.cfi_offset 14, -4
+ 451 0002 88B0     		sub	sp, sp, #32
+ 452              	.LCFI5:
+ 453              		.cfi_def_cfa_offset 40
+ 454 0004 0446     		mov	r4, r0
+ 113:Core/Src/mpu_9250.c **** 	uint8_t buffer[6];
+ 455              		.loc 1 113 2 is_stmt 1 view .LVU85
+ 114:Core/Src/mpu_9250.c **** 	int16_t rawData[3];
+ 456              		.loc 1 114 2 view .LVU86
+ 115:Core/Src/mpu_9250.c **** 
+ 116:Core/Src/mpu_9250.c **** 	// read accelerometer values
+ 117:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x3B, I2C_MEMADD_SIZE_8BIT, buffer, 0x6, 1000);
+ 457              		.loc 1 117 2 view .LVU87
+ 458 0006 4FF47A73 		mov	r3, #1000
+ 459 000a 0293     		str	r3, [sp, #8]
+ 460 000c 0623     		movs	r3, #6
+ 461 000e 0193     		str	r3, [sp, #4]
+ 462 0010 06AB     		add	r3, sp, #24
+ 463 0012 0093     		str	r3, [sp]
+ 464 0014 0123     		movs	r3, #1
+ 465 0016 3B22     		movs	r2, #59
+ 466 0018 D021     		movs	r1, #208
+ 467 001a 1E48     		ldr	r0, .L21
+ 468              	.LVL27:
+ 469              		.loc 1 117 2 is_stmt 0 view .LVU88
+ 470 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 471              	.LVL28:
+ 118:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 472              		.loc 1 118 2 is_stmt 1 view .LVU89
+ 473 0020 0520     		movs	r0, #5
+ 474 0022 FFF7FEFF 		bl	HAL_Delay
+ 475              	.LVL29:
+ 119:Core/Src/mpu_9250.c **** 
+ 120:Core/Src/mpu_9250.c **** 	// merging data
+ 121:Core/Src/mpu_9250.c **** 	for (int i = 0; i < 3; i++){
+ 476              		.loc 1 121 2 view .LVU90
+ 477              	.LBB2:
+ 478              		.loc 1 121 7 view .LVU91
+ 479              		.loc 1 121 11 is_stmt 0 view .LVU92
+ 480 0026 0021     		movs	r1, #0
+ 481              		.loc 1 121 2 view .LVU93
+ 482 0028 0FE0     		b	.L18
+ 483              	.LVL30:
+ 484              	.L19:
+ 122:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 485              		.loc 1 122 3 is_stmt 1 discriminator 3 view .LVU94
+ 486              		.loc 1 122 35 is_stmt 0 discriminator 3 view .LVU95
+ 487 002a 4A00     		lsls	r2, r1, #1
+ 488              		.loc 1 122 33 discriminator 3 view .LVU96
+ 489 002c 08AB     		add	r3, sp, #32
+ 490 002e 03EB4100 		add	r0, r3, r1, lsl #1
+ARM GAS  /tmp/ccESrA8Z.s 			page 12
+
+
+ 491 0032 10F8083C 		ldrb	r3, [r0, #-8]	@ zero_extendqisi2
+ 492              		.loc 1 122 39 discriminator 3 view .LVU97
+ 493 0036 1B02     		lsls	r3, r3, #8
+ 494              		.loc 1 122 17 discriminator 3 view .LVU98
+ 495 0038 1BB2     		sxth	r3, r3
+ 496              		.loc 1 122 53 discriminator 3 view .LVU99
+ 497 003a 2132     		adds	r2, r2, #33
+ 498 003c 6A44     		add	r2, sp, r2
+ 499 003e 12F8082C 		ldrb	r2, [r2, #-8]	@ zero_extendqisi2
+ 500              		.loc 1 122 45 discriminator 3 view .LVU100
+ 501 0042 1343     		orrs	r3, r3, r2
+ 502              		.loc 1 122 14 discriminator 3 view .LVU101
+ 503 0044 20F8103C 		strh	r3, [r0, #-16]	@ movhi
+ 121:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 504              		.loc 1 121 25 is_stmt 1 discriminator 3 view .LVU102
+ 121:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 505              		.loc 1 121 26 is_stmt 0 discriminator 3 view .LVU103
+ 506 0048 0131     		adds	r1, r1, #1
+ 507              	.LVL31:
+ 508              	.L18:
+ 121:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 509              		.loc 1 121 18 is_stmt 1 discriminator 1 view .LVU104
+ 121:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 510              		.loc 1 121 2 is_stmt 0 discriminator 1 view .LVU105
+ 511 004a 0229     		cmp	r1, #2
+ 512 004c EDDD     		ble	.L19
+ 513              	.LBE2:
+ 123:Core/Src/mpu_9250.c **** 	}
+ 124:Core/Src/mpu_9250.c **** 
+ 125:Core/Src/mpu_9250.c **** 	// scaling to appropriate unit, g
+ 126:Core/Src/mpu_9250.c **** 	data->ax = (float)(rawData[0] / sensAccel);
+ 514              		.loc 1 126 2 is_stmt 1 view .LVU106
+ 515              		.loc 1 126 28 is_stmt 0 view .LVU107
+ 516 004e BDF91030 		ldrsh	r3, [sp, #16]
+ 517 0052 07EE103A 		vmov	s14, r3	@ int
+ 518              		.loc 1 126 13 view .LVU108
+ 519 0056 104B     		ldr	r3, .L21+4
+ 520 0058 D3ED007A 		vldr.32	s15, [r3]
+ 521 005c B8EEC77A 		vcvt.f32.s32	s14, s14
+ 522 0060 C7EE276A 		vdiv.f32	s13, s14, s15
+ 523              		.loc 1 126 11 view .LVU109
+ 524 0064 C4ED006A 		vstr.32	s13, [r4]
+ 127:Core/Src/mpu_9250.c **** 	data->ay = (float)(rawData[1] / sensAccel);
+ 525              		.loc 1 127 2 is_stmt 1 view .LVU110
+ 526              		.loc 1 127 28 is_stmt 0 view .LVU111
+ 527 0068 BDF91230 		ldrsh	r3, [sp, #18]
+ 528 006c 07EE103A 		vmov	s14, r3	@ int
+ 529              		.loc 1 127 13 view .LVU112
+ 530 0070 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 531 0074 C7EE276A 		vdiv.f32	s13, s14, s15
+ 532              		.loc 1 127 11 view .LVU113
+ 533 0078 C4ED016A 		vstr.32	s13, [r4, #4]
+ 128:Core/Src/mpu_9250.c **** 	data->az = (float)(rawData[2] / sensAccel);
+ 534              		.loc 1 128 2 is_stmt 1 view .LVU114
+ 535              		.loc 1 128 28 is_stmt 0 view .LVU115
+ 536 007c BDF91430 		ldrsh	r3, [sp, #20]
+ 537 0080 07EE103A 		vmov	s14, r3	@ int
+ARM GAS  /tmp/ccESrA8Z.s 			page 13
+
+
+ 538              		.loc 1 128 13 view .LVU116
+ 539 0084 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 540 0088 C7EE276A 		vdiv.f32	s13, s14, s15
+ 541              		.loc 1 128 11 view .LVU117
+ 542 008c C4ED026A 		vstr.32	s13, [r4, #8]
+ 129:Core/Src/mpu_9250.c **** }
+ 543              		.loc 1 129 1 view .LVU118
+ 544 0090 08B0     		add	sp, sp, #32
+ 545              	.LCFI6:
+ 546              		.cfi_def_cfa_offset 8
+ 547              		@ sp needed
+ 548 0092 10BD     		pop	{r4, pc}
+ 549              	.LVL32:
+ 550              	.L22:
+ 551              		.loc 1 129 1 view .LVU119
+ 552              		.align	2
+ 553              	.L21:
+ 554 0094 00000000 		.word	hi2c1
+ 555 0098 00000000 		.word	.LANCHOR0
+ 556              		.cfi_endproc
+ 557              	.LFE124:
+ 559              		.section	.text.Gyro_readXYZ,"ax",%progbits
+ 560              		.align	1
+ 561              		.global	Gyro_readXYZ
+ 562              		.syntax unified
+ 563              		.thumb
+ 564              		.thumb_func
+ 565              		.fpu fpv4-sp-d16
+ 567              	Gyro_readXYZ:
+ 568              	.LVL33:
+ 569              	.LFB125:
+ 130:Core/Src/mpu_9250.c **** 
+ 131:Core/Src/mpu_9250.c **** void Gyro_readXYZ(dataHandleIMU *data){
+ 570              		.loc 1 131 39 is_stmt 1 view -0
+ 571              		.cfi_startproc
+ 572              		@ args = 0, pretend = 0, frame = 16
+ 573              		@ frame_needed = 0, uses_anonymous_args = 0
+ 574              		.loc 1 131 39 is_stmt 0 view .LVU121
+ 575 0000 10B5     		push	{r4, lr}
+ 576              	.LCFI7:
+ 577              		.cfi_def_cfa_offset 8
+ 578              		.cfi_offset 4, -8
+ 579              		.cfi_offset 14, -4
+ 580 0002 88B0     		sub	sp, sp, #32
+ 581              	.LCFI8:
+ 582              		.cfi_def_cfa_offset 40
+ 583 0004 0446     		mov	r4, r0
+ 132:Core/Src/mpu_9250.c **** 	uint8_t buffer[6];
+ 584              		.loc 1 132 2 is_stmt 1 view .LVU122
+ 133:Core/Src/mpu_9250.c **** 	int16_t rawData[3];
+ 585              		.loc 1 133 2 view .LVU123
+ 134:Core/Src/mpu_9250.c **** 
+ 135:Core/Src/mpu_9250.c **** 	// read gyro values
+ 136:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x43, I2C_MEMADD_SIZE_8BIT, buffer, 0x6, 1000);
+ 586              		.loc 1 136 2 view .LVU124
+ 587 0006 4FF47A73 		mov	r3, #1000
+ 588 000a 0293     		str	r3, [sp, #8]
+ARM GAS  /tmp/ccESrA8Z.s 			page 14
+
+
+ 589 000c 0623     		movs	r3, #6
+ 590 000e 0193     		str	r3, [sp, #4]
+ 591 0010 06AB     		add	r3, sp, #24
+ 592 0012 0093     		str	r3, [sp]
+ 593 0014 0123     		movs	r3, #1
+ 594 0016 4322     		movs	r2, #67
+ 595 0018 D021     		movs	r1, #208
+ 596 001a 1E48     		ldr	r0, .L27
+ 597              	.LVL34:
+ 598              		.loc 1 136 2 is_stmt 0 view .LVU125
+ 599 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 600              	.LVL35:
+ 137:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 601              		.loc 1 137 2 is_stmt 1 view .LVU126
+ 602 0020 0520     		movs	r0, #5
+ 603 0022 FFF7FEFF 		bl	HAL_Delay
+ 604              	.LVL36:
+ 138:Core/Src/mpu_9250.c **** 
+ 139:Core/Src/mpu_9250.c **** 	// merging data
+ 140:Core/Src/mpu_9250.c **** 	for (int i = 0; i < 3; i++){
+ 605              		.loc 1 140 2 view .LVU127
+ 606              	.LBB3:
+ 607              		.loc 1 140 7 view .LVU128
+ 608              		.loc 1 140 11 is_stmt 0 view .LVU129
+ 609 0026 0021     		movs	r1, #0
+ 610              		.loc 1 140 2 view .LVU130
+ 611 0028 0FE0     		b	.L24
+ 612              	.LVL37:
+ 613              	.L25:
+ 141:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 614              		.loc 1 141 3 is_stmt 1 discriminator 3 view .LVU131
+ 615              		.loc 1 141 35 is_stmt 0 discriminator 3 view .LVU132
+ 616 002a 4A00     		lsls	r2, r1, #1
+ 617              		.loc 1 141 33 discriminator 3 view .LVU133
+ 618 002c 08AB     		add	r3, sp, #32
+ 619 002e 03EB4100 		add	r0, r3, r1, lsl #1
+ 620 0032 10F8083C 		ldrb	r3, [r0, #-8]	@ zero_extendqisi2
+ 621              		.loc 1 141 39 discriminator 3 view .LVU134
+ 622 0036 1B02     		lsls	r3, r3, #8
+ 623              		.loc 1 141 17 discriminator 3 view .LVU135
+ 624 0038 1BB2     		sxth	r3, r3
+ 625              		.loc 1 141 53 discriminator 3 view .LVU136
+ 626 003a 2132     		adds	r2, r2, #33
+ 627 003c 6A44     		add	r2, sp, r2
+ 628 003e 12F8082C 		ldrb	r2, [r2, #-8]	@ zero_extendqisi2
+ 629              		.loc 1 141 45 discriminator 3 view .LVU137
+ 630 0042 1343     		orrs	r3, r3, r2
+ 631              		.loc 1 141 14 discriminator 3 view .LVU138
+ 632 0044 20F8103C 		strh	r3, [r0, #-16]	@ movhi
+ 140:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 633              		.loc 1 140 25 is_stmt 1 discriminator 3 view .LVU139
+ 140:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 634              		.loc 1 140 26 is_stmt 0 discriminator 3 view .LVU140
+ 635 0048 0131     		adds	r1, r1, #1
+ 636              	.LVL38:
+ 637              	.L24:
+ 140:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ARM GAS  /tmp/ccESrA8Z.s 			page 15
+
+
+ 638              		.loc 1 140 18 is_stmt 1 discriminator 1 view .LVU141
+ 140:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i] << 8) | buffer[2*i+1]);
+ 639              		.loc 1 140 2 is_stmt 0 discriminator 1 view .LVU142
+ 640 004a 0229     		cmp	r1, #2
+ 641 004c EDDD     		ble	.L25
+ 642              	.LBE3:
+ 142:Core/Src/mpu_9250.c **** 	}
+ 143:Core/Src/mpu_9250.c **** 
+ 144:Core/Src/mpu_9250.c **** 	// scaling to appropriate unit, dps
+ 145:Core/Src/mpu_9250.c **** 	data->gx = (float)(rawData[0] / sensGyro);
+ 643              		.loc 1 145 2 is_stmt 1 view .LVU143
+ 644              		.loc 1 145 28 is_stmt 0 view .LVU144
+ 645 004e BDF91030 		ldrsh	r3, [sp, #16]
+ 646 0052 07EE103A 		vmov	s14, r3	@ int
+ 647              		.loc 1 145 13 view .LVU145
+ 648 0056 104B     		ldr	r3, .L27+4
+ 649 0058 D3ED007A 		vldr.32	s15, [r3]
+ 650 005c B8EEC77A 		vcvt.f32.s32	s14, s14
+ 651 0060 C7EE276A 		vdiv.f32	s13, s14, s15
+ 652              		.loc 1 145 11 view .LVU146
+ 653 0064 C4ED036A 		vstr.32	s13, [r4, #12]
+ 146:Core/Src/mpu_9250.c **** 	data->gy = (float)(rawData[1] / sensGyro);
+ 654              		.loc 1 146 2 is_stmt 1 view .LVU147
+ 655              		.loc 1 146 28 is_stmt 0 view .LVU148
+ 656 0068 BDF91230 		ldrsh	r3, [sp, #18]
+ 657 006c 07EE103A 		vmov	s14, r3	@ int
+ 658              		.loc 1 146 13 view .LVU149
+ 659 0070 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 660 0074 C7EE276A 		vdiv.f32	s13, s14, s15
+ 661              		.loc 1 146 11 view .LVU150
+ 662 0078 C4ED046A 		vstr.32	s13, [r4, #16]
+ 147:Core/Src/mpu_9250.c **** 	data->gz = (float)(rawData[2] / sensGyro);
+ 663              		.loc 1 147 2 is_stmt 1 view .LVU151
+ 664              		.loc 1 147 28 is_stmt 0 view .LVU152
+ 665 007c BDF91430 		ldrsh	r3, [sp, #20]
+ 666 0080 07EE103A 		vmov	s14, r3	@ int
+ 667              		.loc 1 147 13 view .LVU153
+ 668 0084 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 669 0088 C7EE276A 		vdiv.f32	s13, s14, s15
+ 670              		.loc 1 147 11 view .LVU154
+ 671 008c C4ED056A 		vstr.32	s13, [r4, #20]
+ 148:Core/Src/mpu_9250.c **** }
+ 672              		.loc 1 148 1 view .LVU155
+ 673 0090 08B0     		add	sp, sp, #32
+ 674              	.LCFI9:
+ 675              		.cfi_def_cfa_offset 8
+ 676              		@ sp needed
+ 677 0092 10BD     		pop	{r4, pc}
+ 678              	.LVL39:
+ 679              	.L28:
+ 680              		.loc 1 148 1 view .LVU156
+ 681              		.align	2
+ 682              	.L27:
+ 683 0094 00000000 		.word	hi2c1
+ 684 0098 00000000 		.word	.LANCHOR1
+ 685              		.cfi_endproc
+ 686              	.LFE125:
+ARM GAS  /tmp/ccESrA8Z.s 			page 16
+
+
+ 688              		.section	.text.Magneto_readXYZ,"ax",%progbits
+ 689              		.align	1
+ 690              		.global	Magneto_readXYZ
+ 691              		.syntax unified
+ 692              		.thumb
+ 693              		.thumb_func
+ 694              		.fpu fpv4-sp-d16
+ 696              	Magneto_readXYZ:
+ 697              	.LVL40:
+ 698              	.LFB126:
+ 149:Core/Src/mpu_9250.c **** 
+ 150:Core/Src/mpu_9250.c **** // Y, X, -Z
+ 151:Core/Src/mpu_9250.c **** void Magneto_readXYZ(dataHandleIMU *data){
+ 699              		.loc 1 151 42 is_stmt 1 view -0
+ 700              		.cfi_startproc
+ 701              		@ args = 0, pretend = 0, frame = 16
+ 702              		@ frame_needed = 0, uses_anonymous_args = 0
+ 703              		.loc 1 151 42 is_stmt 0 view .LVU158
+ 704 0000 10B5     		push	{r4, lr}
+ 705              	.LCFI10:
+ 706              		.cfi_def_cfa_offset 8
+ 707              		.cfi_offset 4, -8
+ 708              		.cfi_offset 14, -4
+ 709 0002 88B0     		sub	sp, sp, #32
+ 710              	.LCFI11:
+ 711              		.cfi_def_cfa_offset 40
+ 712 0004 0446     		mov	r4, r0
+ 152:Core/Src/mpu_9250.c **** 	uint8_t buffer[6];
+ 713              		.loc 1 152 2 is_stmt 1 view .LVU159
+ 153:Core/Src/mpu_9250.c **** 	int16_t rawData[3]; 
+ 714              		.loc 1 153 2 view .LVU160
+ 154:Core/Src/mpu_9250.c **** 
+ 155:Core/Src/mpu_9250.c **** 	// read gyro values
+ 156:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, AK8963_SLAVE_ADDRESS, 0x03, I2C_MEMADD_SIZE_8BIT, buffer, 0x6, 1000);
+ 715              		.loc 1 156 2 view .LVU161
+ 716 0006 4FF47A73 		mov	r3, #1000
+ 717 000a 0293     		str	r3, [sp, #8]
+ 718 000c 0623     		movs	r3, #6
+ 719 000e 0193     		str	r3, [sp, #4]
+ 720 0010 06AB     		add	r3, sp, #24
+ 721 0012 0093     		str	r3, [sp]
+ 722 0014 0123     		movs	r3, #1
+ 723 0016 0322     		movs	r2, #3
+ 724 0018 1821     		movs	r1, #24
+ 725 001a 1F48     		ldr	r0, .L33
+ 726              	.LVL41:
+ 727              		.loc 1 156 2 is_stmt 0 view .LVU162
+ 728 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 729              	.LVL42:
+ 157:Core/Src/mpu_9250.c **** 	HAL_Delay(5);
+ 730              		.loc 1 157 2 is_stmt 1 view .LVU163
+ 731 0020 0520     		movs	r0, #5
+ 732 0022 FFF7FEFF 		bl	HAL_Delay
+ 733              	.LVL43:
+ 158:Core/Src/mpu_9250.c **** 
+ 159:Core/Src/mpu_9250.c **** 	// merging data
+ 160:Core/Src/mpu_9250.c **** 	for (int i = 0; i < 3; i++){
+ARM GAS  /tmp/ccESrA8Z.s 			page 17
+
+
+ 734              		.loc 1 160 2 view .LVU164
+ 735              	.LBB4:
+ 736              		.loc 1 160 7 view .LVU165
+ 737              		.loc 1 160 11 is_stmt 0 view .LVU166
+ 738 0026 0021     		movs	r1, #0
+ 739              		.loc 1 160 2 view .LVU167
+ 740 0028 0FE0     		b	.L30
+ 741              	.LVL44:
+ 742              	.L31:
+ 161:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
+ 743              		.loc 1 161 3 is_stmt 1 discriminator 3 view .LVU168
+ 744              		.loc 1 161 35 is_stmt 0 discriminator 3 view .LVU169
+ 745 002a 4A00     		lsls	r2, r1, #1
+ 746              		.loc 1 161 33 discriminator 3 view .LVU170
+ 747 002c 02F12103 		add	r3, r2, #33
+ 748 0030 6B44     		add	r3, sp, r3
+ 749 0032 13F8083C 		ldrb	r3, [r3, #-8]	@ zero_extendqisi2
+ 750              		.loc 1 161 41 discriminator 3 view .LVU171
+ 751 0036 1B02     		lsls	r3, r3, #8
+ 752              		.loc 1 161 17 discriminator 3 view .LVU172
+ 753 0038 1BB2     		sxth	r3, r3
+ 754              		.loc 1 161 55 discriminator 3 view .LVU173
+ 755 003a 2032     		adds	r2, r2, #32
+ 756 003c 6A44     		add	r2, sp, r2
+ 757 003e 12F8080C 		ldrb	r0, [r2, #-8]	@ zero_extendqisi2
+ 758              		.loc 1 161 47 discriminator 3 view .LVU174
+ 759 0042 0343     		orrs	r3, r3, r0
+ 760              		.loc 1 161 14 discriminator 3 view .LVU175
+ 761 0044 22F8103C 		strh	r3, [r2, #-16]	@ movhi
+ 160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
+ 762              		.loc 1 160 25 is_stmt 1 discriminator 3 view .LVU176
+ 160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
+ 763              		.loc 1 160 26 is_stmt 0 discriminator 3 view .LVU177
+ 764 0048 0131     		adds	r1, r1, #1
+ 765              	.LVL45:
+ 766              	.L30:
+ 160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
+ 767              		.loc 1 160 18 is_stmt 1 discriminator 1 view .LVU178
+ 160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
+ 768              		.loc 1 160 2 is_stmt 0 discriminator 1 view .LVU179
+ 769 004a 0229     		cmp	r1, #2
+ 770 004c EDDD     		ble	.L31
+ 771              	.LBE4:
+ 162:Core/Src/mpu_9250.c **** 	}
+ 163:Core/Src/mpu_9250.c **** 
+ 164:Core/Src/mpu_9250.c **** 	// scaling to appropriate unit and correcting axis, uT
+ 165:Core/Src/mpu_9250.c **** 	data->mx = (float)(rawData[1] / sensMag);
+ 772              		.loc 1 165 2 is_stmt 1 view .LVU180
+ 773              		.loc 1 165 28 is_stmt 0 view .LVU181
+ 774 004e BDF91230 		ldrsh	r3, [sp, #18]
+ 775 0052 07EE903A 		vmov	s15, r3	@ int
+ 776              		.loc 1 165 13 view .LVU182
+ 777 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 778 005a 9FED107A 		vldr.32	s14, .L33+4
+ 779 005e C7EE876A 		vdiv.f32	s13, s15, s14
+ 780              		.loc 1 165 11 view .LVU183
+ 781 0062 C4ED066A 		vstr.32	s13, [r4, #24]
+ARM GAS  /tmp/ccESrA8Z.s 			page 18
+
+
+ 166:Core/Src/mpu_9250.c **** 	data->my = (float)(rawData[0] / sensMag);
+ 782              		.loc 1 166 2 is_stmt 1 view .LVU184
+ 783              		.loc 1 166 28 is_stmt 0 view .LVU185
+ 784 0066 BDF91030 		ldrsh	r3, [sp, #16]
+ 785 006a 07EE903A 		vmov	s15, r3	@ int
+ 786              		.loc 1 166 13 view .LVU186
+ 787 006e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 788 0072 C7EE876A 		vdiv.f32	s13, s15, s14
+ 789              		.loc 1 166 11 view .LVU187
+ 790 0076 C4ED076A 		vstr.32	s13, [r4, #28]
+ 167:Core/Src/mpu_9250.c **** 	data->mz = -(float)(rawData[2] / sensMag);
+ 791              		.loc 1 167 2 is_stmt 1 view .LVU188
+ 792              		.loc 1 167 29 is_stmt 0 view .LVU189
+ 793 007a BDF91430 		ldrsh	r3, [sp, #20]
+ 794 007e 06EE903A 		vmov	s13, r3	@ int
+ 795              		.loc 1 167 14 view .LVU190
+ 796 0082 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 797 0086 C6EE877A 		vdiv.f32	s15, s13, s14
+ 798              		.loc 1 167 13 view .LVU191
+ 799 008a F1EE677A 		vneg.f32	s15, s15
+ 800              		.loc 1 167 11 view .LVU192
+ 801 008e C4ED087A 		vstr.32	s15, [r4, #32]
+ 168:Core/Src/mpu_9250.c **** }
+ 802              		.loc 1 168 1 view .LVU193
+ 803 0092 08B0     		add	sp, sp, #32
+ 804              	.LCFI12:
+ 805              		.cfi_def_cfa_offset 8
+ 806              		@ sp needed
+ 807 0094 10BD     		pop	{r4, pc}
+ 808              	.LVL46:
+ 809              	.L34:
+ 810              		.loc 1 168 1 view .LVU194
+ 811 0096 00BF     		.align	2
+ 812              	.L33:
+ 813 0098 00000000 		.word	hi2c1
+ 814 009c 0681153E 		.word	1041596678
+ 815              		.cfi_endproc
+ 816              	.LFE126:
+ 818              		.section	.text.IMU_measure,"ax",%progbits
+ 819              		.align	1
+ 820              		.global	IMU_measure
+ 821              		.syntax unified
+ 822              		.thumb
+ 823              		.thumb_func
+ 824              		.fpu fpv4-sp-d16
+ 826              	IMU_measure:
+ 827              	.LVL47:
+ 828              	.LFB127:
+ 169:Core/Src/mpu_9250.c **** 
+ 170:Core/Src/mpu_9250.c **** void IMU_measure(dataHandleIMU* data){
+ 829              		.loc 1 170 38 is_stmt 1 view -0
+ 830              		.cfi_startproc
+ 831              		@ args = 0, pretend = 0, frame = 0
+ 832              		@ frame_needed = 0, uses_anonymous_args = 0
+ 833              		.loc 1 170 38 is_stmt 0 view .LVU196
+ 834 0000 10B5     		push	{r4, lr}
+ 835              	.LCFI13:
+ARM GAS  /tmp/ccESrA8Z.s 			page 19
+
+
+ 836              		.cfi_def_cfa_offset 8
+ 837              		.cfi_offset 4, -8
+ 838              		.cfi_offset 14, -4
+ 839 0002 0446     		mov	r4, r0
+ 171:Core/Src/mpu_9250.c **** 	Accel_readXYZ(data);
+ 840              		.loc 1 171 2 is_stmt 1 view .LVU197
+ 841 0004 FFF7FEFF 		bl	Accel_readXYZ
+ 842              	.LVL48:
+ 172:Core/Src/mpu_9250.c **** 	Gyro_readXYZ(data);
+ 843              		.loc 1 172 2 view .LVU198
+ 844 0008 2046     		mov	r0, r4
+ 845 000a FFF7FEFF 		bl	Gyro_readXYZ
+ 846              	.LVL49:
+ 173:Core/Src/mpu_9250.c **** 	Magneto_readXYZ(data);
+ 847              		.loc 1 173 2 view .LVU199
+ 848 000e 2046     		mov	r0, r4
+ 849 0010 FFF7FEFF 		bl	Magneto_readXYZ
+ 850              	.LVL50:
+ 174:Core/Src/mpu_9250.c **** }...
+ 851              		.loc 1 174 1 is_stmt 0 view .LVU200
+ 852 0014 10BD     		pop	{r4, pc}
+ 853              		.loc 1 174 1 view .LVU201
+ 854              		.cfi_endproc
+ 855              	.LFE127:
+ 857              		.section	.bss.sensAccel,"aw",%nobits
+ 858              		.align	2
+ 859              		.set	.LANCHOR0,. + 0
+ 862              	sensAccel:
+ 863 0000 00000000 		.space	4
+ 864              		.section	.bss.sensGyro,"aw",%nobits
+ 865              		.align	2
+ 866              		.set	.LANCHOR1,. + 0
+ 869              	sensGyro:
+ 870 0000 00000000 		.space	4
+ 871              		.text
+ 872              	.Letext0:
+ 873              		.file 2 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ 874              		.file 3 "Core/Inc/mpu_9250.h"
+ 875              		.file 4 "Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f301x8.h"
+ 876              		.file 5 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h"
+ 877              		.file 6 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h"
+ 878              		.file 7 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h"
+ 879              		.file 8 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h"
+ 880              		.file 9 "Core/Inc/i2c.h"
+ARM GAS  /tmp/ccESrA8Z.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 mpu_9250.c
+     /tmp/ccESrA8Z.s:18     .text.MPU_9250_Init:0000000000000000 $t
+     /tmp/ccESrA8Z.s:26     .text.MPU_9250_Init:0000000000000000 MPU_9250_Init
+     /tmp/ccESrA8Z.s:266    .text.MPU_9250_Init:000000000000017a $d
+     /tmp/ccESrA8Z.s:325    .text.MPU_9250_Init:00000000000001cc $d
+     /tmp/ccESrA8Z.s:420    .text.MPU_9250_Init:0000000000000228 $d
+     /tmp/ccESrA8Z.s:431    .text.Accel_readXYZ:0000000000000000 $t
+     /tmp/ccESrA8Z.s:438    .text.Accel_readXYZ:0000000000000000 Accel_readXYZ
+     /tmp/ccESrA8Z.s:554    .text.Accel_readXYZ:0000000000000094 $d
+     /tmp/ccESrA8Z.s:560    .text.Gyro_readXYZ:0000000000000000 $t
+     /tmp/ccESrA8Z.s:567    .text.Gyro_readXYZ:0000000000000000 Gyro_readXYZ
+     /tmp/ccESrA8Z.s:683    .text.Gyro_readXYZ:0000000000000094 $d
+     /tmp/ccESrA8Z.s:689    .text.Magneto_readXYZ:0000000000000000 $t
+     /tmp/ccESrA8Z.s:696    .text.Magneto_readXYZ:0000000000000000 Magneto_readXYZ
+     /tmp/ccESrA8Z.s:813    .text.Magneto_readXYZ:0000000000000098 $d
+     /tmp/ccESrA8Z.s:819    .text.IMU_measure:0000000000000000 $t
+     /tmp/ccESrA8Z.s:826    .text.IMU_measure:0000000000000000 IMU_measure
+     /tmp/ccESrA8Z.s:858    .bss.sensAccel:0000000000000000 $d
+     /tmp/ccESrA8Z.s:862    .bss.sensAccel:0000000000000000 sensAccel
+     /tmp/ccESrA8Z.s:865    .bss.sensGyro:0000000000000000 $d
+     /tmp/ccESrA8Z.s:869    .bss.sensGyro:0000000000000000 sensGyro
+     /tmp/ccESrA8Z.s:291    .text.MPU_9250_Init:0000000000000193 $d
+     /tmp/ccESrA8Z.s:291    .text.MPU_9250_Init:0000000000000194 $t
+     /tmp/ccESrA8Z.s:350    .text.MPU_9250_Init:00000000000001e5 $d
+     /tmp/ccESrA8Z.s:350    .text.MPU_9250_Init:00000000000001e6 $t
+
+UNDEFINED SYMBOLS
+HAL_I2C_Mem_Write
+HAL_Delay
+HAL_I2C_Mem_Read
+hi2c1

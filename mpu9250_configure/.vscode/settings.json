@@ -1,0 +1,5 @@
+{
+    "cortex-debug.gdbPath": "gdb-multiarch",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "cortex-debug.variableUseNaturalFormat": true
+}

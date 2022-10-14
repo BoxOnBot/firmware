@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccm7pYDX.s 			page 1
+ARM GAS  /tmp/cc2jrcLR.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
   30:Core/Src/syscalls.c **** #include <sys/time.h>
   31:Core/Src/syscalls.c **** #include <sys/times.h>
   32:Core/Src/syscalls.c **** 
-ARM GAS  /tmp/ccm7pYDX.s 			page 2
+ARM GAS  /tmp/cc2jrcLR.s 			page 2
 
 
   33:Core/Src/syscalls.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
   65              		.fpu softvfp
   67              	_kill:
   68              	.LVL0:
-ARM GAS  /tmp/ccm7pYDX.s 			page 3
+ARM GAS  /tmp/cc2jrcLR.s 			page 3
 
 
   69              	.LFB27:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  115              		.loc 1 61 2 is_stmt 1 view .LVU13
  116 0002 4FF0FF31 		mov	r1, #-1
  117 0006 FFF7FEFF 		bl	_kill
-ARM GAS  /tmp/ccm7pYDX.s 			page 4
+ARM GAS  /tmp/cc2jrcLR.s 			page 4
 
 
  118              	.LVL3:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  164              	.LVL7:
  165              		.loc 1 71 7 discriminator 3 view .LVU25
  166 000e 2146     		mov	r1, r4
-ARM GAS  /tmp/ccm7pYDX.s 			page 5
+ARM GAS  /tmp/cc2jrcLR.s 			page 5
 
 
  167              	.LVL8:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
   79:Core/Src/syscalls.c **** 	int DataIdx;
  214              		.loc 1 79 2 is_stmt 1 view .LVU35
   80:Core/Src/syscalls.c **** 
-ARM GAS  /tmp/ccm7pYDX.s 			page 6
+ARM GAS  /tmp/cc2jrcLR.s 			page 6
 
 
   81:Core/Src/syscalls.c **** 	for (DataIdx = 0; DataIdx < len; DataIdx++)
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  260              		@ link register save eliminated.
   90:Core/Src/syscalls.c **** 	return -1;
  261              		.loc 1 90 2 view .LVU48
-ARM GAS  /tmp/ccm7pYDX.s 			page 7
+ARM GAS  /tmp/cc2jrcLR.s 			page 7
 
 
   91:Core/Src/syscalls.c **** }
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  101:Core/Src/syscalls.c **** {
  310              		.loc 1 101 1 is_stmt 1 view -0
  311              		.cfi_startproc
-ARM GAS  /tmp/ccm7pYDX.s 			page 8
+ARM GAS  /tmp/cc2jrcLR.s 			page 8
 
 
  312              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  360              		.loc 1 111 1 is_stmt 1 view -0
  361              		.cfi_startproc
  362              		@ args = 4, pretend = 12, frame = 0
-ARM GAS  /tmp/ccm7pYDX.s 			page 9
+ARM GAS  /tmp/cc2jrcLR.s 			page 9
 
 
  363              		@ frame_needed = 0, uses_anonymous_args = 1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  412 0006 0A23     		movs	r3, #10
  413 0008 0360     		str	r3, [r0]
  119:Core/Src/syscalls.c **** 	return -1;
-ARM GAS  /tmp/ccm7pYDX.s 			page 10
+ARM GAS  /tmp/cc2jrcLR.s 			page 10
 
 
  414              		.loc 1 119 2 is_stmt 1 view .LVU74
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  465              	.LFB38:
  127:Core/Src/syscalls.c **** 
  128:Core/Src/syscalls.c **** int _times(struct tms *buf)
-ARM GAS  /tmp/ccm7pYDX.s 			page 11
+ARM GAS  /tmp/cc2jrcLR.s 			page 11
 
 
  129:Core/Src/syscalls.c **** {
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  514              		.thumb_func
  515              		.fpu softvfp
  517              	_link:
-ARM GAS  /tmp/ccm7pYDX.s 			page 12
+ARM GAS  /tmp/cc2jrcLR.s 			page 12
 
 
  518              	.LVL36:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  564              	.LVL38:
  565              		.loc 1 147 8 is_stmt 0 view .LVU100
  566 0006 0B23     		movs	r3, #11
-ARM GAS  /tmp/ccm7pYDX.s 			page 13
+ARM GAS  /tmp/cc2jrcLR.s 			page 13
 
 
  567 0008 0360     		str	r3, [r0]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  618              		.align	2
  621              	environ:
  622 0000 00000000 		.word	__env
-ARM GAS  /tmp/ccm7pYDX.s 			page 14
+ARM GAS  /tmp/cc2jrcLR.s 			page 14
 
 
  623              		.weak	__io_putchar
@@ -793,51 +793,51 @@ ARM GAS  /tmp/ccm7pYDX.s 			page 1
  632              		.file 7 "/usr/arm-none-eabi/include/sys/stat.h"
  633              		.file 8 "/usr/arm-none-eabi/include/sys/times.h"
  634              		.file 9 "/usr/arm-none-eabi/include/sys/errno.h"
-ARM GAS  /tmp/ccm7pYDX.s 			page 15
+ARM GAS  /tmp/cc2jrcLR.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 syscalls.c
-     /tmp/ccm7pYDX.s:16     .text.initialise_monitor_handles:0000000000000000 $t
-     /tmp/ccm7pYDX.s:24     .text.initialise_monitor_handles:0000000000000000 initialise_monitor_handles
-     /tmp/ccm7pYDX.s:38     .text._getpid:0000000000000000 $t
-     /tmp/ccm7pYDX.s:45     .text._getpid:0000000000000000 _getpid
-     /tmp/ccm7pYDX.s:60     .text._kill:0000000000000000 $t
-     /tmp/ccm7pYDX.s:67     .text._kill:0000000000000000 _kill
-     /tmp/ccm7pYDX.s:94     .text._exit:0000000000000000 $t
-     /tmp/ccm7pYDX.s:101    .text._exit:0000000000000000 _exit
-     /tmp/ccm7pYDX.s:128    .text._read:0000000000000000 $t
-     /tmp/ccm7pYDX.s:135    .text._read:0000000000000000 _read
-     /tmp/ccm7pYDX.s:190    .text._write:0000000000000000 $t
-     /tmp/ccm7pYDX.s:197    .text._write:0000000000000000 _write
-     /tmp/ccm7pYDX.s:246    .text._close:0000000000000000 $t
-     /tmp/ccm7pYDX.s:253    .text._close:0000000000000000 _close
-     /tmp/ccm7pYDX.s:271    .text._fstat:0000000000000000 $t
-     /tmp/ccm7pYDX.s:278    .text._fstat:0000000000000000 _fstat
-     /tmp/ccm7pYDX.s:300    .text._isatty:0000000000000000 $t
-     /tmp/ccm7pYDX.s:307    .text._isatty:0000000000000000 _isatty
-     /tmp/ccm7pYDX.s:325    .text._lseek:0000000000000000 $t
-     /tmp/ccm7pYDX.s:332    .text._lseek:0000000000000000 _lseek
-     /tmp/ccm7pYDX.s:350    .text._open:0000000000000000 $t
-     /tmp/ccm7pYDX.s:357    .text._open:0000000000000000 _open
-     /tmp/ccm7pYDX.s:388    .text._wait:0000000000000000 $t
-     /tmp/ccm7pYDX.s:395    .text._wait:0000000000000000 _wait
-     /tmp/ccm7pYDX.s:422    .text._unlink:0000000000000000 $t
-     /tmp/ccm7pYDX.s:429    .text._unlink:0000000000000000 _unlink
-     /tmp/ccm7pYDX.s:456    .text._times:0000000000000000 $t
-     /tmp/ccm7pYDX.s:463    .text._times:0000000000000000 _times
-     /tmp/ccm7pYDX.s:481    .text._stat:0000000000000000 $t
-     /tmp/ccm7pYDX.s:488    .text._stat:0000000000000000 _stat
-     /tmp/ccm7pYDX.s:510    .text._link:0000000000000000 $t
-     /tmp/ccm7pYDX.s:517    .text._link:0000000000000000 _link
-     /tmp/ccm7pYDX.s:544    .text._fork:0000000000000000 $t
-     /tmp/ccm7pYDX.s:551    .text._fork:0000000000000000 _fork
-     /tmp/ccm7pYDX.s:576    .text._execve:0000000000000000 $t
-     /tmp/ccm7pYDX.s:583    .text._execve:0000000000000000 _execve
-     /tmp/ccm7pYDX.s:621    .data.environ:0000000000000000 environ
-     /tmp/ccm7pYDX.s:615    .bss.__env:0000000000000000 __env
-     /tmp/ccm7pYDX.s:612    .bss.__env:0000000000000000 $d
-     /tmp/ccm7pYDX.s:618    .data.environ:0000000000000000 $d
+     /tmp/cc2jrcLR.s:16     .text.initialise_monitor_handles:0000000000000000 $t
+     /tmp/cc2jrcLR.s:24     .text.initialise_monitor_handles:0000000000000000 initialise_monitor_handles
+     /tmp/cc2jrcLR.s:38     .text._getpid:0000000000000000 $t
+     /tmp/cc2jrcLR.s:45     .text._getpid:0000000000000000 _getpid
+     /tmp/cc2jrcLR.s:60     .text._kill:0000000000000000 $t
+     /tmp/cc2jrcLR.s:67     .text._kill:0000000000000000 _kill
+     /tmp/cc2jrcLR.s:94     .text._exit:0000000000000000 $t
+     /tmp/cc2jrcLR.s:101    .text._exit:0000000000000000 _exit
+     /tmp/cc2jrcLR.s:128    .text._read:0000000000000000 $t
+     /tmp/cc2jrcLR.s:135    .text._read:0000000000000000 _read
+     /tmp/cc2jrcLR.s:190    .text._write:0000000000000000 $t
+     /tmp/cc2jrcLR.s:197    .text._write:0000000000000000 _write
+     /tmp/cc2jrcLR.s:246    .text._close:0000000000000000 $t
+     /tmp/cc2jrcLR.s:253    .text._close:0000000000000000 _close
+     /tmp/cc2jrcLR.s:271    .text._fstat:0000000000000000 $t
+     /tmp/cc2jrcLR.s:278    .text._fstat:0000000000000000 _fstat
+     /tmp/cc2jrcLR.s:300    .text._isatty:0000000000000000 $t
+     /tmp/cc2jrcLR.s:307    .text._isatty:0000000000000000 _isatty
+     /tmp/cc2jrcLR.s:325    .text._lseek:0000000000000000 $t
+     /tmp/cc2jrcLR.s:332    .text._lseek:0000000000000000 _lseek
+     /tmp/cc2jrcLR.s:350    .text._open:0000000000000000 $t
+     /tmp/cc2jrcLR.s:357    .text._open:0000000000000000 _open
+     /tmp/cc2jrcLR.s:388    .text._wait:0000000000000000 $t
+     /tmp/cc2jrcLR.s:395    .text._wait:0000000000000000 _wait
+     /tmp/cc2jrcLR.s:422    .text._unlink:0000000000000000 $t
+     /tmp/cc2jrcLR.s:429    .text._unlink:0000000000000000 _unlink
+     /tmp/cc2jrcLR.s:456    .text._times:0000000000000000 $t
+     /tmp/cc2jrcLR.s:463    .text._times:0000000000000000 _times
+     /tmp/cc2jrcLR.s:481    .text._stat:0000000000000000 $t
+     /tmp/cc2jrcLR.s:488    .text._stat:0000000000000000 _stat
+     /tmp/cc2jrcLR.s:510    .text._link:0000000000000000 $t
+     /tmp/cc2jrcLR.s:517    .text._link:0000000000000000 _link
+     /tmp/cc2jrcLR.s:544    .text._fork:0000000000000000 $t
+     /tmp/cc2jrcLR.s:551    .text._fork:0000000000000000 _fork
+     /tmp/cc2jrcLR.s:576    .text._execve:0000000000000000 $t
+     /tmp/cc2jrcLR.s:583    .text._execve:0000000000000000 _execve
+     /tmp/cc2jrcLR.s:621    .data.environ:0000000000000000 environ
+     /tmp/cc2jrcLR.s:615    .bss.__env:0000000000000000 __env
+     /tmp/cc2jrcLR.s:612    .bss.__env:0000000000000000 $d
+     /tmp/cc2jrcLR.s:618    .data.environ:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __errno

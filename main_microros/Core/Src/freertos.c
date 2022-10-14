@@ -61,7 +61,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t defaultTaskBuffer[ 660 ];
+uint32_t defaultTaskBuffer[ 600 ];
 osStaticThreadDef_t defaultTaskControlBlock;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -161,10 +161,11 @@ void StartDefaultTask(void *argument)
   // micro-ROS app
 
   rcl_publisher_t publisher;
-  std_msgs__msg__Int32 msg;
   rclc_support_t support;
   rcl_allocator_t allocator;
   rcl_node_t node;
+
+  std_msgs__msg__Int32 msg;
 
   allocator = rcl_get_default_allocator();
 

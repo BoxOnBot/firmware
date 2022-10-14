@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccRUZTYB.s 			page 1
+ARM GAS  /tmp/ccfkEC5U.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
   30:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** #include <string.h>
   31:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
   32:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
-ARM GAS  /tmp/ccRUZTYB.s 			page 2
+ARM GAS  /tmp/ccfkEC5U.s 			page 2
 
 
   33:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** all the API functions to use the MPU wrappers.  That should only be done when
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
   87:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		}																				\
   88:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		portCLEAR_INTERRUPT_MASK_FROM_ISR( uxSavedInterruptStatus );					\
   89:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 3
+ARM GAS  /tmp/ccfkEC5U.s 			page 3
 
 
   90:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** #endif /* sbRECEIVE_COMPLETED_FROM_ISR */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  144:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	volatile size_t xHead;				/* Index to the next item to write within the buffer. */
  145:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	size_t xLength;						/* The length of the buffer pointed to by pucBuffer. */
  146:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	size_t xTriggerLevelBytes;			/* The number of bytes that must be in the stream buffer before a tas
-ARM GAS  /tmp/ccRUZTYB.s 			page 4
+ARM GAS  /tmp/ccfkEC5U.s 			page 4
 
 
  147:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	volatile TaskHandle_t xTaskWaitingToReceive; /* Holds the handle of a task waiting for data, or NU
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  201:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 									  uint8_t *pucData,
  202:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 									  size_t xMaxCount,
  203:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 									  size_t xBytesAvailable ); PRIVILEGED_FUNCTION
-ARM GAS  /tmp/ccRUZTYB.s 			page 5
+ARM GAS  /tmp/ccfkEC5U.s 			page 5
 
 
  204:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  258:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		else
  259:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
  260:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			traceSTREAM_BUFFER_CREATE_FAILED( xIsMessageBuffer );
-ARM GAS  /tmp/ccRUZTYB.s 			page 6
+ARM GAS  /tmp/ccfkEC5U.s 			page 6
 
 
  261:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		}
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  315:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			/* Remember this was statically allocated in case it is ever deleted
  316:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			again. */
  317:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			pxStreamBuffer->ucFlags |= sbFLAGS_IS_STATICALLY_ALLOCATED;
-ARM GAS  /tmp/ccRUZTYB.s 			page 7
+ARM GAS  /tmp/ccfkEC5U.s 			page 7
 
 
  318:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  372:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  373:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** #if( configUSE_TRACE_FACILITY == 1 )
  374:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	UBaseType_t uxStreamBufferNumber;
-ARM GAS  /tmp/ccRUZTYB.s 			page 8
+ARM GAS  /tmp/ccfkEC5U.s 			page 8
 
 
  375:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** #endif
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  429:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	/* It is not valid for the trigger level to be 0. */
  430:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	if( xTriggerLevel == ( size_t ) 0 )
  431:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
-ARM GAS  /tmp/ccRUZTYB.s 			page 9
+ARM GAS  /tmp/ccfkEC5U.s 			page 9
 
 
  432:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xTriggerLevel = ( size_t ) 1; /*lint !e9044 Parameter modified to ensure it doesn't have a danger
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  486:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  487:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** size_t xStreamBufferSend( StreamBufferHandle_t xStreamBuffer,
  488:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 						  const void *pvTxData,
-ARM GAS  /tmp/ccRUZTYB.s 			page 10
+ARM GAS  /tmp/ccfkEC5U.s 			page 10
 
 
  489:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 						  size_t xDataLengthBytes,
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  543:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			( void ) xTaskNotifyWait( ( uint32_t ) 0, UINT32_MAX, NULL, xTicksToWait );
  544:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			pxStreamBuffer->xTaskWaitingToSend = NULL;
  545:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 11
+ARM GAS  /tmp/ccfkEC5U.s 			page 11
 
 
  546:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		} while( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE );
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  600:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	/* This send function is used to write to both message buffers and stream
  601:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	buffers.  If this is a message buffer then the space needed must be
  602:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	increased by the amount of bytes needed to store the length of the
-ARM GAS  /tmp/ccRUZTYB.s 			page 12
+ARM GAS  /tmp/ccfkEC5U.s 			page 12
 
 
  603:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	message. */
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  657:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		stream of bytes rather than discrete messages.  Write as many bytes as
  658:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		possible. */
  659:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xShouldWrite = pdTRUE;
-ARM GAS  /tmp/ccRUZTYB.s 			page 13
+ARM GAS  /tmp/ccfkEC5U.s 			page 13
 
 
  660:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xDataLengthBytes = configMIN( xDataLengthBytes, xSpace ); /*lint !e9044 Function parameter modifi
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  714:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
  715:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  716:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	if( xTicksToWait != ( TickType_t ) 0 )
-ARM GAS  /tmp/ccRUZTYB.s 			page 14
+ARM GAS  /tmp/ccfkEC5U.s 			page 14
 
 
  717:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  771:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  772:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xReceivedLength = prvReadMessageFromBuffer( pxStreamBuffer, pvRxData, xBufferLengthBytes, xBytesA
  773:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 15
+ARM GAS  /tmp/ccfkEC5U.s 			page 15
 
 
  774:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		/* Was a task waiting for space in the buffer? */
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  828:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  829:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xReceivedLength = prvReadMessageFromBuffer( pxStreamBuffer, pvRxData, xBufferLengthBytes, xBytesA
  830:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 16
+ARM GAS  /tmp/ccfkEC5U.s 			page 16
 
 
  831:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		/* Was a task waiting for space in the buffer? */
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  885:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			mtCOVERAGE_TEST_MARKER();
  886:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		}
  887:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 17
+ARM GAS  /tmp/ccfkEC5U.s 			page 17
 
 
  888:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	else
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  942:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  943:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		xBytesToStoreMessageLength = 0;
  944:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 18
+ARM GAS  /tmp/ccfkEC5U.s 			page 18
 
 
  945:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  999:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
 1000:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		if( ( pxStreamBuffer )->xTaskWaitingToSend != NULL )
 1001:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
-ARM GAS  /tmp/ccRUZTYB.s 			page 19
+ARM GAS  /tmp/ccfkEC5U.s 			page 19
 
 
 1002:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			( void ) xTaskNotifyFromISR( ( pxStreamBuffer )->xTaskWaitingToSend,
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1056:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
 1057:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		mtCOVERAGE_TEST_MARKER();
 1058:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 20
+ARM GAS  /tmp/ccfkEC5U.s 			page 20
 
 
 1059:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1113:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
 1114:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		mtCOVERAGE_TEST_MARKER();
 1115:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 21
+ARM GAS  /tmp/ccfkEC5U.s 			page 21
 
 
 1116:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1138:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** }
   59              		.loc 1 1138 1 is_stmt 0 view .LVU15
   60 0010 7047     		bx	lr
-ARM GAS  /tmp/ccRUZTYB.s 			page 22
+ARM GAS  /tmp/ccfkEC5U.s 			page 22
 
 
   61              		.cfi_endproc
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
   99 000c 2046     		mov	r0, r4
  100              	.LVL8:
  101              		.loc 1 1156 3 view .LVU21
-ARM GAS  /tmp/ccRUZTYB.s 			page 23
+ARM GAS  /tmp/ccfkEC5U.s 			page 23
 
 
  102 000e FFF7FEFF 		bl	memset
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
   46:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** /* Type definitions. */
   47:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portCHAR		char
   48:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portFLOAT		float
-ARM GAS  /tmp/ccRUZTYB.s 			page 24
+ARM GAS  /tmp/ccfkEC5U.s 			page 24
 
 
   49:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portDOUBLE		double
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  103:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portENTER_CRITICAL()					vPortEnterCritical()
  104:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portEXIT_CRITICAL()						vPortExitCritical()
  105:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 25
+ARM GAS  /tmp/ccfkEC5U.s 			page 25
 
 
  106:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** /*-----------------------------------------------------------*/
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  160:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** /* portNOP() is not required by this port. */
  161:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portNOP()
  162:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 26
+ARM GAS  /tmp/ccfkEC5U.s 			page 26
 
 
  163:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** #define portINLINE	__inline
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  132 0026 FEE7     		b	.L5
  133              	.L4:
  134              		.loc 1 1156 90 discriminator 2 view .LVU30
-ARM GAS  /tmp/ccRUZTYB.s 			page 27
+ARM GAS  /tmp/ccfkEC5U.s 			page 27
 
 
  135              	.LBE88:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  177              		.cfi_startproc
  178              		@ args = 0, pretend = 0, frame = 0
  179              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccRUZTYB.s 			page 28
+ARM GAS  /tmp/ccfkEC5U.s 			page 28
 
 
 1022:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1026:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  224              		.loc 1 1026 12 is_stmt 0 discriminator 2 view .LVU57
  225 001e D0F80480 		ldr	r8, [r0, #4]
-ARM GAS  /tmp/ccRUZTYB.s 			page 29
+ARM GAS  /tmp/ccfkEC5U.s 			page 29
 
 
  226              	.LVL14:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1035:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  269              		.loc 1 1035 2 discriminator 2 view .LVU71
 1035:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 30
+ARM GAS  /tmp/ccfkEC5U.s 			page 30
 
 
  270              		.loc 1 1035 39 is_stmt 0 discriminator 2 view .LVU72
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1043:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
  314              		.loc 1 1043 3 discriminator 2 view .LVU85
  315 0070 7119     		adds	r1, r6, r5
-ARM GAS  /tmp/ccRUZTYB.s 			page 31
+ARM GAS  /tmp/ccfkEC5U.s 			page 31
 
 
  316 0072 A069     		ldr	r0, [r4, #24]
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  644:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	BaseType_t xShouldWrite;
  358              		.loc 1 644 1 is_stmt 1 view -0
  359              		.cfi_startproc
-ARM GAS  /tmp/ccRUZTYB.s 			page 32
+ARM GAS  /tmp/ccfkEC5U.s 			page 32
 
 
  360              		@ args = 4, pretend = 0, frame = 8
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  400              		.loc 1 677 2 is_stmt 1 view .LVU114
  401              	.LVL29:
  402              	.L22:
-ARM GAS  /tmp/ccRUZTYB.s 			page 33
+ARM GAS  /tmp/ccfkEC5U.s 			page 33
 
 
  680:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  444 003c 2846     		mov	r0, r5
  445              	.LVL36:
  669:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 34
+ARM GAS  /tmp/ccfkEC5U.s 			page 34
 
 
  446              		.loc 1 669 12 view .LVU128
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
 1075:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  493              		.loc 1 1075 3 is_stmt 1 view .LVU138
 1075:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 35
+ARM GAS  /tmp/ccfkEC5U.s 			page 35
 
 
  494              		.loc 1 1075 13 is_stmt 0 view .LVU139
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  537              		.loc 1 1084 44 discriminator 2 view .LVU152
 1085:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		memcpy( ( void * ) pucData, ( const void * ) &( pxStreamBuffer->pucBuffer[ xNextTail ] ), xFirstL
  538              		.loc 1 1085 3 discriminator 2 view .LVU153
-ARM GAS  /tmp/ccRUZTYB.s 			page 36
+ARM GAS  /tmp/ccfkEC5U.s 			page 36
 
 
  539 0038 08EB0502 		add	r2, r8, r5
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  582              	.LVL49:
 1090:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
  583              		.loc 1 1090 3 is_stmt 1 discriminator 2 view .LVU167
-ARM GAS  /tmp/ccRUZTYB.s 			page 37
+ARM GAS  /tmp/ccfkEC5U.s 			page 37
 
 
 1090:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  621 007a 7819     		adds	r0, r7, r5
  622 007c FFF7FEFF 		bl	memcpy
  623              	.LVL54:
-ARM GAS  /tmp/ccRUZTYB.s 			page 38
+ARM GAS  /tmp/ccfkEC5U.s 			page 38
 
 
  624 0080 EFE7     		b	.L32
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  896:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  672              		.loc 1 896 20 is_stmt 0 view .LVU193
  673 001a 2346     		mov	r3, r4
-ARM GAS  /tmp/ccRUZTYB.s 			page 39
+ARM GAS  /tmp/ccfkEC5U.s 			page 39
 
 
  674 001c 019A     		ldr	r2, [sp, #4]
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  880:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			xNextMessageLength = 0;
  715              		.loc 1 880 4 is_stmt 1 view .LVU207
  880:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			xNextMessageLength = 0;
-ARM GAS  /tmp/ccRUZTYB.s 			page 40
+ARM GAS  /tmp/ccfkEC5U.s 			page 40
 
 
  716              		.loc 1 880 26 is_stmt 0 view .LVU208
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  764              		.loc 2 195 2 is_stmt 0 view .LVU218
  765              	.LBE102:
  766              	.LBE101:
-ARM GAS  /tmp/ccRUZTYB.s 			page 41
+ARM GAS  /tmp/ccfkEC5U.s 			page 41
 
 
  227:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		configASSERT( xTriggerLevelBytes <= xBufferSizeBytes );
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  228:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  812              		.loc 1 228 3 discriminator 2 view .LVU230
  813 0032 FEE7     		b	.L45
-ARM GAS  /tmp/ccRUZTYB.s 			page 42
+ARM GAS  /tmp/ccfkEC5U.s 			page 42
 
 
  814              	.L44:
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  853 0056 F0BD     		pop	{r4, r5, r6, r7, pc}
  264:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  854              		.loc 1 264 2 view .LVU246
-ARM GAS  /tmp/ccRUZTYB.s 			page 43
+ARM GAS  /tmp/ccfkEC5U.s 			page 43
 
 
  855              		.cfi_endproc
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  899              		.loc 2 191 30 view .LVU258
  900              	.LBB106:
  193:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 44
+ARM GAS  /tmp/ccfkEC5U.s 			page 44
 
 
  901              		.loc 2 193 1 view .LVU259
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  280:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		configASSERT( pxStaticStreamBuffer );
  949              		.loc 1 280 3 discriminator 1 view .LVU270
  950 0032 FEE7     		b	.L53
-ARM GAS  /tmp/ccRUZTYB.s 			page 45
+ARM GAS  /tmp/ccfkEC5U.s 			page 45
 
 
  951              	.LVL76:
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  994              	.LBB111:
  995              	.LBI111:
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** {
-ARM GAS  /tmp/ccRUZTYB.s 			page 46
+ARM GAS  /tmp/ccfkEC5U.s 			page 46
 
 
  996              		.loc 2 191 30 view .LVU284
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1040 0072 BFF36F8F 		isb														
  1041 0076 BFF34F8F 		dsb														
  1042              	
-ARM GAS  /tmp/ccRUZTYB.s 			page 47
+ARM GAS  /tmp/ccfkEC5U.s 			page 47
 
 
  1043              	@ 0 "" 2
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1083              		.loc 1 329 3 view .LVU312
  330:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  1084              		.loc 1 330 2 is_stmt 0 view .LVU313
-ARM GAS  /tmp/ccRUZTYB.s 			page 48
+ARM GAS  /tmp/ccfkEC5U.s 			page 48
 
 
  1085 0096 1046     		mov	r0, r2
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1130              	.LVL88:
  1131              	.L68:
  365:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** /*-----------------------------------------------------------*/
-ARM GAS  /tmp/ccRUZTYB.s 			page 49
+ARM GAS  /tmp/ccfkEC5U.s 			page 49
 
 
  1132              		.loc 1 365 1 is_stmt 0 view .LVU325
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1181              	.LVL92:
  1182              	.LFB7:
  369:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** StreamBuffer_t * const pxStreamBuffer = ( StreamBuffer_t * ) xStreamBuffer; /*lint !e9087 !e9079 Sa
-ARM GAS  /tmp/ccRUZTYB.s 			page 50
+ARM GAS  /tmp/ccfkEC5U.s 			page 50
 
 
  1183              		.loc 1 369 1 is_stmt 1 view -0
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1224              	.L85:
  1225              	.LCFI23:
  1226              		.cfi_def_cfa_offset 0
-ARM GAS  /tmp/ccRUZTYB.s 			page 51
+ARM GAS  /tmp/ccfkEC5U.s 			page 51
 
 
  1227              		.cfi_restore 4
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  418:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** }
  1271              		.loc 1 418 2 view .LVU361
  418:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** }
-ARM GAS  /tmp/ccRUZTYB.s 			page 52
+ARM GAS  /tmp/ccfkEC5U.s 			page 52
 
 
  1272              		.loc 1 418 9 is_stmt 0 view .LVU362
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1315              		.global	xStreamBufferSetTriggerLevel
  1316              		.syntax unified
  1317              		.thumb
-ARM GAS  /tmp/ccRUZTYB.s 			page 53
+ARM GAS  /tmp/ccfkEC5U.s 			page 53
 
 
  1318              		.thumb_func
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1357 0012 7047     		bx	lr
  1358              	.LVL109:
  1359              	.L95:
-ARM GAS  /tmp/ccRUZTYB.s 			page 54
+ARM GAS  /tmp/ccfkEC5U.s 			page 54
 
 
  427:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1407              		.cfi_startproc
  1408              		@ args = 0, pretend = 0, frame = 0
  1409              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccRUZTYB.s 			page 55
+ARM GAS  /tmp/ccfkEC5U.s 			page 55
 
 
  1410              		@ link register save eliminated.
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  471:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** }
  1446              		.loc 1 471 2 view .LVU420
  1447              	.L96:
-ARM GAS  /tmp/ccRUZTYB.s 			page 56
+ARM GAS  /tmp/ccfkEC5U.s 			page 56
 
 
  472:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** /*-----------------------------------------------------------*/
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1496 0000 08B5     		push	{r3, lr}
  1497              	.LCFI25:
  1498              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccRUZTYB.s 			page 57
+ARM GAS  /tmp/ccfkEC5U.s 			page 57
 
 
  1499              		.cfi_offset 3, -8
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1540 001a FEE7     		b	.L103
  1541              		.cfi_endproc
  1542              	.LFE10:
-ARM GAS  /tmp/ccRUZTYB.s 			page 58
+ARM GAS  /tmp/ccfkEC5U.s 			page 58
 
 
  1544              		.section	.text.xStreamBufferSend,"ax",%progbits
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  504:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  1589              		.loc 1 504 2 discriminator 2 view .LVU456
  504:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
-ARM GAS  /tmp/ccRUZTYB.s 			page 59
+ARM GAS  /tmp/ccfkEC5U.s 			page 59
 
 
  1590              		.loc 1 504 22 is_stmt 0 discriminator 2 view .LVU457
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1629 003a 36D9     		bls	.L113
  528:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  1630              		.loc 1 528 6 is_stmt 1 view .LVU473
-ARM GAS  /tmp/ccRUZTYB.s 			page 60
+ARM GAS  /tmp/ccfkEC5U.s 			page 60
 
 
  528:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1669              		.loc 1 546 61 discriminator 2 view .LVU489
  1670 006a 0028     		cmp	r0, #0
  1671 006c DED0     		beq	.L116
-ARM GAS  /tmp/ccRUZTYB.s 			page 61
+ARM GAS  /tmp/ccfkEC5U.s 			page 61
 
 
  1672 006e 1EE0     		b	.L117
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1718              		.thumb
  1719              		.syntax unified
  1720              	.L110:
-ARM GAS  /tmp/ccRUZTYB.s 			page 62
+ARM GAS  /tmp/ccfkEC5U.s 			page 62
 
 
  1721              		.loc 2 195 2 is_stmt 0 view .LVU501
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  550:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
  1765              		.loc 1 550 27 view .LVU514
  553:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
-ARM GAS  /tmp/ccRUZTYB.s 			page 63
+ARM GAS  /tmp/ccfkEC5U.s 			page 63
 
 
  1766              		.loc 1 553 2 view .LVU515
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1809              		.loc 1 566 52 is_stmt 1 view .LVU526
  569:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
  1810              		.loc 1 569 3 view .LVU527
-ARM GAS  /tmp/ccRUZTYB.s 			page 64
+ARM GAS  /tmp/ccfkEC5U.s 			page 64
 
 
  569:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1852              		.align	1
  1853              		.global	xStreamBufferSendFromISR
  1854              		.syntax unified
-ARM GAS  /tmp/ccRUZTYB.s 			page 65
+ARM GAS  /tmp/ccfkEC5U.s 			page 65
 
 
  1855              		.thumb
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1898 0018 24D0     		beq	.L135
  606:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
  1899              		.loc 1 606 3 is_stmt 1 view .LVU554
-ARM GAS  /tmp/ccRUZTYB.s 			page 66
+ARM GAS  /tmp/ccfkEC5U.s 			page 66
 
 
  606:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1941              	.L138:
  1942              	.LCFI33:
  1943              		.cfi_def_cfa_offset 0
-ARM GAS  /tmp/ccRUZTYB.s 			page 67
+ARM GAS  /tmp/ccfkEC5U.s 			page 67
 
 
  1944              		.cfi_restore 4
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  1990              		.loc 2 193 1 view .LVU577
  1991              		.loc 2 195 2 view .LVU578
  1992              		.syntax unified
-ARM GAS  /tmp/ccRUZTYB.s 			page 68
+ARM GAS  /tmp/ccfkEC5U.s 			page 68
 
 
  1993              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  200:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 		"	dsb														\n" \
  201:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 		:"=r" (ulNewBASEPRI) : "i" ( configMAX_SYSCALL_INTERRUPT_PRIORITY ) : "memory"
  202:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 	);
-ARM GAS  /tmp/ccRUZTYB.s 			page 69
+ARM GAS  /tmp/ccfkEC5U.s 			page 69
 
 
  203:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** }
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  621:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		}
  2064              		.loc 1 621 4 discriminator 1 view .LVU597
  2065 009a 0023     		movs	r3, #0
-ARM GAS  /tmp/ccRUZTYB.s 			page 70
+ARM GAS  /tmp/ccfkEC5U.s 			page 70
 
 
  2066 009c 2361     		str	r3, [r4, #16]
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  699:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	configASSERT( pxStreamBuffer );
  2108              		.loc 1 699 2 view .LVU608
  2109 0000 29B3     		cbz	r1, .L158
-ARM GAS  /tmp/ccRUZTYB.s 			page 71
+ARM GAS  /tmp/ccfkEC5U.s 			page 71
 
 
  695:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** StreamBuffer_t * const pxStreamBuffer = ( StreamBuffer_t * ) xStreamBuffer; /*lint !e9087 !e9079 Sa
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2151              		.loc 1 722 22 is_stmt 0 view .LVU621
  2152 0026 2046     		mov	r0, r4
  2153 0028 FFF7FEFF 		bl	prvBytesInBuffer
-ARM GAS  /tmp/ccRUZTYB.s 			page 72
+ARM GAS  /tmp/ccfkEC5U.s 			page 72
 
 
  2154              	.LVL184:
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2195 004c FEE7     		b	.L150
  2196              	.LVL189:
  2197              	.L158:
-ARM GAS  /tmp/ccRUZTYB.s 			page 73
+ARM GAS  /tmp/ccfkEC5U.s 			page 73
 
 
  2198              	.LCFI37:
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2244              	.LBB145:
  2245              	.LBI145:
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** {
-ARM GAS  /tmp/ccRUZTYB.s 			page 74
+ARM GAS  /tmp/ccfkEC5U.s 			page 74
 
 
  2246              		.loc 2 191 30 view .LVU643
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  745:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
  2287              		.loc 1 745 5 is_stmt 0 view .LVU657
  2288 0082 A945     		cmp	r9, r5
-ARM GAS  /tmp/ccRUZTYB.s 			page 75
+ARM GAS  /tmp/ccfkEC5U.s 			page 75
 
 
  2289 0084 11D3     		bcc	.L151
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  697:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  2329              		.loc 1 697 8 view .LVU672
  2330 00ae 0025     		movs	r5, #0
-ARM GAS  /tmp/ccRUZTYB.s 			page 76
+ARM GAS  /tmp/ccfkEC5U.s 			page 76
 
 
  2331              	.LVL203:
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2372 00d6 6069     		ldr	r0, [r4, #20]
  2373 00d8 0023     		movs	r3, #0
  2374 00da 1A46     		mov	r2, r3
-ARM GAS  /tmp/ccRUZTYB.s 			page 77
+ARM GAS  /tmp/ccfkEC5U.s 			page 77
 
 
  2375 00dc 1946     		mov	r1, r3
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2423 000a 1646     		mov	r6, r2
  2424 000c 1D46     		mov	r5, r3
  2425 000e 0F46     		mov	r7, r1
-ARM GAS  /tmp/ccRUZTYB.s 			page 78
+ARM GAS  /tmp/ccfkEC5U.s 			page 78
 
 
  803:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	configASSERT( pxStreamBuffer );
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2463              		.cfi_def_cfa_offset 24
  2464              		@ sp needed
  2465 002e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
-ARM GAS  /tmp/ccRUZTYB.s 			page 79
+ARM GAS  /tmp/ccfkEC5U.s 			page 79
 
 
  2466              	.LVL216:
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2512              	.LBB149:
  2513              	.LBI149:
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** {
-ARM GAS  /tmp/ccRUZTYB.s 			page 80
+ARM GAS  /tmp/ccfkEC5U.s 			page 80
 
 
  2514              		.loc 2 191 30 view .LVU719
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  832:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		{
  2557              		.loc 1 832 5 view .LVU731
  2558 006e 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccRUZTYB.s 			page 81
+ARM GAS  /tmp/ccfkEC5U.s 			page 81
 
 
  2559 0070 DBD0     		beq	.L161
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  834:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 		}
  2602              		.loc 1 834 4 discriminator 3 view .LVU743
  2603              	.LBB154:
-ARM GAS  /tmp/ccRUZTYB.s 			page 82
+ARM GAS  /tmp/ccfkEC5U.s 			page 82
 
 
  2604              	.LBI154:
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2647              	.LVL228:
  912:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  2648              		.loc 1 912 2 is_stmt 1 discriminator 2 view .LVU755
-ARM GAS  /tmp/ccRUZTYB.s 			page 83
+ARM GAS  /tmp/ccfkEC5U.s 			page 83
 
 
  912:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2690 0020 0120     		movs	r0, #1
  2691              	.LVL233:
  914:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	}
-ARM GAS  /tmp/ccRUZTYB.s 			page 84
+ARM GAS  /tmp/ccfkEC5U.s 			page 84
 
 
  2692              		.loc 1 914 11 view .LVU769
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  947:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
  2736              		.loc 1 947 6 is_stmt 0 view .LVU782
  2737 0010 1846     		mov	r0, r3
-ARM GAS  /tmp/ccRUZTYB.s 			page 85
+ARM GAS  /tmp/ccfkEC5U.s 			page 85
 
 
  2738              	.LVL236:
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2781              	.L188:
  2782              	.LCFI48:
  2783              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccRUZTYB.s 			page 86
+ARM GAS  /tmp/ccfkEC5U.s 			page 86
 
 
  2784              		.cfi_offset 4, -8
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2830 0006 0546     		mov	r5, r0
  966:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  2831              		.loc 1 966 32 is_stmt 1 view .LVU804
-ARM GAS  /tmp/ccRUZTYB.s 			page 87
+ARM GAS  /tmp/ccfkEC5U.s 			page 87
 
 
  968:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 	{
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  976:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			xReturn = pdTRUE;
  2873              		.loc 1 976 4 is_stmt 1 view .LVU818
  976:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 			xReturn = pdTRUE;
-ARM GAS  /tmp/ccRUZTYB.s 			page 88
+ARM GAS  /tmp/ccfkEC5U.s 			page 88
 
 
  2874              		.loc 1 976 46 is_stmt 0 view .LVU819
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  2917              		.loc 2 195 2 view .LVU830
  2918              		.syntax unified
  2919              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
-ARM GAS  /tmp/ccRUZTYB.s 			page 89
+ARM GAS  /tmp/ccfkEC5U.s 			page 89
 
 
  2920 003c 4FF05003 			mov r3, #80												
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  994:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
  2968              		.loc 1 994 1 view .LVU839
  996:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 
-ARM GAS  /tmp/ccRUZTYB.s 			page 90
+ARM GAS  /tmp/ccfkEC5U.s 			page 90
 
 
  2969              		.loc 1 996 2 view .LVU840
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  3011              		.loc 1 1002 4 is_stmt 1 view .LVU852
 1002:Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c **** 										 ( uint32_t ) 0,
  3012              		.loc 1 1002 13 is_stmt 0 view .LVU853
-ARM GAS  /tmp/ccRUZTYB.s 			page 91
+ARM GAS  /tmp/ccfkEC5U.s 			page 91
 
 
  3013 0020 4069     		ldr	r0, [r0, #20]
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  3056              	.L208:
  3057              	.LCFI57:
  3058              		.cfi_def_cfa_offset 0
-ARM GAS  /tmp/ccRUZTYB.s 			page 92
+ARM GAS  /tmp/ccfkEC5U.s 			page 92
 
 
  3059              		.cfi_restore 4
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  3105              		.syntax unified
  3106              		.thumb
  3107              		.thumb_func
-ARM GAS  /tmp/ccRUZTYB.s 			page 93
+ARM GAS  /tmp/ccfkEC5U.s 			page 93
 
 
  3108              		.fpu softvfp
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  3148              		.cfi_endproc
  3149              	.LFE26:
  3151              		.section	.text.ucStreamBufferGetStreamBufferType,"ax",%progbits
-ARM GAS  /tmp/ccRUZTYB.s 			page 94
+ARM GAS  /tmp/ccfkEC5U.s 			page 94
 
 
  3152              		.align	1
@@ -5625,59 +5625,59 @@ ARM GAS  /tmp/ccRUZTYB.s 			page 1
  3185              		.file 9 "/usr/arm-none-eabi/include/string.h"
  3186              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
  3187              		.file 11 "<built-in>"
-ARM GAS  /tmp/ccRUZTYB.s 			page 95
+ARM GAS  /tmp/ccfkEC5U.s 			page 95
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stream_buffer.c
-     /tmp/ccRUZTYB.s:16     .text.prvBytesInBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:23     .text.prvBytesInBuffer:0000000000000000 prvBytesInBuffer
-     /tmp/ccRUZTYB.s:65     .text.prvInitialiseNewStreamBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:71     .text.prvInitialiseNewStreamBuffer:0000000000000000 prvInitialiseNewStreamBuffer
-     /tmp/ccRUZTYB.s:167    .text.prvWriteBytesToBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:173    .text.prvWriteBytesToBuffer:0000000000000000 prvWriteBytesToBuffer
-     /tmp/ccRUZTYB.s:349    .text.prvWriteMessageToBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:355    .text.prvWriteMessageToBuffer:0000000000000000 prvWriteMessageToBuffer
-     /tmp/ccRUZTYB.s:455    .text.prvReadBytesFromBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:461    .text.prvReadBytesFromBuffer:0000000000000000 prvReadBytesFromBuffer
-     /tmp/ccRUZTYB.s:629    .text.prvReadMessageFromBuffer:0000000000000000 $t
-     /tmp/ccRUZTYB.s:635    .text.prvReadMessageFromBuffer:0000000000000000 prvReadMessageFromBuffer
-     /tmp/ccRUZTYB.s:727    .text.xStreamBufferGenericCreate:0000000000000000 $t
-     /tmp/ccRUZTYB.s:734    .text.xStreamBufferGenericCreate:0000000000000000 xStreamBufferGenericCreate
-     /tmp/ccRUZTYB.s:859    .text.xStreamBufferGenericCreateStatic:0000000000000000 $t
-     /tmp/ccRUZTYB.s:866    .text.xStreamBufferGenericCreateStatic:0000000000000000 xStreamBufferGenericCreateStatic
-     /tmp/ccRUZTYB.s:1096   .text.vStreamBufferDelete:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1103   .text.vStreamBufferDelete:0000000000000000 vStreamBufferDelete
-     /tmp/ccRUZTYB.s:1173   .text.xStreamBufferReset:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1180   .text.xStreamBufferReset:0000000000000000 xStreamBufferReset
-     /tmp/ccRUZTYB.s:1314   .text.xStreamBufferSetTriggerLevel:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1321   .text.xStreamBufferSetTriggerLevel:0000000000000000 xStreamBufferSetTriggerLevel
-     /tmp/ccRUZTYB.s:1396   .text.xStreamBufferSpacesAvailable:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1403   .text.xStreamBufferSpacesAvailable:0000000000000000 xStreamBufferSpacesAvailable
-     /tmp/ccRUZTYB.s:1481   .text.xStreamBufferBytesAvailable:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1488   .text.xStreamBufferBytesAvailable:0000000000000000 xStreamBufferBytesAvailable
-     /tmp/ccRUZTYB.s:1545   .text.xStreamBufferSend:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1552   .text.xStreamBufferSend:0000000000000000 xStreamBufferSend
-     /tmp/ccRUZTYB.s:1852   .text.xStreamBufferSendFromISR:0000000000000000 $t
-     /tmp/ccRUZTYB.s:1859   .text.xStreamBufferSendFromISR:0000000000000000 xStreamBufferSendFromISR
-     /tmp/ccRUZTYB.s:2092   .text.xStreamBufferReceive:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2099   .text.xStreamBufferReceive:0000000000000000 xStreamBufferReceive
-     /tmp/ccRUZTYB.s:2391   .text.xStreamBufferReceiveFromISR:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2398   .text.xStreamBufferReceiveFromISR:0000000000000000 xStreamBufferReceiveFromISR
-     /tmp/ccRUZTYB.s:2623   .text.xStreamBufferIsEmpty:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2630   .text.xStreamBufferIsEmpty:0000000000000000 xStreamBufferIsEmpty
-     /tmp/ccRUZTYB.s:2698   .text.xStreamBufferIsFull:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2705   .text.xStreamBufferIsFull:0000000000000000 xStreamBufferIsFull
-     /tmp/ccRUZTYB.s:2801   .text.xStreamBufferSendCompletedFromISR:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2808   .text.xStreamBufferSendCompletedFromISR:0000000000000000 xStreamBufferSendCompletedFromISR
-     /tmp/ccRUZTYB.s:2952   .text.xStreamBufferReceiveCompletedFromISR:0000000000000000 $t
-     /tmp/ccRUZTYB.s:2959   .text.xStreamBufferReceiveCompletedFromISR:0000000000000000 xStreamBufferReceiveCompletedFromISR
-     /tmp/ccRUZTYB.s:3103   .text.uxStreamBufferGetStreamBufferNumber:0000000000000000 $t
-     /tmp/ccRUZTYB.s:3110   .text.uxStreamBufferGetStreamBufferNumber:0000000000000000 uxStreamBufferGetStreamBufferNumber
-     /tmp/ccRUZTYB.s:3128   .text.vStreamBufferSetStreamBufferNumber:0000000000000000 $t
-     /tmp/ccRUZTYB.s:3135   .text.vStreamBufferSetStreamBufferNumber:0000000000000000 vStreamBufferSetStreamBufferNumber
-     /tmp/ccRUZTYB.s:3152   .text.ucStreamBufferGetStreamBufferType:0000000000000000 $t
-     /tmp/ccRUZTYB.s:3159   .text.ucStreamBufferGetStreamBufferType:0000000000000000 ucStreamBufferGetStreamBufferType
+     /tmp/ccfkEC5U.s:16     .text.prvBytesInBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:23     .text.prvBytesInBuffer:0000000000000000 prvBytesInBuffer
+     /tmp/ccfkEC5U.s:65     .text.prvInitialiseNewStreamBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:71     .text.prvInitialiseNewStreamBuffer:0000000000000000 prvInitialiseNewStreamBuffer
+     /tmp/ccfkEC5U.s:167    .text.prvWriteBytesToBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:173    .text.prvWriteBytesToBuffer:0000000000000000 prvWriteBytesToBuffer
+     /tmp/ccfkEC5U.s:349    .text.prvWriteMessageToBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:355    .text.prvWriteMessageToBuffer:0000000000000000 prvWriteMessageToBuffer
+     /tmp/ccfkEC5U.s:455    .text.prvReadBytesFromBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:461    .text.prvReadBytesFromBuffer:0000000000000000 prvReadBytesFromBuffer
+     /tmp/ccfkEC5U.s:629    .text.prvReadMessageFromBuffer:0000000000000000 $t
+     /tmp/ccfkEC5U.s:635    .text.prvReadMessageFromBuffer:0000000000000000 prvReadMessageFromBuffer
+     /tmp/ccfkEC5U.s:727    .text.xStreamBufferGenericCreate:0000000000000000 $t
+     /tmp/ccfkEC5U.s:734    .text.xStreamBufferGenericCreate:0000000000000000 xStreamBufferGenericCreate
+     /tmp/ccfkEC5U.s:859    .text.xStreamBufferGenericCreateStatic:0000000000000000 $t
+     /tmp/ccfkEC5U.s:866    .text.xStreamBufferGenericCreateStatic:0000000000000000 xStreamBufferGenericCreateStatic
+     /tmp/ccfkEC5U.s:1096   .text.vStreamBufferDelete:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1103   .text.vStreamBufferDelete:0000000000000000 vStreamBufferDelete
+     /tmp/ccfkEC5U.s:1173   .text.xStreamBufferReset:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1180   .text.xStreamBufferReset:0000000000000000 xStreamBufferReset
+     /tmp/ccfkEC5U.s:1314   .text.xStreamBufferSetTriggerLevel:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1321   .text.xStreamBufferSetTriggerLevel:0000000000000000 xStreamBufferSetTriggerLevel
+     /tmp/ccfkEC5U.s:1396   .text.xStreamBufferSpacesAvailable:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1403   .text.xStreamBufferSpacesAvailable:0000000000000000 xStreamBufferSpacesAvailable
+     /tmp/ccfkEC5U.s:1481   .text.xStreamBufferBytesAvailable:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1488   .text.xStreamBufferBytesAvailable:0000000000000000 xStreamBufferBytesAvailable
+     /tmp/ccfkEC5U.s:1545   .text.xStreamBufferSend:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1552   .text.xStreamBufferSend:0000000000000000 xStreamBufferSend
+     /tmp/ccfkEC5U.s:1852   .text.xStreamBufferSendFromISR:0000000000000000 $t
+     /tmp/ccfkEC5U.s:1859   .text.xStreamBufferSendFromISR:0000000000000000 xStreamBufferSendFromISR
+     /tmp/ccfkEC5U.s:2092   .text.xStreamBufferReceive:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2099   .text.xStreamBufferReceive:0000000000000000 xStreamBufferReceive
+     /tmp/ccfkEC5U.s:2391   .text.xStreamBufferReceiveFromISR:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2398   .text.xStreamBufferReceiveFromISR:0000000000000000 xStreamBufferReceiveFromISR
+     /tmp/ccfkEC5U.s:2623   .text.xStreamBufferIsEmpty:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2630   .text.xStreamBufferIsEmpty:0000000000000000 xStreamBufferIsEmpty
+     /tmp/ccfkEC5U.s:2698   .text.xStreamBufferIsFull:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2705   .text.xStreamBufferIsFull:0000000000000000 xStreamBufferIsFull
+     /tmp/ccfkEC5U.s:2801   .text.xStreamBufferSendCompletedFromISR:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2808   .text.xStreamBufferSendCompletedFromISR:0000000000000000 xStreamBufferSendCompletedFromISR
+     /tmp/ccfkEC5U.s:2952   .text.xStreamBufferReceiveCompletedFromISR:0000000000000000 $t
+     /tmp/ccfkEC5U.s:2959   .text.xStreamBufferReceiveCompletedFromISR:0000000000000000 xStreamBufferReceiveCompletedFromISR
+     /tmp/ccfkEC5U.s:3103   .text.uxStreamBufferGetStreamBufferNumber:0000000000000000 $t
+     /tmp/ccfkEC5U.s:3110   .text.uxStreamBufferGetStreamBufferNumber:0000000000000000 uxStreamBufferGetStreamBufferNumber
+     /tmp/ccfkEC5U.s:3128   .text.vStreamBufferSetStreamBufferNumber:0000000000000000 $t
+     /tmp/ccfkEC5U.s:3135   .text.vStreamBufferSetStreamBufferNumber:0000000000000000 vStreamBufferSetStreamBufferNumber
+     /tmp/ccfkEC5U.s:3152   .text.ucStreamBufferGetStreamBufferType:0000000000000000 $t
+     /tmp/ccfkEC5U.s:3159   .text.ucStreamBufferGetStreamBufferType:0000000000000000 ucStreamBufferGetStreamBufferType
 
 UNDEFINED SYMBOLS
 memset
@@ -5685,7 +5685,7 @@ memcpy
 pvPortMalloc
 vPortFree
 vTaskSetTimeOutState
-ARM GAS  /tmp/ccRUZTYB.s 			page 96
+ARM GAS  /tmp/ccfkEC5U.s 			page 96
 
 
 vPortEnterCritical

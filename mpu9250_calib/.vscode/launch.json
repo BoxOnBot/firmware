@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug (OpenOCD)",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "Build & Flash",
+            "runToEntryPoint": "main",
+            "armToolchainPath": "/usr/bin/",
+            "executable": "${workspaceRoot}/build/mpu9250_calib.elf",
+            "device": "STM32F103C8",
+            "configFiles": ["openocd.cfg"],
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}

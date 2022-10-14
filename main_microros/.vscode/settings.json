@@ -1,6 +1,6 @@
 {
-    "cortex-debug.armToolchainPath": "/usr/bin",
-    "cortex-debug.openocdPath": "/usr/local/bin/openocd",
+    "cortex-debug.armToolchainPath": "/usr/bin/arm-none-eabi-gdb",
+    "cortex-debug.openocdPath": "/usr/share/openocd",
     "files.associations": {
         "config.h": "c",
         "rcl.h": "c",
