@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJKKM7l.s 			page 1
+ARM GAS  /tmp/cc4I4kk6.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
   51 000a 8DF81780 		strb	r8, [sp, #23]
    6:Core/Src/mpu_9250.c **** 	uint8_t buffer[3];
   52              		.loc 1 6 2 is_stmt 1 view .LVU3
-ARM GAS  /tmp/ccJKKM7l.s 			page 2
+ARM GAS  /tmp/cc4I4kk6.s 			page 2
 
 
    7:Core/Src/mpu_9250.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
   94 0056 0097     		str	r7, [sp]
   95 0058 2346     		mov	r3, r4
   96 005a 6B22     		movs	r2, #107
-ARM GAS  /tmp/ccJKKM7l.s 			page 3
+ARM GAS  /tmp/cc4I4kk6.s 			page 3
 
 
   97 005c D021     		movs	r1, #208
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
   31:Core/Src/mpu_9250.c **** 
   32:Core/Src/mpu_9250.c **** 	// accel_config, 2g
   33:Core/Src/mpu_9250.c **** 	tmp = 0x08;
-ARM GAS  /tmp/ccJKKM7l.s 			page 4
+ARM GAS  /tmp/cc4I4kk6.s 			page 4
 
 
  140              		.loc 1 33 2 view .LVU22
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  183 00ec 3722     		movs	r2, #55
  184 00ee D021     		movs	r1, #208
  185 00f0 2846     		mov	r0, r5
-ARM GAS  /tmp/ccJKKM7l.s 			page 5
+ARM GAS  /tmp/cc4I4kk6.s 			page 5
 
 
  186 00f2 FFF7FEFF 		bl	HAL_I2C_Mem_Write
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  226              		.loc 1 58 2 view .LVU42
  227              		.loc 1 58 6 is_stmt 0 view .LVU43
  228 0134 1223     		movs	r3, #18
-ARM GAS  /tmp/ccJKKM7l.s 			page 6
+ARM GAS  /tmp/cc4I4kk6.s 			page 6
 
 
  229 0136 8DF81730 		strb	r3, [sp, #23]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  274 017e 0022     		movs	r2, #0
  275 0180 424B     		ldr	r3, .L18+4
  276 0182 FFF7FEFF 		bl	__aeabi_dmul
-ARM GAS  /tmp/ccJKKM7l.s 			page 7
+ARM GAS  /tmp/cc4I4kk6.s 			page 7
 
 
  277              	.LVL24:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  318              		.loc 1 76 2 view .LVU64
  319              		.loc 1 76 13 is_stmt 0 view .LVU65
  320 01c8 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
-ARM GAS  /tmp/ccJKKM7l.s 			page 8
+ARM GAS  /tmp/cc4I4kk6.s 			page 8
 
 
  321              		.loc 1 76 2 view .LVU66
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
   91:Core/Src/mpu_9250.c **** 	// checking gyro scale
   92:Core/Src/mpu_9250.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU9250_SLAVE_ADDRESS, 0x1B, I2C_MEMADD_SIZE_8BIT, &tmp, 0x1, 1000);
  361              		.loc 1 92 2 view .LVU70
-ARM GAS  /tmp/ccJKKM7l.s 			page 9
+ARM GAS  /tmp/cc4I4kk6.s 			page 9
 
 
  362 01fa 4FF47A73 		mov	r3, #1000
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  412              	.L8:
   81:Core/Src/mpu_9250.c **** 		break;
  413              		.loc 1 81 3 is_stmt 1 view .LVU75
-ARM GAS  /tmp/ccJKKM7l.s 			page 10
+ARM GAS  /tmp/cc4I4kk6.s 			page 10
 
 
   81:Core/Src/mpu_9250.c **** 		break;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  446              	.LCFI2:
  447              		.cfi_remember_state
  448              		.cfi_def_cfa_offset 28
-ARM GAS  /tmp/ccJKKM7l.s 			page 11
+ARM GAS  /tmp/cc4I4kk6.s 			page 11
 
 
  449              		@ sp needed
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  495              		.global	__aeabi_i2f
  496              		.global	__aeabi_fdiv
  497              		.section	.text.Accel_readXYZ,"ax",%progbits
-ARM GAS  /tmp/ccJKKM7l.s 			page 12
+ARM GAS  /tmp/cc4I4kk6.s 			page 12
 
 
  498              		.align	1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  120:Core/Src/mpu_9250.c **** 	// merging data
  121:Core/Src/mpu_9250.c **** 	for (int i = 0; i < 3; i++){
  544              		.loc 1 121 2 view .LVU105
-ARM GAS  /tmp/ccJKKM7l.s 			page 13
+ARM GAS  /tmp/cc4I4kk6.s 			page 13
 
 
  545              	.LBB3:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  590 005a 2946     		mov	r1, r5
  591 005c FFF7FEFF 		bl	__aeabi_fdiv
  592              	.LVL41:
-ARM GAS  /tmp/ccJKKM7l.s 			page 14
+ARM GAS  /tmp/cc4I4kk6.s 			page 14
 
 
  593              		.loc 1 126 11 view .LVU124
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  644              		@ args = 0, pretend = 0, frame = 16
  645              		@ frame_needed = 0, uses_anonymous_args = 0
  646              		.loc 1 131 39 is_stmt 0 view .LVU134
-ARM GAS  /tmp/ccJKKM7l.s 			page 15
+ARM GAS  /tmp/cc4I4kk6.s 			page 15
 
 
  647 0000 30B5     		push	{r4, r5, lr}
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  691 002c 08AB     		add	r3, sp, #32
  692 002e 03EB4100 		add	r0, r3, r1, lsl #1
  693 0032 10F8083C 		ldrb	r3, [r0, #-8]	@ zero_extendqisi2
-ARM GAS  /tmp/ccJKKM7l.s 			page 16
+ARM GAS  /tmp/cc4I4kk6.s 			page 16
 
 
  694              		.loc 1 141 39 discriminator 3 view .LVU147
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  147:Core/Src/mpu_9250.c **** 	data->gz = (float)(rawData[2] / sensGyro);
  739              		.loc 1 147 2 is_stmt 1 view .LVU163
  740              		.loc 1 147 13 is_stmt 0 view .LVU164
-ARM GAS  /tmp/ccJKKM7l.s 			page 17
+ARM GAS  /tmp/cc4I4kk6.s 			page 17
 
 
  741 0072 BDF91400 		ldrsh	r0, [sp, #20]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  792              		.loc 1 152 2 is_stmt 1 view .LVU170
  153:Core/Src/mpu_9250.c **** 	int16_t rawData[3]; 
  793              		.loc 1 153 2 view .LVU171
-ARM GAS  /tmp/ccJKKM7l.s 			page 18
+ARM GAS  /tmp/cc4I4kk6.s 			page 18
 
 
  154:Core/Src/mpu_9250.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  840 0044 22F8103C 		strh	r3, [r2, #-16]	@ movhi
  160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
  841              		.loc 1 160 25 is_stmt 1 discriminator 3 view .LVU187
-ARM GAS  /tmp/ccJKKM7l.s 			page 19
+ARM GAS  /tmp/cc4I4kk6.s 			page 19
 
 
  160:Core/Src/mpu_9250.c **** 		rawData[i] = ((int16_t)(buffer[2*i+1] << 8) | buffer[2*i]);
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  887 0084 0649     		ldr	r1, .L36+4
  888 0086 FFF7FEFF 		bl	__aeabi_fmul
  889              	.LVL73:
-ARM GAS  /tmp/ccJKKM7l.s 			page 20
+ARM GAS  /tmp/cc4I4kk6.s 			page 20
 
 
  890              		.loc 1 167 14 view .LVU203
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  941 0008 2046     		mov	r0, r4
  942 000a FFF7FEFF 		bl	Gyro_readXYZ
  943              	.LVL78:
-ARM GAS  /tmp/ccJKKM7l.s 			page 21
+ARM GAS  /tmp/cc4I4kk6.s 			page 21
 
 
  173:Core/Src/mpu_9250.c **** 	Magneto_readXYZ(data);
@@ -1239,37 +1239,37 @@ ARM GAS  /tmp/ccJKKM7l.s 			page 1
  982              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h"
  983              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
  984              		.file 9 "Core/Inc/i2c.h"
-ARM GAS  /tmp/ccJKKM7l.s 			page 22
+ARM GAS  /tmp/cc4I4kk6.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 mpu_9250.c
-     /tmp/ccJKKM7l.s:20     .text.MPU_9250_Init:0000000000000000 $t
-     /tmp/ccJKKM7l.s:28     .text.MPU_9250_Init:0000000000000000 MPU_9250_Init
-     /tmp/ccJKKM7l.s:327    .text.MPU_9250_Init:00000000000001d8 $d
-     /tmp/ccJKKM7l.s:386    .text.MPU_9250_Init:000000000000022a $d
-     /tmp/ccJKKM7l.s:482    .text.MPU_9250_Init:0000000000000288 $d
-     /tmp/ccJKKM7l.s:498    .text.Accel_readXYZ:0000000000000000 $t
-     /tmp/ccJKKM7l.s:505    .text.Accel_readXYZ:0000000000000000 Accel_readXYZ
-     /tmp/ccJKKM7l.s:626    .text.Accel_readXYZ:0000000000000088 $d
-     /tmp/ccJKKM7l.s:632    .text.Gyro_readXYZ:0000000000000000 $t
-     /tmp/ccJKKM7l.s:639    .text.Gyro_readXYZ:0000000000000000 Gyro_readXYZ
-     /tmp/ccJKKM7l.s:760    .text.Gyro_readXYZ:0000000000000088 $d
-     /tmp/ccJKKM7l.s:767    .text.Magneto_readXYZ:0000000000000000 $t
-     /tmp/ccJKKM7l.s:774    .text.Magneto_readXYZ:0000000000000000 Magneto_readXYZ
-     /tmp/ccJKKM7l.s:909    .text.Magneto_readXYZ:000000000000009c $d
-     /tmp/ccJKKM7l.s:916    .text.IMU_measure:0000000000000000 $t
-     /tmp/ccJKKM7l.s:923    .text.IMU_measure:0000000000000000 IMU_measure
-     /tmp/ccJKKM7l.s:955    .bss.sensAccel:0000000000000000 $d
-     /tmp/ccJKKM7l.s:959    .bss.sensAccel:0000000000000000 sensAccel
-     /tmp/ccJKKM7l.s:962    .bss.sensAdjMag:0000000000000000 $d
-     /tmp/ccJKKM7l.s:966    .bss.sensAdjMag:0000000000000000 sensAdjMag
-     /tmp/ccJKKM7l.s:969    .bss.sensGyro:0000000000000000 $d
-     /tmp/ccJKKM7l.s:973    .bss.sensGyro:0000000000000000 sensGyro
-     /tmp/ccJKKM7l.s:352    .text.MPU_9250_Init:00000000000001f1 $d
-     /tmp/ccJKKM7l.s:352    .text.MPU_9250_Init:00000000000001f2 $t
-     /tmp/ccJKKM7l.s:411    .text.MPU_9250_Init:0000000000000243 $d
-     /tmp/ccJKKM7l.s:411    .text.MPU_9250_Init:0000000000000244 $t
+     /tmp/cc4I4kk6.s:20     .text.MPU_9250_Init:0000000000000000 $t
+     /tmp/cc4I4kk6.s:28     .text.MPU_9250_Init:0000000000000000 MPU_9250_Init
+     /tmp/cc4I4kk6.s:327    .text.MPU_9250_Init:00000000000001d8 $d
+     /tmp/cc4I4kk6.s:386    .text.MPU_9250_Init:000000000000022a $d
+     /tmp/cc4I4kk6.s:482    .text.MPU_9250_Init:0000000000000288 $d
+     /tmp/cc4I4kk6.s:498    .text.Accel_readXYZ:0000000000000000 $t
+     /tmp/cc4I4kk6.s:505    .text.Accel_readXYZ:0000000000000000 Accel_readXYZ
+     /tmp/cc4I4kk6.s:626    .text.Accel_readXYZ:0000000000000088 $d
+     /tmp/cc4I4kk6.s:632    .text.Gyro_readXYZ:0000000000000000 $t
+     /tmp/cc4I4kk6.s:639    .text.Gyro_readXYZ:0000000000000000 Gyro_readXYZ
+     /tmp/cc4I4kk6.s:760    .text.Gyro_readXYZ:0000000000000088 $d
+     /tmp/cc4I4kk6.s:767    .text.Magneto_readXYZ:0000000000000000 $t
+     /tmp/cc4I4kk6.s:774    .text.Magneto_readXYZ:0000000000000000 Magneto_readXYZ
+     /tmp/cc4I4kk6.s:909    .text.Magneto_readXYZ:000000000000009c $d
+     /tmp/cc4I4kk6.s:916    .text.IMU_measure:0000000000000000 $t
+     /tmp/cc4I4kk6.s:923    .text.IMU_measure:0000000000000000 IMU_measure
+     /tmp/cc4I4kk6.s:955    .bss.sensAccel:0000000000000000 $d
+     /tmp/cc4I4kk6.s:959    .bss.sensAccel:0000000000000000 sensAccel
+     /tmp/cc4I4kk6.s:962    .bss.sensAdjMag:0000000000000000 $d
+     /tmp/cc4I4kk6.s:966    .bss.sensAdjMag:0000000000000000 sensAdjMag
+     /tmp/cc4I4kk6.s:969    .bss.sensGyro:0000000000000000 $d
+     /tmp/cc4I4kk6.s:973    .bss.sensGyro:0000000000000000 sensGyro
+     /tmp/cc4I4kk6.s:352    .text.MPU_9250_Init:00000000000001f1 $d
+     /tmp/cc4I4kk6.s:352    .text.MPU_9250_Init:00000000000001f2 $t
+     /tmp/cc4I4kk6.s:411    .text.MPU_9250_Init:0000000000000243 $d
+     /tmp/cc4I4kk6.s:411    .text.MPU_9250_Init:0000000000000244 $t
 
 UNDEFINED SYMBOLS
 __aeabi_i2d

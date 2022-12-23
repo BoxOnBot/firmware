@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccglYuG5.s 			page 1
+ARM GAS  /tmp/cc8mw5hc.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
   29:Core/Src/Fusion/FusionAhrs.c **** //------------------------------------------------------------------------------
   30:Core/Src/Fusion/FusionAhrs.c **** // Functions
   31:Core/Src/Fusion/FusionAhrs.c **** 
-ARM GAS  /tmp/ccglYuG5.s 			page 2
+ARM GAS  /tmp/cc8mw5hc.s 			page 2
 
 
   32:Core/Src/Fusion/FusionAhrs.c **** /**
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
   56 001e 8363     		str	r3, [r0, #56]	@ float
   57 0020 C363     		str	r3, [r0, #60]	@ float
   58 0022 0364     		str	r3, [r0, #64]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 3
+ARM GAS  /tmp/cc8mw5hc.s 			page 3
 
 
   58:Core/Src/Fusion/FusionAhrs.c ****     ahrs->halfMagnetometerFeedback = FUSION_VECTOR_ZERO;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
   66:Core/Src/Fusion/FusionAhrs.c **** 
   67:Core/Src/Fusion/FusionAhrs.c **** /**
   68:Core/Src/Fusion/FusionAhrs.c ****  * @brief Sets the AHRS algorithm settings.
-ARM GAS  /tmp/ccglYuG5.s 			page 4
+ARM GAS  /tmp/cc8mw5hc.s 			page 4
 
 
   69:Core/Src/Fusion/FusionAhrs.c ****  * @param ahrs AHRS algorithm structure.
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  150              		.loc 1 79 18 is_stmt 0 view .LVU41
  151 001e AE68     		ldr	r6, [r5, #8]	@ float
  152              		.loc 1 79 8 view .LVU42
-ARM GAS  /tmp/ccglYuG5.s 			page 5
+ARM GAS  /tmp/cc8mw5hc.s 			page 5
 
 
  153 0020 0021     		movs	r1, #0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  197 0050 70BD     		pop	{r4, r5, r6, pc}
  198              	.LVL8:
  199              	.L6:
-ARM GAS  /tmp/ccglYuG5.s 			page 6
+ARM GAS  /tmp/cc8mw5hc.s 			page 6
 
 
   77:Core/Src/Fusion/FusionAhrs.c ****     }
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
   50:Core/Inc/Fusion/FusionMath.h ****  */
   51:Core/Inc/Fusion/FusionMath.h **** typedef union {
   52:Core/Inc/Fusion/FusionMath.h ****     float array[3][3];
-ARM GAS  /tmp/ccglYuG5.s 			page 7
+ARM GAS  /tmp/cc8mw5hc.s 			page 7
 
 
   53:Core/Inc/Fusion/FusionMath.h **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  107:Core/Inc/Fusion/FusionMath.h ****  * @brief Pi. May not be defined in math.h.
  108:Core/Inc/Fusion/FusionMath.h ****  */
  109:Core/Inc/Fusion/FusionMath.h **** #ifndef M_PI
-ARM GAS  /tmp/ccglYuG5.s 			page 8
+ARM GAS  /tmp/cc8mw5hc.s 			page 8
 
 
  110:Core/Inc/Fusion/FusionMath.h **** #define M_PI (3.14159265358979323846)
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  234              	.LBB49:
  235              		.loc 2 128 5 view .LVU71
  236              		.loc 2 128 20 is_stmt 0 view .LVU72
-ARM GAS  /tmp/ccglYuG5.s 			page 9
+ARM GAS  /tmp/cc8mw5hc.s 			page 9
 
 
  237 0072 0B49     		ldr	r1, .L13+12
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  288 0002 84B0     		sub	sp, sp, #16
  289              	.LCFI2:
  290              		.cfi_def_cfa_offset 24
-ARM GAS  /tmp/ccglYuG5.s 			page 10
+ARM GAS  /tmp/cc8mw5hc.s 			page 10
 
 
  291 0004 0446     		mov	r4, r0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
   95:Core/Src/Fusion/FusionAhrs.c ****  * @param gyroscope Gyroscope measurement in degrees per second.
   96:Core/Src/Fusion/FusionAhrs.c ****  * @param accelerometer Accelerometer measurement in g.
   97:Core/Src/Fusion/FusionAhrs.c ****  * @param magnetometer Magnetometer measurement in arbitrary units.
-ARM GAS  /tmp/ccglYuG5.s 			page 11
+ARM GAS  /tmp/cc8mw5hc.s 			page 11
 
 
   98:Core/Src/Fusion/FusionAhrs.c ****  * @param deltaTime Delta time in seconds.
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  152:Core/Src/Fusion/FusionAhrs.c ****     ahrs->magnetometerIgnored = true;
  153:Core/Src/Fusion/FusionAhrs.c ****     if (FusionVectorIsZero(magnetometer) == false) {
  154:Core/Src/Fusion/FusionAhrs.c **** 
-ARM GAS  /tmp/ccglYuG5.s 			page 12
+ARM GAS  /tmp/cc8mw5hc.s 			page 12
 
 
  155:Core/Src/Fusion/FusionAhrs.c ****         // Set to compass heading if magnetic rejection times out
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  209:Core/Src/Fusion/FusionAhrs.c **** 
  210:Core/Src/Fusion/FusionAhrs.c ****     // Zero heading during initialisation
  211:Core/Src/Fusion/FusionAhrs.c ****     if ((ahrs->initialising == true) && (ahrs->accelerationRejectionTimeout == false)) {
-ARM GAS  /tmp/ccglYuG5.s 			page 13
+ARM GAS  /tmp/cc8mw5hc.s 			page 13
 
 
  212:Core/Src/Fusion/FusionAhrs.c ****         FusionAhrsSetHeading(ahrs, 0.0f);
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  349              		.loc 1 251 16 view .LVU91
  350 0006 8CE80F00 		stm	ip, {r0, r1, r2, r3}
  252:Core/Src/Fusion/FusionAhrs.c **** }
-ARM GAS  /tmp/ccglYuG5.s 			page 14
+ARM GAS  /tmp/cc8mw5hc.s 			page 14
 
 
  351              		.loc 1 252 1 view .LVU92
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  396              		.loc 1 263 35 view .LVU98
  397 0010 3146     		mov	r1, r6
  398              	.LVL27:
-ARM GAS  /tmp/ccglYuG5.s 			page 15
+ARM GAS  /tmp/cc8mw5hc.s 			page 15
 
 
  399              		.loc 1 263 35 view .LVU99
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  265:Core/Src/Fusion/FusionAhrs.c ****             .axis.z = 2.0f * (Q.w * Q.w - 0.5f + Q.z * Q.z),
  450              		.loc 1 265 35 view .LVU112
  451 0060 4946     		mov	r1, r9
-ARM GAS  /tmp/ccglYuG5.s 			page 16
+ARM GAS  /tmp/cc8mw5hc.s 			page 16
 
 
  452 0062 4846     		mov	r0, r9
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  142:Core/Inc/Fusion/FusionMath.h **** 
  143:Core/Inc/Fusion/FusionMath.h **** /**
  144:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the arc sine of the value.
-ARM GAS  /tmp/ccglYuG5.s 			page 17
+ARM GAS  /tmp/cc8mw5hc.s 			page 17
 
 
  145:Core/Inc/Fusion/FusionMath.h ****  * @param value Value.
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  199:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of two vectors.
  200:Core/Inc/Fusion/FusionMath.h ****  */
  201:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorAdd(const FusionVector vectorA, const FusionVector vectorB) 
-ARM GAS  /tmp/ccglYuG5.s 			page 18
+ARM GAS  /tmp/cc8mw5hc.s 			page 18
 
 
  202:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  524              		.loc 1 268 5 is_stmt 1 view .LVU133
  269:Core/Src/Fusion/FusionAhrs.c **** #undef Q
  270:Core/Src/Fusion/FusionAhrs.c **** }
-ARM GAS  /tmp/ccglYuG5.s 			page 19
+ARM GAS  /tmp/cc8mw5hc.s 			page 19
 
 
  525              		.loc 1 270 1 is_stmt 0 view .LVU134
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  570              		.loc 1 281 25 is_stmt 0 view .LVU139
  571 000a D1F810A0 		ldr	r10, [r1, #16]	@ float
  572              		.loc 1 281 17 view .LVU140
-ARM GAS  /tmp/ccglYuG5.s 			page 20
+ARM GAS  /tmp/cc8mw5hc.s 			page 20
 
 
  573 000e 5146     		mov	r1, r10
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  623              	.LVL60:
  624              		.loc 1 285 17 view .LVU157
  625 0044 FFF7FEFF 		bl	__aeabi_fmul
-ARM GAS  /tmp/ccglYuG5.s 			page 21
+ARM GAS  /tmp/cc8mw5hc.s 			page 21
 
 
  626              	.LVL61:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  676              		.loc 1 289 71 view .LVU171
  677 0086 0299     		ldr	r1, [sp, #8]	@ float
  678 0088 0398     		ldr	r0, [sp, #12]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 22
+ARM GAS  /tmp/cc8mw5hc.s 			page 22
 
 
  679 008a FFF7FEFF 		bl	__aeabi_fsub
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  731              	.LVL85:
  732 00dc 0146     		mov	r1, r0
  733              		.loc 1 290 66 view .LVU184
-ARM GAS  /tmp/ccglYuG5.s 			page 23
+ARM GAS  /tmp/cc8mw5hc.s 			page 23
 
 
  734 00de 3046     		mov	r0, r6
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  786 0134 0146     		mov	r1, r0
  787              		.loc 1 291 68 view .LVU195
  788 0136 4846     		mov	r0, r9
-ARM GAS  /tmp/ccglYuG5.s 			page 24
+ARM GAS  /tmp/cc8mw5hc.s 			page 24
 
 
  789 0138 FFF7FEFF 		bl	__aeabi_fmul
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  837              		.loc 1 296 1 view .LVU207
  838              		.cfi_endproc
  839              	.LFE29:
-ARM GAS  /tmp/ccglYuG5.s 			page 25
+ARM GAS  /tmp/cc8mw5hc.s 			page 25
 
 
  841              		.global	__aeabi_fcmple
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  226:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of the elements.
  227:Core/Inc/Fusion/FusionMath.h ****  */
  228:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorSum(const FusionVector vector) {
-ARM GAS  /tmp/ccglYuG5.s 			page 26
+ARM GAS  /tmp/cc8mw5hc.s 			page 26
 
 
  229:Core/Inc/Fusion/FusionMath.h ****     return vector.axis.x + vector.axis.y + vector.axis.z;
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  283:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorMagnitudeSquared(const FusionVector vector) {
  284:Core/Inc/Fusion/FusionMath.h ****     return FusionVectorSum(FusionVectorHadamardProduct(vector, vector));
  285:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/ccglYuG5.s 			page 27
+ARM GAS  /tmp/cc8mw5hc.s 			page 27
 
 
  286:Core/Inc/Fusion/FusionMath.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  919 0042 0E90     		str	r0, [sp, #56]	@ float
  256:Core/Inc/Fusion/FusionMath.h ****     return result;
  920              		.loc 2 256 5 is_stmt 1 view .LVU224
-ARM GAS  /tmp/ccglYuG5.s 			page 28
+ARM GAS  /tmp/cc8mw5hc.s 			page 28
 
 
  256:Core/Inc/Fusion/FusionMath.h ****     return result;
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  966              	.LVL114:
  967              	.LBB84:
  968              	.LBI84:
-ARM GAS  /tmp/ccglYuG5.s 			page 29
+ARM GAS  /tmp/cc8mw5hc.s 			page 29
 
 
  148:Core/Inc/Fusion/FusionMath.h ****     if (value <= -1.0f) {
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1009 009c 95F85030 		ldrb	r3, [r5, #80]	@ zero_extendqisi2
  304:Core/Src/Fusion/FusionAhrs.c ****             .accelerationError = FusionRadiansToDegrees(FusionAsin(2.0f * FusionVectorMagnitude(ahr
  1010              		.loc 1 304 36 view .LVU249
-ARM GAS  /tmp/ccglYuG5.s 			page 30
+ARM GAS  /tmp/cc8mw5hc.s 			page 30
 
 
  1011 00a0 2371     		strb	r3, [r4, #4]
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1058              		.loc 2 253 5 view .LVU261
  254:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
  1059              		.loc 2 254 5 view .LVU262
-ARM GAS  /tmp/ccglYuG5.s 			page 31
+ARM GAS  /tmp/cc8mw5hc.s 			page 31
 
 
  254:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1101 0116 3846     		mov	r0, r7
  1102 0118 FFF7FEFF 		bl	__aeabi_fadd
  1103              	.LVL125:
-ARM GAS  /tmp/ccglYuG5.s 			page 32
+ARM GAS  /tmp/cc8mw5hc.s 			page 32
 
 
  1104 011c 0146     		mov	r1, r0
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1148              	.LBE97:
  1149              	.LBB100:
  1150              	.LBI100:
-ARM GAS  /tmp/ccglYuG5.s 			page 33
+ARM GAS  /tmp/cc8mw5hc.s 			page 33
 
 
  136:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1193              	.LCFI12:
  1194              		.cfi_remember_state
  1195              		.cfi_def_cfa_offset 24
-ARM GAS  /tmp/ccglYuG5.s 			page 34
+ARM GAS  /tmp/cc8mw5hc.s 			page 34
 
 
  1196              		@ sp needed
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  310:Core/Src/Fusion/FusionAhrs.c ****     };
  1241              		.loc 1 310 83 view .LVU311
  1242 0194 0020     		movs	r0, #0
-ARM GAS  /tmp/ccglYuG5.s 			page 35
+ARM GAS  /tmp/cc8mw5hc.s 			page 35
 
 
  1243 0196 EAE7     		b	.L28
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1286 001c 80F801C0 		strb	ip, [r0, #1]
  325:Core/Src/Fusion/FusionAhrs.c ****             .accelerationRejectionTimeout = ahrs->accelerationRejectionTimeout,
  1287              		.loc 1 325 49 view .LVU320
-ARM GAS  /tmp/ccglYuG5.s 			page 36
+ARM GAS  /tmp/cc8mw5hc.s 			page 36
 
 
  1288 0020 91F858C0 		ldrb	ip, [r1, #88]	@ zero_extendqisi2
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1327 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
  1328              	.LCFI14:
  1329              		.cfi_def_cfa_offset 36
-ARM GAS  /tmp/ccglYuG5.s 			page 37
+ARM GAS  /tmp/cc8mw5hc.s 			page 37
 
 
  1330              		.cfi_offset 4, -36
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1382              		.loc 1 341 23 view .LVU341
  1383 0042 2846     		mov	r0, r5
  1384 0044 FFF7FEFF 		bl	__aeabi_fsub
-ARM GAS  /tmp/ccglYuG5.s 			page 38
+ARM GAS  /tmp/cc8mw5hc.s 			page 38
 
 
  1385              	.LVL155:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1430 007a 0023     		movs	r3, #0
  1431 007c 0F93     		str	r3, [sp, #60]	@ float
  1432 007e 1093     		str	r3, [sp, #64]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 39
+ARM GAS  /tmp/cc8mw5hc.s 			page 39
 
 
  345:Core/Src/Fusion/FusionAhrs.c ****             .element.x = 0.0f,
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  320:Core/Inc/Fusion/FusionMath.h ****     FusionQuaternion result;
  321:Core/Inc/Fusion/FusionMath.h ****     result.element.w = quaternionA.element.w + quaternionB.element.w;
  322:Core/Inc/Fusion/FusionMath.h ****     result.element.x = quaternionA.element.x + quaternionB.element.x;
-ARM GAS  /tmp/ccglYuG5.s 			page 40
+ARM GAS  /tmp/cc8mw5hc.s 			page 40
 
 
  323:Core/Inc/Fusion/FusionMath.h ****     result.element.y = quaternionA.element.y + quaternionB.element.y;
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1493 00d6 FFF7FEFF 		bl	__aeabi_fmul
  1494              	.LVL173:
  1495 00da 0146     		mov	r1, r0
-ARM GAS  /tmp/ccglYuG5.s 			page 41
+ARM GAS  /tmp/cc8mw5hc.s 			page 41
 
 
  1496              		.loc 2 338 46 view .LVU371
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1549 012e FFF7FEFF 		bl	__aeabi_fmul
  1550              	.LVL182:
  1551 0132 0146     		mov	r1, r0
-ARM GAS  /tmp/ccglYuG5.s 			page 42
+ARM GAS  /tmp/cc8mw5hc.s 			page 42
 
 
  1552              		.loc 2 339 58 view .LVU384
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1604              	.LVL191:
  1605 0184 8246     		mov	r10, r0
  1606              		.loc 2 341 40 view .LVU397
-ARM GAS  /tmp/ccglYuG5.s 			page 43
+ARM GAS  /tmp/cc8mw5hc.s 			page 43
 
 
  1607 0186 4946     		mov	r1, r9
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1658 01ce BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
  1659              	.LVL199:
  1660              	.L44:
-ARM GAS  /tmp/ccglYuG5.s 			page 44
+ARM GAS  /tmp/cc8mw5hc.s 			page 44
 
 
  1661              		.loc 1 351 1 view .LVU409
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1711 0014 07CA     		ldm	r2, {r0, r1, r2}
  1712              	.LVL203:
  104:Core/Src/Fusion/FusionAhrs.c **** 
-ARM GAS  /tmp/ccglYuG5.s 			page 45
+ARM GAS  /tmp/cc8mw5hc.s 			page 45
 
 
  1713              		.loc 1 104 25 view .LVU416
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1751              		.loc 1 117 5 is_stmt 1 view .LVU432
  118:Core/Src/Fusion/FusionAhrs.c ****             .axis.y = Q.y * Q.z + Q.w * Q.x,
  1752              		.loc 1 118 24 is_stmt 0 view .LVU433
-ARM GAS  /tmp/ccglYuG5.s 			page 46
+ARM GAS  /tmp/cc8mw5hc.s 			page 46
 
 
  1753 0048 D4F81480 		ldr	r8, [r4, #20]	@ float
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  120:Core/Src/Fusion/FusionAhrs.c ****     }; // third column of transposed rotation matrix scaled by 0.5
  1796              		.loc 1 120 27 view .LVU445
  1797 008c 3146     		mov	r1, r6
-ARM GAS  /tmp/ccglYuG5.s 			page 47
+ARM GAS  /tmp/cc8mw5hc.s 			page 47
 
 
  1798 008e 3046     		mov	r0, r6
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1840              	.LBB179:
  192:Core/Inc/Fusion/FusionMath.h **** }
  1841              		.loc 2 192 5 view .LVU458
-ARM GAS  /tmp/ccglYuG5.s 			page 48
+ARM GAS  /tmp/cc8mw5hc.s 			page 48
 
 
  192:Core/Inc/Fusion/FusionMath.h **** }
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  1886 010a 93E80700 		ldm	r3, {r0, r1, r2}
  1887 010e 88E80700 		stm	r8, {r0, r1, r2}
  1888              	.LBB181:
-ARM GAS  /tmp/ccglYuG5.s 			page 49
+ARM GAS  /tmp/cc8mw5hc.s 			page 49
 
 
  1889              	.LBI181:
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  256:Core/Inc/Fusion/FusionMath.h ****     return result;
  1930              		.loc 2 256 5 is_stmt 1 view .LVU482
  256:Core/Inc/Fusion/FusionMath.h ****     return result;
-ARM GAS  /tmp/ccglYuG5.s 			page 50
+ARM GAS  /tmp/cc8mw5hc.s 			page 50
 
 
  1931              		.loc 2 256 36 is_stmt 0 view .LVU483
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  178:Core/Inc/Fusion/FusionMath.h **** }
  1973              		.loc 2 178 5 view .LVU496
  1974 0164 784B     		ldr	r3, .L89
-ARM GAS  /tmp/ccglYuG5.s 			page 51
+ARM GAS  /tmp/cc8mw5hc.s 			page 51
 
 
  1975 0166 A3EB6009 		sub	r9, r3, r0, asr #1
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  240:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vector.axis.y * scalar;
  2017              		.loc 2 240 19 view .LVU509
  2018 0198 2860     		str	r0, [r5]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 52
+ARM GAS  /tmp/cc8mw5hc.s 			page 52
 
 
  241:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vector.axis.z * scalar;
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2059 01ca D6F808A0 		ldr	r10, [r6, #8]	@ float
  270:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = A.z * B.x - A.x * B.z;
  2060              		.loc 2 270 25 view .LVU524
-ARM GAS  /tmp/ccglYuG5.s 			page 53
+ARM GAS  /tmp/cc8mw5hc.s 			page 53
 
 
  2061 01ce 5146     		mov	r1, r10
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  271:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = A.x * B.y - A.y * B.x;
  2104              		.loc 2 271 19 view .LVU536
  2105 0210 6860     		str	r0, [r5, #4]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 54
+ARM GAS  /tmp/cc8mw5hc.s 			page 54
 
 
  272:Core/Inc/Fusion/FusionMath.h ****     return result;
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  284:Core/Inc/Fusion/FusionMath.h **** }
  2148              		.loc 2 284 5 discriminator 1 view .LVU549
  2149 0252 17AE     		add	r6, sp, #92
-ARM GAS  /tmp/ccglYuG5.s 			page 55
+ARM GAS  /tmp/cc8mw5hc.s 			page 55
 
 
  2150 0254 86E80700 		stm	r6, {r0, r1, r2}
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2191              	.LBE198:
  2192              	.LBE197:
  2193              	.LBB199:
-ARM GAS  /tmp/ccglYuG5.s 			page 56
+ARM GAS  /tmp/cc8mw5hc.s 			page 56
 
 
  2194              	.LBI199:
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2236 02c2 0A22     		movs	r2, #10
  2237              	.L56:
  144:Core/Src/Fusion/FusionAhrs.c ****         } else {
-ARM GAS  /tmp/ccglYuG5.s 			page 57
+ARM GAS  /tmp/cc8mw5hc.s 			page 57
 
 
  2238              		.loc 1 144 46 discriminator 4 view .LVU575
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2282 0304 40F02583 		bne	.L73
  2283 0308 0023     		movs	r3, #0
  2284 030a 24E0     		b	.L57
-ARM GAS  /tmp/ccglYuG5.s 			page 58
+ARM GAS  /tmp/cc8mw5hc.s 			page 58
 
 
  2285              	.L81:
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  144:Core/Src/Fusion/FusionAhrs.c ****         } else {
  2327              		.loc 1 144 93 view .LVU598
  2328 033c 0022     		movs	r2, #0
-ARM GAS  /tmp/ccglYuG5.s 			page 59
+ARM GAS  /tmp/cc8mw5hc.s 			page 59
 
 
  2329 033e C1E7     		b	.L56
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2370 036a 6769     		ldr	r7, [r4, #20]	@ float
  165:Core/Src/Fusion/FusionAhrs.c ****                 .axis.y = Q.w * Q.w - 0.5f + Q.y * Q.y,
  2371              		.loc 1 165 34 view .LVU612
-ARM GAS  /tmp/ccglYuG5.s 			page 60
+ARM GAS  /tmp/cc8mw5hc.s 			page 60
 
 
  2372 036c A669     		ldr	r6, [r4, #24]	@ float
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  164:Core/Src/Fusion/FusionAhrs.c ****                 .axis.x = Q.x * Q.y + Q.w * Q.z,
  2416              		.loc 1 164 28 view .LVU623
  2417 03b6 0B90     		str	r0, [sp, #44]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 61
+ARM GAS  /tmp/cc8mw5hc.s 			page 61
 
 
  167:Core/Src/Fusion/FusionAhrs.c ****         }; // second column of transposed rotation matrix scaled by 0.5
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2461 03fc 0546     		mov	r5, r0
  270:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = A.z * B.x - A.x * B.z;
  2462              		.loc 2 270 34 view .LVU635
-ARM GAS  /tmp/ccglYuG5.s 			page 62
+ARM GAS  /tmp/cc8mw5hc.s 			page 62
 
 
  2463 03fe D7F808A0 		ldr	r10, [r7, #8]	@ float
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2504              		.loc 2 272 25 is_stmt 0 view .LVU648
  2505 043e 5146     		mov	r1, r10
  2506 0440 0498     		ldr	r0, [sp, #16]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 63
+ARM GAS  /tmp/cc8mw5hc.s 			page 63
 
 
  2507 0442 FFF7FEFF 		bl	__aeabi_fmul
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  254:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
  2550              		.loc 2 254 5 view .LVU660
  254:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
-ARM GAS  /tmp/ccglYuG5.s 			page 64
+ARM GAS  /tmp/cc8mw5hc.s 			page 64
 
 
  2551              		.loc 2 254 36 is_stmt 0 view .LVU661
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2593              	.LVL281:
  2594 04b0 0146     		mov	r1, r0
  229:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/ccglYuG5.s 			page 65
+ARM GAS  /tmp/cc8mw5hc.s 			page 65
 
 
  2595              		.loc 2 229 42 view .LVU674
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2637 04e0 FFF7FEFF 		bl	__aeabi_fmul
  2638              	.LVL287:
  2639 04e4 8246     		mov	r10, r0
-ARM GAS  /tmp/ccglYuG5.s 			page 66
+ARM GAS  /tmp/cc8mw5hc.s 			page 66
 
 
  2640              	.LVL288:
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  243:Core/Inc/Fusion/FusionMath.h **** }
  2679              		.loc 2 243 12 view .LVU702
  2680 050c 87E80700 		stm	r7, {r0, r1, r2}
-ARM GAS  /tmp/ccglYuG5.s 			page 67
+ARM GAS  /tmp/cc8mw5hc.s 			page 67
 
 
  2681 0510 99E80700 		ldm	r9, {r0, r1, r2}
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2722 0544 3668     		ldr	r6, [r6]	@ float
  271:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = A.x * B.y - A.y * B.x;
  2723              		.loc 2 271 25 view .LVU716
-ARM GAS  /tmp/ccglYuG5.s 			page 68
+ARM GAS  /tmp/cc8mw5hc.s 			page 68
 
 
  2724 0546 3146     		mov	r1, r6
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2767              	.LBE224:
  2768              	.LBE223:
  171:Core/Src/Fusion/FusionAhrs.c **** 
-ARM GAS  /tmp/ccglYuG5.s 			page 69
+ARM GAS  /tmp/cc8mw5hc.s 			page 69
 
 
  2769              		.loc 1 171 42 view .LVU728
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2811 05c6 8146     		mov	r9, r0
  255:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z * vectorB.axis.z;
  2812              		.loc 2 255 19 discriminator 1 view .LVU741
-ARM GAS  /tmp/ccglYuG5.s 			page 70
+ARM GAS  /tmp/cc8mw5hc.s 			page 70
 
 
  2813 05c8 1C90     		str	r0, [sp, #112]	@ float
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  175:Core/Src/Fusion/FusionAhrs.c ****             ahrs->magnetometerIgnored = false;
  2857              		.loc 1 175 13 is_stmt 1 view .LVU752
  175:Core/Src/Fusion/FusionAhrs.c ****             ahrs->magnetometerIgnored = false;
-ARM GAS  /tmp/ccglYuG5.s 			page 71
+ARM GAS  /tmp/cc8mw5hc.s 			page 71
 
 
  2858              		.loc 1 175 38 is_stmt 0 view .LVU753
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2898 062c 3068     		ldr	r0, [r6]	@ float
  2899 062e FFF7FEFF 		bl	__aeabi_fmul
  2900              	.LVL311:
-ARM GAS  /tmp/ccglYuG5.s 			page 72
+ARM GAS  /tmp/cc8mw5hc.s 			page 72
 
 
  240:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vector.axis.y * scalar;
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2943              	.LBB234:
  202:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x + vectorB.axis.x;
  2944              		.loc 2 202 5 view .LVU780
-ARM GAS  /tmp/ccglYuG5.s 			page 73
+ARM GAS  /tmp/cc8mw5hc.s 			page 73
 
 
  203:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  2986              	.LBB236:
  239:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vector.axis.x * scalar;
  2987              		.loc 2 239 5 view .LVU794
-ARM GAS  /tmp/ccglYuG5.s 			page 74
+ARM GAS  /tmp/cc8mw5hc.s 			page 74
 
 
  240:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vector.axis.y * scalar;
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3030              	.LBI237:
  201:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
  3031              		.loc 2 201 28 is_stmt 1 view .LVU807
-ARM GAS  /tmp/ccglYuG5.s 			page 75
+ARM GAS  /tmp/cc8mw5hc.s 			page 75
 
 
  3032              	.LBB238:
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  238:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
  3073              		.loc 2 238 28 view .LVU821
  3074              	.LBB240:
-ARM GAS  /tmp/ccglYuG5.s 			page 76
+ARM GAS  /tmp/cc8mw5hc.s 			page 76
 
 
  239:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vector.axis.x * scalar;
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3115              	.LBE239:
  3116              	.LBB241:
  3117              	.LBI241:
-ARM GAS  /tmp/ccglYuG5.s 			page 77
+ARM GAS  /tmp/cc8mw5hc.s 			page 77
 
 
  343:Core/Inc/Fusion/FusionMath.h **** #undef A
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3154              		.loc 2 360 35 view .LVU846
  3155 0790 5046     		mov	r0, r10
  3156 0792 FFF7FEFF 		bl	__aeabi_fsub
-ARM GAS  /tmp/ccglYuG5.s 			page 78
+ARM GAS  /tmp/cc8mw5hc.s 			page 78
 
 
  3157              	.LVL334:
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3209              		.loc 2 362 5 is_stmt 1 view .LVU860
  3210              		.loc 2 362 28 is_stmt 0 view .LVU861
  3211 07e6 0699     		ldr	r1, [sp, #24]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 79
+ARM GAS  /tmp/cc8mw5hc.s 			page 79
 
 
  3212 07e8 4846     		mov	r0, r9
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3265 083c FFF7FEFF 		bl	__aeabi_fsub
  3266              	.LVL351:
  3267              		.loc 2 363 22 view .LVU873
-ARM GAS  /tmp/ccglYuG5.s 			page 80
+ARM GAS  /tmp/cc8mw5hc.s 			page 80
 
 
  3268 0840 E860     		str	r0, [r5, #12]	@ float
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3309              		.loc 2 324 5 is_stmt 1 view .LVU887
  324:Core/Inc/Fusion/FusionMath.h ****     return result;
  3310              		.loc 2 324 46 is_stmt 0 view .LVU888
-ARM GAS  /tmp/ccglYuG5.s 			page 81
+ARM GAS  /tmp/cc8mw5hc.s 			page 81
 
 
  3311 087c F168     		ldr	r1, [r6, #12]	@ float
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3345 08ac 4046     		mov	r0, r8
  3346 08ae FFF7FEFF 		bl	__aeabi_fmul
  3347              	.LVL357:
-ARM GAS  /tmp/ccglYuG5.s 			page 82
+ARM GAS  /tmp/cc8mw5hc.s 			page 82
 
 
  3348 08b2 0146     		mov	r1, r0
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  178:Core/Inc/Fusion/FusionMath.h **** }
  3395              		.loc 2 178 56 view .LVU914
  3396 08f2 3046     		mov	r0, r6
-ARM GAS  /tmp/ccglYuG5.s 			page 83
+ARM GAS  /tmp/cc8mw5hc.s 			page 83
 
 
  3397 08f4 FFF7FEFF 		bl	__aeabi_fmul
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3442 092a FFF7FEFF 		bl	__aeabi_fmul
  3443              	.LVL372:
  3444              		.loc 2 384 36 view .LVU929
-ARM GAS  /tmp/ccglYuG5.s 			page 84
+ARM GAS  /tmp/cc8mw5hc.s 			page 84
 
 
  3445 092e A860     		str	r0, [r5, #8]	@ float
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3492 095c 8DE80300 		stm	sp, {r0, r1}
  3493 0960 6B9B     		ldr	r3, [sp, #428]
  3494 0962 2BAA     		add	r2, sp, #172
-ARM GAS  /tmp/ccglYuG5.s 			page 85
+ARM GAS  /tmp/cc8mw5hc.s 			page 85
 
 
  3495 0964 07CA     		ldm	r2, {r0, r1, r2}
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3543              	.LFB26:
  225:Core/Src/Fusion/FusionAhrs.c **** #define Q ahrs->quaternion.element
  3544              		.loc 1 225 170 is_stmt 1 view -0
-ARM GAS  /tmp/ccglYuG5.s 			page 86
+ARM GAS  /tmp/cc8mw5hc.s 			page 86
 
 
  3545              		.cfi_startproc
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3590              		.loc 1 229 59 view .LVU958
  3591 0032 4FF07C50 		mov	r0, #1056964608
  3592 0036 FFF7FEFF 		bl	__aeabi_fsub
-ARM GAS  /tmp/ccglYuG5.s 			page 87
+ARM GAS  /tmp/cc8mw5hc.s 			page 87
 
 
  3593              	.LVL383:
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  233:Core/Src/Fusion/FusionAhrs.c ****     const FusionVector magnetometer = {
  3637              		.loc 1 233 37 view .LVU969
  3638 006c 0646     		mov	r6, r0
-ARM GAS  /tmp/ccglYuG5.s 			page 88
+ARM GAS  /tmp/cc8mw5hc.s 			page 88
 
 
  3639              	.LVL393:
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3680              		.loc 1 241 5 is_stmt 0 view .LVU982
  3681 00a8 93E80700 		ldm	r3, {r0, r1, r2}
  3682 00ac 8DE80700 		stm	sp, {r0, r1, r2}
-ARM GAS  /tmp/ccglYuG5.s 			page 89
+ARM GAS  /tmp/cc8mw5hc.s 			page 89
 
 
  3683 00b0 95E80E00 		ldm	r5, {r1, r2, r3}
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3732              		.loc 1 208 54 is_stmt 0 view .LVU989
  3733 000e 0023     		movs	r3, #0
  3734 0010 0D93     		str	r3, [sp, #52]	@ float
-ARM GAS  /tmp/ccglYuG5.s 			page 90
+ARM GAS  /tmp/cc8mw5hc.s 			page 90
 
 
  3735 0012 0E93     		str	r3, [sp, #56]	@ float
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3778              		.loc 1 212 9 is_stmt 1 view .LVU1000
  3779 004a 0021     		movs	r1, #0
  3780 004c 2046     		mov	r0, r4
-ARM GAS  /tmp/ccglYuG5.s 			page 91
+ARM GAS  /tmp/cc8mw5hc.s 			page 91
 
 
  3781 004e FFF7FEFF 		bl	FusionAhrsSetHeading
@@ -5422,47 +5422,47 @@ ARM GAS  /tmp/ccglYuG5.s 			page 1
  3799              		.file 4 "Core/Inc/Fusion/FusionAhrs.h"
  3800              		.file 5 "/usr/include/newlib/math.h"
  3801              		.file 6 "Core/Inc/Fusion/FusionCompass.h"
-ARM GAS  /tmp/ccglYuG5.s 			page 92
+ARM GAS  /tmp/cc8mw5hc.s 			page 92
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 FusionAhrs.c
-     /tmp/ccglYuG5.s:16     .text.FusionAhrsReset:0000000000000000 $t
-     /tmp/ccglYuG5.s:24     .text.FusionAhrsReset:0000000000000000 FusionAhrsReset
-     /tmp/ccglYuG5.s:88     .text.FusionAhrsReset:0000000000000044 $d
-     /tmp/ccglYuG5.s:97     .text.FusionAhrsSetSettings:0000000000000000 $t
-     /tmp/ccglYuG5.s:104    .text.FusionAhrsSetSettings:0000000000000000 FusionAhrsSetSettings
-     /tmp/ccglYuG5.s:260    .text.FusionAhrsSetSettings:0000000000000094 $d
-     /tmp/ccglYuG5.s:268    .text.FusionAhrsInitialise:0000000000000000 $t
-     /tmp/ccglYuG5.s:275    .text.FusionAhrsInitialise:0000000000000000 FusionAhrsInitialise
-     /tmp/ccglYuG5.s:320    .text.FusionAhrsInitialise:0000000000000024 $d
-     /tmp/ccglYuG5.s:325    .text.FusionAhrsGetQuaternion:0000000000000000 $t
-     /tmp/ccglYuG5.s:332    .text.FusionAhrsGetQuaternion:0000000000000000 FusionAhrsGetQuaternion
-     /tmp/ccglYuG5.s:359    .text.FusionAhrsGetLinearAcceleration:0000000000000000 $t
-     /tmp/ccglYuG5.s:366    .text.FusionAhrsGetLinearAcceleration:0000000000000000 FusionAhrsGetLinearAcceleration
-     /tmp/ccglYuG5.s:537    .text.FusionAhrsGetEarthAcceleration:0000000000000000 $t
-     /tmp/ccglYuG5.s:544    .text.FusionAhrsGetEarthAcceleration:0000000000000000 FusionAhrsGetEarthAcceleration
-     /tmp/ccglYuG5.s:845    .text.FusionAhrsGetInternalStates:0000000000000000 $t
-     /tmp/ccglYuG5.s:852    .text.FusionAhrsGetInternalStates:0000000000000000 FusionAhrsGetInternalStates
-     /tmp/ccglYuG5.s:1247   .text.FusionAhrsGetInternalStates:0000000000000198 $d
-     /tmp/ccglYuG5.s:1255   .text.FusionAhrsGetFlags:0000000000000000 $t
-     /tmp/ccglYuG5.s:1262   .text.FusionAhrsGetFlags:0000000000000000 FusionAhrsGetFlags
-     /tmp/ccglYuG5.s:1312   .text.FusionAhrsSetHeading:0000000000000000 $t
-     /tmp/ccglYuG5.s:1319   .text.FusionAhrsSetHeading:0000000000000000 FusionAhrsSetHeading
-     /tmp/ccglYuG5.s:1664   .text.FusionAhrsSetHeading:00000000000001d4 $d
-     /tmp/ccglYuG5.s:1670   .text.FusionAhrsUpdate:0000000000000000 $t
-     /tmp/ccglYuG5.s:1677   .text.FusionAhrsUpdate:0000000000000000 FusionAhrsUpdate
-     /tmp/ccglYuG5.s:2341   .text.FusionAhrsUpdate:0000000000000348 $d
-     /tmp/ccglYuG5.s:2348   .text.FusionAhrsUpdate:0000000000000354 $t
-     /tmp/ccglYuG5.s:3149   .text.FusionAhrsUpdate:0000000000000780 $d
-     /tmp/ccglYuG5.s:3155   .text.FusionAhrsUpdate:0000000000000790 $t
-     /tmp/ccglYuG5.s:3526   .text.FusionAhrsUpdate:000000000000098c $d
-     /tmp/ccglYuG5.s:3534   .text.FusionAhrsUpdateExternalHeading:0000000000000000 $t
-     /tmp/ccglYuG5.s:3541   .text.FusionAhrsUpdateExternalHeading:0000000000000000 FusionAhrsUpdateExternalHeading
-     /tmp/ccglYuG5.s:3700   .text.FusionAhrsUpdateExternalHeading:00000000000000c0 $d
-     /tmp/ccglYuG5.s:3705   .text.FusionAhrsUpdateNoMagnetometer:0000000000000000 $t
-     /tmp/ccglYuG5.s:3712   .text.FusionAhrsUpdateNoMagnetometer:0000000000000000 FusionAhrsUpdateNoMagnetometer
-     /tmp/ccglYuG5.s:3789   .rodata:0000000000000000 $d
+     /tmp/cc8mw5hc.s:16     .text.FusionAhrsReset:0000000000000000 $t
+     /tmp/cc8mw5hc.s:24     .text.FusionAhrsReset:0000000000000000 FusionAhrsReset
+     /tmp/cc8mw5hc.s:88     .text.FusionAhrsReset:0000000000000044 $d
+     /tmp/cc8mw5hc.s:97     .text.FusionAhrsSetSettings:0000000000000000 $t
+     /tmp/cc8mw5hc.s:104    .text.FusionAhrsSetSettings:0000000000000000 FusionAhrsSetSettings
+     /tmp/cc8mw5hc.s:260    .text.FusionAhrsSetSettings:0000000000000094 $d
+     /tmp/cc8mw5hc.s:268    .text.FusionAhrsInitialise:0000000000000000 $t
+     /tmp/cc8mw5hc.s:275    .text.FusionAhrsInitialise:0000000000000000 FusionAhrsInitialise
+     /tmp/cc8mw5hc.s:320    .text.FusionAhrsInitialise:0000000000000024 $d
+     /tmp/cc8mw5hc.s:325    .text.FusionAhrsGetQuaternion:0000000000000000 $t
+     /tmp/cc8mw5hc.s:332    .text.FusionAhrsGetQuaternion:0000000000000000 FusionAhrsGetQuaternion
+     /tmp/cc8mw5hc.s:359    .text.FusionAhrsGetLinearAcceleration:0000000000000000 $t
+     /tmp/cc8mw5hc.s:366    .text.FusionAhrsGetLinearAcceleration:0000000000000000 FusionAhrsGetLinearAcceleration
+     /tmp/cc8mw5hc.s:537    .text.FusionAhrsGetEarthAcceleration:0000000000000000 $t
+     /tmp/cc8mw5hc.s:544    .text.FusionAhrsGetEarthAcceleration:0000000000000000 FusionAhrsGetEarthAcceleration
+     /tmp/cc8mw5hc.s:845    .text.FusionAhrsGetInternalStates:0000000000000000 $t
+     /tmp/cc8mw5hc.s:852    .text.FusionAhrsGetInternalStates:0000000000000000 FusionAhrsGetInternalStates
+     /tmp/cc8mw5hc.s:1247   .text.FusionAhrsGetInternalStates:0000000000000198 $d
+     /tmp/cc8mw5hc.s:1255   .text.FusionAhrsGetFlags:0000000000000000 $t
+     /tmp/cc8mw5hc.s:1262   .text.FusionAhrsGetFlags:0000000000000000 FusionAhrsGetFlags
+     /tmp/cc8mw5hc.s:1312   .text.FusionAhrsSetHeading:0000000000000000 $t
+     /tmp/cc8mw5hc.s:1319   .text.FusionAhrsSetHeading:0000000000000000 FusionAhrsSetHeading
+     /tmp/cc8mw5hc.s:1664   .text.FusionAhrsSetHeading:00000000000001d4 $d
+     /tmp/cc8mw5hc.s:1670   .text.FusionAhrsUpdate:0000000000000000 $t
+     /tmp/cc8mw5hc.s:1677   .text.FusionAhrsUpdate:0000000000000000 FusionAhrsUpdate
+     /tmp/cc8mw5hc.s:2341   .text.FusionAhrsUpdate:0000000000000348 $d
+     /tmp/cc8mw5hc.s:2348   .text.FusionAhrsUpdate:0000000000000354 $t
+     /tmp/cc8mw5hc.s:3149   .text.FusionAhrsUpdate:0000000000000780 $d
+     /tmp/cc8mw5hc.s:3155   .text.FusionAhrsUpdate:0000000000000790 $t
+     /tmp/cc8mw5hc.s:3526   .text.FusionAhrsUpdate:000000000000098c $d
+     /tmp/cc8mw5hc.s:3534   .text.FusionAhrsUpdateExternalHeading:0000000000000000 $t
+     /tmp/cc8mw5hc.s:3541   .text.FusionAhrsUpdateExternalHeading:0000000000000000 FusionAhrsUpdateExternalHeading
+     /tmp/cc8mw5hc.s:3700   .text.FusionAhrsUpdateExternalHeading:00000000000000c0 $d
+     /tmp/cc8mw5hc.s:3705   .text.FusionAhrsUpdateNoMagnetometer:0000000000000000 $t
+     /tmp/cc8mw5hc.s:3712   .text.FusionAhrsUpdateNoMagnetometer:0000000000000000 FusionAhrsUpdateNoMagnetometer
+     /tmp/cc8mw5hc.s:3789   .rodata:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_fcmpeq

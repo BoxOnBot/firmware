@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccg5SaWA.s 			page 1
+ARM GAS  /tmp/ccDSpqbN.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
   30:Core/Src/syscalls.c **** **      and/or other materials provided with the distribution.
   31:Core/Src/syscalls.c **** **   3. Neither the name of STMicroelectronics nor the names of its contributors
   32:Core/Src/syscalls.c **** **      may be used to endorse or promote products derived from this software
-ARM GAS  /tmp/ccg5SaWA.s 			page 2
+ARM GAS  /tmp/ccDSpqbN.s 			page 2
 
 
   33:Core/Src/syscalls.c **** **      without specific prior written permission.
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
   37              		.section	.text._getpid,"ax",%progbits
   38              		.align	1
   39              		.global	_getpid
-ARM GAS  /tmp/ccg5SaWA.s 			page 3
+ARM GAS  /tmp/ccDSpqbN.s 			page 3
 
 
   40              		.syntax unified
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
   88:Core/Src/syscalls.c **** }
   87              		.loc 1 88 1 is_stmt 0 view .LVU10
   88 000a 4FF0FF30 		mov	r0, #-1
-ARM GAS  /tmp/ccg5SaWA.s 			page 4
+ARM GAS  /tmp/ccDSpqbN.s 			page 4
 
 
   89 000e 08BD     		pop	{r3, pc}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  138              		.loc 1 97 1 view -0
  139              		.cfi_startproc
  140              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccg5SaWA.s 			page 5
+ARM GAS  /tmp/ccDSpqbN.s 			page 5
 
 
  141              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  183              		.loc 1 105 1 is_stmt 1 view .LVU32
  106:Core/Src/syscalls.c **** }
  184              		.loc 1 106 1 is_stmt 0 view .LVU33
-ARM GAS  /tmp/ccg5SaWA.s 			page 6
+ARM GAS  /tmp/ccDSpqbN.s 			page 6
 
 
  185 001c 3046     		mov	r0, r6
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  232              		.loc 1 112 35 is_stmt 1 discriminator 3 view .LVU44
  112:Core/Src/syscalls.c **** 	{
  233              		.loc 1 112 42 is_stmt 0 discriminator 3 view .LVU45
-ARM GAS  /tmp/ccg5SaWA.s 			page 7
+ARM GAS  /tmp/ccDSpqbN.s 			page 7
 
 
  234 0012 0135     		adds	r5, r5, #1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  278              		.loc 1 124 8 view .LVU58
  279 0008 5AB1     		cbz	r2, .L21
  280              	.L17:
-ARM GAS  /tmp/ccg5SaWA.s 			page 8
+ARM GAS  /tmp/ccDSpqbN.s 			page 8
 
 
  125:Core/Src/syscalls.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  318              		.syntax unified
  319              	@ 129 "Core/Src/syscalls.c" 1
  320 002a 00BE     		BKPT #0
-ARM GAS  /tmp/ccg5SaWA.s 			page 9
+ARM GAS  /tmp/ccDSpqbN.s 			page 9
 
 
  321              	
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  368              	.LFE32:
  370              		.section	.text._fstat,"ax",%progbits
  371              		.align	1
-ARM GAS  /tmp/ccg5SaWA.s 			page 10
+ARM GAS  /tmp/ccDSpqbN.s 			page 10
 
 
  372              		.global	_fstat
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  417 0000 0120     		movs	r0, #1
  418              	.LVL30:
  419              		.loc 1 155 1 view .LVU89
-ARM GAS  /tmp/ccg5SaWA.s 			page 11
+ARM GAS  /tmp/ccDSpqbN.s 			page 11
 
 
  420 0002 7047     		bx	lr
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  470              		.cfi_offset 2, -8
  471              		.cfi_offset 3, -4
  164:Core/Src/syscalls.c **** 	/* Pretend like we always fail */
-ARM GAS  /tmp/ccg5SaWA.s 			page 12
+ARM GAS  /tmp/ccDSpqbN.s 			page 12
 
 
  165:Core/Src/syscalls.c **** 	return -1;
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  521              		.section	.text._unlink,"ax",%progbits
  522              		.align	1
  523              		.global	_unlink
-ARM GAS  /tmp/ccg5SaWA.s 			page 13
+ARM GAS  /tmp/ccDSpqbN.s 			page 13
 
 
  524              		.syntax unified
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  571              		.loc 1 182 2 view .LVU112
  183:Core/Src/syscalls.c **** }
  572              		.loc 1 183 1 is_stmt 0 view .LVU113
-ARM GAS  /tmp/ccg5SaWA.s 			page 14
+ARM GAS  /tmp/ccDSpqbN.s 			page 14
 
 
  573 0000 4FF0FF30 		mov	r0, #-1
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  622              		@ args = 0, pretend = 0, frame = 0
  623              		@ frame_needed = 0, uses_anonymous_args = 0
  624              		.loc 1 192 1 is_stmt 0 view .LVU122
-ARM GAS  /tmp/ccg5SaWA.s 			page 15
+ARM GAS  /tmp/ccDSpqbN.s 			page 15
 
 
  625 0000 08B5     		push	{r3, lr}
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  672              		.cfi_endproc
  673              	.LFE42:
  675              		.section	.text._execve,"ax",%progbits
-ARM GAS  /tmp/ccg5SaWA.s 			page 16
+ARM GAS  /tmp/ccDSpqbN.s 			page 16
 
 
  676              		.align	1
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  732              		.text
  733              	.Letext0:
  734              		.file 2 "/usr/include/newlib/machine/_default_types.h"
-ARM GAS  /tmp/ccg5SaWA.s 			page 17
+ARM GAS  /tmp/ccDSpqbN.s 			page 17
 
 
  735              		.file 3 "/usr/include/newlib/sys/_types.h"
@@ -968,56 +968,56 @@ ARM GAS  /tmp/ccg5SaWA.s 			page 1
  739              		.file 7 "/usr/include/newlib/sys/stat.h"
  740              		.file 8 "/usr/include/newlib/sys/times.h"
  741              		.file 9 "/usr/include/newlib/sys/errno.h"
-ARM GAS  /tmp/ccg5SaWA.s 			page 18
+ARM GAS  /tmp/ccDSpqbN.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 syscalls.c
-     /tmp/ccg5SaWA.s:16     .text.initialise_monitor_handles:0000000000000000 $t
-     /tmp/ccg5SaWA.s:24     .text.initialise_monitor_handles:0000000000000000 initialise_monitor_handles
-     /tmp/ccg5SaWA.s:38     .text._getpid:0000000000000000 $t
-     /tmp/ccg5SaWA.s:45     .text._getpid:0000000000000000 _getpid
-     /tmp/ccg5SaWA.s:60     .text._kill:0000000000000000 $t
-     /tmp/ccg5SaWA.s:67     .text._kill:0000000000000000 _kill
-     /tmp/ccg5SaWA.s:94     .text._exit:0000000000000000 $t
-     /tmp/ccg5SaWA.s:101    .text._exit:0000000000000000 _exit
-     /tmp/ccg5SaWA.s:128    .text._read:0000000000000000 $t
-     /tmp/ccg5SaWA.s:135    .text._read:0000000000000000 _read
-     /tmp/ccg5SaWA.s:192    .text._write:0000000000000000 $t
-     /tmp/ccg5SaWA.s:199    .text._write:0000000000000000 _write
-     /tmp/ccg5SaWA.s:250    .text._sbrk:0000000000000000 $t
-     /tmp/ccg5SaWA.s:257    .text._sbrk:0000000000000000 _sbrk
-     /tmp/ccg5SaWA.s:338    .text._sbrk:000000000000003c $d
-     /tmp/ccg5SaWA.s:346    .text._close:0000000000000000 $t
-     /tmp/ccg5SaWA.s:353    .text._close:0000000000000000 _close
-     /tmp/ccg5SaWA.s:371    .text._fstat:0000000000000000 $t
-     /tmp/ccg5SaWA.s:378    .text._fstat:0000000000000000 _fstat
-     /tmp/ccg5SaWA.s:400    .text._isatty:0000000000000000 $t
-     /tmp/ccg5SaWA.s:407    .text._isatty:0000000000000000 _isatty
-     /tmp/ccg5SaWA.s:425    .text._lseek:0000000000000000 $t
-     /tmp/ccg5SaWA.s:432    .text._lseek:0000000000000000 _lseek
-     /tmp/ccg5SaWA.s:450    .text._open:0000000000000000 $t
-     /tmp/ccg5SaWA.s:457    .text._open:0000000000000000 _open
-     /tmp/ccg5SaWA.s:488    .text._wait:0000000000000000 $t
-     /tmp/ccg5SaWA.s:495    .text._wait:0000000000000000 _wait
-     /tmp/ccg5SaWA.s:522    .text._unlink:0000000000000000 $t
-     /tmp/ccg5SaWA.s:529    .text._unlink:0000000000000000 _unlink
-     /tmp/ccg5SaWA.s:556    .text._times:0000000000000000 $t
-     /tmp/ccg5SaWA.s:563    .text._times:0000000000000000 _times
-     /tmp/ccg5SaWA.s:581    .text._stat:0000000000000000 $t
-     /tmp/ccg5SaWA.s:588    .text._stat:0000000000000000 _stat
-     /tmp/ccg5SaWA.s:610    .text._link:0000000000000000 $t
-     /tmp/ccg5SaWA.s:617    .text._link:0000000000000000 _link
-     /tmp/ccg5SaWA.s:644    .text._fork:0000000000000000 $t
-     /tmp/ccg5SaWA.s:651    .text._fork:0000000000000000 _fork
-     /tmp/ccg5SaWA.s:676    .text._execve:0000000000000000 $t
-     /tmp/ccg5SaWA.s:683    .text._execve:0000000000000000 _execve
-     /tmp/ccg5SaWA.s:728    .data.environ:0000000000000000 environ
-     /tmp/ccg5SaWA.s:715    .bss.__env:0000000000000000 __env
-     /tmp/ccg5SaWA.s:712    .bss.__env:0000000000000000 $d
-     /tmp/ccg5SaWA.s:718    .bss.heap_end.0:0000000000000000 $d
-     /tmp/ccg5SaWA.s:722    .bss.heap_end.0:0000000000000000 heap_end.0
-     /tmp/ccg5SaWA.s:725    .data.environ:0000000000000000 $d
+     /tmp/ccDSpqbN.s:16     .text.initialise_monitor_handles:0000000000000000 $t
+     /tmp/ccDSpqbN.s:24     .text.initialise_monitor_handles:0000000000000000 initialise_monitor_handles
+     /tmp/ccDSpqbN.s:38     .text._getpid:0000000000000000 $t
+     /tmp/ccDSpqbN.s:45     .text._getpid:0000000000000000 _getpid
+     /tmp/ccDSpqbN.s:60     .text._kill:0000000000000000 $t
+     /tmp/ccDSpqbN.s:67     .text._kill:0000000000000000 _kill
+     /tmp/ccDSpqbN.s:94     .text._exit:0000000000000000 $t
+     /tmp/ccDSpqbN.s:101    .text._exit:0000000000000000 _exit
+     /tmp/ccDSpqbN.s:128    .text._read:0000000000000000 $t
+     /tmp/ccDSpqbN.s:135    .text._read:0000000000000000 _read
+     /tmp/ccDSpqbN.s:192    .text._write:0000000000000000 $t
+     /tmp/ccDSpqbN.s:199    .text._write:0000000000000000 _write
+     /tmp/ccDSpqbN.s:250    .text._sbrk:0000000000000000 $t
+     /tmp/ccDSpqbN.s:257    .text._sbrk:0000000000000000 _sbrk
+     /tmp/ccDSpqbN.s:338    .text._sbrk:000000000000003c $d
+     /tmp/ccDSpqbN.s:346    .text._close:0000000000000000 $t
+     /tmp/ccDSpqbN.s:353    .text._close:0000000000000000 _close
+     /tmp/ccDSpqbN.s:371    .text._fstat:0000000000000000 $t
+     /tmp/ccDSpqbN.s:378    .text._fstat:0000000000000000 _fstat
+     /tmp/ccDSpqbN.s:400    .text._isatty:0000000000000000 $t
+     /tmp/ccDSpqbN.s:407    .text._isatty:0000000000000000 _isatty
+     /tmp/ccDSpqbN.s:425    .text._lseek:0000000000000000 $t
+     /tmp/ccDSpqbN.s:432    .text._lseek:0000000000000000 _lseek
+     /tmp/ccDSpqbN.s:450    .text._open:0000000000000000 $t
+     /tmp/ccDSpqbN.s:457    .text._open:0000000000000000 _open
+     /tmp/ccDSpqbN.s:488    .text._wait:0000000000000000 $t
+     /tmp/ccDSpqbN.s:495    .text._wait:0000000000000000 _wait
+     /tmp/ccDSpqbN.s:522    .text._unlink:0000000000000000 $t
+     /tmp/ccDSpqbN.s:529    .text._unlink:0000000000000000 _unlink
+     /tmp/ccDSpqbN.s:556    .text._times:0000000000000000 $t
+     /tmp/ccDSpqbN.s:563    .text._times:0000000000000000 _times
+     /tmp/ccDSpqbN.s:581    .text._stat:0000000000000000 $t
+     /tmp/ccDSpqbN.s:588    .text._stat:0000000000000000 _stat
+     /tmp/ccDSpqbN.s:610    .text._link:0000000000000000 $t
+     /tmp/ccDSpqbN.s:617    .text._link:0000000000000000 _link
+     /tmp/ccDSpqbN.s:644    .text._fork:0000000000000000 $t
+     /tmp/ccDSpqbN.s:651    .text._fork:0000000000000000 _fork
+     /tmp/ccDSpqbN.s:676    .text._execve:0000000000000000 $t
+     /tmp/ccDSpqbN.s:683    .text._execve:0000000000000000 _execve
+     /tmp/ccDSpqbN.s:728    .data.environ:0000000000000000 environ
+     /tmp/ccDSpqbN.s:715    .bss.__env:0000000000000000 __env
+     /tmp/ccDSpqbN.s:712    .bss.__env:0000000000000000 $d
+     /tmp/ccDSpqbN.s:718    .bss.heap_end.0:0000000000000000 $d
+     /tmp/ccDSpqbN.s:722    .bss.heap_end.0:0000000000000000 heap_end.0
+     /tmp/ccDSpqbN.s:725    .data.environ:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __errno

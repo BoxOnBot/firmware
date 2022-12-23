@@ -1,5 +1,9 @@
 {
     "cortex-debug.gdbPath": "gdb-multiarch",
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
-    "cortex-debug.variableUseNaturalFormat": true
+    "cortex-debug.variableUseNaturalFormat": true,
+    "files.associations": {
+        "cmsis_os.h": "c",
+        "time.h": "c"
+    }
 }

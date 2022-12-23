@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccLbY7Op.s 			page 1
+ARM GAS  /tmp/ccGVr8Ra.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccLbY7Op.s 			page 1
   29:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   * All rights reserved.</center></h2>
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   *
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
-ARM GAS  /tmp/ccLbY7Op.s 			page 2
+ARM GAS  /tmp/ccGVr8Ra.s 			page 2
 
 
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   * the "License"; You may not use this file except in compliance with the
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccLbY7Op.s 			page 1
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   83:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   /* Verify the parameters */
-ARM GAS  /tmp/ccLbY7Op.s 			page 3
+ARM GAS  /tmp/ccGVr8Ra.s 			page 3
 
 
   84:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ****   assert_param(IS_AFIO_EVENTOUT_PORT(GPIO_PortSource));
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccLbY7Op.s 			page 1
   74 000a 7047     		bx	lr
   75              	.L6:
   76              		.align	2
-ARM GAS  /tmp/ccLbY7Op.s 			page 4
+ARM GAS  /tmp/ccGVr8Ra.s 			page 4
 
 
   77              	.L5:
@@ -223,22 +223,21 @@ ARM GAS  /tmp/ccLbY7Op.s 			page 1
  109              	.LFE67:
  111              		.text
  112              	.Letext0:
- 113              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 114              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 115              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
-ARM GAS  /tmp/ccLbY7Op.s 			page 5
+ 113              		.file 2 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 114              		.file 3 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ARM GAS  /tmp/ccGVr8Ra.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_gpio_ex.c
-     /tmp/ccLbY7Op.s:16     .text.HAL_GPIOEx_ConfigEventout:0000000000000000 $t
-     /tmp/ccLbY7Op.s:24     .text.HAL_GPIOEx_ConfigEventout:0000000000000000 HAL_GPIOEx_ConfigEventout
-     /tmp/ccLbY7Op.s:49     .text.HAL_GPIOEx_ConfigEventout:0000000000000010 $d
-     /tmp/ccLbY7Op.s:54     .text.HAL_GPIOEx_EnableEventout:0000000000000000 $t
-     /tmp/ccLbY7Op.s:61     .text.HAL_GPIOEx_EnableEventout:0000000000000000 HAL_GPIOEx_EnableEventout
-     /tmp/ccLbY7Op.s:78     .text.HAL_GPIOEx_EnableEventout:000000000000000c $d
-     /tmp/ccLbY7Op.s:83     .text.HAL_GPIOEx_DisableEventout:0000000000000000 $t
-     /tmp/ccLbY7Op.s:90     .text.HAL_GPIOEx_DisableEventout:0000000000000000 HAL_GPIOEx_DisableEventout
-     /tmp/ccLbY7Op.s:107    .text.HAL_GPIOEx_DisableEventout:000000000000000c $d
+     /tmp/ccGVr8Ra.s:16     .text.HAL_GPIOEx_ConfigEventout:0000000000000000 $t
+     /tmp/ccGVr8Ra.s:24     .text.HAL_GPIOEx_ConfigEventout:0000000000000000 HAL_GPIOEx_ConfigEventout
+     /tmp/ccGVr8Ra.s:49     .text.HAL_GPIOEx_ConfigEventout:0000000000000010 $d
+     /tmp/ccGVr8Ra.s:54     .text.HAL_GPIOEx_EnableEventout:0000000000000000 $t
+     /tmp/ccGVr8Ra.s:61     .text.HAL_GPIOEx_EnableEventout:0000000000000000 HAL_GPIOEx_EnableEventout
+     /tmp/ccGVr8Ra.s:78     .text.HAL_GPIOEx_EnableEventout:000000000000000c $d
+     /tmp/ccGVr8Ra.s:83     .text.HAL_GPIOEx_DisableEventout:0000000000000000 $t
+     /tmp/ccGVr8Ra.s:90     .text.HAL_GPIOEx_DisableEventout:0000000000000000 HAL_GPIOEx_DisableEventout
+     /tmp/ccGVr8Ra.s:107    .text.HAL_GPIOEx_DisableEventout:000000000000000c $d
 
 NO UNDEFINED SYMBOLS

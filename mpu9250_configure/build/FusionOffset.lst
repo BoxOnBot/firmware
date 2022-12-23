@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccMq5j0H.s 			page 1
+ARM GAS  /tmp/ccih3Jv2.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
   26:Core/Src/Fusion/FusionOffset.c **** 
   27:Core/Src/Fusion/FusionOffset.c **** /**
   28:Core/Src/Fusion/FusionOffset.c ****  * @brief Threshold in degrees per second.
-ARM GAS  /tmp/ccMq5j0H.s 			page 2
+ARM GAS  /tmp/ccih3Jv2.s 			page 2
 
 
   29:Core/Src/Fusion/FusionOffset.c ****  */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
   70              		.loc 1 43 5 is_stmt 1 view .LVU12
   71              		.loc 1 43 19 is_stmt 0 view .LVU13
   72 0024 0023     		movs	r3, #0
-ARM GAS  /tmp/ccMq5j0H.s 			page 3
+ARM GAS  /tmp/ccih3Jv2.s 			page 3
 
 
   73 0026 A360     		str	r3, [r4, #8]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  118              		.cfi_offset 6, -36
  119              		.cfi_offset 7, -32
  120              		.cfi_offset 8, -28
-ARM GAS  /tmp/ccMq5j0H.s 			page 4
+ARM GAS  /tmp/ccih3Jv2.s 			page 4
 
 
  121              		.cfi_offset 9, -24
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
   28:Core/Inc/Fusion/FusionMath.h ****         float y;
   29:Core/Inc/Fusion/FusionMath.h ****         float z;
   30:Core/Inc/Fusion/FusionMath.h ****     } axis;
-ARM GAS  /tmp/ccMq5j0H.s 			page 5
+ARM GAS  /tmp/ccih3Jv2.s 			page 5
 
 
   31:Core/Inc/Fusion/FusionMath.h **** } FusionVector;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
   85:Core/Inc/Fusion/FusionMath.h **** 
   86:Core/Inc/Fusion/FusionMath.h **** /**
   87:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of ones.
-ARM GAS  /tmp/ccMq5j0H.s 			page 6
+ARM GAS  /tmp/ccih3Jv2.s 			page 6
 
 
   88:Core/Inc/Fusion/FusionMath.h ****  */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  142:Core/Inc/Fusion/FusionMath.h **** 
  143:Core/Inc/Fusion/FusionMath.h **** /**
  144:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the arc sine of the value.
-ARM GAS  /tmp/ccMq5j0H.s 			page 7
+ARM GAS  /tmp/ccih3Jv2.s 			page 7
 
 
  145:Core/Inc/Fusion/FusionMath.h ****  * @param value Value.
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  199:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of two vectors.
  200:Core/Inc/Fusion/FusionMath.h ****  */
  201:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorAdd(const FusionVector vectorA, const FusionVector vectorB) 
-ARM GAS  /tmp/ccMq5j0H.s 			page 8
+ARM GAS  /tmp/ccih3Jv2.s 			page 8
 
 
  202:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  180 0052 83E80700 		stm	r3, {r0, r1, r2}
  181              	.LBE9:
  182              	.LBE8:
-ARM GAS  /tmp/ccMq5j0H.s 			page 9
+ARM GAS  /tmp/ccih3Jv2.s 			page 9
 
 
   58:Core/Src/Fusion/FusionOffset.c **** 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  222 0090 1AAB     		add	r3, sp, #104
  223 0092 93E80700 		ldm	r3, {r0, r1, r2}
  224 0096 89E80700 		stm	r9, {r0, r1, r2}
-ARM GAS  /tmp/ccMq5j0H.s 			page 10
+ARM GAS  /tmp/ccih3Jv2.s 			page 10
 
 
  225              	.LVL16:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  257 00bc 0990     		str	r0, [sp, #36]	@ float
  243:Core/Inc/Fusion/FusionMath.h ****     return result;
  258              		.loc 2 243 5 is_stmt 1 view .LVU60
-ARM GAS  /tmp/ccMq5j0H.s 			page 11
+ARM GAS  /tmp/ccih3Jv2.s 			page 11
 
 
  259              		.loc 2 243 12 is_stmt 0 view .LVU61
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  206:Core/Inc/Fusion/FusionMath.h **** }
  302              		.loc 2 206 5 is_stmt 1 view .LVU74
  206:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/ccMq5j0H.s 			page 12
+ARM GAS  /tmp/ccih3Jv2.s 			page 12
 
 
  303              		.loc 2 206 12 is_stmt 0 view .LVU75
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  351 012c 02B0     		add	sp, sp, #8
  352              	.LCFI6:
  353              		.cfi_def_cfa_offset 0
-ARM GAS  /tmp/ccMq5j0H.s 			page 13
+ARM GAS  /tmp/ccih3Jv2.s 			page 13
 
 
  354 012e 7047     		bx	lr
@@ -749,17 +749,17 @@ ARM GAS  /tmp/ccMq5j0H.s 			page 1
  376              		.text
  377              	.Letext0:
  378              		.file 3 "Core/Inc/Fusion/FusionOffset.h"
-ARM GAS  /tmp/ccMq5j0H.s 			page 14
+ARM GAS  /tmp/ccih3Jv2.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 FusionOffset.c
-     /tmp/ccMq5j0H.s:19     .text.FusionOffsetInitialise:0000000000000000 $t
-     /tmp/ccMq5j0H.s:27     .text.FusionOffsetInitialise:0000000000000000 FusionOffsetInitialise
-     /tmp/ccMq5j0H.s:87     .text.FusionOffsetInitialise:0000000000000034 $d
-     /tmp/ccMq5j0H.s:95     .text.FusionOffsetUpdate:0000000000000000 $t
-     /tmp/ccMq5j0H.s:102    .text.FusionOffsetUpdate:0000000000000000 FusionOffsetUpdate
-     /tmp/ccMq5j0H.s:372    .text.FusionOffsetUpdate:0000000000000140 $d
+     /tmp/ccih3Jv2.s:19     .text.FusionOffsetInitialise:0000000000000000 $t
+     /tmp/ccih3Jv2.s:27     .text.FusionOffsetInitialise:0000000000000000 FusionOffsetInitialise
+     /tmp/ccih3Jv2.s:87     .text.FusionOffsetInitialise:0000000000000034 $d
+     /tmp/ccih3Jv2.s:95     .text.FusionOffsetUpdate:0000000000000000 $t
+     /tmp/ccih3Jv2.s:102    .text.FusionOffsetUpdate:0000000000000000 FusionOffsetUpdate
+     /tmp/ccih3Jv2.s:372    .text.FusionOffsetUpdate:0000000000000140 $d
 
 UNDEFINED SYMBOLS
 __aeabi_ui2f

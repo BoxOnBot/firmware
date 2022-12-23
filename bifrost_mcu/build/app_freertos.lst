@@ -1,0 +1,2635 @@
+ARM GAS  /tmp/ccNflO0v.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"app_freertos.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_fsub
+  16              		.global	__aeabi_fmul
+  17              		.global	__aeabi_fadd
+  18              		.section	.text.FusionCalibrationInertial,"ax",%progbits
+  19              		.align	1
+  20              		.arch armv6s-m
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  24              		.fpu softvfp
+  26              	FusionCalibrationInertial:
+  27              	.LVL0:
+  28              	.LFB353:
+  29              		.file 1 "Core/Inc/Fusion/FusionCalibration.h"
+   1:Core/Inc/Fusion/FusionCalibration.h **** /**
+   2:Core/Inc/Fusion/FusionCalibration.h ****  * @file FusionCalibration.h
+   3:Core/Inc/Fusion/FusionCalibration.h ****  * @author Seb Madgwick
+   4:Core/Inc/Fusion/FusionCalibration.h ****  * @brief Gyroscope, accelerometer, and magnetometer calibration models.
+   5:Core/Inc/Fusion/FusionCalibration.h ****  */
+   6:Core/Inc/Fusion/FusionCalibration.h **** 
+   7:Core/Inc/Fusion/FusionCalibration.h **** #ifndef FUSION_CALIBRATION_H
+   8:Core/Inc/Fusion/FusionCalibration.h **** #define FUSION_CALIBRATION_H
+   9:Core/Inc/Fusion/FusionCalibration.h **** 
+  10:Core/Inc/Fusion/FusionCalibration.h **** //------------------------------------------------------------------------------
+  11:Core/Inc/Fusion/FusionCalibration.h **** // Includes
+  12:Core/Inc/Fusion/FusionCalibration.h **** 
+  13:Core/Inc/Fusion/FusionCalibration.h **** #include "FusionMath.h"
+  14:Core/Inc/Fusion/FusionCalibration.h **** 
+  15:Core/Inc/Fusion/FusionCalibration.h **** //------------------------------------------------------------------------------
+  16:Core/Inc/Fusion/FusionCalibration.h **** // Inline functions
+  17:Core/Inc/Fusion/FusionCalibration.h **** 
+  18:Core/Inc/Fusion/FusionCalibration.h **** /**
+  19:Core/Inc/Fusion/FusionCalibration.h ****  * @brief Gyroscope and accelerometer calibration model.
+  20:Core/Inc/Fusion/FusionCalibration.h ****  * @param uncalibrated Uncalibrated measurement.
+  21:Core/Inc/Fusion/FusionCalibration.h ****  * @param misalignment Misalignment matrix.
+  22:Core/Inc/Fusion/FusionCalibration.h ****  * @param sensitivity Sensitivity.
+  23:Core/Inc/Fusion/FusionCalibration.h ****  * @param offset Offset.
+  24:Core/Inc/Fusion/FusionCalibration.h ****  * @return Calibrated measurement.
+  25:Core/Inc/Fusion/FusionCalibration.h ****  */
+  26:Core/Inc/Fusion/FusionCalibration.h **** static inline FusionVector FusionCalibrationInertial(const FusionVector uncalibrated, const FusionM
+  30              		.loc 1 26 179 view -0
+  31              		.cfi_startproc
+  32              		@ args = 60, pretend = 0, frame = 104
+ARM GAS  /tmp/ccNflO0v.s 			page 2
+
+
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 26 179 is_stmt 0 view .LVU1
+  35 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 20
+  38              		.cfi_offset 4, -20
+  39              		.cfi_offset 5, -16
+  40              		.cfi_offset 6, -12
+  41              		.cfi_offset 7, -8
+  42              		.cfi_offset 14, -4
+  43 0002 DE46     		mov	lr, fp
+  44 0004 5746     		mov	r7, r10
+  45 0006 4E46     		mov	r6, r9
+  46 0008 4546     		mov	r5, r8
+  47 000a E0B5     		push	{r5, r6, r7, lr}
+  48              	.LCFI1:
+  49              		.cfi_def_cfa_offset 36
+  50              		.cfi_offset 8, -36
+  51              		.cfi_offset 9, -32
+  52              		.cfi_offset 10, -28
+  53              		.cfi_offset 11, -24
+  54 000c 9BB0     		sub	sp, sp, #108
+  55              	.LCFI2:
+  56              		.cfi_def_cfa_offset 144
+  57 000e 0090     		str	r0, [sp]
+  58 0010 01A8     		add	r0, sp, #4
+  59              	.LVL1:
+  60              		.loc 1 26 179 view .LVU2
+  61 0012 0191     		str	r1, [sp, #4]
+  62 0014 0292     		str	r2, [sp, #8]
+  63 0016 0393     		str	r3, [sp, #12]
+  27:Core/Inc/Fusion/FusionCalibration.h ****     return FusionMatrixMultiplyVector(misalignment, FusionVectorHadamardProduct(FusionVectorSubtrac
+  64              		.loc 1 27 5 is_stmt 1 view .LVU3
+  65 0018 05AE     		add	r6, sp, #20
+  66 001a 3300     		movs	r3, r6
+  67 001c 16C8     		ldmia	r0!, {r1, r2, r4}
+  68 001e 16C3     		stmia	r3!, {r1, r2, r4}
+  69 0020 1D00     		movs	r5, r3
+  70 0022 0C22     		movs	r2, #12
+  71 0024 30A9     		add	r1, sp, #192
+  72 0026 1800     		movs	r0, r3
+  73 0028 FFF7FEFF 		bl	memcpy
+  74              	.LVL2:
+  75              	.LBB14:
+  76              	.LBI14:
+  77              		.file 2 "Core/Inc/Fusion/FusionMath.h"
+   1:Core/Inc/Fusion/FusionMath.h **** /**
+   2:Core/Inc/Fusion/FusionMath.h ****  * @file FusionMath.h
+   3:Core/Inc/Fusion/FusionMath.h ****  * @author Seb Madgwick
+   4:Core/Inc/Fusion/FusionMath.h ****  * @brief Math library.
+   5:Core/Inc/Fusion/FusionMath.h ****  */
+   6:Core/Inc/Fusion/FusionMath.h **** 
+   7:Core/Inc/Fusion/FusionMath.h **** #ifndef FUSION_MATH_H
+   8:Core/Inc/Fusion/FusionMath.h **** #define FUSION_MATH_H
+   9:Core/Inc/Fusion/FusionMath.h **** 
+  10:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+  11:Core/Inc/Fusion/FusionMath.h **** // Includes
+ARM GAS  /tmp/ccNflO0v.s 			page 3
+
+
+  12:Core/Inc/Fusion/FusionMath.h **** 
+  13:Core/Inc/Fusion/FusionMath.h **** #include <math.h> // M_PI, sqrtf, atan2f, asinf
+  14:Core/Inc/Fusion/FusionMath.h **** #include <stdbool.h>
+  15:Core/Inc/Fusion/FusionMath.h **** #include <stdint.h>
+  16:Core/Inc/Fusion/FusionMath.h **** 
+  17:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+  18:Core/Inc/Fusion/FusionMath.h **** // Definitions
+  19:Core/Inc/Fusion/FusionMath.h **** 
+  20:Core/Inc/Fusion/FusionMath.h **** /**
+  21:Core/Inc/Fusion/FusionMath.h ****  * @brief 3D vector.
+  22:Core/Inc/Fusion/FusionMath.h ****  */
+  23:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  24:Core/Inc/Fusion/FusionMath.h ****     float array[3];
+  25:Core/Inc/Fusion/FusionMath.h **** 
+  26:Core/Inc/Fusion/FusionMath.h ****     struct {
+  27:Core/Inc/Fusion/FusionMath.h ****         float x;
+  28:Core/Inc/Fusion/FusionMath.h ****         float y;
+  29:Core/Inc/Fusion/FusionMath.h ****         float z;
+  30:Core/Inc/Fusion/FusionMath.h ****     } axis;
+  31:Core/Inc/Fusion/FusionMath.h **** } FusionVector;
+  32:Core/Inc/Fusion/FusionMath.h **** 
+  33:Core/Inc/Fusion/FusionMath.h **** /**
+  34:Core/Inc/Fusion/FusionMath.h ****  * @brief Quaternion.
+  35:Core/Inc/Fusion/FusionMath.h ****  */
+  36:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  37:Core/Inc/Fusion/FusionMath.h ****     float array[4];
+  38:Core/Inc/Fusion/FusionMath.h **** 
+  39:Core/Inc/Fusion/FusionMath.h ****     struct {
+  40:Core/Inc/Fusion/FusionMath.h ****         float w;
+  41:Core/Inc/Fusion/FusionMath.h ****         float x;
+  42:Core/Inc/Fusion/FusionMath.h ****         float y;
+  43:Core/Inc/Fusion/FusionMath.h ****         float z;
+  44:Core/Inc/Fusion/FusionMath.h ****     } element;
+  45:Core/Inc/Fusion/FusionMath.h **** } FusionQuaternion;
+  46:Core/Inc/Fusion/FusionMath.h **** 
+  47:Core/Inc/Fusion/FusionMath.h **** /**
+  48:Core/Inc/Fusion/FusionMath.h ****  * @brief 3x3 matrix in row-major order.
+  49:Core/Inc/Fusion/FusionMath.h ****  * See http://en.wikipedia.org/wiki/Row-major_order
+  50:Core/Inc/Fusion/FusionMath.h ****  */
+  51:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  52:Core/Inc/Fusion/FusionMath.h ****     float array[3][3];
+  53:Core/Inc/Fusion/FusionMath.h **** 
+  54:Core/Inc/Fusion/FusionMath.h ****     struct {
+  55:Core/Inc/Fusion/FusionMath.h ****         float xx;
+  56:Core/Inc/Fusion/FusionMath.h ****         float xy;
+  57:Core/Inc/Fusion/FusionMath.h ****         float xz;
+  58:Core/Inc/Fusion/FusionMath.h ****         float yx;
+  59:Core/Inc/Fusion/FusionMath.h ****         float yy;
+  60:Core/Inc/Fusion/FusionMath.h ****         float yz;
+  61:Core/Inc/Fusion/FusionMath.h ****         float zx;
+  62:Core/Inc/Fusion/FusionMath.h ****         float zy;
+  63:Core/Inc/Fusion/FusionMath.h ****         float zz;
+  64:Core/Inc/Fusion/FusionMath.h ****     } element;
+  65:Core/Inc/Fusion/FusionMath.h **** } FusionMatrix;
+  66:Core/Inc/Fusion/FusionMath.h **** 
+  67:Core/Inc/Fusion/FusionMath.h **** /**
+  68:Core/Inc/Fusion/FusionMath.h ****  * @brief Euler angles.  Roll, pitch, and yaw correspond to rotations around
+ARM GAS  /tmp/ccNflO0v.s 			page 4
+
+
+  69:Core/Inc/Fusion/FusionMath.h ****  * X, Y, and Z respectively.
+  70:Core/Inc/Fusion/FusionMath.h ****  */
+  71:Core/Inc/Fusion/FusionMath.h **** typedef union {
+  72:Core/Inc/Fusion/FusionMath.h ****     float array[3];
+  73:Core/Inc/Fusion/FusionMath.h **** 
+  74:Core/Inc/Fusion/FusionMath.h ****     struct {
+  75:Core/Inc/Fusion/FusionMath.h ****         float roll;
+  76:Core/Inc/Fusion/FusionMath.h ****         float pitch;
+  77:Core/Inc/Fusion/FusionMath.h ****         float yaw;
+  78:Core/Inc/Fusion/FusionMath.h ****     } angle;
+  79:Core/Inc/Fusion/FusionMath.h **** } FusionEuler;
+  80:Core/Inc/Fusion/FusionMath.h **** 
+  81:Core/Inc/Fusion/FusionMath.h **** /**
+  82:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of zeros.
+  83:Core/Inc/Fusion/FusionMath.h ****  */
+  84:Core/Inc/Fusion/FusionMath.h **** #define FUSION_VECTOR_ZERO ((FusionVector){ .array = {0.0f, 0.0f, 0.0f} })
+  85:Core/Inc/Fusion/FusionMath.h **** 
+  86:Core/Inc/Fusion/FusionMath.h **** /**
+  87:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of ones.
+  88:Core/Inc/Fusion/FusionMath.h ****  */
+  89:Core/Inc/Fusion/FusionMath.h **** #define FUSION_VECTOR_ONES ((FusionVector){ .array = {1.0f, 1.0f, 1.0f} })
+  90:Core/Inc/Fusion/FusionMath.h **** 
+  91:Core/Inc/Fusion/FusionMath.h **** /**
+  92:Core/Inc/Fusion/FusionMath.h ****  * @brief Identity quaternion.
+  93:Core/Inc/Fusion/FusionMath.h ****  */
+  94:Core/Inc/Fusion/FusionMath.h **** #define FUSION_IDENTITY_QUATERNION ((FusionQuaternion){ .array = {1.0f, 0.0f, 0.0f, 0.0f} })
+  95:Core/Inc/Fusion/FusionMath.h **** 
+  96:Core/Inc/Fusion/FusionMath.h **** /**
+  97:Core/Inc/Fusion/FusionMath.h ****  * @brief Identity matrix.
+  98:Core/Inc/Fusion/FusionMath.h ****  */
+  99:Core/Inc/Fusion/FusionMath.h **** #define FUSION_IDENTITY_MATRIX ((FusionMatrix){ .array = {{1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {
+ 100:Core/Inc/Fusion/FusionMath.h **** 
+ 101:Core/Inc/Fusion/FusionMath.h **** /**
+ 102:Core/Inc/Fusion/FusionMath.h ****  * @brief Euler angles of zero.
+ 103:Core/Inc/Fusion/FusionMath.h ****  */
+ 104:Core/Inc/Fusion/FusionMath.h **** #define FUSION_EULER_ZERO ((FusionEuler){ .array = {0.0f, 0.0f, 0.0f} })
+ 105:Core/Inc/Fusion/FusionMath.h **** 
+ 106:Core/Inc/Fusion/FusionMath.h **** /**
+ 107:Core/Inc/Fusion/FusionMath.h ****  * @brief Pi. May not be defined in math.h.
+ 108:Core/Inc/Fusion/FusionMath.h ****  */
+ 109:Core/Inc/Fusion/FusionMath.h **** #ifndef M_PI
+ 110:Core/Inc/Fusion/FusionMath.h **** #define M_PI (3.14159265358979323846)
+ 111:Core/Inc/Fusion/FusionMath.h **** #endif
+ 112:Core/Inc/Fusion/FusionMath.h **** 
+ 113:Core/Inc/Fusion/FusionMath.h **** /**
+ 114:Core/Inc/Fusion/FusionMath.h ****  * @brief Include this definition or add as a preprocessor definition to use
+ 115:Core/Inc/Fusion/FusionMath.h ****  * normal square root operations.
+ 116:Core/Inc/Fusion/FusionMath.h ****  */
+ 117:Core/Inc/Fusion/FusionMath.h **** //#define FUSION_USE_NORMAL_SQRT
+ 118:Core/Inc/Fusion/FusionMath.h **** 
+ 119:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 120:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Degrees and radians conversion
+ 121:Core/Inc/Fusion/FusionMath.h **** 
+ 122:Core/Inc/Fusion/FusionMath.h **** /**
+ 123:Core/Inc/Fusion/FusionMath.h ****  * @brief Converts degrees to radians.
+ 124:Core/Inc/Fusion/FusionMath.h ****  * @param degrees Degrees.
+ 125:Core/Inc/Fusion/FusionMath.h ****  * @return Radians.
+ARM GAS  /tmp/ccNflO0v.s 			page 5
+
+
+ 126:Core/Inc/Fusion/FusionMath.h ****  */
+ 127:Core/Inc/Fusion/FusionMath.h **** static inline float FusionDegreesToRadians(const float degrees) {
+ 128:Core/Inc/Fusion/FusionMath.h ****     return degrees * ((float) M_PI / 180.0f);
+ 129:Core/Inc/Fusion/FusionMath.h **** }
+ 130:Core/Inc/Fusion/FusionMath.h **** 
+ 131:Core/Inc/Fusion/FusionMath.h **** /**
+ 132:Core/Inc/Fusion/FusionMath.h ****  * @brief Converts radians to degrees.
+ 133:Core/Inc/Fusion/FusionMath.h ****  * @param radians Radians.
+ 134:Core/Inc/Fusion/FusionMath.h ****  * @return Degrees.
+ 135:Core/Inc/Fusion/FusionMath.h ****  */
+ 136:Core/Inc/Fusion/FusionMath.h **** static inline float FusionRadiansToDegrees(const float radians) {
+ 137:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
+ 138:Core/Inc/Fusion/FusionMath.h **** }
+ 139:Core/Inc/Fusion/FusionMath.h **** 
+ 140:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 141:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Arc sine
+ 142:Core/Inc/Fusion/FusionMath.h **** 
+ 143:Core/Inc/Fusion/FusionMath.h **** /**
+ 144:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the arc sine of the value.
+ 145:Core/Inc/Fusion/FusionMath.h ****  * @param value Value.
+ 146:Core/Inc/Fusion/FusionMath.h ****  * @return Arc sine of the value.
+ 147:Core/Inc/Fusion/FusionMath.h ****  */
+ 148:Core/Inc/Fusion/FusionMath.h **** static inline float FusionAsin(const float value) {
+ 149:Core/Inc/Fusion/FusionMath.h ****     if (value <= -1.0f) {
+ 150:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / -2.0f;
+ 151:Core/Inc/Fusion/FusionMath.h ****     }
+ 152:Core/Inc/Fusion/FusionMath.h ****     if (value >= 1.0f) {
+ 153:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / 2.0f;
+ 154:Core/Inc/Fusion/FusionMath.h ****     }
+ 155:Core/Inc/Fusion/FusionMath.h ****     return asinf(value);
+ 156:Core/Inc/Fusion/FusionMath.h **** }
+ 157:Core/Inc/Fusion/FusionMath.h **** 
+ 158:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 159:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Fast inverse square root
+ 160:Core/Inc/Fusion/FusionMath.h **** 
+ 161:Core/Inc/Fusion/FusionMath.h **** #ifndef FUSION_USE_NORMAL_SQRT
+ 162:Core/Inc/Fusion/FusionMath.h **** 
+ 163:Core/Inc/Fusion/FusionMath.h **** /**
+ 164:Core/Inc/Fusion/FusionMath.h ****  * @brief Calculates the reciprocal of the square root.
+ 165:Core/Inc/Fusion/FusionMath.h ****  * See https://pizer.wordpress.com/2008/10/12/fast-inverse-square-root/
+ 166:Core/Inc/Fusion/FusionMath.h ****  * @param x Operand.
+ 167:Core/Inc/Fusion/FusionMath.h ****  * @return Reciprocal of the square root of x.
+ 168:Core/Inc/Fusion/FusionMath.h ****  */
+ 169:Core/Inc/Fusion/FusionMath.h **** static inline float FusionFastInverseSqrt(const float x) {
+ 170:Core/Inc/Fusion/FusionMath.h **** 
+ 171:Core/Inc/Fusion/FusionMath.h ****     typedef union {
+ 172:Core/Inc/Fusion/FusionMath.h ****         float f;
+ 173:Core/Inc/Fusion/FusionMath.h ****         int32_t i;
+ 174:Core/Inc/Fusion/FusionMath.h ****     } Union32;
+ 175:Core/Inc/Fusion/FusionMath.h **** 
+ 176:Core/Inc/Fusion/FusionMath.h ****     Union32 union32 = {.f = x};
+ 177:Core/Inc/Fusion/FusionMath.h ****     union32.i = 0x5F1F1412 - (union32.i >> 1);
+ 178:Core/Inc/Fusion/FusionMath.h ****     return union32.f * (1.69000231f - 0.714158168f * x * union32.f * union32.f);
+ 179:Core/Inc/Fusion/FusionMath.h **** }
+ 180:Core/Inc/Fusion/FusionMath.h **** 
+ 181:Core/Inc/Fusion/FusionMath.h **** #endif
+ 182:Core/Inc/Fusion/FusionMath.h **** 
+ARM GAS  /tmp/ccNflO0v.s 			page 6
+
+
+ 183:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 184:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Vector operations
+ 185:Core/Inc/Fusion/FusionMath.h **** 
+ 186:Core/Inc/Fusion/FusionMath.h **** /**
+ 187:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns true if the vector is zero.
+ 188:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 189:Core/Inc/Fusion/FusionMath.h ****  * @return True if the vector is zero.
+ 190:Core/Inc/Fusion/FusionMath.h ****  */
+ 191:Core/Inc/Fusion/FusionMath.h **** static inline bool FusionVectorIsZero(const FusionVector vector) {
+ 192:Core/Inc/Fusion/FusionMath.h ****     return (vector.axis.x == 0.0f) && (vector.axis.y == 0.0f) && (vector.axis.z == 0.0f);
+ 193:Core/Inc/Fusion/FusionMath.h **** }
+ 194:Core/Inc/Fusion/FusionMath.h **** 
+ 195:Core/Inc/Fusion/FusionMath.h **** /**
+ 196:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of two vectors.
+ 197:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 198:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 199:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of two vectors.
+ 200:Core/Inc/Fusion/FusionMath.h ****  */
+ 201:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorAdd(const FusionVector vectorA, const FusionVector vectorB) 
+ 202:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 203:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x + vectorB.axis.x;
+ 204:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y + vectorB.axis.y;
+ 205:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z + vectorB.axis.z;
+ 206:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 207:Core/Inc/Fusion/FusionMath.h **** }
+ 208:Core/Inc/Fusion/FusionMath.h **** 
+ 209:Core/Inc/Fusion/FusionMath.h **** /**
+ 210:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns vector B subtracted from vector A.
+ 211:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 212:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 213:Core/Inc/Fusion/FusionMath.h ****  * @return Vector B subtracted from vector A.
+ 214:Core/Inc/Fusion/FusionMath.h ****  */
+ 215:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorSubtract(const FusionVector vectorA, const FusionVector vect
+  78              		.loc 2 215 28 view .LVU4
+  79              	.LBB15:
+ 216:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+  80              		.loc 2 216 5 view .LVU5
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x - vectorB.axis.x;
+  81              		.loc 2 217 5 view .LVU6
+  82              		.loc 2 217 36 is_stmt 0 view .LVU7
+  83 002c 0899     		ldr	r1, [sp, #32]
+  84 002e 0598     		ldr	r0, [sp, #20]
+  85 0030 FFF7FEFF 		bl	__aeabi_fsub
+  86              	.LVL3:
+  87 0034 8346     		mov	fp, r0
+  88              		.loc 2 217 19 view .LVU8
+  89 0036 0BAC     		add	r4, sp, #44
+  90 0038 0B90     		str	r0, [sp, #44]
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+  91              		.loc 2 218 5 is_stmt 1 view .LVU9
+  92              		.loc 2 218 36 is_stmt 0 view .LVU10
+  93 003a 6968     		ldr	r1, [r5, #4]
+  94 003c 0698     		ldr	r0, [sp, #24]
+  95 003e FFF7FEFF 		bl	__aeabi_fsub
+  96              	.LVL4:
+  97 0042 8246     		mov	r10, r0
+  98              		.loc 2 218 19 view .LVU11
+ARM GAS  /tmp/ccNflO0v.s 			page 7
+
+
+  99 0044 0C90     		str	r0, [sp, #48]
+ 219:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 100              		.loc 2 219 5 is_stmt 1 view .LVU12
+ 101              		.loc 2 219 36 is_stmt 0 view .LVU13
+ 102 0046 A968     		ldr	r1, [r5, #8]
+ 103 0048 0798     		ldr	r0, [sp, #28]
+ 104 004a FFF7FEFF 		bl	__aeabi_fsub
+ 105              	.LVL5:
+ 106 004e 8146     		mov	r9, r0
+ 107              		.loc 2 219 19 view .LVU14
+ 108 0050 0D90     		str	r0, [sp, #52]
+ 220:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 109              		.loc 2 220 5 is_stmt 1 view .LVU15
+ 110              		.loc 2 220 12 is_stmt 0 view .LVU16
+ 111 0052 14AB     		add	r3, sp, #80
+ 112 0054 9C46     		mov	ip, r3
+ 113 0056 1900     		movs	r1, r3
+ 114 0058 2200     		movs	r2, r4
+ 115 005a 89CA     		ldmia	r2!, {r0, r3, r7}
+ 116 005c 89C1     		stmia	r1!, {r0, r3, r7}
+ 117 005e 3200     		movs	r2, r6
+ 118 0060 6346     		mov	r3, ip
+ 119 0062 83CB     		ldmia	r3!, {r0, r1, r7}
+ 120 0064 83C2     		stmia	r2!, {r0, r1, r7}
+ 121 0066 2DAB     		add	r3, sp, #180
+ 122 0068 83CB     		ldmia	r3!, {r0, r1, r7}
+ 123 006a 83C2     		stmia	r2!, {r0, r1, r7}
+ 124              	.LBE15:
+ 125              	.LBE14:
+ 126              	.LBB16:
+ 127              	.LBI16:
+ 221:Core/Inc/Fusion/FusionMath.h **** }
+ 222:Core/Inc/Fusion/FusionMath.h **** 
+ 223:Core/Inc/Fusion/FusionMath.h **** /**
+ 224:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of the elements.
+ 225:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 226:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of the elements.
+ 227:Core/Inc/Fusion/FusionMath.h ****  */
+ 228:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorSum(const FusionVector vector) {
+ 229:Core/Inc/Fusion/FusionMath.h ****     return vector.axis.x + vector.axis.y + vector.axis.z;
+ 230:Core/Inc/Fusion/FusionMath.h **** }
+ 231:Core/Inc/Fusion/FusionMath.h **** 
+ 232:Core/Inc/Fusion/FusionMath.h **** /**
+ 233:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the multiplication of a vector by a scalar.
+ 234:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 235:Core/Inc/Fusion/FusionMath.h ****  * @param scalar Scalar.
+ 236:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of a vector by a scalar.
+ 237:Core/Inc/Fusion/FusionMath.h ****  */
+ 238:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorMultiplyScalar(const FusionVector vector, const float scalar
+ 239:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 240:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vector.axis.x * scalar;
+ 241:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vector.axis.y * scalar;
+ 242:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vector.axis.z * scalar;
+ 243:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 244:Core/Inc/Fusion/FusionMath.h **** }
+ 245:Core/Inc/Fusion/FusionMath.h **** 
+ 246:Core/Inc/Fusion/FusionMath.h **** /**
+ARM GAS  /tmp/ccNflO0v.s 			page 8
+
+
+ 247:Core/Inc/Fusion/FusionMath.h ****  * @brief Calculates the Hadamard product (element-wise multiplication).
+ 248:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 249:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 250:Core/Inc/Fusion/FusionMath.h ****  * @return Hadamard product.
+ 251:Core/Inc/Fusion/FusionMath.h ****  */
+ 252:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorHadamardProduct(const FusionVector vectorA, const FusionVect
+ 128              		.loc 2 252 28 is_stmt 1 view .LVU17
+ 129              	.LBB17:
+ 253:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 130              		.loc 2 253 5 view .LVU18
+ 254:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x * vectorB.axis.x;
+ 131              		.loc 2 254 5 view .LVU19
+ 132              		.loc 2 254 36 is_stmt 0 view .LVU20
+ 133 006c 5946     		mov	r1, fp
+ 134 006e 0898     		ldr	r0, [sp, #32]
+ 135 0070 FFF7FEFF 		bl	__aeabi_fmul
+ 136              	.LVL6:
+ 137              		.loc 2 254 19 view .LVU21
+ 138 0074 0B90     		str	r0, [sp, #44]
+ 255:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
+ 139              		.loc 2 255 5 is_stmt 1 view .LVU22
+ 140              		.loc 2 255 36 is_stmt 0 view .LVU23
+ 141 0076 5146     		mov	r1, r10
+ 142 0078 6868     		ldr	r0, [r5, #4]
+ 143 007a FFF7FEFF 		bl	__aeabi_fmul
+ 144              	.LVL7:
+ 145              		.loc 2 255 19 view .LVU24
+ 146 007e 0C90     		str	r0, [sp, #48]
+ 256:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z * vectorB.axis.z;
+ 147              		.loc 2 256 5 is_stmt 1 view .LVU25
+ 148              		.loc 2 256 36 is_stmt 0 view .LVU26
+ 149 0080 4946     		mov	r1, r9
+ 150 0082 A868     		ldr	r0, [r5, #8]
+ 151 0084 FFF7FEFF 		bl	__aeabi_fmul
+ 152              	.LVL8:
+ 153              		.loc 2 256 19 view .LVU27
+ 154 0088 0D90     		str	r0, [sp, #52]
+ 257:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 155              		.loc 2 257 5 is_stmt 1 view .LVU28
+ 156              		.loc 2 257 12 is_stmt 0 view .LVU29
+ 157 008a 17AB     		add	r3, sp, #92
+ 158 008c 9C46     		mov	ip, r3
+ 159 008e 2100     		movs	r1, r4
+ 160 0090 85C9     		ldmia	r1!, {r0, r2, r7}
+ 161 0092 85C3     		stmia	r3!, {r0, r2, r7}
+ 162 0094 2100     		movs	r1, r4
+ 163 0096 24AB     		add	r3, sp, #144
+ 164 0098 85CB     		ldmia	r3!, {r0, r2, r7}
+ 165 009a 85C1     		stmia	r1!, {r0, r2, r7}
+ 166 009c 85CB     		ldmia	r3!, {r0, r2, r7}
+ 167 009e 85C1     		stmia	r1!, {r0, r2, r7}
+ 168 00a0 85CB     		ldmia	r3!, {r0, r2, r7}
+ 169 00a2 85C1     		stmia	r1!, {r0, r2, r7}
+ 170 00a4 3300     		movs	r3, r6
+ 171 00a6 6246     		mov	r2, ip
+ 172 00a8 83CA     		ldmia	r2!, {r0, r1, r7}
+ 173 00aa 83C3     		stmia	r3!, {r0, r1, r7}
+ARM GAS  /tmp/ccNflO0v.s 			page 9
+
+
+ 174              	.LBE17:
+ 175              	.LBE16:
+ 176              	.LBB18:
+ 177              	.LBI18:
+ 258:Core/Inc/Fusion/FusionMath.h **** }
+ 259:Core/Inc/Fusion/FusionMath.h **** 
+ 260:Core/Inc/Fusion/FusionMath.h **** /**
+ 261:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the cross product.
+ 262:Core/Inc/Fusion/FusionMath.h ****  * @param vectorA Vector A.
+ 263:Core/Inc/Fusion/FusionMath.h ****  * @param vectorB Vector B.
+ 264:Core/Inc/Fusion/FusionMath.h ****  * @return Cross product.
+ 265:Core/Inc/Fusion/FusionMath.h ****  */
+ 266:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorCrossProduct(const FusionVector vectorA, const FusionVector 
+ 267:Core/Inc/Fusion/FusionMath.h **** #define A vectorA.axis
+ 268:Core/Inc/Fusion/FusionMath.h **** #define B vectorB.axis
+ 269:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 270:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = A.y * B.z - A.z * B.y;
+ 271:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = A.z * B.x - A.x * B.z;
+ 272:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = A.x * B.y - A.y * B.x;
+ 273:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 274:Core/Inc/Fusion/FusionMath.h **** #undef A
+ 275:Core/Inc/Fusion/FusionMath.h **** #undef B
+ 276:Core/Inc/Fusion/FusionMath.h **** }
+ 277:Core/Inc/Fusion/FusionMath.h **** 
+ 278:Core/Inc/Fusion/FusionMath.h **** /**
+ 279:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the vector magnitude squared.
+ 280:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 281:Core/Inc/Fusion/FusionMath.h ****  * @return Vector magnitude squared.
+ 282:Core/Inc/Fusion/FusionMath.h ****  */
+ 283:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorMagnitudeSquared(const FusionVector vector) {
+ 284:Core/Inc/Fusion/FusionMath.h ****     return FusionVectorSum(FusionVectorHadamardProduct(vector, vector));
+ 285:Core/Inc/Fusion/FusionMath.h **** }
+ 286:Core/Inc/Fusion/FusionMath.h **** 
+ 287:Core/Inc/Fusion/FusionMath.h **** /**
+ 288:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the vector magnitude.
+ 289:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 290:Core/Inc/Fusion/FusionMath.h ****  * @return Vector magnitude.
+ 291:Core/Inc/Fusion/FusionMath.h ****  */
+ 292:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorMagnitude(const FusionVector vector) {
+ 293:Core/Inc/Fusion/FusionMath.h ****     return sqrtf(FusionVectorMagnitudeSquared(vector));
+ 294:Core/Inc/Fusion/FusionMath.h **** }
+ 295:Core/Inc/Fusion/FusionMath.h **** 
+ 296:Core/Inc/Fusion/FusionMath.h **** /**
+ 297:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the normalised vector.
+ 298:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 299:Core/Inc/Fusion/FusionMath.h ****  * @return Normalised vector.
+ 300:Core/Inc/Fusion/FusionMath.h ****  */
+ 301:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorNormalise(const FusionVector vector) {
+ 302:Core/Inc/Fusion/FusionMath.h **** #ifdef FUSION_USE_NORMAL_SQRT
+ 303:Core/Inc/Fusion/FusionMath.h ****     const float magnitudeReciprocal = 1.0f / sqrtf(FusionVectorMagnitudeSquared(vector));
+ 304:Core/Inc/Fusion/FusionMath.h **** #else
+ 305:Core/Inc/Fusion/FusionMath.h ****     const float magnitudeReciprocal = FusionFastInverseSqrt(FusionVectorMagnitudeSquared(vector));
+ 306:Core/Inc/Fusion/FusionMath.h **** #endif
+ 307:Core/Inc/Fusion/FusionMath.h ****     return FusionVectorMultiplyScalar(vector, magnitudeReciprocal);
+ 308:Core/Inc/Fusion/FusionMath.h **** }
+ 309:Core/Inc/Fusion/FusionMath.h **** 
+ 310:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ARM GAS  /tmp/ccNflO0v.s 			page 10
+
+
+ 311:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Quaternion operations
+ 312:Core/Inc/Fusion/FusionMath.h **** 
+ 313:Core/Inc/Fusion/FusionMath.h **** /**
+ 314:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of two quaternions.
+ 315:Core/Inc/Fusion/FusionMath.h ****  * @param quaternionA Quaternion A.
+ 316:Core/Inc/Fusion/FusionMath.h ****  * @param quaternionB Quaternion B.
+ 317:Core/Inc/Fusion/FusionMath.h ****  * @return Sum of two quaternions.
+ 318:Core/Inc/Fusion/FusionMath.h ****  */
+ 319:Core/Inc/Fusion/FusionMath.h **** static inline FusionQuaternion FusionQuaternionAdd(const FusionQuaternion quaternionA, const Fusion
+ 320:Core/Inc/Fusion/FusionMath.h ****     FusionQuaternion result;
+ 321:Core/Inc/Fusion/FusionMath.h ****     result.element.w = quaternionA.element.w + quaternionB.element.w;
+ 322:Core/Inc/Fusion/FusionMath.h ****     result.element.x = quaternionA.element.x + quaternionB.element.x;
+ 323:Core/Inc/Fusion/FusionMath.h ****     result.element.y = quaternionA.element.y + quaternionB.element.y;
+ 324:Core/Inc/Fusion/FusionMath.h ****     result.element.z = quaternionA.element.z + quaternionB.element.z;
+ 325:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 326:Core/Inc/Fusion/FusionMath.h **** }
+ 327:Core/Inc/Fusion/FusionMath.h **** 
+ 328:Core/Inc/Fusion/FusionMath.h **** /**
+ 329:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the multiplication of two quaternions.
+ 330:Core/Inc/Fusion/FusionMath.h ****  * @param quaternionA Quaternion A (to be post-multiplied).
+ 331:Core/Inc/Fusion/FusionMath.h ****  * @param quaternionB Quaternion B (to be pre-multiplied).
+ 332:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of two quaternions.
+ 333:Core/Inc/Fusion/FusionMath.h ****  */
+ 334:Core/Inc/Fusion/FusionMath.h **** static inline FusionQuaternion FusionQuaternionMultiply(const FusionQuaternion quaternionA, const F
+ 335:Core/Inc/Fusion/FusionMath.h **** #define A quaternionA.element
+ 336:Core/Inc/Fusion/FusionMath.h **** #define B quaternionB.element
+ 337:Core/Inc/Fusion/FusionMath.h ****     FusionQuaternion result;
+ 338:Core/Inc/Fusion/FusionMath.h ****     result.element.w = A.w * B.w - A.x * B.x - A.y * B.y - A.z * B.z;
+ 339:Core/Inc/Fusion/FusionMath.h ****     result.element.x = A.w * B.x + A.x * B.w + A.y * B.z - A.z * B.y;
+ 340:Core/Inc/Fusion/FusionMath.h ****     result.element.y = A.w * B.y - A.x * B.z + A.y * B.w + A.z * B.x;
+ 341:Core/Inc/Fusion/FusionMath.h ****     result.element.z = A.w * B.z + A.x * B.y - A.y * B.x + A.z * B.w;
+ 342:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 343:Core/Inc/Fusion/FusionMath.h **** #undef A
+ 344:Core/Inc/Fusion/FusionMath.h **** #undef B
+ 345:Core/Inc/Fusion/FusionMath.h **** }
+ 346:Core/Inc/Fusion/FusionMath.h **** 
+ 347:Core/Inc/Fusion/FusionMath.h **** /**
+ 348:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the multiplication of a quaternion with a vector.  This is a
+ 349:Core/Inc/Fusion/FusionMath.h ****  * normal quaternion multiplication where the vector is treated a
+ 350:Core/Inc/Fusion/FusionMath.h ****  * quaternion with a W element value of zero.  The quaternion is post-
+ 351:Core/Inc/Fusion/FusionMath.h ****  * multiplied by the vector.
+ 352:Core/Inc/Fusion/FusionMath.h ****  * @param quaternion Quaternion.
+ 353:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 354:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of a quaternion with a vector.
+ 355:Core/Inc/Fusion/FusionMath.h ****  */
+ 356:Core/Inc/Fusion/FusionMath.h **** static inline FusionQuaternion FusionQuaternionMultiplyVector(const FusionQuaternion quaternion, co
+ 357:Core/Inc/Fusion/FusionMath.h **** #define Q quaternion.element
+ 358:Core/Inc/Fusion/FusionMath.h **** #define V vector.axis
+ 359:Core/Inc/Fusion/FusionMath.h ****     FusionQuaternion result;
+ 360:Core/Inc/Fusion/FusionMath.h ****     result.element.w = -Q.x * V.x - Q.y * V.y - Q.z * V.z;
+ 361:Core/Inc/Fusion/FusionMath.h ****     result.element.x = Q.w * V.x + Q.y * V.z - Q.z * V.y;
+ 362:Core/Inc/Fusion/FusionMath.h ****     result.element.y = Q.w * V.y - Q.x * V.z + Q.z * V.x;
+ 363:Core/Inc/Fusion/FusionMath.h ****     result.element.z = Q.w * V.z + Q.x * V.y - Q.y * V.x;
+ 364:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 365:Core/Inc/Fusion/FusionMath.h **** #undef Q
+ 366:Core/Inc/Fusion/FusionMath.h **** #undef V
+ 367:Core/Inc/Fusion/FusionMath.h **** }
+ARM GAS  /tmp/ccNflO0v.s 			page 11
+
+
+ 368:Core/Inc/Fusion/FusionMath.h **** 
+ 369:Core/Inc/Fusion/FusionMath.h **** /**
+ 370:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the normalised quaternion.
+ 371:Core/Inc/Fusion/FusionMath.h ****  * @param quaternion Quaternion.
+ 372:Core/Inc/Fusion/FusionMath.h ****  * @return Normalised quaternion.
+ 373:Core/Inc/Fusion/FusionMath.h ****  */
+ 374:Core/Inc/Fusion/FusionMath.h **** static inline FusionQuaternion FusionQuaternionNormalise(const FusionQuaternion quaternion) {
+ 375:Core/Inc/Fusion/FusionMath.h **** #define Q quaternion.element
+ 376:Core/Inc/Fusion/FusionMath.h **** #ifdef FUSION_USE_NORMAL_SQRT
+ 377:Core/Inc/Fusion/FusionMath.h ****     const float magnitudeReciprocal = 1.0f / sqrtf(Q.w * Q.w + Q.x * Q.x + Q.y * Q.y + Q.z * Q.z);
+ 378:Core/Inc/Fusion/FusionMath.h **** #else
+ 379:Core/Inc/Fusion/FusionMath.h ****     const float magnitudeReciprocal = FusionFastInverseSqrt(Q.w * Q.w + Q.x * Q.x + Q.y * Q.y + Q.z
+ 380:Core/Inc/Fusion/FusionMath.h **** #endif
+ 381:Core/Inc/Fusion/FusionMath.h ****     FusionQuaternion normalisedQuaternion;
+ 382:Core/Inc/Fusion/FusionMath.h ****     normalisedQuaternion.element.w = Q.w * magnitudeReciprocal;
+ 383:Core/Inc/Fusion/FusionMath.h ****     normalisedQuaternion.element.x = Q.x * magnitudeReciprocal;
+ 384:Core/Inc/Fusion/FusionMath.h ****     normalisedQuaternion.element.y = Q.y * magnitudeReciprocal;
+ 385:Core/Inc/Fusion/FusionMath.h ****     normalisedQuaternion.element.z = Q.z * magnitudeReciprocal;
+ 386:Core/Inc/Fusion/FusionMath.h ****     return normalisedQuaternion;
+ 387:Core/Inc/Fusion/FusionMath.h **** #undef Q
+ 388:Core/Inc/Fusion/FusionMath.h **** }
+ 389:Core/Inc/Fusion/FusionMath.h **** 
+ 390:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
+ 391:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Matrix operations
+ 392:Core/Inc/Fusion/FusionMath.h **** 
+ 393:Core/Inc/Fusion/FusionMath.h **** /**
+ 394:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the multiplication of a matrix with a vector.
+ 395:Core/Inc/Fusion/FusionMath.h ****  * @param matrix Matrix.
+ 396:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
+ 397:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of a matrix with a vector.
+ 398:Core/Inc/Fusion/FusionMath.h ****  */
+ 399:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionMatrixMultiplyVector(const FusionMatrix matrix, const FusionVector
+ 178              		.loc 2 399 28 is_stmt 1 view .LVU30
+ 179              	.LBB19:
+ 400:Core/Inc/Fusion/FusionMath.h **** #define R matrix.element
+ 401:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 180              		.loc 2 401 5 view .LVU31
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = R.xx * vector.axis.x + R.xy * vector.axis.y + R.xz * vector.axis.z;
+ 181              		.loc 2 402 5 view .LVU32
+ 182              		.loc 2 402 39 is_stmt 0 view .LVU33
+ 183 00ac 059B     		ldr	r3, [sp, #20]
+ 184 00ae 9A46     		mov	r10, r3
+ 185              		.loc 2 402 26 view .LVU34
+ 186 00b0 191C     		adds	r1, r3, #0
+ 187 00b2 0B98     		ldr	r0, [sp, #44]
+ 188 00b4 FFF7FEFF 		bl	__aeabi_fmul
+ 189              	.LVL9:
+ 190 00b8 8046     		mov	r8, r0
+ 191              		.loc 2 402 62 view .LVU35
+ 192 00ba 069B     		ldr	r3, [sp, #24]
+ 193 00bc 9946     		mov	r9, r3
+ 194              		.loc 2 402 49 view .LVU36
+ 195 00be 191C     		adds	r1, r3, #0
+ 196 00c0 0C98     		ldr	r0, [sp, #48]
+ 197 00c2 FFF7FEFF 		bl	__aeabi_fmul
+ 198              	.LVL10:
+ 199 00c6 011C     		adds	r1, r0, #0
+ARM GAS  /tmp/ccNflO0v.s 			page 12
+
+
+ 200              		.loc 2 402 42 view .LVU37
+ 201 00c8 4046     		mov	r0, r8
+ 202 00ca FFF7FEFF 		bl	__aeabi_fadd
+ 203              	.LVL11:
+ 204 00ce 8346     		mov	fp, r0
+ 205              		.loc 2 402 85 view .LVU38
+ 206 00d0 079B     		ldr	r3, [sp, #28]
+ 207 00d2 9846     		mov	r8, r3
+ 208              		.loc 2 402 72 view .LVU39
+ 209 00d4 191C     		adds	r1, r3, #0
+ 210 00d6 0D98     		ldr	r0, [sp, #52]
+ 211 00d8 FFF7FEFF 		bl	__aeabi_fmul
+ 212              	.LVL12:
+ 213 00dc 011C     		adds	r1, r0, #0
+ 214              		.loc 2 402 65 view .LVU40
+ 215 00de 5846     		mov	r0, fp
+ 216 00e0 FFF7FEFF 		bl	__aeabi_fadd
+ 217              	.LVL13:
+ 218              		.loc 2 402 19 view .LVU41
+ 219 00e4 0890     		str	r0, [sp, #32]
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 220              		.loc 2 403 5 is_stmt 1 view .LVU42
+ 221              		.loc 2 403 26 is_stmt 0 view .LVU43
+ 222 00e6 0E99     		ldr	r1, [sp, #56]
+ 223 00e8 5046     		mov	r0, r10
+ 224 00ea FFF7FEFF 		bl	__aeabi_fmul
+ 225              	.LVL14:
+ 226 00ee 061C     		adds	r6, r0, #0
+ 227              		.loc 2 403 49 view .LVU44
+ 228 00f0 0F99     		ldr	r1, [sp, #60]
+ 229 00f2 4846     		mov	r0, r9
+ 230 00f4 FFF7FEFF 		bl	__aeabi_fmul
+ 231              	.LVL15:
+ 232 00f8 011C     		adds	r1, r0, #0
+ 233              		.loc 2 403 42 view .LVU45
+ 234 00fa 301C     		adds	r0, r6, #0
+ 235 00fc FFF7FEFF 		bl	__aeabi_fadd
+ 236              	.LVL16:
+ 237 0100 061C     		adds	r6, r0, #0
+ 238              		.loc 2 403 72 view .LVU46
+ 239 0102 1099     		ldr	r1, [sp, #64]
+ 240 0104 4046     		mov	r0, r8
+ 241 0106 FFF7FEFF 		bl	__aeabi_fmul
+ 242              	.LVL17:
+ 243 010a 011C     		adds	r1, r0, #0
+ 244              		.loc 2 403 65 view .LVU47
+ 245 010c 301C     		adds	r0, r6, #0
+ 246 010e FFF7FEFF 		bl	__aeabi_fadd
+ 247              	.LVL18:
+ 248              		.loc 2 403 19 view .LVU48
+ 249 0112 6860     		str	r0, [r5, #4]
+ 404:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 250              		.loc 2 404 5 is_stmt 1 view .LVU49
+ 251              		.loc 2 404 26 is_stmt 0 view .LVU50
+ 252 0114 1199     		ldr	r1, [sp, #68]
+ 253 0116 5046     		mov	r0, r10
+ 254 0118 FFF7FEFF 		bl	__aeabi_fmul
+ARM GAS  /tmp/ccNflO0v.s 			page 13
+
+
+ 255              	.LVL19:
+ 256 011c 061C     		adds	r6, r0, #0
+ 257              		.loc 2 404 49 view .LVU51
+ 258 011e 1299     		ldr	r1, [sp, #72]
+ 259 0120 4846     		mov	r0, r9
+ 260 0122 FFF7FEFF 		bl	__aeabi_fmul
+ 261              	.LVL20:
+ 262 0126 011C     		adds	r1, r0, #0
+ 263              		.loc 2 404 42 view .LVU52
+ 264 0128 301C     		adds	r0, r6, #0
+ 265 012a FFF7FEFF 		bl	__aeabi_fadd
+ 266              	.LVL21:
+ 267 012e 061C     		adds	r6, r0, #0
+ 268              		.loc 2 404 68 view .LVU53
+ 269 0130 1399     		ldr	r1, [sp, #76]
+ 270              		.loc 2 404 72 view .LVU54
+ 271 0132 4046     		mov	r0, r8
+ 272 0134 FFF7FEFF 		bl	__aeabi_fmul
+ 273              	.LVL22:
+ 274 0138 011C     		adds	r1, r0, #0
+ 275              		.loc 2 404 65 view .LVU55
+ 276 013a 301C     		adds	r0, r6, #0
+ 277 013c FFF7FEFF 		bl	__aeabi_fadd
+ 278              	.LVL23:
+ 279              		.loc 2 404 19 view .LVU56
+ 280 0140 A860     		str	r0, [r5, #8]
+ 405:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 281              		.loc 2 405 5 is_stmt 1 view .LVU57
+ 282              		.loc 2 405 12 is_stmt 0 view .LVU58
+ 283 0142 009C     		ldr	r4, [sp]
+ 284 0144 2300     		movs	r3, r4
+ 285 0146 07CD     		ldmia	r5!, {r0, r1, r2}
+ 286 0148 07C3     		stmia	r3!, {r0, r1, r2}
+ 287              	.LVL24:
+ 288              		.loc 2 405 12 view .LVU59
+ 289              	.LBE19:
+ 290              	.LBE18:
+  28:Core/Inc/Fusion/FusionCalibration.h **** }
+ 291              		.loc 1 28 1 view .LVU60
+ 292 014a 2000     		movs	r0, r4
+ 293 014c 1BB0     		add	sp, sp, #108
+ 294              		@ sp needed
+ 295 014e F0BC     		pop	{r4, r5, r6, r7}
+ 296 0150 BB46     		mov	fp, r7
+ 297 0152 B246     		mov	r10, r6
+ 298 0154 A946     		mov	r9, r5
+ 299 0156 A046     		mov	r8, r4
+ 300 0158 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 301              		.cfi_endproc
+ 302              	.LFE353:
+ 304              		.section	.rodata.StartDefaultTask.str1.4,"aMS",%progbits,1
+ 305              		.align	2
+ 306              	.LC9:
+ 307 0000 626F625F 		.ascii	"bob_imu\000"
+ 307      696D7500 
+ 308              		.align	2
+ 309              	.LC11:
+ARM GAS  /tmp/ccNflO0v.s 			page 14
+
+
+ 310 0008 00       		.ascii	"\000"
+ 311 0009 000000   		.align	2
+ 312              	.LC13:
+ 313 000c 62696672 		.ascii	"bifrost_node\000"
+ 313      6F73745F 
+ 313      6E6F6465 
+ 313      00
+ 314 0019 000000   		.align	2
+ 315              	.LC15:
+ 316 001c 494D555F 		.ascii	"IMU_data\000"
+ 316      64617461 
+ 316      00
+ 317              		.global	__aeabi_fdiv
+ 318              		.global	__aeabi_ui2f
+ 319              		.global	__aeabi_f2d
+ 320              		.section	.text.StartDefaultTask,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	StartDefaultTask
+ 323              		.syntax unified
+ 324              		.code	16
+ 325              		.thumb_func
+ 326              		.fpu softvfp
+ 328              	StartDefaultTask:
+ 329              	.LVL25:
+ 330              	.LFB356:
+ 331              		.file 3 "Core/Src/app_freertos.c"
+   1:Core/Src/app_freertos.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/app_freertos.c **** /**
+   3:Core/Src/app_freertos.c ****   ******************************************************************************
+   4:Core/Src/app_freertos.c ****   * File Name          : app_freertos.c
+   5:Core/Src/app_freertos.c ****   * Description        : Code for freertos applications
+   6:Core/Src/app_freertos.c ****   ******************************************************************************
+   7:Core/Src/app_freertos.c ****   * @attention
+   8:Core/Src/app_freertos.c ****   *
+   9:Core/Src/app_freertos.c ****   * Copyright (c) 2022 STMicroelectronics.
+  10:Core/Src/app_freertos.c ****   * All rights reserved.
+  11:Core/Src/app_freertos.c ****   *
+  12:Core/Src/app_freertos.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Core/Src/app_freertos.c ****   * in the root directory of this software component.
+  14:Core/Src/app_freertos.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Core/Src/app_freertos.c ****   *
+  16:Core/Src/app_freertos.c ****   ******************************************************************************
+  17:Core/Src/app_freertos.c ****   */
+  18:Core/Src/app_freertos.c **** /* USER CODE END Header */
+  19:Core/Src/app_freertos.c **** 
+  20:Core/Src/app_freertos.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/app_freertos.c **** #include "FreeRTOS.h"
+  22:Core/Src/app_freertos.c **** #include "task.h"
+  23:Core/Src/app_freertos.c **** #include "main.h"
+  24:Core/Src/app_freertos.c **** #include "cmsis_os.h"
+  25:Core/Src/app_freertos.c **** 
+  26:Core/Src/app_freertos.c **** /* Private includes ----------------------------------------------------------*/
+  27:Core/Src/app_freertos.c **** /* USER CODE BEGIN Includes */
+  28:Core/Src/app_freertos.c **** #include <rcl/rcl.h>
+  29:Core/Src/app_freertos.c **** #include <rcl/error_handling.h>
+  30:Core/Src/app_freertos.c **** #include <rclc/rclc.h>
+  31:Core/Src/app_freertos.c **** #include <rclc/executor.h>
+ARM GAS  /tmp/ccNflO0v.s 			page 15
+
+
+  32:Core/Src/app_freertos.c **** #include <uxr/client/transport.h>
+  33:Core/Src/app_freertos.c **** #include <rmw_microxrcedds_c/config.h>
+  34:Core/Src/app_freertos.c **** #include <rmw_microros/rmw_microros.h>
+  35:Core/Src/app_freertos.c **** 
+  36:Core/Src/app_freertos.c **** #include <std_msgs/msg/int32.h>
+  37:Core/Src/app_freertos.c **** #include <sensor_msgs/msg/imu.h>
+  38:Core/Src/app_freertos.c **** 
+  39:Core/Src/app_freertos.c **** #include <stdbool.h>
+  40:Core/Src/app_freertos.c **** #include <usart.h>
+  41:Core/Src/app_freertos.c **** 
+  42:Core/Src/app_freertos.c **** #include "mpu_9250.h"
+  43:Core/Src/app_freertos.c **** #include "printf.h"
+  44:Core/Src/app_freertos.c **** #include "Fusion/Fusion.h"
+  45:Core/Src/app_freertos.c **** /* USER CODE END Includes */
+  46:Core/Src/app_freertos.c **** 
+  47:Core/Src/app_freertos.c **** /* Private typedef -----------------------------------------------------------*/
+  48:Core/Src/app_freertos.c **** /* USER CODE BEGIN PTD */
+  49:Core/Src/app_freertos.c **** 
+  50:Core/Src/app_freertos.c **** /* USER CODE END PTD */
+  51:Core/Src/app_freertos.c **** 
+  52:Core/Src/app_freertos.c **** /* Private define ------------------------------------------------------------*/
+  53:Core/Src/app_freertos.c **** /* USER CODE BEGIN PD */
+  54:Core/Src/app_freertos.c **** #define SAMPLE_RATE (100)
+  55:Core/Src/app_freertos.c **** /* USER CODE END PD */
+  56:Core/Src/app_freertos.c **** 
+  57:Core/Src/app_freertos.c **** /* Private macro -------------------------------------------------------------*/
+  58:Core/Src/app_freertos.c **** /* USER CODE BEGIN PM */
+  59:Core/Src/app_freertos.c **** 
+  60:Core/Src/app_freertos.c **** /* USER CODE END PM */
+  61:Core/Src/app_freertos.c **** 
+  62:Core/Src/app_freertos.c **** /* Private variables ---------------------------------------------------------*/
+  63:Core/Src/app_freertos.c **** /* USER CODE BEGIN Variables */
+  64:Core/Src/app_freertos.c ****   // Define calibration
+  65:Core/Src/app_freertos.c ****   // sensitivity and alignment taken into account in mpu_9250.c
+  66:Core/Src/app_freertos.c **** const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+  67:Core/Src/app_freertos.c **** const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
+  68:Core/Src/app_freertos.c **** const FusionVector gyroscopeOffset = {103.0f, -35.0f, -10.0f};
+  69:Core/Src/app_freertos.c **** const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0
+  70:Core/Src/app_freertos.c **** const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
+  71:Core/Src/app_freertos.c **** const FusionVector accelerometerOffset = {0.0f, 0.05f, 0.0f};
+  72:Core/Src/app_freertos.c **** const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+  73:Core/Src/app_freertos.c **** const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
+  74:Core/Src/app_freertos.c **** 
+  75:Core/Src/app_freertos.c **** // Initialise algorithms
+  76:Core/Src/app_freertos.c **** FusionOffset offset;
+  77:Core/Src/app_freertos.c **** FusionAhrs ahrs;
+  78:Core/Src/app_freertos.c **** FusionQuaternion quarternion;
+  79:Core/Src/app_freertos.c **** 
+  80:Core/Src/app_freertos.c **** FusionVector gyroscope; // gyroscope data in degrees/s
+  81:Core/Src/app_freertos.c **** FusionVector accelerometer; // accelerometer data in g
+  82:Core/Src/app_freertos.c **** FusionVector magnetometer; // magnetometer data in arbitrary units
+  83:Core/Src/app_freertos.c **** 
+  84:Core/Src/app_freertos.c **** 
+  85:Core/Src/app_freertos.c **** // Set AHRS algorithm settings
+  86:Core/Src/app_freertos.c **** const FusionAhrsSettings settings = {
+  87:Core/Src/app_freertos.c ****         .gain = 1.0f,
+  88:Core/Src/app_freertos.c ****         .accelerationRejection = 10.0f,
+ARM GAS  /tmp/ccNflO0v.s 			page 16
+
+
+  89:Core/Src/app_freertos.c ****         .magneticRejection = 20.0f,
+  90:Core/Src/app_freertos.c ****         .rejectionTimeout = 5 * SAMPLE_RATE, /* 5 seconds */
+  91:Core/Src/app_freertos.c **** };
+  92:Core/Src/app_freertos.c **** 
+  93:Core/Src/app_freertos.c **** dataHandleIMU himu1;
+  94:Core/Src/app_freertos.c **** 
+  95:Core/Src/app_freertos.c **** uint32_t prevPoll = 0;
+  96:Core/Src/app_freertos.c **** uint32_t currPoll = 0;
+  97:Core/Src/app_freertos.c **** 
+  98:Core/Src/app_freertos.c **** double cov[9] = {0.05f, 0, 0, 0, 0.05f, 0, 0, 0, 0.05f};
+  99:Core/Src/app_freertos.c **** /* USER CODE END Variables */
+ 100:Core/Src/app_freertos.c **** /* Definitions for defaultTask */
+ 101:Core/Src/app_freertos.c **** osThreadId_t defaultTaskHandle;
+ 102:Core/Src/app_freertos.c **** const osThreadAttr_t defaultTask_attributes = {
+ 103:Core/Src/app_freertos.c ****   .name = "defaultTask",
+ 104:Core/Src/app_freertos.c ****   .priority = (osPriority_t) osPriorityNormal,
+ 105:Core/Src/app_freertos.c ****   .stack_size = 800 * 4
+ 106:Core/Src/app_freertos.c **** };
+ 107:Core/Src/app_freertos.c **** 
+ 108:Core/Src/app_freertos.c **** /* Private function prototypes -----------------------------------------------*/
+ 109:Core/Src/app_freertos.c **** /* USER CODE BEGIN FunctionPrototypes */
+ 110:Core/Src/app_freertos.c **** bool cubemx_transport_open(struct uxrCustomTransport * transport);
+ 111:Core/Src/app_freertos.c **** bool cubemx_transport_close(struct uxrCustomTransport * transport);
+ 112:Core/Src/app_freertos.c **** size_t cubemx_transport_write(struct uxrCustomTransport* transport, const uint8_t * buf, size_t len
+ 113:Core/Src/app_freertos.c **** size_t cubemx_transport_read(struct uxrCustomTransport* transport, uint8_t* buf, size_t len, int ti
+ 114:Core/Src/app_freertos.c **** 
+ 115:Core/Src/app_freertos.c **** void * microros_allocate(size_t size, void * state);
+ 116:Core/Src/app_freertos.c **** void microros_deallocate(void * pointer, void * state);
+ 117:Core/Src/app_freertos.c **** void * microros_reallocate(void * pointer, size_t size, void * state);
+ 118:Core/Src/app_freertos.c **** void * microros_zero_allocate(size_t number_of_elements, size_t size_of_element, void * state);
+ 119:Core/Src/app_freertos.c **** /* USER CODE END FunctionPrototypes */
+ 120:Core/Src/app_freertos.c **** 
+ 121:Core/Src/app_freertos.c **** void StartDefaultTask(void *argument);
+ 122:Core/Src/app_freertos.c **** 
+ 123:Core/Src/app_freertos.c **** void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+ 124:Core/Src/app_freertos.c **** 
+ 125:Core/Src/app_freertos.c **** /**
+ 126:Core/Src/app_freertos.c ****   * @brief  FreeRTOS initialization
+ 127:Core/Src/app_freertos.c ****   * @param  None
+ 128:Core/Src/app_freertos.c ****   * @retval None
+ 129:Core/Src/app_freertos.c ****   */
+ 130:Core/Src/app_freertos.c **** void MX_FREERTOS_Init(void) {
+ 131:Core/Src/app_freertos.c ****   /* USER CODE BEGIN Init */
+ 132:Core/Src/app_freertos.c ****   FusionOffsetInitialise(&offset, SAMPLE_RATE);
+ 133:Core/Src/app_freertos.c ****   FusionAhrsInitialise(&ahrs);
+ 134:Core/Src/app_freertos.c **** 
+ 135:Core/Src/app_freertos.c ****   FusionAhrsSetSettings(&ahrs, &settings);
+ 136:Core/Src/app_freertos.c ****   /* USER CODE END Init */
+ 137:Core/Src/app_freertos.c **** 
+ 138:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_MUTEX */
+ 139:Core/Src/app_freertos.c ****   /* add mutexes, ... */
+ 140:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_MUTEX */
+ 141:Core/Src/app_freertos.c **** 
+ 142:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_SEMAPHORES */
+ 143:Core/Src/app_freertos.c ****   /* add semaphores, ... */
+ 144:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_SEMAPHORES */
+ 145:Core/Src/app_freertos.c **** 
+ARM GAS  /tmp/ccNflO0v.s 			page 17
+
+
+ 146:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_TIMERS */
+ 147:Core/Src/app_freertos.c ****   /* start timers, add new ones, ... */
+ 148:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_TIMERS */
+ 149:Core/Src/app_freertos.c **** 
+ 150:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_QUEUES */
+ 151:Core/Src/app_freertos.c ****   /* add queues, ... */
+ 152:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_QUEUES */
+ 153:Core/Src/app_freertos.c **** 
+ 154:Core/Src/app_freertos.c ****   /* Create the thread(s) */
+ 155:Core/Src/app_freertos.c ****   /* creation of defaultTask */
+ 156:Core/Src/app_freertos.c ****   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+ 157:Core/Src/app_freertos.c **** 
+ 158:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_THREADS */
+ 159:Core/Src/app_freertos.c ****   /* add threads, ... */
+ 160:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_THREADS */
+ 161:Core/Src/app_freertos.c **** 
+ 162:Core/Src/app_freertos.c ****   /* USER CODE BEGIN RTOS_EVENTS */
+ 163:Core/Src/app_freertos.c ****   /* add events, ... */
+ 164:Core/Src/app_freertos.c ****   /* USER CODE END RTOS_EVENTS */
+ 165:Core/Src/app_freertos.c **** 
+ 166:Core/Src/app_freertos.c **** }
+ 167:Core/Src/app_freertos.c **** 
+ 168:Core/Src/app_freertos.c **** /* USER CODE BEGIN Header_StartDefaultTask */
+ 169:Core/Src/app_freertos.c **** /**
+ 170:Core/Src/app_freertos.c ****   * @brief  Function implementing the defaultTask thread.
+ 171:Core/Src/app_freertos.c ****   * @param  argument: Not used
+ 172:Core/Src/app_freertos.c ****   * @retval None
+ 173:Core/Src/app_freertos.c ****   */
+ 174:Core/Src/app_freertos.c **** /* USER CODE END Header_StartDefaultTask */
+ 175:Core/Src/app_freertos.c **** void StartDefaultTask(void *argument)
+ 176:Core/Src/app_freertos.c **** {
+ 332              		.loc 3 176 1 is_stmt 1 view -0
+ 333              		.cfi_startproc
+ 334              		@ args = 0, pretend = 0, frame = 640
+ 335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 336              		.loc 3 176 1 is_stmt 0 view .LVU62
+ 337 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 338              	.LCFI3:
+ 339              		.cfi_def_cfa_offset 20
+ 340              		.cfi_offset 4, -20
+ 341              		.cfi_offset 5, -16
+ 342              		.cfi_offset 6, -12
+ 343              		.cfi_offset 7, -8
+ 344              		.cfi_offset 14, -4
+ 345 0002 DE46     		mov	lr, fp
+ 346 0004 5746     		mov	r7, r10
+ 347 0006 4E46     		mov	r6, r9
+ 348 0008 4546     		mov	r5, r8
+ 349 000a E0B5     		push	{r5, r6, r7, lr}
+ 350              	.LCFI4:
+ 351              		.cfi_def_cfa_offset 36
+ 352              		.cfi_offset 8, -36
+ 353              		.cfi_offset 9, -32
+ 354              		.cfi_offset 10, -28
+ 355              		.cfi_offset 11, -24
+ 356 000c 4B4C     		ldr	r4, .L11
+ 357 000e A544     		add	sp, sp, r4
+ARM GAS  /tmp/ccNflO0v.s 			page 18
+
+
+ 358              	.LCFI5:
+ 359              		.cfi_def_cfa_offset 744
+ 177:Core/Src/app_freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
+ 178:Core/Src/app_freertos.c ****   /* Infinite loop */
+ 179:Core/Src/app_freertos.c ****   rmw_uros_set_custom_transport(
+ 360              		.loc 3 179 3 is_stmt 1 view .LVU63
+ 361 0010 4B4B     		ldr	r3, .L11+4
+ 362 0012 0193     		str	r3, [sp, #4]
+ 363 0014 4B4B     		ldr	r3, .L11+8
+ 364 0016 0093     		str	r3, [sp]
+ 365 0018 4B4B     		ldr	r3, .L11+12
+ 366 001a 4C4A     		ldr	r2, .L11+16
+ 367 001c 4C49     		ldr	r1, .L11+20
+ 368 001e 0120     		movs	r0, #1
+ 369              	.LVL26:
+ 370              		.loc 3 179 3 is_stmt 0 view .LVU64
+ 371 0020 FFF7FEFF 		bl	rmw_uros_set_custom_transport
+ 372              	.LVL27:
+ 180:Core/Src/app_freertos.c ****   true,
+ 181:Core/Src/app_freertos.c ****   (void *) &huart1,
+ 182:Core/Src/app_freertos.c ****   cubemx_transport_open,
+ 183:Core/Src/app_freertos.c ****   cubemx_transport_close,
+ 184:Core/Src/app_freertos.c ****   cubemx_transport_write,
+ 185:Core/Src/app_freertos.c ****   cubemx_transport_read);
+ 186:Core/Src/app_freertos.c **** 
+ 187:Core/Src/app_freertos.c ****   rcl_allocator_t freeRTOS_allocator = rcutils_get_zero_initialized_allocator();
+ 373              		.loc 3 187 3 is_stmt 1 view .LVU65
+ 374              		.loc 3 187 40 is_stmt 0 view .LVU66
+ 375 0024 A5A8     		add	r0, sp, #660
+ 376 0026 FFF7FEFF 		bl	rcutils_get_zero_initialized_allocator
+ 377              	.LVL28:
+ 188:Core/Src/app_freertos.c ****   freeRTOS_allocator.allocate = microros_allocate;
+ 378              		.loc 3 188 3 is_stmt 1 view .LVU67
+ 379              		.loc 3 188 31 is_stmt 0 view .LVU68
+ 380 002a 4A4B     		ldr	r3, .L11+24
+ 381 002c A593     		str	r3, [sp, #660]
+ 189:Core/Src/app_freertos.c ****   freeRTOS_allocator.deallocate = microros_deallocate;
+ 382              		.loc 3 189 3 is_stmt 1 view .LVU69
+ 383              		.loc 3 189 33 is_stmt 0 view .LVU70
+ 384 002e 4A4B     		ldr	r3, .L11+28
+ 385 0030 A693     		str	r3, [sp, #664]
+ 190:Core/Src/app_freertos.c ****   freeRTOS_allocator.reallocate = microros_reallocate;
+ 386              		.loc 3 190 3 is_stmt 1 view .LVU71
+ 387              		.loc 3 190 33 is_stmt 0 view .LVU72
+ 388 0032 4A4B     		ldr	r3, .L11+32
+ 389 0034 A793     		str	r3, [sp, #668]
+ 191:Core/Src/app_freertos.c ****   freeRTOS_allocator.zero_allocate =  microros_zero_allocate;
+ 390              		.loc 3 191 3 is_stmt 1 view .LVU73
+ 391              		.loc 3 191 36 is_stmt 0 view .LVU74
+ 392 0036 4A4B     		ldr	r3, .L11+36
+ 393 0038 A893     		str	r3, [sp, #672]
+ 192:Core/Src/app_freertos.c **** 
+ 193:Core/Src/app_freertos.c ****   rcutils_set_default_allocator(&freeRTOS_allocator);
+ 394              		.loc 3 193 3 is_stmt 1 view .LVU75
+ 395 003a A5A8     		add	r0, sp, #660
+ 396 003c FFF7FEFF 		bl	rcutils_set_default_allocator
+ 397              	.LVL29:
+ARM GAS  /tmp/ccNflO0v.s 			page 19
+
+
+ 194:Core/Src/app_freertos.c **** 
+ 195:Core/Src/app_freertos.c **** 
+ 196:Core/Src/app_freertos.c ****   // micro-ROS app
+ 197:Core/Src/app_freertos.c **** 
+ 198:Core/Src/app_freertos.c ****   rcl_publisher_t publisher;
+ 398              		.loc 3 198 3 view .LVU76
+ 199:Core/Src/app_freertos.c **** 
+ 200:Core/Src/app_freertos.c ****   rcl_allocator_t allocator;
+ 399              		.loc 3 200 3 view .LVU77
+ 201:Core/Src/app_freertos.c ****   rclc_support_t support;
+ 400              		.loc 3 201 3 view .LVU78
+ 202:Core/Src/app_freertos.c ****   rcl_node_t node;
+ 401              		.loc 3 202 3 view .LVU79
+ 203:Core/Src/app_freertos.c **** 
+ 204:Core/Src/app_freertos.c ****   volatile rcl_ret_t ret;
+ 402              		.loc 3 204 3 view .LVU80
+ 205:Core/Src/app_freertos.c ****   volatile bool err = true;
+ 403              		.loc 3 205 3 view .LVU81
+ 404              		.loc 3 205 17 is_stmt 0 view .LVU82
+ 405 0040 484B     		ldr	r3, .L11+40
+ 406 0042 04AA     		add	r2, sp, #16
+ 407 0044 9446     		mov	ip, r2
+ 408 0046 6344     		add	r3, r3, ip
+ 409 0048 0122     		movs	r2, #1
+ 410 004a 1A70     		strb	r2, [r3]
+ 206:Core/Src/app_freertos.c **** 
+ 207:Core/Src/app_freertos.c ****   std_msgs__msg__Int32 msg;
+ 411              		.loc 3 207 3 is_stmt 1 view .LVU83
+ 208:Core/Src/app_freertos.c **** 
+ 209:Core/Src/app_freertos.c ****   sensor_msgs__msg__Imu msg_imu;
+ 412              		.loc 3 209 3 view .LVU84
+ 210:Core/Src/app_freertos.c ****   rosidl_runtime_c__String frame_name;
+ 413              		.loc 3 210 3 view .LVU85
+ 211:Core/Src/app_freertos.c ****   frame_name.data = "bob_imu";
+ 414              		.loc 3 211 3 view .LVU86
+ 415              		.loc 3 211 19 is_stmt 0 view .LVU87
+ 416 004c 464B     		ldr	r3, .L11+44
+ 417 004e 3993     		str	r3, [sp, #228]
+ 212:Core/Src/app_freertos.c **** 
+ 213:Core/Src/app_freertos.c ****   allocator = rcl_get_default_allocator();
+ 418              		.loc 3 213 3 is_stmt 1 view .LVU88
+ 419              		.loc 3 213 15 is_stmt 0 view .LVU89
+ 420 0050 9FAC     		add	r4, sp, #636
+ 421 0052 14A8     		add	r0, sp, #80
+ 422 0054 FFF7FEFF 		bl	rcutils_get_default_allocator
+ 423              	.LVL30:
+ 424 0058 14AB     		add	r3, sp, #80
+ 425 005a 2200     		movs	r2, r4
+ 426 005c 23CB     		ldmia	r3!, {r0, r1, r5}
+ 427 005e 23C2     		stmia	r2!, {r0, r1, r5}
+ 428 0060 03CB     		ldmia	r3!, {r0, r1}
+ 429 0062 03C2     		stmia	r2!, {r0, r1}
+ 214:Core/Src/app_freertos.c **** 
+ 215:Core/Src/app_freertos.c ****   //create init_options
+ 216:Core/Src/app_freertos.c ****   ret = rclc_support_init(&support, 0, NULL, &allocator);
+ 430              		.loc 3 216 3 is_stmt 1 view .LVU90
+ 431              		.loc 3 216 9 is_stmt 0 view .LVU91
+ARM GAS  /tmp/ccNflO0v.s 			page 20
+
+
+ 432 0064 2300     		movs	r3, r4
+ 433 0066 0022     		movs	r2, #0
+ 434 0068 0021     		movs	r1, #0
+ 435 006a 91A8     		add	r0, sp, #580
+ 436 006c FFF7FEFF 		bl	rclc_support_init
+ 437              	.LVL31:
+ 438              		.loc 3 216 7 view .LVU92
+ 439 0070 8E90     		str	r0, [sp, #568]
+ 217:Core/Src/app_freertos.c ****   if (ret != RCL_RET_OK)
+ 440              		.loc 3 217 3 is_stmt 1 view .LVU93
+ 441              		.loc 3 217 11 is_stmt 0 view .LVU94
+ 442 0072 8E9B     		ldr	r3, [sp, #568]
+ 443              		.loc 3 217 6 view .LVU95
+ 444 0074 002B     		cmp	r3, #0
+ 445 0076 05D0     		beq	.L3
+ 218:Core/Src/app_freertos.c ****   {
+ 219:Core/Src/app_freertos.c ****     err = false; 
+ 446              		.loc 3 219 5 is_stmt 1 view .LVU96
+ 447              		.loc 3 219 9 is_stmt 0 view .LVU97
+ 448 0078 3A4B     		ldr	r3, .L11+40
+ 449 007a 04AA     		add	r2, sp, #16
+ 450 007c 9446     		mov	ip, r2
+ 451 007e 6344     		add	r3, r3, ip
+ 452 0080 0022     		movs	r2, #0
+ 453 0082 1A70     		strb	r2, [r3]
+ 454              	.L3:
+ 220:Core/Src/app_freertos.c ****   }
+ 221:Core/Src/app_freertos.c ****   // create node
+ 222:Core/Src/app_freertos.c ****   const char* node_name = "bifrost_node";
+ 455              		.loc 3 222 3 is_stmt 1 view .LVU98
+ 456              	.LVL32:
+ 223:Core/Src/app_freertos.c ****   const char * namespace = "";
+ 457              		.loc 3 223 3 view .LVU99
+ 224:Core/Src/app_freertos.c ****   ret = rclc_node_init_default(&node, node_name, namespace, &support);
+ 458              		.loc 3 224 3 view .LVU100
+ 459              		.loc 3 224 9 is_stmt 0 view .LVU101
+ 460 0084 91AB     		add	r3, sp, #580
+ 461 0086 394A     		ldr	r2, .L11+48
+ 462 0088 3949     		ldr	r1, .L11+52
+ 463 008a 8FA8     		add	r0, sp, #572
+ 464 008c FFF7FEFF 		bl	rclc_node_init_default
+ 465              	.LVL33:
+ 466              		.loc 3 224 7 view .LVU102
+ 467 0090 8E90     		str	r0, [sp, #568]
+ 225:Core/Src/app_freertos.c ****   if (ret != RCL_RET_OK)
+ 468              		.loc 3 225 3 is_stmt 1 view .LVU103
+ 469              		.loc 3 225 11 is_stmt 0 view .LVU104
+ 470 0092 8E9B     		ldr	r3, [sp, #568]
+ 471              		.loc 3 225 6 view .LVU105
+ 472 0094 002B     		cmp	r3, #0
+ 473 0096 05D0     		beq	.L4
+ 226:Core/Src/app_freertos.c ****   {
+ 227:Core/Src/app_freertos.c ****     err = false; 
+ 474              		.loc 3 227 5 is_stmt 1 view .LVU106
+ 475              		.loc 3 227 9 is_stmt 0 view .LVU107
+ 476 0098 324B     		ldr	r3, .L11+40
+ 477 009a 04AA     		add	r2, sp, #16
+ARM GAS  /tmp/ccNflO0v.s 			page 21
+
+
+ 478 009c 9446     		mov	ip, r2
+ 479 009e 6344     		add	r3, r3, ip
+ 480 00a0 0022     		movs	r2, #0
+ 481 00a2 1A70     		strb	r2, [r3]
+ 482              	.L4:
+ 228:Core/Src/app_freertos.c ****   }
+ 229:Core/Src/app_freertos.c **** 
+ 230:Core/Src/app_freertos.c ****   // create publisher 
+ 231:Core/Src/app_freertos.c ****   const char* topic_name = "IMU_data";
+ 483              		.loc 3 231 3 is_stmt 1 view .LVU108
+ 484              	.LVL34:
+ 232:Core/Src/app_freertos.c ****   ret = rclc_publisher_init_default(
+ 485              		.loc 3 232 3 view .LVU109
+ 486              		.loc 3 232 9 is_stmt 0 view .LVU110
+ 487 00a4 FFF7FEFF 		bl	rosidl_typesupport_c__get_message_type_support_handle__sensor_msgs__msg__Imu
+ 488              	.LVL35:
+ 489 00a8 0200     		movs	r2, r0
+ 490 00aa 324B     		ldr	r3, .L11+56
+ 491 00ac 8FA9     		add	r1, sp, #572
+ 492 00ae A4A8     		add	r0, sp, #656
+ 493 00b0 FFF7FEFF 		bl	rclc_publisher_init_default
+ 494              	.LVL36:
+ 495              		.loc 3 232 7 view .LVU111
+ 496 00b4 8E90     		str	r0, [sp, #568]
+ 233:Core/Src/app_freertos.c ****   &publisher,
+ 234:Core/Src/app_freertos.c ****   &node,
+ 235:Core/Src/app_freertos.c ****   ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
+ 236:Core/Src/app_freertos.c ****   topic_name);
+ 237:Core/Src/app_freertos.c ****   if (ret != RCL_RET_OK)
+ 497              		.loc 3 237 3 is_stmt 1 view .LVU112
+ 498              		.loc 3 237 11 is_stmt 0 view .LVU113
+ 499 00b6 8E9B     		ldr	r3, [sp, #568]
+ 500              		.loc 3 237 6 view .LVU114
+ 501 00b8 002B     		cmp	r3, #0
+ 502 00ba 05D0     		beq	.L5
+ 238:Core/Src/app_freertos.c ****   {
+ 239:Core/Src/app_freertos.c ****     err = false; 
+ 503              		.loc 3 239 5 is_stmt 1 view .LVU115
+ 504              		.loc 3 239 9 is_stmt 0 view .LVU116
+ 505 00bc 294B     		ldr	r3, .L11+40
+ 506 00be 04AA     		add	r2, sp, #16
+ 507 00c0 9446     		mov	ip, r2
+ 508 00c2 6344     		add	r3, r3, ip
+ 509 00c4 0022     		movs	r2, #0
+ 510 00c6 1A70     		strb	r2, [r3]
+ 511              	.L5:
+ 240:Core/Src/app_freertos.c ****   }
+ 241:Core/Src/app_freertos.c **** 
+ 242:Core/Src/app_freertos.c ****   msg.data = 0;
+ 512              		.loc 3 242 3 is_stmt 1 view .LVU117
+ 243:Core/Src/app_freertos.c **** 
+ 244:Core/Src/app_freertos.c ****   msg_imu.header.frame_id = frame_name;
+ 513              		.loc 3 244 3 view .LVU118
+ 514              		.loc 3 244 27 is_stmt 0 view .LVU119
+ 515 00c8 39AA     		add	r2, sp, #228
+ 516 00ca 3EAB     		add	r3, sp, #248
+ 517 00cc 13CA     		ldmia	r2!, {r0, r1, r4}
+ARM GAS  /tmp/ccNflO0v.s 			page 22
+
+
+ 518 00ce 13C3     		stmia	r3!, {r0, r1, r4}
+ 245:Core/Src/app_freertos.c ****   msg_imu.orientation.w = 1;
+ 519              		.loc 3 245 3 is_stmt 1 view .LVU120
+ 520              		.loc 3 245 25 is_stmt 0 view .LVU121
+ 521 00d0 0022     		movs	r2, #0
+ 522 00d2 294B     		ldr	r3, .L11+60
+ 523 00d4 4892     		str	r2, [sp, #288]
+ 524 00d6 4993     		str	r3, [sp, #292]
+ 246:Core/Src/app_freertos.c ****   msg_imu.orientation.x = 0;
+ 525              		.loc 3 246 3 is_stmt 1 view .LVU122
+ 526              		.loc 3 246 25 is_stmt 0 view .LVU123
+ 527 00d8 0022     		movs	r2, #0
+ 528 00da 0023     		movs	r3, #0
+ 529 00dc 4292     		str	r2, [sp, #264]
+ 530 00de 4393     		str	r3, [sp, #268]
+ 247:Core/Src/app_freertos.c ****   msg_imu.orientation.y = 0;
+ 531              		.loc 3 247 3 is_stmt 1 view .LVU124
+ 532              		.loc 3 247 25 is_stmt 0 view .LVU125
+ 533 00e0 4492     		str	r2, [sp, #272]
+ 534 00e2 4593     		str	r3, [sp, #276]
+ 248:Core/Src/app_freertos.c ****   msg_imu.orientation.z = 0;
+ 535              		.loc 3 248 3 is_stmt 1 view .LVU126
+ 536              		.loc 3 248 25 is_stmt 0 view .LVU127
+ 537 00e4 4692     		str	r2, [sp, #280]
+ 538 00e6 4793     		str	r3, [sp, #284]
+ 249:Core/Src/app_freertos.c **** 
+ 250:Core/Src/app_freertos.c ****   msg_imu.angular_velocity.x = 0;
+ 539              		.loc 3 250 3 is_stmt 1 view .LVU128
+ 540              		.loc 3 250 30 is_stmt 0 view .LVU129
+ 541 00e8 5C92     		str	r2, [sp, #368]
+ 542 00ea 5D93     		str	r3, [sp, #372]
+ 251:Core/Src/app_freertos.c ****   msg_imu.angular_velocity.y = 0;
+ 543              		.loc 3 251 3 is_stmt 1 view .LVU130
+ 544              		.loc 3 251 30 is_stmt 0 view .LVU131
+ 545 00ec 5E92     		str	r2, [sp, #376]
+ 546 00ee 5F93     		str	r3, [sp, #380]
+ 252:Core/Src/app_freertos.c ****   msg_imu.angular_velocity.z = 0;
+ 547              		.loc 3 252 3 is_stmt 1 view .LVU132
+ 548              		.loc 3 252 30 is_stmt 0 view .LVU133
+ 549 00f0 6092     		str	r2, [sp, #384]
+ 550 00f2 6193     		str	r3, [sp, #388]
+ 253:Core/Src/app_freertos.c **** 
+ 254:Core/Src/app_freertos.c ****   msg_imu.linear_acceleration.x = 0;
+ 551              		.loc 3 254 3 is_stmt 1 view .LVU134
+ 552              		.loc 3 254 33 is_stmt 0 view .LVU135
+ 553 00f4 7492     		str	r2, [sp, #464]
+ 554 00f6 7593     		str	r3, [sp, #468]
+ 255:Core/Src/app_freertos.c ****   msg_imu.linear_acceleration.y = 0;
+ 555              		.loc 3 255 3 is_stmt 1 view .LVU136
+ 556              		.loc 3 255 33 is_stmt 0 view .LVU137
+ 557 00f8 7692     		str	r2, [sp, #472]
+ 558 00fa 7793     		str	r3, [sp, #476]
+ 256:Core/Src/app_freertos.c ****   msg_imu.linear_acceleration.z = 0;
+ 559              		.loc 3 256 3 is_stmt 1 view .LVU138
+ 560              		.loc 3 256 33 is_stmt 0 view .LVU139
+ 561 00fc 7892     		str	r2, [sp, #480]
+ 562 00fe 7993     		str	r3, [sp, #484]
+ARM GAS  /tmp/ccNflO0v.s 			page 23
+
+
+ 257:Core/Src/app_freertos.c **** 
+ 258:Core/Src/app_freertos.c ****   for (int i = 0; i < 9; i++){
+ 563              		.loc 3 258 3 is_stmt 1 view .LVU140
+ 564              	.LBB28:
+ 565              		.loc 3 258 8 view .LVU141
+ 566              	.LVL37:
+ 567              		.loc 3 258 12 is_stmt 0 view .LVU142
+ 568 0100 0023     		movs	r3, #0
+ 569              		.loc 3 258 3 view .LVU143
+ 570 0102 18E0     		b	.L6
+ 571              	.LVL38:
+ 572              	.L7:
+ 259:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 573              		.loc 3 259 5 is_stmt 1 discriminator 3 view .LVU144
+ 574              		.loc 3 259 44 is_stmt 0 discriminator 3 view .LVU145
+ 575 0104 D900     		lsls	r1, r3, #3
+ 576 0106 1D4A     		ldr	r2, .L11+64
+ 577 0108 5218     		adds	r2, r2, r1
+ 578 010a 1068     		ldr	r0, [r2]
+ 579 010c 5168     		ldr	r1, [r2, #4]
+ 580              		.loc 3 259 39 discriminator 3 view .LVU146
+ 581 010e DA1D     		adds	r2, r3, #7
+ 582 0110 D200     		lsls	r2, r2, #3
+ 583 0112 3CAC     		add	r4, sp, #240
+ 584 0114 A446     		mov	ip, r4
+ 585 0116 6244     		add	r2, r2, ip
+ 586 0118 1060     		str	r0, [r2]
+ 587 011a 5160     		str	r1, [r2, #4]
+ 260:Core/Src/app_freertos.c ****     msg_imu.angular_velocity_covariance[i] = cov[i];
+ 588              		.loc 3 260 5 is_stmt 1 discriminator 3 view .LVU147
+ 589              		.loc 3 260 44 is_stmt 0 discriminator 3 view .LVU148
+ 590 011c 1A00     		movs	r2, r3
+ 591 011e 1332     		adds	r2, r2, #19
+ 592 0120 D200     		lsls	r2, r2, #3
+ 593 0122 6244     		add	r2, r2, ip
+ 594 0124 1060     		str	r0, [r2]
+ 595 0126 5160     		str	r1, [r2, #4]
+ 261:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration_covariance[i] = cov[i];
+ 596              		.loc 3 261 5 is_stmt 1 discriminator 3 view .LVU149
+ 597              		.loc 3 261 47 is_stmt 0 discriminator 3 view .LVU150
+ 598 0128 1A00     		movs	r2, r3
+ 599 012a 1F32     		adds	r2, r2, #31
+ 600 012c D200     		lsls	r2, r2, #3
+ 601 012e 6244     		add	r2, r2, ip
+ 602 0130 1060     		str	r0, [r2]
+ 603 0132 5160     		str	r1, [r2, #4]
+ 258:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 604              		.loc 3 258 26 is_stmt 1 discriminator 3 view .LVU151
+ 258:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 605              		.loc 3 258 27 is_stmt 0 discriminator 3 view .LVU152
+ 606 0134 0133     		adds	r3, r3, #1
+ 607              	.LVL39:
+ 608              	.L6:
+ 258:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 609              		.loc 3 258 19 is_stmt 1 discriminator 1 view .LVU153
+ 258:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 610              		.loc 3 258 3 is_stmt 0 discriminator 1 view .LVU154
+ARM GAS  /tmp/ccNflO0v.s 			page 24
+
+
+ 611 0136 082B     		cmp	r3, #8
+ 612 0138 E4DD     		ble	.L7
+ 613 013a 2EE0     		b	.L9
+ 614              	.L12:
+ 615              		.align	2
+ 616              	.L11:
+ 617 013c 3CFDFFFF 		.word	-708
+ 618 0140 00000000 		.word	cubemx_transport_read
+ 619 0144 00000000 		.word	cubemx_transport_write
+ 620 0148 00000000 		.word	cubemx_transport_close
+ 621 014c 00000000 		.word	cubemx_transport_open
+ 622 0150 00000000 		.word	huart1
+ 623 0154 00000000 		.word	microros_allocate
+ 624 0158 00000000 		.word	microros_deallocate
+ 625 015c 00000000 		.word	microros_reallocate
+ 626 0160 00000000 		.word	microros_zero_allocate
+ 627 0164 27020000 		.word	551
+ 628 0168 00000000 		.word	.LC9
+ 629 016c 08000000 		.word	.LC11
+ 630 0170 0C000000 		.word	.LC13
+ 631 0174 1C000000 		.word	.LC15
+ 632 0178 0000F03F 		.word	1072693248
+ 633 017c 00000000 		.word	.LANCHOR0
+ 634              	.LVL40:
+ 635              	.L10:
+ 258:Core/Src/app_freertos.c ****     msg_imu.orientation_covariance[i] = cov[i];
+ 636              		.loc 3 258 3 discriminator 1 view .LVU155
+ 637              	.LBE28:
+ 262:Core/Src/app_freertos.c ****   }
+ 263:Core/Src/app_freertos.c **** 
+ 264:Core/Src/app_freertos.c ****   for(;;)
+ 265:Core/Src/app_freertos.c ****   {
+ 266:Core/Src/app_freertos.c ****     currPoll = HAL_GetTick();
+ 267:Core/Src/app_freertos.c ****     
+ 268:Core/Src/app_freertos.c ****     if ((currPoll - prevPoll) >= (1/SAMPLE_RATE)*1000){
+ 269:Core/Src/app_freertos.c ****       IMU_measure(&himu1);
+ 270:Core/Src/app_freertos.c **** 
+ 271:Core/Src/app_freertos.c ****       // set values from imu
+ 272:Core/Src/app_freertos.c ****       gyroscope.axis.x = himu1.gx;
+ 273:Core/Src/app_freertos.c ****       gyroscope.axis.y = himu1.gy;
+ 274:Core/Src/app_freertos.c ****       gyroscope.axis.z = himu1.gz; 
+ 275:Core/Src/app_freertos.c **** 
+ 276:Core/Src/app_freertos.c ****       accelerometer.axis.x = himu1.ax / 3.7f;
+ 277:Core/Src/app_freertos.c ****       accelerometer.axis.y = himu1.ay / 3.7f;
+ 278:Core/Src/app_freertos.c ****       accelerometer.axis.z = himu1.az / 3.7f; 
+ 279:Core/Src/app_freertos.c **** 
+ 280:Core/Src/app_freertos.c ****       magnetometer.axis.x = himu1.mx;
+ 281:Core/Src/app_freertos.c ****       magnetometer.axis.y = himu1.my;
+ 282:Core/Src/app_freertos.c ****       magnetometer.axis.z = himu1.mz; 
+ 283:Core/Src/app_freertos.c **** 
+ 284:Core/Src/app_freertos.c ****       // Apply calibration
+ 285:Core/Src/app_freertos.c ****       gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity,
+ 286:Core/Src/app_freertos.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 287:Core/Src/app_freertos.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 288:Core/Src/app_freertos.c **** 
+ 289:Core/Src/app_freertos.c ****       // swap imu axes to axes of system
+ 290:Core/Src/app_freertos.c ****       // gyroscope = FusionAxesSwap(gyroscope, FusionAxesAlignmentPYNXPZ);
+ARM GAS  /tmp/ccNflO0v.s 			page 25
+
+
+ 291:Core/Src/app_freertos.c ****       // accelerometer = FusionAxesSwap(accelerometer, FusionAxesAlignmentPYNXPZ);
+ 292:Core/Src/app_freertos.c ****       // magnetometer = FusionAxesSwap(magnetometer, FusionAxesAlignmentPYNXPZ);
+ 293:Core/Src/app_freertos.c **** 
+ 294:Core/Src/app_freertos.c ****       // Update gyroscope offset correction algorithm
+ 295:Core/Src/app_freertos.c ****       gyroscope = FusionOffsetUpdate(&offset, gyroscope);
+ 296:Core/Src/app_freertos.c **** 
+ 297:Core/Src/app_freertos.c ****       // Calculate delta time (in seconds) to account for gyroscope sample clock error
+ 298:Core/Src/app_freertos.c ****       volatile float deltaTime = (float) (currPoll - prevPoll) / (float) 1000;
+ 299:Core/Src/app_freertos.c **** 
+ 300:Core/Src/app_freertos.c ****       // Update AHRS algorithm
+ 301:Core/Src/app_freertos.c ****       FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, deltaTime);
+ 302:Core/Src/app_freertos.c **** 
+ 303:Core/Src/app_freertos.c ****       // algorithm outputs
+ 304:Core/Src/app_freertos.c ****       quarternion = FusionAhrsGetQuaternion(&ahrs);
+ 305:Core/Src/app_freertos.c ****     }
+ 306:Core/Src/app_freertos.c **** 
+ 307:Core/Src/app_freertos.c ****     msg.data++;
+ 308:Core/Src/app_freertos.c ****     msg_imu.orientation.w = quarternion.element.w;
+ 309:Core/Src/app_freertos.c ****     msg_imu.orientation.x = quarternion.element.x;
+ 310:Core/Src/app_freertos.c ****     msg_imu.orientation.y = quarternion.element.y;
+ 311:Core/Src/app_freertos.c ****     msg_imu.orientation.z = quarternion.element.z;
+ 312:Core/Src/app_freertos.c **** 
+ 313:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.x = gyroscope.axis.x;
+ 314:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.y = gyroscope.axis.y;
+ 315:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.z = gyroscope.axis.z;
+ 316:Core/Src/app_freertos.c **** 
+ 317:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.x = accelerometer.axis.x;
+ 318:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.y = accelerometer.axis.y;
+ 319:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.z = accelerometer.axis.z;
+ 320:Core/Src/app_freertos.c **** 
+ 321:Core/Src/app_freertos.c ****     // rcl_ret_t ret = rcl_publish(&publisher, &msg_imu, NULL);
+ 322:Core/Src/app_freertos.c ****     // if (ret != RCL_RET_OK)
+ 323:Core/Src/app_freertos.c ****     // {
+ 324:Core/Src/app_freertos.c ****     //   // printf("Error publishing (line %d)\n", __LINE__); 
+ 325:Core/Src/app_freertos.c ****     // }
+ 326:Core/Src/app_freertos.c **** 
+ 327:Core/Src/app_freertos.c ****     ret = rcl_publish(&publisher, &msg_imu, NULL);
+ 328:Core/Src/app_freertos.c ****     if (ret != RCL_RET_OK)
+ 329:Core/Src/app_freertos.c ****     {
+ 330:Core/Src/app_freertos.c ****       err = false; 
+ 638              		.loc 3 330 7 is_stmt 1 view .LVU156
+ 639              		.loc 3 330 11 is_stmt 0 view .LVU157
+ 640 0180 B64B     		ldr	r3, .L13
+ 641 0182 04AA     		add	r2, sp, #16
+ 642 0184 9446     		mov	ip, r2
+ 643 0186 6344     		add	r3, r3, ip
+ 644 0188 0022     		movs	r2, #0
+ 645 018a 1A70     		strb	r2, [r3]
+ 646              	.L8:
+ 331:Core/Src/app_freertos.c ****     }
+ 332:Core/Src/app_freertos.c **** 
+ 333:Core/Src/app_freertos.c **** 
+ 334:Core/Src/app_freertos.c ****     osDelay(10);
+ 647              		.loc 3 334 5 is_stmt 1 view .LVU158
+ 648 018c 0A20     		movs	r0, #10
+ 649 018e FFF7FEFF 		bl	osDelay
+ 650              	.LVL41:
+ARM GAS  /tmp/ccNflO0v.s 			page 26
+
+
+ 335:Core/Src/app_freertos.c ****     prevPoll = currPoll;
+ 651              		.loc 3 335 5 view .LVU159
+ 652              		.loc 3 335 14 is_stmt 0 view .LVU160
+ 653 0192 B34B     		ldr	r3, .L13+4
+ 654 0194 1A68     		ldr	r2, [r3]
+ 655 0196 B34B     		ldr	r3, .L13+8
+ 656 0198 1A60     		str	r2, [r3]
+ 264:Core/Src/app_freertos.c ****   {
+ 657              		.loc 3 264 8 is_stmt 1 view .LVU161
+ 658              	.L9:
+ 264:Core/Src/app_freertos.c ****   {
+ 659              		.loc 3 264 3 view .LVU162
+ 266:Core/Src/app_freertos.c ****     
+ 660              		.loc 3 266 5 view .LVU163
+ 266:Core/Src/app_freertos.c ****     
+ 661              		.loc 3 266 16 is_stmt 0 view .LVU164
+ 662 019a FFF7FEFF 		bl	HAL_GetTick
+ 663              	.LVL42:
+ 266:Core/Src/app_freertos.c ****     
+ 664              		.loc 3 266 14 view .LVU165
+ 665 019e B04B     		ldr	r3, .L13+4
+ 666 01a0 9A46     		mov	r10, r3
+ 667 01a2 1860     		str	r0, [r3]
+ 268:Core/Src/app_freertos.c ****       IMU_measure(&himu1);
+ 668              		.loc 3 268 5 is_stmt 1 view .LVU166
+ 669              	.LBB29:
+ 269:Core/Src/app_freertos.c **** 
+ 670              		.loc 3 269 7 view .LVU167
+ 671 01a4 B04E     		ldr	r6, .L13+12
+ 672 01a6 3000     		movs	r0, r6
+ 673 01a8 FFF7FEFF 		bl	IMU_measure
+ 674              	.LVL43:
+ 272:Core/Src/app_freertos.c ****       gyroscope.axis.y = himu1.gy;
+ 675              		.loc 3 272 7 view .LVU168
+ 272:Core/Src/app_freertos.c ****       gyroscope.axis.y = himu1.gy;
+ 676              		.loc 3 272 24 is_stmt 0 view .LVU169
+ 677 01ac AF4C     		ldr	r4, .L13+16
+ 678 01ae F368     		ldr	r3, [r6, #12]
+ 679 01b0 2360     		str	r3, [r4]
+ 273:Core/Src/app_freertos.c ****       gyroscope.axis.z = himu1.gz; 
+ 680              		.loc 3 273 7 is_stmt 1 view .LVU170
+ 273:Core/Src/app_freertos.c ****       gyroscope.axis.z = himu1.gz; 
+ 681              		.loc 3 273 24 is_stmt 0 view .LVU171
+ 682 01b2 3369     		ldr	r3, [r6, #16]
+ 683 01b4 6360     		str	r3, [r4, #4]
+ 274:Core/Src/app_freertos.c **** 
+ 684              		.loc 3 274 7 is_stmt 1 view .LVU172
+ 274:Core/Src/app_freertos.c **** 
+ 685              		.loc 3 274 24 is_stmt 0 view .LVU173
+ 686 01b6 7369     		ldr	r3, [r6, #20]
+ 687 01b8 A360     		str	r3, [r4, #8]
+ 276:Core/Src/app_freertos.c ****       accelerometer.axis.y = himu1.ay / 3.7f;
+ 688              		.loc 3 276 7 is_stmt 1 view .LVU174
+ 276:Core/Src/app_freertos.c ****       accelerometer.axis.y = himu1.ay / 3.7f;
+ 689              		.loc 3 276 39 is_stmt 0 view .LVU175
+ 690 01ba AD49     		ldr	r1, .L13+20
+ 691 01bc 3068     		ldr	r0, [r6]
+ARM GAS  /tmp/ccNflO0v.s 			page 27
+
+
+ 692 01be FFF7FEFF 		bl	__aeabi_fdiv
+ 693              	.LVL44:
+ 276:Core/Src/app_freertos.c ****       accelerometer.axis.y = himu1.ay / 3.7f;
+ 694              		.loc 3 276 28 view .LVU176
+ 695 01c2 AC4D     		ldr	r5, .L13+24
+ 696 01c4 2860     		str	r0, [r5]
+ 277:Core/Src/app_freertos.c ****       accelerometer.axis.z = himu1.az / 3.7f; 
+ 697              		.loc 3 277 7 is_stmt 1 view .LVU177
+ 277:Core/Src/app_freertos.c ****       accelerometer.axis.z = himu1.az / 3.7f; 
+ 698              		.loc 3 277 39 is_stmt 0 view .LVU178
+ 699 01c6 AA49     		ldr	r1, .L13+20
+ 700 01c8 7068     		ldr	r0, [r6, #4]
+ 701 01ca FFF7FEFF 		bl	__aeabi_fdiv
+ 702              	.LVL45:
+ 277:Core/Src/app_freertos.c ****       accelerometer.axis.z = himu1.az / 3.7f; 
+ 703              		.loc 3 277 28 view .LVU179
+ 704 01ce 6860     		str	r0, [r5, #4]
+ 278:Core/Src/app_freertos.c **** 
+ 705              		.loc 3 278 7 is_stmt 1 view .LVU180
+ 278:Core/Src/app_freertos.c **** 
+ 706              		.loc 3 278 39 is_stmt 0 view .LVU181
+ 707 01d0 A749     		ldr	r1, .L13+20
+ 708 01d2 B068     		ldr	r0, [r6, #8]
+ 709 01d4 FFF7FEFF 		bl	__aeabi_fdiv
+ 710              	.LVL46:
+ 278:Core/Src/app_freertos.c **** 
+ 711              		.loc 3 278 28 view .LVU182
+ 712 01d8 A860     		str	r0, [r5, #8]
+ 280:Core/Src/app_freertos.c ****       magnetometer.axis.y = himu1.my;
+ 713              		.loc 3 280 7 is_stmt 1 view .LVU183
+ 280:Core/Src/app_freertos.c ****       magnetometer.axis.y = himu1.my;
+ 714              		.loc 3 280 27 is_stmt 0 view .LVU184
+ 715 01da A74B     		ldr	r3, .L13+28
+ 716 01dc 9946     		mov	r9, r3
+ 717 01de B269     		ldr	r2, [r6, #24]
+ 718 01e0 1A60     		str	r2, [r3]
+ 281:Core/Src/app_freertos.c ****       magnetometer.axis.z = himu1.mz; 
+ 719              		.loc 3 281 7 is_stmt 1 view .LVU185
+ 281:Core/Src/app_freertos.c ****       magnetometer.axis.z = himu1.mz; 
+ 720              		.loc 3 281 27 is_stmt 0 view .LVU186
+ 721 01e2 F269     		ldr	r2, [r6, #28]
+ 722 01e4 5A60     		str	r2, [r3, #4]
+ 282:Core/Src/app_freertos.c **** 
+ 723              		.loc 3 282 7 is_stmt 1 view .LVU187
+ 282:Core/Src/app_freertos.c **** 
+ 724              		.loc 3 282 34 is_stmt 0 view .LVU188
+ 725 01e6 326A     		ldr	r2, [r6, #32]
+ 726 01e8 9A60     		str	r2, [r3, #8]
+ 285:Core/Src/app_freertos.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 727              		.loc 3 285 7 is_stmt 1 view .LVU189
+ 285:Core/Src/app_freertos.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 728              		.loc 3 285 19 is_stmt 0 view .LVU190
+ 729 01ea A44B     		ldr	r3, .L13+32
+ 730 01ec 0CAF     		add	r7, sp, #48
+ 731 01ee 3A00     		movs	r2, r7
+ 732 01f0 43CB     		ldmia	r3!, {r0, r1, r6}
+ 733 01f2 43C2     		stmia	r2!, {r0, r1, r6}
+ARM GAS  /tmp/ccNflO0v.s 			page 28
+
+
+ 734 01f4 A24B     		ldr	r3, .L13+36
+ 735 01f6 09AA     		add	r2, sp, #36
+ 736 01f8 9046     		mov	r8, r2
+ 737 01fa 43CB     		ldmia	r3!, {r0, r1, r6}
+ 738 01fc 43C2     		stmia	r2!, {r0, r1, r6}
+ 739 01fe A14B     		ldr	r3, .L13+40
+ 740 0200 6A46     		mov	r2, sp
+ 741 0202 43CB     		ldmia	r3!, {r0, r1, r6}
+ 742 0204 43C2     		stmia	r2!, {r0, r1, r6}
+ 743 0206 43CB     		ldmia	r3!, {r0, r1, r6}
+ 744 0208 43C2     		stmia	r2!, {r0, r1, r6}
+ 745 020a 43CB     		ldmia	r3!, {r0, r1, r6}
+ 746 020c 43C2     		stmia	r2!, {r0, r1, r6}
+ 747 020e 2168     		ldr	r1, [r4]
+ 748 0210 6268     		ldr	r2, [r4, #4]
+ 749 0212 A368     		ldr	r3, [r4, #8]
+ 750 0214 14A8     		add	r0, sp, #80
+ 751 0216 FFF7FEFF 		bl	FusionCalibrationInertial
+ 752              	.LVL47:
+ 753 021a 2200     		movs	r2, r4
+ 754 021c 14AB     		add	r3, sp, #80
+ 755 021e 43CB     		ldmia	r3!, {r0, r1, r6}
+ 756 0220 43C2     		stmia	r2!, {r0, r1, r6}
+ 286:Core/Src/app_freertos.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 757              		.loc 3 286 7 is_stmt 1 view .LVU191
+ 286:Core/Src/app_freertos.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 758              		.loc 3 286 23 is_stmt 0 view .LVU192
+ 759 0222 994B     		ldr	r3, .L13+44
+ 760 0224 07CB     		ldmia	r3!, {r0, r1, r2}
+ 761 0226 07C7     		stmia	r7!, {r0, r1, r2}
+ 762 0228 984B     		ldr	r3, .L13+48
+ 763 022a 4646     		mov	r6, r8
+ 764 022c 07CB     		ldmia	r3!, {r0, r1, r2}
+ 765 022e 07C6     		stmia	r6!, {r0, r1, r2}
+ 766 0230 974B     		ldr	r3, .L13+52
+ 767 0232 6A46     		mov	r2, sp
+ 768 0234 43CB     		ldmia	r3!, {r0, r1, r6}
+ 769 0236 43C2     		stmia	r2!, {r0, r1, r6}
+ 770 0238 43CB     		ldmia	r3!, {r0, r1, r6}
+ 771 023a 43C2     		stmia	r2!, {r0, r1, r6}
+ 772 023c 43CB     		ldmia	r3!, {r0, r1, r6}
+ 773 023e 43C2     		stmia	r2!, {r0, r1, r6}
+ 774 0240 2968     		ldr	r1, [r5]
+ 775 0242 6A68     		ldr	r2, [r5, #4]
+ 776 0244 AB68     		ldr	r3, [r5, #8]
+ 777 0246 14A8     		add	r0, sp, #80
+ 778 0248 FFF7FEFF 		bl	FusionCalibrationInertial
+ 779              	.LVL48:
+ 780 024c 2B00     		movs	r3, r5
+ 781 024e 14AA     		add	r2, sp, #80
+ 782 0250 43CA     		ldmia	r2!, {r0, r1, r6}
+ 783 0252 43C3     		stmia	r3!, {r0, r1, r6}
+ 287:Core/Src/app_freertos.c **** 
+ 784              		.loc 3 287 7 is_stmt 1 view .LVU193
+ 785 0254 1BAB     		add	r3, sp, #108
+ 786 0256 9C46     		mov	ip, r3
+ 787 0258 4A46     		mov	r2, r9
+ARM GAS  /tmp/ccNflO0v.s 			page 29
+
+
+ 788 025a C1CA     		ldmia	r2!, {r0, r6, r7}
+ 789 025c C1C3     		stmia	r3!, {r0, r6, r7}
+ 790 025e 27AB     		add	r3, sp, #156
+ 791 0260 9846     		mov	r8, r3
+ 792 0262 8C4A     		ldr	r2, .L13+56
+ 793 0264 1800     		movs	r0, r3
+ 794 0266 C8CA     		ldmia	r2!, {r3, r6, r7}
+ 795 0268 C8C0     		stmia	r0!, {r3, r6, r7}
+ 796 026a C8CA     		ldmia	r2!, {r3, r6, r7}
+ 797 026c C8C0     		stmia	r0!, {r3, r6, r7}
+ 798 026e C8CA     		ldmia	r2!, {r3, r6, r7}
+ 799 0270 C8C0     		stmia	r0!, {r3, r6, r7}
+ 800 0272 894A     		ldr	r2, .L13+60
+ 801 0274 1EA8     		add	r0, sp, #120
+ 802 0276 C8CA     		ldmia	r2!, {r3, r6, r7}
+ 803 0278 C8C0     		stmia	r0!, {r3, r6, r7}
+ 804              	.LBB30:
+ 805              	.LBI30:
+  29:Core/Inc/Fusion/FusionCalibration.h **** 
+  30:Core/Inc/Fusion/FusionCalibration.h **** /**
+  31:Core/Inc/Fusion/FusionCalibration.h ****  * @brief Magnetometer calibration model.
+  32:Core/Inc/Fusion/FusionCalibration.h ****  * @param uncalibrated Uncalibrated measurement.
+  33:Core/Inc/Fusion/FusionCalibration.h ****  * @param softIronMatrix Soft-iron matrix.
+  34:Core/Inc/Fusion/FusionCalibration.h ****  * @param hardIronOffset Hard-iron offset.
+  35:Core/Inc/Fusion/FusionCalibration.h ****  * @return Calibrated measurement.
+  36:Core/Inc/Fusion/FusionCalibration.h ****  */
+  37:Core/Inc/Fusion/FusionCalibration.h **** static inline FusionVector FusionCalibrationMagnetic(const FusionVector uncalibrated, const FusionM
+ 806              		.loc 1 37 28 view .LVU194
+ 807              	.LBB31:
+  38:Core/Inc/Fusion/FusionCalibration.h ****     return FusionVectorSubtract(FusionMatrixMultiplyVector(softIronMatrix, uncalibrated), hardIronO
+ 808              		.loc 1 38 5 view .LVU195
+ 809 027a 30AE     		add	r6, sp, #192
+ 810 027c 3200     		movs	r2, r6
+ 811 027e 4346     		mov	r3, r8
+ 812 0280 83CB     		ldmia	r3!, {r0, r1, r7}
+ 813 0282 83C2     		stmia	r2!, {r0, r1, r7}
+ 814 0284 83CB     		ldmia	r3!, {r0, r1, r7}
+ 815 0286 83C2     		stmia	r2!, {r0, r1, r7}
+ 816 0288 83CB     		ldmia	r3!, {r0, r1, r7}
+ 817 028a 83C2     		stmia	r2!, {r0, r1, r7}
+ 818 028c 21AB     		add	r3, sp, #132
+ 819 028e 6146     		mov	r1, ip
+ 820 0290 85C9     		ldmia	r1!, {r0, r2, r7}
+ 821 0292 85C3     		stmia	r3!, {r0, r2, r7}
+ 822              	.LBB32:
+ 823              	.LBI32:
+ 399:Core/Inc/Fusion/FusionMath.h **** #define R matrix.element
+ 824              		.loc 2 399 28 view .LVU196
+ 825              	.LBB33:
+ 401:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = R.xx * vector.axis.x + R.xy * vector.axis.y + R.xz * vector.axis.z;
+ 826              		.loc 2 401 5 view .LVU197
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 827              		.loc 2 402 5 view .LVU198
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 828              		.loc 2 402 39 is_stmt 0 view .LVU199
+ 829 0294 219B     		ldr	r3, [sp, #132]
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ARM GAS  /tmp/ccNflO0v.s 			page 30
+
+
+ 830              		.loc 2 402 26 view .LVU200
+ 831 0296 1193     		str	r3, [sp, #68]
+ 832 0298 191C     		adds	r1, r3, #0
+ 833 029a 3098     		ldr	r0, [sp, #192]
+ 834 029c FFF7FEFF 		bl	__aeabi_fmul
+ 835              	.LVL49:
+ 836 02a0 8046     		mov	r8, r0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 837              		.loc 2 402 62 view .LVU201
+ 838 02a2 229A     		ldr	r2, [sp, #136]
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 839              		.loc 2 402 49 view .LVU202
+ 840 02a4 1292     		str	r2, [sp, #72]
+ 841 02a6 111C     		adds	r1, r2, #0
+ 842 02a8 3198     		ldr	r0, [sp, #196]
+ 843 02aa FFF7FEFF 		bl	__aeabi_fmul
+ 844              	.LVL50:
+ 845 02ae 011C     		adds	r1, r0, #0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 846              		.loc 2 402 42 view .LVU203
+ 847 02b0 4046     		mov	r0, r8
+ 848 02b2 FFF7FEFF 		bl	__aeabi_fadd
+ 849              	.LVL51:
+ 850 02b6 8046     		mov	r8, r0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 851              		.loc 2 402 85 view .LVU204
+ 852 02b8 2398     		ldr	r0, [sp, #140]
+ 853 02ba 071C     		adds	r7, r0, #0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 854              		.loc 2 402 72 view .LVU205
+ 855 02bc 011C     		adds	r1, r0, #0
+ 856 02be 3298     		ldr	r0, [sp, #200]
+ 857 02c0 FFF7FEFF 		bl	__aeabi_fmul
+ 858              	.LVL52:
+ 859 02c4 011C     		adds	r1, r0, #0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 860              		.loc 2 402 65 view .LVU206
+ 861 02c6 4046     		mov	r0, r8
+ 862 02c8 FFF7FEFF 		bl	__aeabi_fadd
+ 863              	.LVL53:
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 864              		.loc 2 402 19 view .LVU207
+ 865 02cc 24AB     		add	r3, sp, #144
+ 866 02ce 9846     		mov	r8, r3
+ 867 02d0 2490     		str	r0, [sp, #144]
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 868              		.loc 2 403 5 is_stmt 1 view .LVU208
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 869              		.loc 2 403 26 is_stmt 0 view .LVU209
+ 870 02d2 3399     		ldr	r1, [sp, #204]
+ 871 02d4 1198     		ldr	r0, [sp, #68]
+ 872 02d6 FFF7FEFF 		bl	__aeabi_fmul
+ 873              	.LVL54:
+ 874 02da 1390     		str	r0, [sp, #76]
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 875              		.loc 2 403 49 view .LVU210
+ 876 02dc 3499     		ldr	r1, [sp, #208]
+ARM GAS  /tmp/ccNflO0v.s 			page 31
+
+
+ 877 02de 1298     		ldr	r0, [sp, #72]
+ 878 02e0 FFF7FEFF 		bl	__aeabi_fmul
+ 879              	.LVL55:
+ 880 02e4 011C     		adds	r1, r0, #0
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 881              		.loc 2 403 42 view .LVU211
+ 882 02e6 1398     		ldr	r0, [sp, #76]
+ 883 02e8 FFF7FEFF 		bl	__aeabi_fadd
+ 884              	.LVL56:
+ 885 02ec 1390     		str	r0, [sp, #76]
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 886              		.loc 2 403 72 view .LVU212
+ 887 02ee 3599     		ldr	r1, [sp, #212]
+ 888 02f0 381C     		adds	r0, r7, #0
+ 889 02f2 FFF7FEFF 		bl	__aeabi_fmul
+ 890              	.LVL57:
+ 891 02f6 011C     		adds	r1, r0, #0
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 892              		.loc 2 403 65 view .LVU213
+ 893 02f8 1398     		ldr	r0, [sp, #76]
+ 894 02fa FFF7FEFF 		bl	__aeabi_fadd
+ 895              	.LVL58:
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 896              		.loc 2 403 19 view .LVU214
+ 897 02fe 4146     		mov	r1, r8
+ 898 0300 4860     		str	r0, [r1, #4]
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 899              		.loc 2 404 5 is_stmt 1 view .LVU215
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 900              		.loc 2 404 26 is_stmt 0 view .LVU216
+ 901 0302 3699     		ldr	r1, [sp, #216]
+ 902 0304 1198     		ldr	r0, [sp, #68]
+ 903 0306 FFF7FEFF 		bl	__aeabi_fmul
+ 904              	.LVL59:
+ 905 030a 1190     		str	r0, [sp, #68]
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 906              		.loc 2 404 49 view .LVU217
+ 907 030c 3799     		ldr	r1, [sp, #220]
+ 908 030e 1298     		ldr	r0, [sp, #72]
+ 909 0310 FFF7FEFF 		bl	__aeabi_fmul
+ 910              	.LVL60:
+ 911 0314 011C     		adds	r1, r0, #0
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 912              		.loc 2 404 42 view .LVU218
+ 913 0316 1198     		ldr	r0, [sp, #68]
+ 914 0318 FFF7FEFF 		bl	__aeabi_fadd
+ 915              	.LVL61:
+ 916 031c 1190     		str	r0, [sp, #68]
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 917              		.loc 2 404 72 view .LVU219
+ 918 031e 3899     		ldr	r1, [sp, #224]
+ 919 0320 381C     		adds	r0, r7, #0
+ 920 0322 FFF7FEFF 		bl	__aeabi_fmul
+ 921              	.LVL62:
+ 922 0326 011C     		adds	r1, r0, #0
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 923              		.loc 2 404 65 view .LVU220
+ARM GAS  /tmp/ccNflO0v.s 			page 32
+
+
+ 924 0328 1198     		ldr	r0, [sp, #68]
+ 925 032a FFF7FEFF 		bl	__aeabi_fadd
+ 926              	.LVL63:
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 927              		.loc 2 404 19 view .LVU221
+ 928 032e 4346     		mov	r3, r8
+ 929 0330 9860     		str	r0, [r3, #8]
+ 930              		.loc 2 405 5 is_stmt 1 view .LVU222
+ 931              		.loc 2 405 12 is_stmt 0 view .LVU223
+ 932 0332 ADAB     		add	r3, sp, #692
+ 933 0334 9C46     		mov	ip, r3
+ 934 0336 1A00     		movs	r2, r3
+ 935 0338 4146     		mov	r1, r8
+ 936 033a 89C9     		ldmia	r1!, {r0, r3, r7}
+ 937 033c 89C2     		stmia	r2!, {r0, r3, r7}
+ 938 033e 4246     		mov	r2, r8
+ 939 0340 6346     		mov	r3, ip
+ 940 0342 83CB     		ldmia	r3!, {r0, r1, r7}
+ 941 0344 83C2     		stmia	r2!, {r0, r1, r7}
+ 942 0346 21AB     		add	r3, sp, #132
+ 943 0348 1EAA     		add	r2, sp, #120
+ 944 034a 83CA     		ldmia	r2!, {r0, r1, r7}
+ 945 034c 83C3     		stmia	r3!, {r0, r1, r7}
+ 946              	.LBE33:
+ 947              	.LBE32:
+ 948              	.LBB34:
+ 949              	.LBI34:
+ 215:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
+ 950              		.loc 2 215 28 is_stmt 1 view .LVU224
+ 951              	.LBB35:
+ 216:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x - vectorB.axis.x;
+ 952              		.loc 2 216 5 view .LVU225
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+ 953              		.loc 2 217 5 view .LVU226
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+ 954              		.loc 2 217 36 is_stmt 0 view .LVU227
+ 955 034e 2199     		ldr	r1, [sp, #132]
+ 956 0350 2498     		ldr	r0, [sp, #144]
+ 957 0352 FFF7FEFF 		bl	__aeabi_fsub
+ 958              	.LVL64:
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+ 959              		.loc 2 217 19 view .LVU228
+ 960 0356 3090     		str	r0, [sp, #192]
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 961              		.loc 2 218 5 is_stmt 1 view .LVU229
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 962              		.loc 2 218 36 is_stmt 0 view .LVU230
+ 963 0358 2299     		ldr	r1, [sp, #136]
+ 964 035a 4346     		mov	r3, r8
+ 965 035c 5868     		ldr	r0, [r3, #4]
+ 966 035e FFF7FEFF 		bl	__aeabi_fsub
+ 967              	.LVL65:
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 968              		.loc 2 218 19 view .LVU231
+ 969 0362 3190     		str	r0, [sp, #196]
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 970              		.loc 2 219 5 is_stmt 1 view .LVU232
+ARM GAS  /tmp/ccNflO0v.s 			page 33
+
+
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 971              		.loc 2 219 33 is_stmt 0 view .LVU233
+ 972 0364 4346     		mov	r3, r8
+ 973 0366 9868     		ldr	r0, [r3, #8]
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 974              		.loc 2 219 50 view .LVU234
+ 975 0368 2399     		ldr	r1, [sp, #140]
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 976              		.loc 2 219 36 view .LVU235
+ 977 036a FFF7FEFF 		bl	__aeabi_fsub
+ 978              	.LVL66:
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 979              		.loc 2 219 19 view .LVU236
+ 980 036e 3290     		str	r0, [sp, #200]
+ 220:Core/Inc/Fusion/FusionMath.h **** }
+ 981              		.loc 2 220 5 is_stmt 1 view .LVU237
+ 220:Core/Inc/Fusion/FusionMath.h **** }
+ 982              		.loc 2 220 12 is_stmt 0 view .LVU238
+ 983 0370 AAAF     		add	r7, sp, #680
+ 984 0372 0C22     		movs	r2, #12
+ 985 0374 3100     		movs	r1, r6
+ 986 0376 3800     		movs	r0, r7
+ 987 0378 FFF7FEFF 		bl	memcpy
+ 988              	.LVL67:
+ 989              	.LBE35:
+ 990              	.LBE34:
+ 991              	.LBE31:
+ 992              	.LBE30:
+ 287:Core/Src/app_freertos.c **** 
+ 993              		.loc 3 287 22 view .LVU239
+ 994 037c 4B46     		mov	r3, r9
+ 995 037e 07CF     		ldmia	r7!, {r0, r1, r2}
+ 996 0380 07C3     		stmia	r3!, {r0, r1, r2}
+ 295:Core/Src/app_freertos.c **** 
+ 997              		.loc 3 295 7 is_stmt 1 view .LVU240
+ 295:Core/Src/app_freertos.c **** 
+ 998              		.loc 3 295 19 is_stmt 0 view .LVU241
+ 999 0382 A368     		ldr	r3, [r4, #8]
+ 1000 0384 0093     		str	r3, [sp]
+ 1001 0386 2268     		ldr	r2, [r4]
+ 1002 0388 6368     		ldr	r3, [r4, #4]
+ 1003 038a 4449     		ldr	r1, .L13+64
+ 1004 038c 14A8     		add	r0, sp, #80
+ 1005 038e FFF7FEFF 		bl	FusionOffsetUpdate
+ 1006              	.LVL68:
+ 1007 0392 2300     		movs	r3, r4
+ 1008 0394 14AA     		add	r2, sp, #80
+ 1009 0396 43CA     		ldmia	r2!, {r0, r1, r6}
+ 1010 0398 43C3     		stmia	r3!, {r0, r1, r6}
+ 298:Core/Src/app_freertos.c **** 
+ 1011              		.loc 3 298 7 is_stmt 1 view .LVU242
+ 298:Core/Src/app_freertos.c **** 
+ 1012              		.loc 3 298 52 is_stmt 0 view .LVU243
+ 1013 039a 5346     		mov	r3, r10
+ 1014 039c 1868     		ldr	r0, [r3]
+ 1015 039e 314B     		ldr	r3, .L13+8
+ 1016 03a0 1B68     		ldr	r3, [r3]
+ARM GAS  /tmp/ccNflO0v.s 			page 34
+
+
+ 1017 03a2 C01A     		subs	r0, r0, r3
+ 298:Core/Src/app_freertos.c **** 
+ 1018              		.loc 3 298 34 view .LVU244
+ 1019 03a4 FFF7FEFF 		bl	__aeabi_ui2f
+ 1020              	.LVL69:
+ 298:Core/Src/app_freertos.c **** 
+ 1021              		.loc 3 298 64 view .LVU245
+ 1022 03a8 3D49     		ldr	r1, .L13+68
+ 1023 03aa FFF7FEFF 		bl	__aeabi_fdiv
+ 1024              	.LVL70:
+ 298:Core/Src/app_freertos.c **** 
+ 1025              		.loc 3 298 22 view .LVU246
+ 1026 03ae 1A90     		str	r0, [sp, #104]
+ 301:Core/Src/app_freertos.c **** 
+ 1027              		.loc 3 301 7 is_stmt 1 view .LVU247
+ 1028 03b0 1A9B     		ldr	r3, [sp, #104]
+ 1029 03b2 3C4F     		ldr	r7, .L13+72
+ 1030 03b4 0393     		str	r3, [sp, #12]
+ 1031 03b6 6B46     		mov	r3, sp
+ 1032 03b8 2A00     		movs	r2, r5
+ 1033 03ba 43CA     		ldmia	r2!, {r0, r1, r6}
+ 1034 03bc 43C3     		stmia	r3!, {r0, r1, r6}
+ 1035 03be 2168     		ldr	r1, [r4]
+ 1036 03c0 6268     		ldr	r2, [r4, #4]
+ 1037 03c2 A368     		ldr	r3, [r4, #8]
+ 1038 03c4 3800     		movs	r0, r7
+ 1039 03c6 FFF7FEFF 		bl	FusionAhrsUpdateNoMagnetometer
+ 1040              	.LVL71:
+ 304:Core/Src/app_freertos.c ****     }
+ 1041              		.loc 3 304 7 view .LVU248
+ 304:Core/Src/app_freertos.c ****     }
+ 1042              		.loc 3 304 21 is_stmt 0 view .LVU249
+ 1043 03ca 374E     		ldr	r6, .L13+76
+ 1044 03cc 3900     		movs	r1, r7
+ 1045 03ce 14A8     		add	r0, sp, #80
+ 1046 03d0 FFF7FEFF 		bl	FusionAhrsGetQuaternion
+ 1047              	.LVL72:
+ 1048 03d4 3300     		movs	r3, r6
+ 1049 03d6 14AA     		add	r2, sp, #80
+ 1050 03d8 83CA     		ldmia	r2!, {r0, r1, r7}
+ 1051 03da 83C3     		stmia	r3!, {r0, r1, r7}
+ 1052 03dc 1268     		ldr	r2, [r2]
+ 1053 03de 1A60     		str	r2, [r3]
+ 1054              	.LBE29:
+ 307:Core/Src/app_freertos.c ****     msg_imu.orientation.w = quarternion.element.w;
+ 1055              		.loc 3 307 5 is_stmt 1 view .LVU250
+ 308:Core/Src/app_freertos.c ****     msg_imu.orientation.x = quarternion.element.x;
+ 1056              		.loc 3 308 5 view .LVU251
+ 308:Core/Src/app_freertos.c ****     msg_imu.orientation.x = quarternion.element.x;
+ 1057              		.loc 3 308 48 is_stmt 0 view .LVU252
+ 1058 03e0 3068     		ldr	r0, [r6]
+ 1059 03e2 FFF7FEFF 		bl	__aeabi_f2d
+ 1060              	.LVL73:
+ 308:Core/Src/app_freertos.c ****     msg_imu.orientation.x = quarternion.element.x;
+ 1061              		.loc 3 308 27 view .LVU253
+ 1062 03e6 4890     		str	r0, [sp, #288]
+ 1063 03e8 4991     		str	r1, [sp, #292]
+ARM GAS  /tmp/ccNflO0v.s 			page 35
+
+
+ 309:Core/Src/app_freertos.c ****     msg_imu.orientation.y = quarternion.element.y;
+ 1064              		.loc 3 309 5 is_stmt 1 view .LVU254
+ 309:Core/Src/app_freertos.c ****     msg_imu.orientation.y = quarternion.element.y;
+ 1065              		.loc 3 309 48 is_stmt 0 view .LVU255
+ 1066 03ea 7068     		ldr	r0, [r6, #4]
+ 1067 03ec FFF7FEFF 		bl	__aeabi_f2d
+ 1068              	.LVL74:
+ 309:Core/Src/app_freertos.c ****     msg_imu.orientation.y = quarternion.element.y;
+ 1069              		.loc 3 309 27 view .LVU256
+ 1070 03f0 4290     		str	r0, [sp, #264]
+ 1071 03f2 4391     		str	r1, [sp, #268]
+ 310:Core/Src/app_freertos.c ****     msg_imu.orientation.z = quarternion.element.z;
+ 1072              		.loc 3 310 5 is_stmt 1 view .LVU257
+ 310:Core/Src/app_freertos.c ****     msg_imu.orientation.z = quarternion.element.z;
+ 1073              		.loc 3 310 48 is_stmt 0 view .LVU258
+ 1074 03f4 B068     		ldr	r0, [r6, #8]
+ 1075 03f6 FFF7FEFF 		bl	__aeabi_f2d
+ 1076              	.LVL75:
+ 310:Core/Src/app_freertos.c ****     msg_imu.orientation.z = quarternion.element.z;
+ 1077              		.loc 3 310 27 view .LVU259
+ 1078 03fa 4490     		str	r0, [sp, #272]
+ 1079 03fc 4591     		str	r1, [sp, #276]
+ 311:Core/Src/app_freertos.c **** 
+ 1080              		.loc 3 311 5 is_stmt 1 view .LVU260
+ 311:Core/Src/app_freertos.c **** 
+ 1081              		.loc 3 311 48 is_stmt 0 view .LVU261
+ 1082 03fe F068     		ldr	r0, [r6, #12]
+ 1083 0400 FFF7FEFF 		bl	__aeabi_f2d
+ 1084              	.LVL76:
+ 311:Core/Src/app_freertos.c **** 
+ 1085              		.loc 3 311 27 view .LVU262
+ 1086 0404 4690     		str	r0, [sp, #280]
+ 1087 0406 4791     		str	r1, [sp, #284]
+ 313:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.y = gyroscope.axis.y;
+ 1088              		.loc 3 313 5 is_stmt 1 view .LVU263
+ 313:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.y = gyroscope.axis.y;
+ 1089              		.loc 3 313 48 is_stmt 0 view .LVU264
+ 1090 0408 2068     		ldr	r0, [r4]
+ 1091 040a FFF7FEFF 		bl	__aeabi_f2d
+ 1092              	.LVL77:
+ 313:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.y = gyroscope.axis.y;
+ 1093              		.loc 3 313 32 view .LVU265
+ 1094 040e 5C90     		str	r0, [sp, #368]
+ 1095 0410 5D91     		str	r1, [sp, #372]
+ 314:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.z = gyroscope.axis.z;
+ 1096              		.loc 3 314 5 is_stmt 1 view .LVU266
+ 314:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.z = gyroscope.axis.z;
+ 1097              		.loc 3 314 48 is_stmt 0 view .LVU267
+ 1098 0412 6068     		ldr	r0, [r4, #4]
+ 1099 0414 FFF7FEFF 		bl	__aeabi_f2d
+ 1100              	.LVL78:
+ 314:Core/Src/app_freertos.c ****     msg_imu.angular_velocity.z = gyroscope.axis.z;
+ 1101              		.loc 3 314 32 view .LVU268
+ 1102 0418 5E90     		str	r0, [sp, #376]
+ 1103 041a 5F91     		str	r1, [sp, #380]
+ 315:Core/Src/app_freertos.c **** 
+ 1104              		.loc 3 315 5 is_stmt 1 view .LVU269
+ARM GAS  /tmp/ccNflO0v.s 			page 36
+
+
+ 315:Core/Src/app_freertos.c **** 
+ 1105              		.loc 3 315 48 is_stmt 0 view .LVU270
+ 1106 041c A068     		ldr	r0, [r4, #8]
+ 1107 041e FFF7FEFF 		bl	__aeabi_f2d
+ 1108              	.LVL79:
+ 315:Core/Src/app_freertos.c **** 
+ 1109              		.loc 3 315 32 view .LVU271
+ 1110 0422 6090     		str	r0, [sp, #384]
+ 1111 0424 6191     		str	r1, [sp, #388]
+ 317:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.y = accelerometer.axis.y;
+ 1112              		.loc 3 317 5 is_stmt 1 view .LVU272
+ 317:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.y = accelerometer.axis.y;
+ 1113              		.loc 3 317 55 is_stmt 0 view .LVU273
+ 1114 0426 2868     		ldr	r0, [r5]
+ 1115 0428 FFF7FEFF 		bl	__aeabi_f2d
+ 1116              	.LVL80:
+ 317:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.y = accelerometer.axis.y;
+ 1117              		.loc 3 317 35 view .LVU274
+ 1118 042c 7490     		str	r0, [sp, #464]
+ 1119 042e 7591     		str	r1, [sp, #468]
+ 318:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.z = accelerometer.axis.z;
+ 1120              		.loc 3 318 5 is_stmt 1 view .LVU275
+ 318:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.z = accelerometer.axis.z;
+ 1121              		.loc 3 318 55 is_stmt 0 view .LVU276
+ 1122 0430 6868     		ldr	r0, [r5, #4]
+ 1123 0432 FFF7FEFF 		bl	__aeabi_f2d
+ 1124              	.LVL81:
+ 318:Core/Src/app_freertos.c ****     msg_imu.linear_acceleration.z = accelerometer.axis.z;
+ 1125              		.loc 3 318 35 view .LVU277
+ 1126 0436 7690     		str	r0, [sp, #472]
+ 1127 0438 7791     		str	r1, [sp, #476]
+ 319:Core/Src/app_freertos.c **** 
+ 1128              		.loc 3 319 5 is_stmt 1 view .LVU278
+ 319:Core/Src/app_freertos.c **** 
+ 1129              		.loc 3 319 55 is_stmt 0 view .LVU279
+ 1130 043a A868     		ldr	r0, [r5, #8]
+ 1131 043c FFF7FEFF 		bl	__aeabi_f2d
+ 1132              	.LVL82:
+ 319:Core/Src/app_freertos.c **** 
+ 1133              		.loc 3 319 35 view .LVU280
+ 1134 0440 7890     		str	r0, [sp, #480]
+ 1135 0442 7991     		str	r1, [sp, #484]
+ 327:Core/Src/app_freertos.c ****     if (ret != RCL_RET_OK)
+ 1136              		.loc 3 327 5 is_stmt 1 view .LVU281
+ 327:Core/Src/app_freertos.c ****     if (ret != RCL_RET_OK)
+ 1137              		.loc 3 327 11 is_stmt 0 view .LVU282
+ 1138 0444 0022     		movs	r2, #0
+ 1139 0446 3CA9     		add	r1, sp, #240
+ 1140 0448 A4A8     		add	r0, sp, #656
+ 1141 044a FFF7FEFF 		bl	rcl_publish
+ 1142              	.LVL83:
+ 327:Core/Src/app_freertos.c ****     if (ret != RCL_RET_OK)
+ 1143              		.loc 3 327 9 view .LVU283
+ 1144 044e 8E90     		str	r0, [sp, #568]
+ 328:Core/Src/app_freertos.c ****     {
+ 1145              		.loc 3 328 5 is_stmt 1 view .LVU284
+ 328:Core/Src/app_freertos.c ****     {
+ARM GAS  /tmp/ccNflO0v.s 			page 37
+
+
+ 1146              		.loc 3 328 13 is_stmt 0 view .LVU285
+ 1147 0450 8E9B     		ldr	r3, [sp, #568]
+ 328:Core/Src/app_freertos.c ****     {
+ 1148              		.loc 3 328 8 view .LVU286
+ 1149 0452 002B     		cmp	r3, #0
+ 1150 0454 00D0     		beq	.LCB890
+ 1151 0456 93E6     		b	.L10	@long jump
+ 1152              	.LCB890:
+ 1153 0458 98E6     		b	.L8
+ 1154              	.L14:
+ 1155 045a C046     		.align	2
+ 1156              	.L13:
+ 1157 045c 27020000 		.word	551
+ 1158 0460 00000000 		.word	.LANCHOR1
+ 1159 0464 00000000 		.word	.LANCHOR15
+ 1160 0468 00000000 		.word	.LANCHOR2
+ 1161 046c 00000000 		.word	.LANCHOR3
+ 1162 0470 CDCC6C40 		.word	1080872141
+ 1163 0474 00000000 		.word	.LANCHOR4
+ 1164 0478 00000000 		.word	.LANCHOR5
+ 1165 047c 00000000 		.word	.LANCHOR6
+ 1166 0480 00000000 		.word	.LANCHOR7
+ 1167 0484 00000000 		.word	.LANCHOR8
+ 1168 0488 00000000 		.word	.LANCHOR9
+ 1169 048c 00000000 		.word	.LANCHOR10
+ 1170 0490 00000000 		.word	.LANCHOR11
+ 1171 0494 00000000 		.word	.LANCHOR12
+ 1172 0498 00000000 		.word	.LANCHOR13
+ 1173 049c 00000000 		.word	.LANCHOR14
+ 1174 04a0 00007A44 		.word	1148846080
+ 1175 04a4 00000000 		.word	.LANCHOR16
+ 1176 04a8 00000000 		.word	.LANCHOR17
+ 1177              		.cfi_endproc
+ 1178              	.LFE356:
+ 1180              		.section	.text.MX_FREERTOS_Init,"ax",%progbits
+ 1181              		.align	1
+ 1182              		.global	MX_FREERTOS_Init
+ 1183              		.syntax unified
+ 1184              		.code	16
+ 1185              		.thumb_func
+ 1186              		.fpu softvfp
+ 1188              	MX_FREERTOS_Init:
+ 1189              	.LFB355:
+ 130:Core/Src/app_freertos.c ****   /* USER CODE BEGIN Init */
+ 1190              		.loc 3 130 29 is_stmt 1 view -0
+ 1191              		.cfi_startproc
+ 1192              		@ args = 0, pretend = 0, frame = 0
+ 1193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1194 0000 10B5     		push	{r4, lr}
+ 1195              	.LCFI6:
+ 1196              		.cfi_def_cfa_offset 8
+ 1197              		.cfi_offset 4, -8
+ 1198              		.cfi_offset 14, -4
+ 132:Core/Src/app_freertos.c ****   FusionAhrsInitialise(&ahrs);
+ 1199              		.loc 3 132 3 view .LVU288
+ 1200 0002 6421     		movs	r1, #100
+ 1201 0004 0948     		ldr	r0, .L16
+ARM GAS  /tmp/ccNflO0v.s 			page 38
+
+
+ 1202 0006 FFF7FEFF 		bl	FusionOffsetInitialise
+ 1203              	.LVL84:
+ 133:Core/Src/app_freertos.c **** 
+ 1204              		.loc 3 133 3 view .LVU289
+ 1205 000a 094C     		ldr	r4, .L16+4
+ 1206 000c 2000     		movs	r0, r4
+ 1207 000e FFF7FEFF 		bl	FusionAhrsInitialise
+ 1208              	.LVL85:
+ 135:Core/Src/app_freertos.c ****   /* USER CODE END Init */
+ 1209              		.loc 3 135 3 view .LVU290
+ 1210 0012 0849     		ldr	r1, .L16+8
+ 1211 0014 2000     		movs	r0, r4
+ 1212 0016 FFF7FEFF 		bl	FusionAhrsSetSettings
+ 1213              	.LVL86:
+ 156:Core/Src/app_freertos.c **** 
+ 1214              		.loc 3 156 3 view .LVU291
+ 156:Core/Src/app_freertos.c **** 
+ 1215              		.loc 3 156 23 is_stmt 0 view .LVU292
+ 1216 001a 074A     		ldr	r2, .L16+12
+ 1217 001c 0021     		movs	r1, #0
+ 1218 001e 0748     		ldr	r0, .L16+16
+ 1219 0020 FFF7FEFF 		bl	osThreadNew
+ 1220              	.LVL87:
+ 156:Core/Src/app_freertos.c **** 
+ 1221              		.loc 3 156 21 view .LVU293
+ 1222 0024 064B     		ldr	r3, .L16+20
+ 1223 0026 1860     		str	r0, [r3]
+ 166:Core/Src/app_freertos.c **** 
+ 1224              		.loc 3 166 1 view .LVU294
+ 1225              		@ sp needed
+ 1226 0028 10BD     		pop	{r4, pc}
+ 1227              	.L17:
+ 1228 002a C046     		.align	2
+ 1229              	.L16:
+ 1230 002c 00000000 		.word	.LANCHOR14
+ 1231 0030 00000000 		.word	.LANCHOR16
+ 1232 0034 00000000 		.word	.LANCHOR18
+ 1233 0038 00000000 		.word	.LANCHOR19
+ 1234 003c 00000000 		.word	StartDefaultTask
+ 1235 0040 00000000 		.word	.LANCHOR20
+ 1236              		.cfi_endproc
+ 1237              	.LFE355:
+ 1239              		.global	defaultTask_attributes
+ 1240              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 1241              		.align	2
+ 1242              	.LC41:
+ 1243 0000 64656661 		.ascii	"defaultTask\000"
+ 1243      756C7454 
+ 1243      61736B00 
+ 1244              		.global	defaultTaskHandle
+ 1245              		.global	cov
+ 1246              		.global	currPoll
+ 1247              		.global	prevPoll
+ 1248              		.global	himu1
+ 1249              		.global	settings
+ 1250              		.global	magnetometer
+ 1251              		.global	accelerometer
+ARM GAS  /tmp/ccNflO0v.s 			page 39
+
+
+ 1252              		.global	gyroscope
+ 1253              		.global	quarternion
+ 1254              		.global	ahrs
+ 1255              		.global	offset
+ 1256              		.global	hardIronOffset
+ 1257              		.global	softIronMatrix
+ 1258              		.global	accelerometerOffset
+ 1259              		.global	accelerometerSensitivity
+ 1260              		.global	accelerometerMisalignment
+ 1261              		.global	gyroscopeOffset
+ 1262              		.global	gyroscopeSensitivity
+ 1263              		.global	gyroscopeMisalignment
+ 1264              		.section	.bss.accelerometer,"aw",%nobits
+ 1265              		.align	2
+ 1266              		.set	.LANCHOR4,. + 0
+ 1269              	accelerometer:
+ 1270 0000 00000000 		.space	12
+ 1270      00000000 
+ 1270      00000000 
+ 1271              		.section	.bss.ahrs,"aw",%nobits
+ 1272              		.align	2
+ 1273              		.set	.LANCHOR16,. + 0
+ 1276              	ahrs:
+ 1277 0000 00000000 		.space	100
+ 1277      00000000 
+ 1277      00000000 
+ 1277      00000000 
+ 1277      00000000 
+ 1278              		.section	.bss.currPoll,"aw",%nobits
+ 1279              		.align	2
+ 1280              		.set	.LANCHOR1,. + 0
+ 1283              	currPoll:
+ 1284 0000 00000000 		.space	4
+ 1285              		.section	.bss.defaultTaskHandle,"aw",%nobits
+ 1286              		.align	2
+ 1287              		.set	.LANCHOR20,. + 0
+ 1290              	defaultTaskHandle:
+ 1291 0000 00000000 		.space	4
+ 1292              		.section	.bss.gyroscope,"aw",%nobits
+ 1293              		.align	2
+ 1294              		.set	.LANCHOR3,. + 0
+ 1297              	gyroscope:
+ 1298 0000 00000000 		.space	12
+ 1298      00000000 
+ 1298      00000000 
+ 1299              		.section	.bss.himu1,"aw",%nobits
+ 1300              		.align	2
+ 1301              		.set	.LANCHOR2,. + 0
+ 1304              	himu1:
+ 1305 0000 00000000 		.space	36
+ 1305      00000000 
+ 1305      00000000 
+ 1305      00000000 
+ 1305      00000000 
+ 1306              		.section	.bss.magnetometer,"aw",%nobits
+ 1307              		.align	2
+ 1308              		.set	.LANCHOR5,. + 0
+ARM GAS  /tmp/ccNflO0v.s 			page 40
+
+
+ 1311              	magnetometer:
+ 1312 0000 00000000 		.space	12
+ 1312      00000000 
+ 1312      00000000 
+ 1313              		.section	.bss.offset,"aw",%nobits
+ 1314              		.align	2
+ 1315              		.set	.LANCHOR14,. + 0
+ 1318              	offset:
+ 1319 0000 00000000 		.space	24
+ 1319      00000000 
+ 1319      00000000 
+ 1319      00000000 
+ 1319      00000000 
+ 1320              		.section	.bss.prevPoll,"aw",%nobits
+ 1321              		.align	2
+ 1322              		.set	.LANCHOR15,. + 0
+ 1325              	prevPoll:
+ 1326 0000 00000000 		.space	4
+ 1327              		.section	.bss.quarternion,"aw",%nobits
+ 1328              		.align	2
+ 1329              		.set	.LANCHOR17,. + 0
+ 1332              	quarternion:
+ 1333 0000 00000000 		.space	16
+ 1333      00000000 
+ 1333      00000000 
+ 1333      00000000 
+ 1334              		.section	.data.cov,"aw"
+ 1335              		.align	3
+ 1336              		.set	.LANCHOR0,. + 0
+ 1339              	cov:
+ 1340 0000 000000A0 		.word	-1610612736
+ 1341 0004 9999A93F 		.word	1068079513
+ 1342 0008 00000000 		.word	0
+ 1343 000c 00000000 		.word	0
+ 1344 0010 00000000 		.word	0
+ 1345 0014 00000000 		.word	0
+ 1346 0018 00000000 		.word	0
+ 1347 001c 00000000 		.word	0
+ 1348 0020 000000A0 		.word	-1610612736
+ 1349 0024 9999A93F 		.word	1068079513
+ 1350 0028 00000000 		.word	0
+ 1351 002c 00000000 		.word	0
+ 1352 0030 00000000 		.word	0
+ 1353 0034 00000000 		.word	0
+ 1354 0038 00000000 		.word	0
+ 1355 003c 00000000 		.word	0
+ 1356 0040 000000A0 		.word	-1610612736
+ 1357 0044 9999A93F 		.word	1068079513
+ 1358              		.section	.rodata.accelerometerMisalignment,"a"
+ 1359              		.align	2
+ 1360              		.set	.LANCHOR11,. + 0
+ 1363              	accelerometerMisalignment:
+ 1364 0000 0000803F 		.word	1065353216
+ 1365 0004 00000000 		.word	0
+ 1366 0008 00000000 		.word	0
+ 1367 000c 00000000 		.word	0
+ 1368 0010 0000803F 		.word	1065353216
+ARM GAS  /tmp/ccNflO0v.s 			page 41
+
+
+ 1369 0014 00000000 		.word	0
+ 1370 0018 00000000 		.word	0
+ 1371 001c 00000000 		.word	0
+ 1372 0020 0000803F 		.word	1065353216
+ 1373              		.section	.rodata.accelerometerOffset,"a"
+ 1374              		.align	2
+ 1375              		.set	.LANCHOR9,. + 0
+ 1378              	accelerometerOffset:
+ 1379 0000 00000000 		.word	0
+ 1380 0004 CDCC4C3D 		.word	1028443341
+ 1381 0008 00000000 		.word	0
+ 1382              		.section	.rodata.accelerometerSensitivity,"a"
+ 1383              		.align	2
+ 1384              		.set	.LANCHOR10,. + 0
+ 1387              	accelerometerSensitivity:
+ 1388 0000 0000803F 		.word	1065353216
+ 1389 0004 0000803F 		.word	1065353216
+ 1390 0008 0000803F 		.word	1065353216
+ 1391              		.section	.rodata.defaultTask_attributes,"a"
+ 1392              		.align	2
+ 1393              		.set	.LANCHOR19,. + 0
+ 1396              	defaultTask_attributes:
+ 1397 0000 00000000 		.word	.LC41
+ 1398 0004 00000000 		.space	16
+ 1398      00000000 
+ 1398      00000000 
+ 1398      00000000 
+ 1399 0014 800C0000 		.word	3200
+ 1400 0018 18000000 		.word	24
+ 1401 001c 00000000 		.space	8
+ 1401      00000000 
+ 1402              		.section	.rodata.gyroscopeMisalignment,"a"
+ 1403              		.align	2
+ 1404              		.set	.LANCHOR8,. + 0
+ 1407              	gyroscopeMisalignment:
+ 1408 0000 0000803F 		.word	1065353216
+ 1409 0004 00000000 		.word	0
+ 1410 0008 00000000 		.word	0
+ 1411 000c 00000000 		.word	0
+ 1412 0010 0000803F 		.word	1065353216
+ 1413 0014 00000000 		.word	0
+ 1414 0018 00000000 		.word	0
+ 1415 001c 00000000 		.word	0
+ 1416 0020 0000803F 		.word	1065353216
+ 1417              		.section	.rodata.gyroscopeOffset,"a"
+ 1418              		.align	2
+ 1419              		.set	.LANCHOR6,. + 0
+ 1422              	gyroscopeOffset:
+ 1423 0000 0000CE42 		.word	1120796672
+ 1424 0004 00000CC2 		.word	-1039400960
+ 1425 0008 000020C1 		.word	-1054867456
+ 1426              		.section	.rodata.gyroscopeSensitivity,"a"
+ 1427              		.align	2
+ 1428              		.set	.LANCHOR7,. + 0
+ 1431              	gyroscopeSensitivity:
+ 1432 0000 0000803F 		.word	1065353216
+ 1433 0004 0000803F 		.word	1065353216
+ARM GAS  /tmp/ccNflO0v.s 			page 42
+
+
+ 1434 0008 0000803F 		.word	1065353216
+ 1435              		.section	.rodata.hardIronOffset,"a"
+ 1436              		.align	2
+ 1437              		.set	.LANCHOR13,. + 0
+ 1440              	hardIronOffset:
+ 1441 0000 00000000 		.space	12
+ 1441      00000000 
+ 1441      00000000 
+ 1442              		.section	.rodata.settings,"a"
+ 1443              		.align	2
+ 1444              		.set	.LANCHOR18,. + 0
+ 1447              	settings:
+ 1448 0000 0000803F 		.word	1065353216
+ 1449 0004 00002041 		.word	1092616192
+ 1450 0008 0000A041 		.word	1101004800
+ 1451 000c F4010000 		.word	500
+ 1452              		.section	.rodata.softIronMatrix,"a"
+ 1453              		.align	2
+ 1454              		.set	.LANCHOR12,. + 0
+ 1457              	softIronMatrix:
+ 1458 0000 0000803F 		.word	1065353216
+ 1459 0004 00000000 		.word	0
+ 1460 0008 00000000 		.word	0
+ 1461 000c 00000000 		.word	0
+ 1462 0010 0000803F 		.word	1065353216
+ 1463 0014 00000000 		.word	0
+ 1464 0018 00000000 		.word	0
+ 1465 001c 00000000 		.word	0
+ 1466 0020 0000803F 		.word	1065353216
+ 1467              		.text
+ 1468              	.Letext0:
+ 1469              		.file 4 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 1470              		.file 5 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ 1471              		.file 6 "Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g071xx.h"
+ 1472              		.file 7 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h"
+ 1473              		.file 8 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma.h"
+ 1474              		.file 9 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h"
+ 1475              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 1476              		.file 11 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcutils
+ 1477              		.file 12 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/all
+ 1478              		.file 13 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rmw/ret
+ 1479              		.file 14 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcutils
+ 1480              		.file 15 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rmw/typ
+ 1481              		.file 16 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/typ
+ 1482              		.file 17 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/ini
+ 1483              		.file 18 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/con
+ 1484              		.file 19 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/nod
+ 1485              		.file 20 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/pub
+ 1486              		.file 21 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rcl/tim
+ 1487              		.file 22 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dma.h"
+ 1488              		.file 23 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rmw/qos
+ 1489              		.file 24 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rclc/ty
+ 1490              		.file 25 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/std_msg
+ 1491              		.file 26 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/builtin
+ 1492              		.file 27 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rosidl_
+ 1493              		.file 28 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/std_msg
+ 1494              		.file 29 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/geometr
+ARM GAS  /tmp/ccNflO0v.s 			page 43
+
+
+ 1495              		.file 30 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/geometr
+ 1496              		.file 31 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/sensor_
+ 1497              		.file 32 "Core/Inc/mpu_9250.h"
+ 1498              		.file 33 "Core/Inc/Fusion/FusionAhrs.h"
+ 1499              		.file 34 "Core/Inc/Fusion/FusionOffset.h"
+ 1500              		.file 35 "Core/Inc/usart.h"
+ 1501              		.file 36 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rmw_mic
+ 1502              		.file 37 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rclc/in
+ 1503              		.file 38 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rclc/no
+ 1504              		.file 39 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/sensor_
+ 1505              		.file 40 "micro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include/rclc/pu
+ 1506              		.file 41 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h"
+ 1507              		.file 42 "<built-in>"
+ARM GAS  /tmp/ccNflO0v.s 			page 44
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 app_freertos.c
+     /tmp/ccNflO0v.s:19     .text.FusionCalibrationInertial:0000000000000000 $t
+     /tmp/ccNflO0v.s:26     .text.FusionCalibrationInertial:0000000000000000 FusionCalibrationInertial
+     /tmp/ccNflO0v.s:305    .rodata.StartDefaultTask.str1.4:0000000000000000 $d
+     /tmp/ccNflO0v.s:321    .text.StartDefaultTask:0000000000000000 $t
+     /tmp/ccNflO0v.s:328    .text.StartDefaultTask:0000000000000000 StartDefaultTask
+     /tmp/ccNflO0v.s:617    .text.StartDefaultTask:000000000000013c $d
+     /tmp/ccNflO0v.s:640    .text.StartDefaultTask:0000000000000180 $t
+     /tmp/ccNflO0v.s:1157   .text.StartDefaultTask:000000000000045c $d
+     /tmp/ccNflO0v.s:1181   .text.MX_FREERTOS_Init:0000000000000000 $t
+     /tmp/ccNflO0v.s:1188   .text.MX_FREERTOS_Init:0000000000000000 MX_FREERTOS_Init
+     /tmp/ccNflO0v.s:1230   .text.MX_FREERTOS_Init:000000000000002c $d
+     /tmp/ccNflO0v.s:1396   .rodata.defaultTask_attributes:0000000000000000 defaultTask_attributes
+     /tmp/ccNflO0v.s:1241   .rodata.str1.4:0000000000000000 $d
+     /tmp/ccNflO0v.s:1290   .bss.defaultTaskHandle:0000000000000000 defaultTaskHandle
+     /tmp/ccNflO0v.s:1339   .data.cov:0000000000000000 cov
+     /tmp/ccNflO0v.s:1283   .bss.currPoll:0000000000000000 currPoll
+     /tmp/ccNflO0v.s:1325   .bss.prevPoll:0000000000000000 prevPoll
+     /tmp/ccNflO0v.s:1304   .bss.himu1:0000000000000000 himu1
+     /tmp/ccNflO0v.s:1447   .rodata.settings:0000000000000000 settings
+     /tmp/ccNflO0v.s:1311   .bss.magnetometer:0000000000000000 magnetometer
+     /tmp/ccNflO0v.s:1269   .bss.accelerometer:0000000000000000 accelerometer
+     /tmp/ccNflO0v.s:1297   .bss.gyroscope:0000000000000000 gyroscope
+     /tmp/ccNflO0v.s:1332   .bss.quarternion:0000000000000000 quarternion
+     /tmp/ccNflO0v.s:1276   .bss.ahrs:0000000000000000 ahrs
+     /tmp/ccNflO0v.s:1318   .bss.offset:0000000000000000 offset
+     /tmp/ccNflO0v.s:1440   .rodata.hardIronOffset:0000000000000000 hardIronOffset
+     /tmp/ccNflO0v.s:1457   .rodata.softIronMatrix:0000000000000000 softIronMatrix
+     /tmp/ccNflO0v.s:1378   .rodata.accelerometerOffset:0000000000000000 accelerometerOffset
+     /tmp/ccNflO0v.s:1387   .rodata.accelerometerSensitivity:0000000000000000 accelerometerSensitivity
+     /tmp/ccNflO0v.s:1363   .rodata.accelerometerMisalignment:0000000000000000 accelerometerMisalignment
+     /tmp/ccNflO0v.s:1422   .rodata.gyroscopeOffset:0000000000000000 gyroscopeOffset
+     /tmp/ccNflO0v.s:1431   .rodata.gyroscopeSensitivity:0000000000000000 gyroscopeSensitivity
+     /tmp/ccNflO0v.s:1407   .rodata.gyroscopeMisalignment:0000000000000000 gyroscopeMisalignment
+     /tmp/ccNflO0v.s:1265   .bss.accelerometer:0000000000000000 $d
+     /tmp/ccNflO0v.s:1272   .bss.ahrs:0000000000000000 $d
+     /tmp/ccNflO0v.s:1279   .bss.currPoll:0000000000000000 $d
+     /tmp/ccNflO0v.s:1286   .bss.defaultTaskHandle:0000000000000000 $d
+     /tmp/ccNflO0v.s:1293   .bss.gyroscope:0000000000000000 $d
+     /tmp/ccNflO0v.s:1300   .bss.himu1:0000000000000000 $d
+     /tmp/ccNflO0v.s:1307   .bss.magnetometer:0000000000000000 $d
+     /tmp/ccNflO0v.s:1314   .bss.offset:0000000000000000 $d
+     /tmp/ccNflO0v.s:1321   .bss.prevPoll:0000000000000000 $d
+     /tmp/ccNflO0v.s:1328   .bss.quarternion:0000000000000000 $d
+     /tmp/ccNflO0v.s:1335   .data.cov:0000000000000000 $d
+     /tmp/ccNflO0v.s:1359   .rodata.accelerometerMisalignment:0000000000000000 $d
+     /tmp/ccNflO0v.s:1374   .rodata.accelerometerOffset:0000000000000000 $d
+     /tmp/ccNflO0v.s:1383   .rodata.accelerometerSensitivity:0000000000000000 $d
+     /tmp/ccNflO0v.s:1392   .rodata.defaultTask_attributes:0000000000000000 $d
+     /tmp/ccNflO0v.s:1403   .rodata.gyroscopeMisalignment:0000000000000000 $d
+     /tmp/ccNflO0v.s:1418   .rodata.gyroscopeOffset:0000000000000000 $d
+     /tmp/ccNflO0v.s:1427   .rodata.gyroscopeSensitivity:0000000000000000 $d
+     /tmp/ccNflO0v.s:1436   .rodata.hardIronOffset:0000000000000000 $d
+     /tmp/ccNflO0v.s:1443   .rodata.settings:0000000000000000 $d
+     /tmp/ccNflO0v.s:1453   .rodata.softIronMatrix:0000000000000000 $d
+
+ARM GAS  /tmp/ccNflO0v.s 			page 45
+
+
+UNDEFINED SYMBOLS
+__aeabi_fsub
+__aeabi_fmul
+__aeabi_fadd
+memcpy
+__aeabi_fdiv
+__aeabi_ui2f
+__aeabi_f2d
+rmw_uros_set_custom_transport
+rcutils_get_zero_initialized_allocator
+rcutils_set_default_allocator
+rcutils_get_default_allocator
+rclc_support_init
+rclc_node_init_default
+rosidl_typesupport_c__get_message_type_support_handle__sensor_msgs__msg__Imu
+rclc_publisher_init_default
+cubemx_transport_read
+cubemx_transport_write
+cubemx_transport_close
+cubemx_transport_open
+huart1
+microros_allocate
+microros_deallocate
+microros_reallocate
+microros_zero_allocate
+osDelay
+HAL_GetTick
+IMU_measure
+FusionOffsetUpdate
+FusionAhrsUpdateNoMagnetometer
+FusionAhrsGetQuaternion
+rcl_publish
+FusionOffsetInitialise
+FusionAhrsInitialise
+FusionAhrsSetSettings
+osThreadNew

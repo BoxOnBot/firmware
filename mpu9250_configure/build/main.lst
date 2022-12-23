@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6ZXLtF.s 			page 1
+ARM GAS  /tmp/ccP4y1SB.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   30              		.loc 1 26 179 view -0
   31              		.cfi_startproc
   32              		@ args = 60, pretend = 0, frame = 104
-ARM GAS  /tmp/cc6ZXLtF.s 			page 2
+ARM GAS  /tmp/ccP4y1SB.s 			page 2
 
 
   33              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   22:Core/Inc/Fusion/FusionMath.h ****  */
   23:Core/Inc/Fusion/FusionMath.h **** typedef union {
   24:Core/Inc/Fusion/FusionMath.h ****     float array[3];
-ARM GAS  /tmp/cc6ZXLtF.s 			page 3
+ARM GAS  /tmp/ccP4y1SB.s 			page 3
 
 
   25:Core/Inc/Fusion/FusionMath.h **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   79:Core/Inc/Fusion/FusionMath.h **** } FusionEuler;
   80:Core/Inc/Fusion/FusionMath.h **** 
   81:Core/Inc/Fusion/FusionMath.h **** /**
-ARM GAS  /tmp/cc6ZXLtF.s 			page 4
+ARM GAS  /tmp/ccP4y1SB.s 			page 4
 
 
   82:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of zeros.
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  136:Core/Inc/Fusion/FusionMath.h **** static inline float FusionRadiansToDegrees(const float radians) {
  137:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
  138:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/cc6ZXLtF.s 			page 5
+ARM GAS  /tmp/ccP4y1SB.s 			page 5
 
 
  139:Core/Inc/Fusion/FusionMath.h **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  193:Core/Inc/Fusion/FusionMath.h **** }
  194:Core/Inc/Fusion/FusionMath.h **** 
  195:Core/Inc/Fusion/FusionMath.h **** /**
-ARM GAS  /tmp/cc6ZXLtF.s 			page 6
+ARM GAS  /tmp/ccP4y1SB.s 			page 6
 
 
  196:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of two vectors.
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  220:Core/Inc/Fusion/FusionMath.h ****     return result;
   95              		.loc 2 220 5 is_stmt 1 view .LVU15
   96              		.loc 2 220 12 is_stmt 0 view .LVU16
-ARM GAS  /tmp/cc6ZXLtF.s 			page 7
+ARM GAS  /tmp/ccP4y1SB.s 			page 7
 
 
   97 0046 14AB     		add	r3, sp, #80
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  117              	.LVL5:
  118              		.loc 2 254 19 view .LVU21
  119 0068 0B90     		str	r0, [sp, #44]	@ float
-ARM GAS  /tmp/cc6ZXLtF.s 			page 8
+ARM GAS  /tmp/ccP4y1SB.s 			page 8
 
 
  255:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  274:Core/Inc/Fusion/FusionMath.h **** #undef A
  275:Core/Inc/Fusion/FusionMath.h **** #undef B
  276:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/cc6ZXLtF.s 			page 9
+ARM GAS  /tmp/ccP4y1SB.s 			page 9
 
 
  277:Core/Inc/Fusion/FusionMath.h **** 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  331:Core/Inc/Fusion/FusionMath.h ****  * @param quaternionB Quaternion B (to be pre-multiplied).
  332:Core/Inc/Fusion/FusionMath.h ****  * @return Multiplication of two quaternions.
  333:Core/Inc/Fusion/FusionMath.h ****  */
-ARM GAS  /tmp/cc6ZXLtF.s 			page 10
+ARM GAS  /tmp/ccP4y1SB.s 			page 10
 
 
  334:Core/Inc/Fusion/FusionMath.h **** static inline FusionQuaternion FusionQuaternionMultiply(const FusionQuaternion quaternionA, const F
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  388:Core/Inc/Fusion/FusionMath.h **** }
  389:Core/Inc/Fusion/FusionMath.h **** 
  390:Core/Inc/Fusion/FusionMath.h **** //------------------------------------------------------------------------------
-ARM GAS  /tmp/cc6ZXLtF.s 			page 11
+ARM GAS  /tmp/ccP4y1SB.s 			page 11
 
 
  391:Core/Inc/Fusion/FusionMath.h **** // Inline functions - Matrix operations
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  196 00de 0E99     		ldr	r1, [sp, #56]	@ float
  197 00e0 2046     		mov	r0, r4
  198 00e2 FFF7FEFF 		bl	__aeabi_fmul
-ARM GAS  /tmp/cc6ZXLtF.s 			page 12
+ARM GAS  /tmp/ccP4y1SB.s 			page 12
 
 
  199              	.LVL13:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  252              		.loc 2 404 19 view .LVU55
  253 0138 0A90     		str	r0, [sp, #40]	@ float
  405:Core/Inc/Fusion/FusionMath.h ****     return result;
-ARM GAS  /tmp/cc6ZXLtF.s 			page 13
+ARM GAS  /tmp/ccP4y1SB.s 			page 13
 
 
  254              		.loc 2 405 5 is_stmt 1 view .LVU56
@@ -768,241 +768,259 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   18:Core/Src/main.c **** /* USER CODE END Header */
   19:Core/Src/main.c **** /* Includes ------------------------------------------------------------------*/
   20:Core/Src/main.c **** #include "main.h"
-  21:Core/Src/main.c **** #include "gpio.h"
-  22:Core/Src/main.c **** #include "i2c.h"
-  23:Core/Src/main.c **** #include "stm32f1xx_hal_uart.h"
-  24:Core/Src/main.c **** #include "usart.h"
-  25:Core/Src/main.c **** 
-  26:Core/Src/main.c **** 
-  27:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
-  28:Core/Src/main.c **** /* USER CODE BEGIN Includes */
-  29:Core/Src/main.c **** #include "mpu_9250.h"
-  30:Core/Src/main.c **** #include "printf.h"
-ARM GAS  /tmp/cc6ZXLtF.s 			page 14
+  21:Core/Src/main.c **** #include "i2c.h"
+  22:Core/Src/main.c **** #include "usart.h"
+  23:Core/Src/main.c **** #include "gpio.h"
+  24:Core/Src/main.c **** 
+  25:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
+  26:Core/Src/main.c **** /* USER CODE BEGIN Includes */
+  27:Core/Src/main.c **** #include "mpu_9250.h"
+  28:Core/Src/main.c **** #include "printf.h"
+  29:Core/Src/main.c **** #include "Fusion/Fusion.h"
+  30:Core/Src/main.c **** /* USER CODE END Includes */
+ARM GAS  /tmp/ccP4y1SB.s 			page 14
 
 
-  31:Core/Src/main.c **** #include <string.h>
-  32:Core/Src/main.c **** #include "Fusion/Fusion.h"
-  33:Core/Src/main.c **** /* USER CODE END Includes */
+  31:Core/Src/main.c **** 
+  32:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  33:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   34:Core/Src/main.c **** 
-  35:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
-  36:Core/Src/main.c **** /* USER CODE BEGIN PTD */
-  37:Core/Src/main.c **** 
-  38:Core/Src/main.c **** /* USER CODE END PTD */
-  39:Core/Src/main.c **** 
-  40:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-  41:Core/Src/main.c **** /* USER CODE BEGIN PD */
-  42:Core/Src/main.c **** #define SAMPLE_RATE (100)
-  43:Core/Src/main.c **** /* USER CODE END PD */
-  44:Core/Src/main.c **** 
-  45:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
-  46:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  35:Core/Src/main.c **** /* USER CODE END PTD */
+  36:Core/Src/main.c **** 
+  37:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  38:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  39:Core/Src/main.c **** #define SAMPLE_RATE (100)
+  40:Core/Src/main.c **** #define MSG_MAX_LEN 120
+  41:Core/Src/main.c **** /* USER CODE END PD */
+  42:Core/Src/main.c **** 
+  43:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  44:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  45:Core/Src/main.c **** 
+  46:Core/Src/main.c **** /* USER CODE END PM */
   47:Core/Src/main.c **** 
-  48:Core/Src/main.c **** /* USER CODE END PM */
+  48:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
   49:Core/Src/main.c **** 
-  50:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  50:Core/Src/main.c **** /* USER CODE BEGIN PV */
   51:Core/Src/main.c **** 
-  52:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  52:Core/Src/main.c **** /* USER CODE END PV */
   53:Core/Src/main.c **** 
-  54:Core/Src/main.c **** /* USER CODE END PV */
-  55:Core/Src/main.c **** 
-  56:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
-  57:Core/Src/main.c **** void SystemClock_Config(void);
-  58:Core/Src/main.c **** /* USER CODE BEGIN PFP */
-  59:Core/Src/main.c **** /* USER CODE END PFP */
-  60:Core/Src/main.c **** 
-  61:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
-  62:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  54:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  55:Core/Src/main.c **** void SystemClock_Config(void);
+  56:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  57:Core/Src/main.c **** /* USER CODE END PFP */
+  58:Core/Src/main.c **** 
+  59:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  60:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  61:Core/Src/main.c **** 
+  62:Core/Src/main.c **** /* USER CODE END 0 */
   63:Core/Src/main.c **** 
-  64:Core/Src/main.c **** /* USER CODE END 0 */
-  65:Core/Src/main.c **** 
-  66:Core/Src/main.c **** /**
-  67:Core/Src/main.c ****  * @brief  The application entry point.
-  68:Core/Src/main.c ****  * @retval int
-  69:Core/Src/main.c ****  */
-  70:Core/Src/main.c **** int main(void) {
-  71:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
-  72:Core/Src/main.c ****   dataHandleIMU himu1;
-  73:Core/Src/main.c **** 
-  74:Core/Src/main.c ****   char msg[100] = "";
+  64:Core/Src/main.c **** /**
+  65:Core/Src/main.c ****   * @brief  The application entry point.
+  66:Core/Src/main.c ****   * @retval int
+  67:Core/Src/main.c ****   */
+  68:Core/Src/main.c **** int main(void)
+  69:Core/Src/main.c **** {
+  70:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  71:Core/Src/main.c ****   dataHandleIMU himu1;
+  72:Core/Src/main.c **** 
+  73:Core/Src/main.c ****   char msg[MSG_MAX_LEN] = {'\0'};
+  74:Core/Src/main.c ****   uint16_t msgLen = 0;
   75:Core/Src/main.c **** 
-  76:Core/Src/main.c ****   uint32_t previousTimestamp = 0;
-  77:Core/Src/main.c ****   uint32_t timestamp = 0;
+  76:Core/Src/main.c ****   uint32_t prevPoll = 0;
+  77:Core/Src/main.c ****   uint32_t currPoll = 0;
   78:Core/Src/main.c ****   /* USER CODE END 1 */
   79:Core/Src/main.c **** 
   80:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
   81:Core/Src/main.c **** 
-  82:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick.
-  83:Core/Src/main.c ****    */
-  84:Core/Src/main.c ****   HAL_Init();
-  85:Core/Src/main.c **** 
-  86:Core/Src/main.c ****   /* USER CODE BEGIN Init */
-  87:Core/Src/main.c **** 
-ARM GAS  /tmp/cc6ZXLtF.s 			page 15
+  82:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  83:Core/Src/main.c ****   HAL_Init();
+  84:Core/Src/main.c **** 
+  85:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  86:Core/Src/main.c **** 
+  87:Core/Src/main.c ****   /* USER CODE END Init */
+ARM GAS  /tmp/ccP4y1SB.s 			page 15
 
 
-  88:Core/Src/main.c ****   /* USER CODE END Init */
-  89:Core/Src/main.c **** 
-  90:Core/Src/main.c ****   /* Configure the system clock */
-  91:Core/Src/main.c ****   SystemClock_Config();
-  92:Core/Src/main.c **** 
-  93:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-  94:Core/Src/main.c **** 
-  95:Core/Src/main.c ****   /* USER CODE END SysInit */
-  96:Core/Src/main.c **** 
-  97:Core/Src/main.c ****   /* Initialize all configured peripherals */
-  98:Core/Src/main.c ****   MX_GPIO_Init();
-  99:Core/Src/main.c ****   MX_I2C1_Init();
- 100:Core/Src/main.c ****   MX_USART3_UART_Init();
- 101:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 102:Core/Src/main.c ****   MPU_9250_Init();
- 103:Core/Src/main.c **** 
- 104:Core/Src/main.c ****   // Define calibration
- 105:Core/Src/main.c ****   // sensitivity and alignment taken into account in mpu_9250.c
- 106:Core/Src/main.c ****   const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}
- 107:Core/Src/main.c ****   const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
- 108:Core/Src/main.c ****   const FusionVector gyroscopeOffset = {-26.0f, 4.83f, 1.34f};
- 109:Core/Src/main.c ****   const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1
- 110:Core/Src/main.c ****   const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
- 111:Core/Src/main.c ****   const FusionVector accelerometerOffset = {0.0f, 0.0f, 0.07f};
- 112:Core/Src/main.c ****   const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
- 113:Core/Src/main.c ****   const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
- 114:Core/Src/main.c **** 
- 115:Core/Src/main.c ****   // Initialise algorithms
- 116:Core/Src/main.c ****   FusionOffset offset;
- 117:Core/Src/main.c ****   FusionAhrs ahrs;
- 118:Core/Src/main.c **** 
- 119:Core/Src/main.c ****   FusionOffsetInitialise(&offset, SAMPLE_RATE);
- 120:Core/Src/main.c ****   FusionAhrsInitialise(&ahrs);
- 121:Core/Src/main.c **** 
- 122:Core/Src/main.c ****   // Set AHRS algorithm settings
- 123:Core/Src/main.c ****   const FusionAhrsSettings settings = {
- 124:Core/Src/main.c ****           .gain = 0.5f,
- 125:Core/Src/main.c ****           .accelerationRejection = 10.0f,
- 126:Core/Src/main.c ****           .magneticRejection = 20.0f,
- 127:Core/Src/main.c ****           .rejectionTimeout = 5 * SAMPLE_RATE, /* 5 seconds */
- 128:Core/Src/main.c ****   };
- 129:Core/Src/main.c ****   FusionAhrsSetSettings(&ahrs, &settings);
- 130:Core/Src/main.c **** 
- 131:Core/Src/main.c ****   /* USER CODE END 2 */
- 132:Core/Src/main.c **** 
- 133:Core/Src/main.c ****   /* Infinite loop */
- 134:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
- 135:Core/Src/main.c ****   while (1) {
- 136:Core/Src/main.c ****     IMU_measure(&himu1);
- 137:Core/Src/main.c **** 
- 138:Core/Src/main.c ****     // Acquire latest sensor data
- 139:Core/Src/main.c ****     timestamp = HAL_GetTick();
- 140:Core/Src/main.c **** 
- 141:Core/Src/main.c ****     FusionVector gyroscope = {himu1.gx, himu1.gy, himu1.gz}; // gyroscope data in degrees/s
- 142:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 143:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 144:Core/Src/main.c **** 
-ARM GAS  /tmp/cc6ZXLtF.s 			page 16
+  88:Core/Src/main.c **** 
+  89:Core/Src/main.c ****   /* Configure the system clock */
+  90:Core/Src/main.c ****   SystemClock_Config();
+  91:Core/Src/main.c **** 
+  92:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  93:Core/Src/main.c **** 
+  94:Core/Src/main.c ****   /* USER CODE END SysInit */
+  95:Core/Src/main.c **** 
+  96:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  97:Core/Src/main.c ****   MX_GPIO_Init();
+  98:Core/Src/main.c ****   MX_I2C1_Init();
+  99:Core/Src/main.c ****   MX_USART3_UART_Init();
+ 100:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 101:Core/Src/main.c ****   MPU_9250_Init();
+ 102:Core/Src/main.c **** 
+ 103:Core/Src/main.c ****   // Define calibration
+ 104:Core/Src/main.c ****   // sensitivity and alignment taken into account in mpu_9250.c
+ 105:Core/Src/main.c ****   const FusionMatrix gyroscopeMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}
+ 106:Core/Src/main.c ****   const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
+ 107:Core/Src/main.c ****   const FusionVector gyroscopeOffset = {26.17f, -9.3f, -3.0f};
+ 108:Core/Src/main.c ****   const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1
+ 109:Core/Src/main.c ****   const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
+ 110:Core/Src/main.c ****   const FusionVector accelerometerOffset = {-0.005f, 0.025f, -0.07f};
+ 111:Core/Src/main.c ****   const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+ 112:Core/Src/main.c ****   const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
+ 113:Core/Src/main.c **** 
+ 114:Core/Src/main.c ****   // Initialise algorithms
+ 115:Core/Src/main.c ****   FusionOffset offset;
+ 116:Core/Src/main.c ****   FusionAhrs ahrs;
+ 117:Core/Src/main.c **** 
+ 118:Core/Src/main.c ****   FusionOffsetInitialise(&offset, SAMPLE_RATE);
+ 119:Core/Src/main.c ****   FusionAhrsInitialise(&ahrs);
+ 120:Core/Src/main.c **** 
+ 121:Core/Src/main.c ****   // Set AHRS algorithm settings
+ 122:Core/Src/main.c ****   const FusionAhrsSettings settings = {
+ 123:Core/Src/main.c ****           .gain = 1.0f,
+ 124:Core/Src/main.c ****           .accelerationRejection = 10.0f,
+ 125:Core/Src/main.c ****           .magneticRejection = 20.0f,
+ 126:Core/Src/main.c ****           .rejectionTimeout = 5 * SAMPLE_RATE, /* 5 seconds */
+ 127:Core/Src/main.c ****   };
+ 128:Core/Src/main.c ****   FusionAhrsSetSettings(&ahrs, &settings);
+ 129:Core/Src/main.c **** 
+ 130:Core/Src/main.c ****   /* USER CODE END 2 */
+ 131:Core/Src/main.c **** 
+ 132:Core/Src/main.c ****   /* Infinite loop */
+ 133:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+ 134:Core/Src/main.c ****   while (1) {
+ 135:Core/Src/main.c ****     currPoll = HAL_GetTick();
+ 136:Core/Src/main.c ****     
+ 137:Core/Src/main.c ****     if ((currPoll - prevPoll) >= (1/SAMPLE_RATE)*1000){
+ 138:Core/Src/main.c ****       IMU_measure(&himu1);
+ 139:Core/Src/main.c **** 
+ 140:Core/Src/main.c ****       FusionVector gyroscope = {himu1.gx, himu1.gy, himu1.gz}; // gyroscope data in degrees/s
+ 141:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 142:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 143:Core/Src/main.c **** 
+ 144:Core/Src/main.c ****       // Apply calibration
+ARM GAS  /tmp/ccP4y1SB.s 			page 16
 
 
- 145:Core/Src/main.c ****     // Apply calibration
- 146:Core/Src/main.c ****     gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity, g
- 147:Core/Src/main.c ****     accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, acceleromet
- 148:Core/Src/main.c ****     magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
- 149:Core/Src/main.c **** 
- 150:Core/Src/main.c ****     // swap to axes of system
- 151:Core/Src/main.c ****     gyroscope = FusionAxesSwap(gyroscope, FusionAxesAlignmentPYNXPZ);
- 152:Core/Src/main.c ****     accelerometer = FusionAxesSwap(accelerometer, FusionAxesAlignmentPYNXPZ);
- 153:Core/Src/main.c ****     magnetometer = FusionAxesSwap(magnetometer, FusionAxesAlignmentPYNXPZ);
- 154:Core/Src/main.c **** 
- 155:Core/Src/main.c ****     // Update gyroscope offset correction algorithm
- 156:Core/Src/main.c ****     gyroscope = FusionOffsetUpdate(&offset, gyroscope);
- 157:Core/Src/main.c **** 
- 158:Core/Src/main.c ****     // Calculate delta time (in seconds) to account for gyroscope sample clock error
- 159:Core/Src/main.c ****     const float deltaTime = (float) (timestamp - previousTimestamp) / (float) 1000;
- 160:Core/Src/main.c **** 
- 161:Core/Src/main.c ****     previousTimestamp = timestamp;
+ 145:Core/Src/main.c ****       gyroscope = FusionCalibrationInertial(gyroscope, gyroscopeMisalignment, gyroscopeSensitivity,
+ 146:Core/Src/main.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 147:Core/Src/main.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 148:Core/Src/main.c **** 
+ 149:Core/Src/main.c ****       // swap imu axes to axes of system
+ 150:Core/Src/main.c ****       gyroscope = FusionAxesSwap(gyroscope, FusionAxesAlignmentPYNXPZ);
+ 151:Core/Src/main.c ****       accelerometer = FusionAxesSwap(accelerometer, FusionAxesAlignmentPYNXPZ);
+ 152:Core/Src/main.c ****       magnetometer = FusionAxesSwap(magnetometer, FusionAxesAlignmentPYNXPZ);
+ 153:Core/Src/main.c **** 
+ 154:Core/Src/main.c ****       // Update gyroscope offset correction algorithm
+ 155:Core/Src/main.c ****       gyroscope = FusionOffsetUpdate(&offset, gyroscope);
+ 156:Core/Src/main.c **** 
+ 157:Core/Src/main.c ****       // Calculate delta time (in seconds) to account for gyroscope sample clock error
+ 158:Core/Src/main.c ****       const float deltaTime = (float) (currPoll - prevPoll) / (float) 1000;
+ 159:Core/Src/main.c **** 
+ 160:Core/Src/main.c ****       // Update gyroscope AHRS algorithm
+ 161:Core/Src/main.c ****       // FusionAhrsUpdate(&ahrs, gyroscope, accelerometer, magnetometer, deltaTime);
  162:Core/Src/main.c **** 
- 163:Core/Src/main.c ****     // Update gyroscope AHRS algorithm
- 164:Core/Src/main.c ****     FusionAhrsUpdate(&ahrs, gyroscope, accelerometer, magnetometer, deltaTime);
- 165:Core/Src/main.c **** 
- 166:Core/Src/main.c ****     // algorithm outputs
- 167:Core/Src/main.c ****     const FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
- 168:Core/Src/main.c ****     const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
- 169:Core/Src/main.c **** 
- 170:Core/Src/main.c ****     // print algo outputs
- 171:Core/Src/main.c ****     sprintf_(msg,"Roll %0.1f, Pitch %0.1f, Yaw %0.1f, X %0.1f, Y %0.1f, Z %0.1f\n", euler.angle.rol
- 172:Core/Src/main.c **** 
- 173:Core/Src/main.c ****     HAL_UART_Transmit_IT(&huart3, (uint8_t *)msg, (uint16_t)100);
- 174:Core/Src/main.c ****     /* USER CODE END WHILE */
- 175:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 176:Core/Src/main.c ****   }
- 177:Core/Src/main.c ****   /* USER CODE END 3 */
- 178:Core/Src/main.c **** }
+ 163:Core/Src/main.c ****       FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, deltaTime);
+ 164:Core/Src/main.c **** 
+ 165:Core/Src/main.c ****       // algorithm outputs
+ 166:Core/Src/main.c ****       const FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
+ 167:Core/Src/main.c ****       // const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
+ 168:Core/Src/main.c **** 
+ 169:Core/Src/main.c ****       // print algo outputs
+ 170:Core/Src/main.c ****       // msgLen = sprintf_(msg, "[[%0.2f, %0.2f, %0.2f],[%0.2f, %0.2f, %0.2f],[%0.2f, %0.2f, %0.2f]
+ 171:Core/Src/main.c **** 
+ 172:Core/Src/main.c ****       msgLen = sprintf_(msg,"Roll %0.1f, Pitch %0.1f, Yaw %0.1f\n", euler.angle.roll, euler.angle.p
+ 173:Core/Src/main.c **** 
+ 174:Core/Src/main.c ****       HAL_UART_Transmit(&huart3, (uint8_t *)msg, (uint16_t)msgLen, 0xFFFF);
+ 175:Core/Src/main.c **** 
+ 176:Core/Src/main.c ****       prevPoll = currPoll;
+ 177:Core/Src/main.c ****     }
+ 178:Core/Src/main.c ****     /* USER CODE END WHILE */
  179:Core/Src/main.c **** 
- 180:Core/Src/main.c **** /**
- 181:Core/Src/main.c ****  * @brief System Clock Configuration
- 182:Core/Src/main.c ****  * @retval None
- 183:Core/Src/main.c ****  */
- 184:Core/Src/main.c **** void SystemClock_Config(void) {
- 185:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 186:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 187:Core/Src/main.c **** 
- 188:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
- 189:Core/Src/main.c ****    * in the RCC_OscInitTypeDef structure.
- 190:Core/Src/main.c ****    */
- 191:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
- 192:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 193:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 194:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 195:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 196:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 197:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 198:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
- 199:Core/Src/main.c ****     Error_Handler();
- 200:Core/Src/main.c ****   }
- 201:Core/Src/main.c **** 
-ARM GAS  /tmp/cc6ZXLtF.s 			page 17
+ 180:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 181:Core/Src/main.c ****   }
+ 182:Core/Src/main.c ****   /* USER CODE END 3 */
+ 183:Core/Src/main.c **** }
+ 184:Core/Src/main.c **** 
+ 185:Core/Src/main.c **** /**
+ 186:Core/Src/main.c ****   * @brief System Clock Configuration
+ 187:Core/Src/main.c ****   * @retval None
+ 188:Core/Src/main.c ****   */
+ 189:Core/Src/main.c **** void SystemClock_Config(void)
+ 190:Core/Src/main.c **** {
+ 191:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 192:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 193:Core/Src/main.c **** 
+ 194:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 195:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 196:Core/Src/main.c ****   */
+ 197:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+ 198:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 199:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 200:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 201:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ARM GAS  /tmp/ccP4y1SB.s 			page 17
 
 
- 202:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
- 203:Core/Src/main.c ****    */
- 204:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK |
- 205:Core/Src/main.c ****                                 RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
- 206:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 207:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 208:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 209:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 210:Core/Src/main.c **** 
- 211:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
- 212:Core/Src/main.c ****     Error_Handler();
- 213:Core/Src/main.c ****   }
- 214:Core/Src/main.c **** }
- 215:Core/Src/main.c **** 
- 216:Core/Src/main.c **** /* USER CODE BEGIN 4 */
- 217:Core/Src/main.c **** // legacy dump
- 218:Core/Src/main.c **** 
- 219:Core/Src/main.c **** // sprintf_(msg, ">%0.2f, %0.2f, %0.2f;%0.2f, %0.2f, %0.2f;%0.2f, %02f, %0.2f<\n", himu1.ax, himu1.
- 220:Core/Src/main.c **** 
- 221:Core/Src/main.c **** // HAL_UART_Transmit_IT(&huart3, (uint8_t *)msg, (uint16_t)100);
- 222:Core/Src/main.c **** /* USER CODE END 4 */
+ 202:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 203:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 204:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 205:Core/Src/main.c ****   {
+ 206:Core/Src/main.c ****     Error_Handler();
+ 207:Core/Src/main.c ****   }
+ 208:Core/Src/main.c **** 
+ 209:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 210:Core/Src/main.c ****   */
+ 211:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 212:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 213:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 214:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 215:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 216:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 217:Core/Src/main.c **** 
+ 218:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+ 219:Core/Src/main.c ****   {
+ 220:Core/Src/main.c ****     Error_Handler();
+ 221:Core/Src/main.c ****   }
+ 222:Core/Src/main.c **** }
  223:Core/Src/main.c **** 
- 224:Core/Src/main.c **** /**
- 225:Core/Src/main.c ****  * @brief  This function is executed in case of error occurrence.
- 226:Core/Src/main.c ****  * @retval None
- 227:Core/Src/main.c ****  */
- 228:Core/Src/main.c **** void Error_Handler(void) {
- 282              		.loc 3 228 26 is_stmt 1 view -0
+ 224:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 225:Core/Src/main.c **** 
+ 226:Core/Src/main.c **** // legacy dump
+ 227:Core/Src/main.c **** 
+ 228:Core/Src/main.c **** // sprintf_(msg, ">%0.2f, %0.2f, %0.2f;%0.2f, %0.2f, %0.2f;%0.2f, %02f, %0.2f<\n", himu1.ax, himu1.
+ 229:Core/Src/main.c **** 
+ 230:Core/Src/main.c **** // msgLen = sprintf_(msg, "[[%0.2f, %0.2f, %0.2f],[%0.2f, %0.2f, %0.2f]]\r\n", himu1.ax, himu1.ay, 
+ 231:Core/Src/main.c **** 
+ 232:Core/Src/main.c **** // msgLen = sprintf_(msg, "[[%0.2f, %0.2f, %0.2f]]\r\n", himu1.ax, himu1.ay, himu1.az);
+ 233:Core/Src/main.c **** 
+ 234:Core/Src/main.c **** // HAL_UART_Transmit_IT(&huart3, (uint8_t *)msg, (uint16_t)100);
+ 235:Core/Src/main.c **** 
+ 236:Core/Src/main.c **** /* USER CODE END 4 */
+ 237:Core/Src/main.c **** 
+ 238:Core/Src/main.c **** /**
+ 239:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 240:Core/Src/main.c ****   * @retval None
+ 241:Core/Src/main.c ****   */
+ 242:Core/Src/main.c **** void Error_Handler(void)
+ 243:Core/Src/main.c **** {
+ 282              		.loc 3 243 1 is_stmt 1 view -0
  283              		.cfi_startproc
  284              		@ Volatile: function does not return.
  285              		@ args = 0, pretend = 0, frame = 0
  286              		@ frame_needed = 0, uses_anonymous_args = 0
  287              		@ link register save eliminated.
- 229:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
- 230:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 231:Core/Src/main.c ****   __disable_irq();
- 288              		.loc 3 231 3 view .LVU61
+ 244:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 245:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 246:Core/Src/main.c ****   __disable_irq();
+ 288              		.loc 3 246 3 view .LVU61
  289              	.LBB35:
  290              	.LBI35:
  291              		.file 4 "Drivers/CMSIS/Include/cmsis_gcc.h"
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+ARM GAS  /tmp/ccP4y1SB.s 			page 18
+
+
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
    4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.0.4
    5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     09. April 2018
@@ -1018,9 +1036,6 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
-ARM GAS  /tmp/cc6ZXLtF.s 			page 18
-
-
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
   19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
   20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -1063,6 +1078,9 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
   59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+ARM GAS  /tmp/ccP4y1SB.s 			page 19
+
+
   60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
   62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
@@ -1078,9 +1096,6 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
-ARM GAS  /tmp/cc6ZXLtF.s 			page 19
-
-
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
   77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1123,6 +1138,9 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  116:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /tmp/ccP4y1SB.s 			page 20
+
+
  117:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  118:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
  119:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
@@ -1138,9 +1156,6 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  129:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
  130:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  131:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
-ARM GAS  /tmp/cc6ZXLtF.s 			page 20
-
-
  132:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  133:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  134:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1164,12 +1179,12 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  301              	.L4:
  302              	.LBE36:
  303              	.LBE35:
- 232:Core/Src/main.c ****   while (1) {
- 304              		.loc 3 232 3 discriminator 1 view .LVU64
- 233:Core/Src/main.c ****   }
- 305              		.loc 3 233 3 discriminator 1 view .LVU65
- 232:Core/Src/main.c ****   while (1) {
- 306              		.loc 3 232 9 discriminator 1 view .LVU66
+ 247:Core/Src/main.c ****   while (1) {
+ 304              		.loc 3 247 3 discriminator 1 view .LVU64
+ 248:Core/Src/main.c ****   }
+ 305              		.loc 3 248 3 discriminator 1 view .LVU65
+ 247:Core/Src/main.c ****   while (1) {
+ 306              		.loc 3 247 9 discriminator 1 view .LVU66
  307 0002 FEE7     		b	.L4
  308              		.cfi_endproc
  309              	.LFE91:
@@ -1182,8 +1197,11 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  317              		.fpu softvfp
  319              	SystemClock_Config:
  320              	.LFB90:
- 184:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 321              		.loc 3 184 31 view -0
+ 190:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ARM GAS  /tmp/ccP4y1SB.s 			page 21
+
+
+ 321              		.loc 3 190 1 view -0
  322              		.cfi_startproc
  323              		@ args = 0, pretend = 0, frame = 64
  324              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1194,118 +1212,118 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  329 0002 91B0     		sub	sp, sp, #68
  330              	.LCFI4:
  331              		.cfi_def_cfa_offset 72
- 185:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 332              		.loc 3 185 3 view .LVU68
- 185:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 333              		.loc 3 185 22 is_stmt 0 view .LVU69
-ARM GAS  /tmp/cc6ZXLtF.s 			page 21
-
-
+ 191:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 332              		.loc 3 191 3 view .LVU68
+ 191:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 333              		.loc 3 191 22 is_stmt 0 view .LVU69
  334 0004 2822     		movs	r2, #40
  335 0006 0021     		movs	r1, #0
  336 0008 06A8     		add	r0, sp, #24
  337 000a FFF7FEFF 		bl	memset
  338              	.LVL23:
- 186:Core/Src/main.c **** 
- 339              		.loc 3 186 3 is_stmt 1 view .LVU70
- 186:Core/Src/main.c **** 
- 340              		.loc 3 186 22 is_stmt 0 view .LVU71
+ 192:Core/Src/main.c **** 
+ 339              		.loc 3 192 3 is_stmt 1 view .LVU70
+ 192:Core/Src/main.c **** 
+ 340              		.loc 3 192 22 is_stmt 0 view .LVU71
  341 000e 0023     		movs	r3, #0
  342 0010 0193     		str	r3, [sp, #4]
  343 0012 0293     		str	r3, [sp, #8]
  344 0014 0393     		str	r3, [sp, #12]
  345 0016 0493     		str	r3, [sp, #16]
  346 0018 0593     		str	r3, [sp, #20]
- 191:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 347              		.loc 3 191 3 is_stmt 1 view .LVU72
- 191:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 348              		.loc 3 191 36 is_stmt 0 view .LVU73
+ 197:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 347              		.loc 3 197 3 is_stmt 1 view .LVU72
+ 197:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 348              		.loc 3 197 36 is_stmt 0 view .LVU73
  349 001a 0122     		movs	r2, #1
  350 001c 0692     		str	r2, [sp, #24]
- 192:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 351              		.loc 3 192 3 is_stmt 1 view .LVU74
- 192:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 352              		.loc 3 192 30 is_stmt 0 view .LVU75
+ 198:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 351              		.loc 3 198 3 is_stmt 1 view .LVU74
+ 198:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 352              		.loc 3 198 30 is_stmt 0 view .LVU75
  353 001e 4FF48033 		mov	r3, #65536
  354 0022 0793     		str	r3, [sp, #28]
- 193:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 355              		.loc 3 193 3 is_stmt 1 view .LVU76
- 194:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 356              		.loc 3 194 3 view .LVU77
- 194:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 357              		.loc 3 194 30 is_stmt 0 view .LVU78
+ 199:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 355              		.loc 3 199 3 is_stmt 1 view .LVU76
+ 200:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 356              		.loc 3 200 3 view .LVU77
+ 200:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 357              		.loc 3 200 30 is_stmt 0 view .LVU78
  358 0024 0A92     		str	r2, [sp, #40]
- 195:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 359              		.loc 3 195 3 is_stmt 1 view .LVU79
- 195:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 360              		.loc 3 195 34 is_stmt 0 view .LVU80
+ 201:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 359              		.loc 3 201 3 is_stmt 1 view .LVU79
+ 201:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 360              		.loc 3 201 34 is_stmt 0 view .LVU80
  361 0026 0222     		movs	r2, #2
  362 0028 0D92     		str	r2, [sp, #52]
- 196:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 363              		.loc 3 196 3 is_stmt 1 view .LVU81
- 196:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 364              		.loc 3 196 35 is_stmt 0 view .LVU82
+ 202:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 363              		.loc 3 202 3 is_stmt 1 view .LVU81
+ARM GAS  /tmp/ccP4y1SB.s 			page 22
+
+
+ 202:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 364              		.loc 3 202 35 is_stmt 0 view .LVU82
  365 002a 0E93     		str	r3, [sp, #56]
- 197:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
- 366              		.loc 3 197 3 is_stmt 1 view .LVU83
- 197:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
- 367              		.loc 3 197 32 is_stmt 0 view .LVU84
+ 203:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 366              		.loc 3 203 3 is_stmt 1 view .LVU83
+ 203:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 367              		.loc 3 203 32 is_stmt 0 view .LVU84
  368 002c 4FF4E013 		mov	r3, #1835008
  369 0030 0F93     		str	r3, [sp, #60]
- 198:Core/Src/main.c ****     Error_Handler();
- 370              		.loc 3 198 3 is_stmt 1 view .LVU85
- 198:Core/Src/main.c ****     Error_Handler();
- 371              		.loc 3 198 7 is_stmt 0 view .LVU86
+ 204:Core/Src/main.c ****   {
+ 370              		.loc 3 204 3 is_stmt 1 view .LVU85
+ 204:Core/Src/main.c ****   {
+ 371              		.loc 3 204 7 is_stmt 0 view .LVU86
  372 0032 06A8     		add	r0, sp, #24
  373 0034 FFF7FEFF 		bl	HAL_RCC_OscConfig
-ARM GAS  /tmp/cc6ZXLtF.s 			page 22
-
-
  374              	.LVL24:
- 198:Core/Src/main.c ****     Error_Handler();
- 375              		.loc 3 198 6 view .LVU87
+ 204:Core/Src/main.c ****   {
+ 375              		.loc 3 204 6 view .LVU87
  376 0038 80B9     		cbnz	r0, .L9
- 204:Core/Src/main.c ****                                 RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
- 377              		.loc 3 204 3 is_stmt 1 view .LVU88
- 204:Core/Src/main.c ****                                 RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
- 378              		.loc 3 204 31 is_stmt 0 view .LVU89
+ 211:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 377              		.loc 3 211 3 is_stmt 1 view .LVU88
+ 211:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 378              		.loc 3 211 31 is_stmt 0 view .LVU89
  379 003a 0F23     		movs	r3, #15
  380 003c 0193     		str	r3, [sp, #4]
- 206:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 381              		.loc 3 206 3 is_stmt 1 view .LVU90
- 206:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 382              		.loc 3 206 34 is_stmt 0 view .LVU91
+ 213:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 381              		.loc 3 213 3 is_stmt 1 view .LVU90
+ 213:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 382              		.loc 3 213 34 is_stmt 0 view .LVU91
  383 003e 0221     		movs	r1, #2
  384 0040 0291     		str	r1, [sp, #8]
- 207:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 385              		.loc 3 207 3 is_stmt 1 view .LVU92
- 207:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 386              		.loc 3 207 35 is_stmt 0 view .LVU93
+ 214:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 385              		.loc 3 214 3 is_stmt 1 view .LVU92
+ 214:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 386              		.loc 3 214 35 is_stmt 0 view .LVU93
  387 0042 0023     		movs	r3, #0
  388 0044 0393     		str	r3, [sp, #12]
- 208:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 389              		.loc 3 208 3 is_stmt 1 view .LVU94
- 208:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 390              		.loc 3 208 36 is_stmt 0 view .LVU95
+ 215:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 389              		.loc 3 215 3 is_stmt 1 view .LVU94
+ 215:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 390              		.loc 3 215 36 is_stmt 0 view .LVU95
  391 0046 4FF48062 		mov	r2, #1024
  392 004a 0492     		str	r2, [sp, #16]
- 209:Core/Src/main.c **** 
- 393              		.loc 3 209 3 is_stmt 1 view .LVU96
- 209:Core/Src/main.c **** 
- 394              		.loc 3 209 36 is_stmt 0 view .LVU97
+ 216:Core/Src/main.c **** 
+ 393              		.loc 3 216 3 is_stmt 1 view .LVU96
+ 216:Core/Src/main.c **** 
+ 394              		.loc 3 216 36 is_stmt 0 view .LVU97
  395 004c 0593     		str	r3, [sp, #20]
- 211:Core/Src/main.c ****     Error_Handler();
- 396              		.loc 3 211 3 is_stmt 1 view .LVU98
- 211:Core/Src/main.c ****     Error_Handler();
- 397              		.loc 3 211 7 is_stmt 0 view .LVU99
+ 218:Core/Src/main.c ****   {
+ 396              		.loc 3 218 3 is_stmt 1 view .LVU98
+ 218:Core/Src/main.c ****   {
+ 397              		.loc 3 218 7 is_stmt 0 view .LVU99
  398 004e 01A8     		add	r0, sp, #4
  399 0050 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  400              	.LVL25:
- 211:Core/Src/main.c ****     Error_Handler();
- 401              		.loc 3 211 6 view .LVU100
+ 218:Core/Src/main.c ****   {
+ 401              		.loc 3 218 6 view .LVU100
+ARM GAS  /tmp/ccP4y1SB.s 			page 23
+
+
  402 0054 20B9     		cbnz	r0, .L10
- 214:Core/Src/main.c **** 
- 403              		.loc 3 214 1 view .LVU101
+ 222:Core/Src/main.c **** 
+ 403              		.loc 3 222 1 view .LVU101
  404 0056 11B0     		add	sp, sp, #68
  405              	.LCFI5:
  406              		.cfi_remember_state
@@ -1315,16 +1333,13 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  410              	.L9:
  411              	.LCFI6:
  412              		.cfi_restore_state
- 199:Core/Src/main.c ****   }
- 413              		.loc 3 199 5 is_stmt 1 view .LVU102
+ 206:Core/Src/main.c ****   }
+ 413              		.loc 3 206 5 is_stmt 1 view .LVU102
  414 005c FFF7FEFF 		bl	Error_Handler
-ARM GAS  /tmp/cc6ZXLtF.s 			page 23
-
-
  415              	.LVL26:
  416              	.L10:
- 212:Core/Src/main.c ****   }
- 417              		.loc 3 212 5 view .LVU103
+ 220:Core/Src/main.c ****   }
+ 417              		.loc 3 220 5 view .LVU103
  418 0060 FFF7FEFF 		bl	Error_Handler
  419              	.LVL27:
  420              		.cfi_endproc
@@ -1337,194 +1352,186 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  428              		.section	.rodata.main.str1.4,"aMS",%progbits,1
  429              		.align	2
  430              	.LC1:
- 431 0000 526F6C6C 		.ascii	"Roll %0.1f, Pitch %0.1f, Yaw %0.1f, X %0.1f, Y %0.1"
+ 431 0000 526F6C6C 		.ascii	"Roll %0.1f, Pitch %0.1f, Yaw %0.1f\012\000"
  431      2025302E 
  431      31662C20 
  431      50697463 
  431      68202530 
- 432 0033 662C205A 		.ascii	"f, Z %0.1f\012\000"
- 432      2025302E 
- 432      31660A00 
- 433              		.section	.text.main,"ax",%progbits
- 434              		.align	1
- 435              		.global	main
- 436              		.syntax unified
- 437              		.thumb
- 438              		.thumb_func
- 439              		.fpu softvfp
- 441              	main:
- 442              	.LFB89:
-  70:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
- 443              		.loc 3 70 16 view -0
- 444              		.cfi_startproc
- 445              		@ args = 0, pretend = 0, frame = 528
- 446              		@ frame_needed = 0, uses_anonymous_args = 0
- 447 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 448              	.LCFI7:
- 449              		.cfi_def_cfa_offset 36
- 450              		.cfi_offset 4, -36
- 451              		.cfi_offset 5, -32
- 452              		.cfi_offset 6, -28
- 453              		.cfi_offset 7, -24
- 454              		.cfi_offset 8, -20
- 455              		.cfi_offset 9, -16
- 456              		.cfi_offset 10, -12
- 457              		.cfi_offset 11, -8
- 458              		.cfi_offset 14, -4
- 459 0004 ADF5157D 		sub	sp, sp, #596
- 460              	.LCFI8:
- 461              		.cfi_def_cfa_offset 632
-  72:Core/Src/main.c **** 
- 462              		.loc 3 72 3 view .LVU105
-  74:Core/Src/main.c **** 
- 463              		.loc 3 74 3 view .LVU106
-ARM GAS  /tmp/cc6ZXLtF.s 			page 24
+ 432              		.section	.text.main,"ax",%progbits
+ 433              		.align	1
+ 434              		.global	main
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 438              		.fpu softvfp
+ 440              	main:
+ 441              	.LFB89:
+  69:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+ 442              		.loc 3 69 1 view -0
+ 443              		.cfi_startproc
+ 444              		@ args = 0, pretend = 0, frame = 536
+ 445              		@ frame_needed = 0, uses_anonymous_args = 0
+ 446 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 447              	.LCFI7:
+ 448              		.cfi_def_cfa_offset 36
+ 449              		.cfi_offset 4, -36
+ 450              		.cfi_offset 5, -32
+ 451              		.cfi_offset 6, -28
+ 452              		.cfi_offset 7, -24
+ARM GAS  /tmp/ccP4y1SB.s 			page 24
 
 
+ 453              		.cfi_offset 8, -20
+ 454              		.cfi_offset 9, -16
+ 455              		.cfi_offset 10, -12
+ 456              		.cfi_offset 11, -8
+ 457              		.cfi_offset 14, -4
+ 458 0004 ADF5177D 		sub	sp, sp, #604
+ 459              	.LCFI8:
+ 460              		.cfi_def_cfa_offset 640
+  71:Core/Src/main.c **** 
+ 461              		.loc 3 71 3 view .LVU105
+  73:Core/Src/main.c ****   uint16_t msgLen = 0;
+ 462              		.loc 3 73 3 view .LVU106
+  73:Core/Src/main.c ****   uint16_t msgLen = 0;
+ 463              		.loc 3 73 8 is_stmt 0 view .LVU107
+ 464 0008 0025     		movs	r5, #0
+ 465 000a 6895     		str	r5, [sp, #416]
+ 466 000c 7422     		movs	r2, #116
+ 467 000e 2946     		mov	r1, r5
+ 468 0010 69A8     		add	r0, sp, #420
+ 469 0012 FFF7FEFF 		bl	memset
+ 470              	.LVL28:
   74:Core/Src/main.c **** 
- 464              		.loc 3 74 8 is_stmt 0 view .LVU107
- 465 0008 0025     		movs	r5, #0
- 466 000a 6B95     		str	r5, [sp, #428]
- 467 000c 6022     		movs	r2, #96
- 468 000e 2946     		mov	r1, r5
- 469 0010 6CA8     		add	r0, sp, #432
- 470 0012 FFF7FEFF 		bl	memset
- 471              	.LVL28:
-  76:Core/Src/main.c ****   uint32_t timestamp = 0;
- 472              		.loc 3 76 3 is_stmt 1 view .LVU108
+ 471              		.loc 3 74 3 is_stmt 1 view .LVU108
+  76:Core/Src/main.c ****   uint32_t currPoll = 0;
+ 472              		.loc 3 76 3 view .LVU109
   77:Core/Src/main.c ****   /* USER CODE END 1 */
- 473              		.loc 3 77 3 view .LVU109
-  84:Core/Src/main.c **** 
- 474              		.loc 3 84 3 view .LVU110
+ 473              		.loc 3 77 3 view .LVU110
+  83:Core/Src/main.c **** 
+ 474              		.loc 3 83 3 view .LVU111
  475 0016 FFF7FEFF 		bl	HAL_Init
  476              	.LVL29:
-  91:Core/Src/main.c **** 
- 477              		.loc 3 91 3 view .LVU111
+  90:Core/Src/main.c **** 
+ 477              		.loc 3 90 3 view .LVU112
  478 001a FFF7FEFF 		bl	SystemClock_Config
  479              	.LVL30:
-  98:Core/Src/main.c ****   MX_I2C1_Init();
- 480              		.loc 3 98 3 view .LVU112
+  97:Core/Src/main.c ****   MX_I2C1_Init();
+ 480              		.loc 3 97 3 view .LVU113
  481 001e FFF7FEFF 		bl	MX_GPIO_Init
  482              	.LVL31:
-  99:Core/Src/main.c ****   MX_USART3_UART_Init();
- 483              		.loc 3 99 3 view .LVU113
+  98:Core/Src/main.c ****   MX_USART3_UART_Init();
+ 483              		.loc 3 98 3 view .LVU114
  484 0022 FFF7FEFF 		bl	MX_I2C1_Init
  485              	.LVL32:
- 100:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 486              		.loc 3 100 3 view .LVU114
+  99:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 486              		.loc 3 99 3 view .LVU115
  487 0026 FFF7FEFF 		bl	MX_USART3_UART_Init
  488              	.LVL33:
- 102:Core/Src/main.c **** 
- 489              		.loc 3 102 3 view .LVU115
+ 101:Core/Src/main.c **** 
+ 489              		.loc 3 101 3 view .LVU116
  490 002a FFF7FEFF 		bl	MPU_9250_Init
  491              	.LVL34:
- 106:Core/Src/main.c ****   const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
- 492              		.loc 3 106 3 view .LVU116
- 107:Core/Src/main.c ****   const FusionVector gyroscopeOffset = {-26.0f, 4.83f, 1.34f};
- 493              		.loc 3 107 3 view .LVU117
- 108:Core/Src/main.c ****   const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1
- 494              		.loc 3 108 3 view .LVU118
- 109:Core/Src/main.c ****   const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
- 495              		.loc 3 109 3 view .LVU119
- 110:Core/Src/main.c ****   const FusionVector accelerometerOffset = {0.0f, 0.0f, 0.07f};
- 496              		.loc 3 110 3 view .LVU120
- 111:Core/Src/main.c ****   const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
- 497              		.loc 3 111 3 view .LVU121
- 111:Core/Src/main.c ****   const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
- 498              		.loc 3 111 22 is_stmt 0 view .LVU122
- 499 002e 0023     		movs	r3, #0
- 500 0030 6893     		str	r3, [sp, #416]	@ float
- 501 0032 6993     		str	r3, [sp, #420]	@ float
- 502 0034 0B4A     		ldr	r2, .L18
- 503 0036 6A92     		str	r2, [sp, #424]	@ float
- 112:Core/Src/main.c ****   const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
-ARM GAS  /tmp/cc6ZXLtF.s 			page 25
+ 105:Core/Src/main.c ****   const FusionVector gyroscopeSensitivity = {1.0f, 1.0f, 1.0f};
+ 492              		.loc 3 105 3 view .LVU117
+ 106:Core/Src/main.c ****   const FusionVector gyroscopeOffset = {26.17f, -9.3f, -3.0f};
+ 493              		.loc 3 106 3 view .LVU118
+ 107:Core/Src/main.c ****   const FusionMatrix accelerometerMisalignment = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1
+ 494              		.loc 3 107 3 view .LVU119
+ARM GAS  /tmp/ccP4y1SB.s 			page 25
 
 
- 504              		.loc 3 112 3 is_stmt 1 view .LVU123
- 113:Core/Src/main.c **** 
- 505              		.loc 3 113 3 view .LVU124
- 113:Core/Src/main.c **** 
- 506              		.loc 3 113 22 is_stmt 0 view .LVU125
- 507 0038 6593     		str	r3, [sp, #404]	@ float
- 508 003a 6693     		str	r3, [sp, #408]	@ float
- 509 003c 6793     		str	r3, [sp, #412]	@ float
- 116:Core/Src/main.c ****   FusionAhrs ahrs;
- 510              		.loc 3 116 3 is_stmt 1 view .LVU126
- 117:Core/Src/main.c **** 
- 511              		.loc 3 117 3 view .LVU127
- 119:Core/Src/main.c ****   FusionAhrsInitialise(&ahrs);
- 512              		.loc 3 119 3 view .LVU128
- 513 003e 6421     		movs	r1, #100
- 514 0040 5FA8     		add	r0, sp, #380
- 515 0042 FFF7FEFF 		bl	FusionOffsetInitialise
- 516              	.LVL35:
- 120:Core/Src/main.c **** 
- 517              		.loc 3 120 3 view .LVU129
- 518 0046 46A8     		add	r0, sp, #280
- 519 0048 FFF7FEFF 		bl	FusionAhrsInitialise
- 520              	.LVL36:
- 123:Core/Src/main.c ****           .gain = 0.5f,
- 521              		.loc 3 123 3 view .LVU130
- 123:Core/Src/main.c ****           .gain = 0.5f,
- 522              		.loc 3 123 28 is_stmt 0 view .LVU131
- 523 004c 42AC     		add	r4, sp, #264
- 524 004e 064B     		ldr	r3, .L18+4
- 525 0050 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 526 0052 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 129:Core/Src/main.c **** 
- 527              		.loc 3 129 3 is_stmt 1 view .LVU132
- 528 0056 2146     		mov	r1, r4
- 529 0058 46A8     		add	r0, sp, #280
- 530 005a FFF7FEFF 		bl	FusionAhrsSetSettings
- 531              	.LVL37:
-  76:Core/Src/main.c ****   uint32_t timestamp = 0;
- 532              		.loc 3 76 12 is_stmt 0 view .LVU133
- 533 005e 1495     		str	r5, [sp, #80]
- 534 0060 67E0     		b	.L13
- 535              	.L19:
- 536 0062 00BF     		.align	2
- 537              	.L18:
- 538 0064 295C8F3D 		.word	1032805417
- 539 0068 00000000 		.word	.LANCHOR0
- 540              	.LVL38:
- 541              	.L17:
- 542              	.LBB60:
- 543              	.LBB61:
- 544              	.LBB62:
- 545              	.LBB63:
- 546              	.LBB64:
+ 108:Core/Src/main.c ****   const FusionVector accelerometerSensitivity = {1.0f, 1.0f, 1.0f};
+ 495              		.loc 3 108 3 view .LVU120
+ 109:Core/Src/main.c ****   const FusionVector accelerometerOffset = {-0.005f, 0.025f, -0.07f};
+ 496              		.loc 3 109 3 view .LVU121
+ 110:Core/Src/main.c ****   const FusionMatrix softIronMatrix = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+ 497              		.loc 3 110 3 view .LVU122
+ 111:Core/Src/main.c ****   const FusionVector hardIronOffset = {0.0f, 0.0f, 0.0f};
+ 498              		.loc 3 111 3 view .LVU123
+ 112:Core/Src/main.c **** 
+ 499              		.loc 3 112 3 view .LVU124
+ 112:Core/Src/main.c **** 
+ 500              		.loc 3 112 22 is_stmt 0 view .LVU125
+ 501 002e 0023     		movs	r3, #0
+ 502 0030 6593     		str	r3, [sp, #404]	@ float
+ 503 0032 6693     		str	r3, [sp, #408]	@ float
+ 504 0034 6793     		str	r3, [sp, #412]	@ float
+ 115:Core/Src/main.c ****   FusionAhrs ahrs;
+ 505              		.loc 3 115 3 is_stmt 1 view .LVU126
+ 116:Core/Src/main.c **** 
+ 506              		.loc 3 116 3 view .LVU127
+ 118:Core/Src/main.c ****   FusionAhrsInitialise(&ahrs);
+ 507              		.loc 3 118 3 view .LVU128
+ 508 0036 6421     		movs	r1, #100
+ 509 0038 5FA8     		add	r0, sp, #380
+ 510 003a FFF7FEFF 		bl	FusionOffsetInitialise
+ 511              	.LVL35:
+ 119:Core/Src/main.c **** 
+ 512              		.loc 3 119 3 view .LVU129
+ 513 003e 46A8     		add	r0, sp, #280
+ 514 0040 FFF7FEFF 		bl	FusionAhrsInitialise
+ 515              	.LVL36:
+ 122:Core/Src/main.c ****           .gain = 1.0f,
+ 516              		.loc 3 122 3 view .LVU130
+ 122:Core/Src/main.c ****           .gain = 1.0f,
+ 517              		.loc 3 122 28 is_stmt 0 view .LVU131
+ 518 0044 42AC     		add	r4, sp, #264
+ 519 0046 054B     		ldr	r3, .L18
+ 520 0048 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 521 004a 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 128:Core/Src/main.c **** 
+ 522              		.loc 3 128 3 is_stmt 1 view .LVU132
+ 523 004e 2146     		mov	r1, r4
+ 524 0050 46A8     		add	r0, sp, #280
+ 525 0052 FFF7FEFF 		bl	FusionAhrsSetSettings
+ 526              	.LVL37:
+  76:Core/Src/main.c ****   uint32_t currPoll = 0;
+ 527              		.loc 3 76 12 is_stmt 0 view .LVU133
+ 528 0056 1495     		str	r5, [sp, #80]
+ 529 0058 4EE0     		b	.L13
+ 530              	.L19:
+ 531 005a 00BF     		.align	2
+ 532              	.L18:
+ 533 005c 00000000 		.word	.LANCHOR0
+ 534              	.LVL38:
+ 535              	.L17:
+ 536              	.LBB60:
+ 537              	.LBB61:
+ARM GAS  /tmp/ccP4y1SB.s 			page 26
+
+
+ 538              	.LBB62:
+ 539              	.LBB63:
+ 540              	.LBB64:
  155:Core/Inc/Fusion/FusionMath.h **** }
- 547              		.loc 2 155 5 is_stmt 1 view .LVU134
+ 541              		.loc 2 155 5 is_stmt 1 view .LVU134
  155:Core/Inc/Fusion/FusionMath.h **** }
- 548              		.loc 2 155 12 is_stmt 0 view .LVU135
-ARM GAS  /tmp/cc6ZXLtF.s 			page 26
-
-
- 549 006c 4846     		mov	r0, r9
- 550 006e FFF7FEFF 		bl	asinf
- 551              	.LVL39:
- 552              	.L12:
+ 542              		.loc 2 155 12 is_stmt 0 view .LVU135
+ 543 0060 4846     		mov	r0, r9
+ 544 0062 FFF7FEFF 		bl	asinf
+ 545              	.LVL39:
+ 546              	.L12:
  155:Core/Inc/Fusion/FusionMath.h **** }
- 553              		.loc 2 155 12 view .LVU136
- 554              	.LBE64:
- 555              	.LBE63:
- 556              	.LBB66:
- 557              	.LBI66:
+ 547              		.loc 2 155 12 view .LVU136
+ 548              	.LBE64:
+ 549              	.LBE63:
+ 550              	.LBB66:
+ 551              	.LBI66:
  136:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
- 558              		.loc 2 136 21 is_stmt 1 view .LVU137
- 559              	.LBB67:
+ 552              		.loc 2 136 21 is_stmt 1 view .LVU137
+ 553              	.LBB67:
  137:Core/Inc/Fusion/FusionMath.h **** }
- 560              		.loc 2 137 5 view .LVU138
+ 554              		.loc 2 137 5 view .LVU138
  137:Core/Inc/Fusion/FusionMath.h **** }
- 561              		.loc 2 137 20 is_stmt 0 view .LVU139
- 562 0072 BB49     		ldr	r1, .L20
- 563 0074 FFF7FEFF 		bl	__aeabi_fmul
- 564              	.LVL40:
+ 555              		.loc 2 137 20 is_stmt 0 view .LVU139
+ 556 0066 BD49     		ldr	r1, .L20
+ 557 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 558              	.LVL40:
  137:Core/Inc/Fusion/FusionMath.h **** }
- 565              		.loc 2 137 20 view .LVU140
- 566              	.LBE67:
- 567              	.LBE66:
+ 559              		.loc 2 137 20 view .LVU140
+ 560              	.LBE67:
+ 561              	.LBE66:
  406:Core/Inc/Fusion/FusionMath.h **** #undef R
  407:Core/Inc/Fusion/FusionMath.h **** }
  408:Core/Inc/Fusion/FusionMath.h **** 
@@ -1551,6 +1558,9 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  429:Core/Inc/Fusion/FusionMath.h ****     matrix.element.xz = 2.0f * (qxqz + qwqy);
  430:Core/Inc/Fusion/FusionMath.h ****     matrix.element.yx = 2.0f * (qxqy + qwqz);
  431:Core/Inc/Fusion/FusionMath.h ****     matrix.element.yy = 2.0f * (qwqw - 0.5f + Q.y * Q.y);
+ARM GAS  /tmp/ccP4y1SB.s 			page 27
+
+
  432:Core/Inc/Fusion/FusionMath.h ****     matrix.element.yz = 2.0f * (qyqz - qwqx);
  433:Core/Inc/Fusion/FusionMath.h ****     matrix.element.zx = 2.0f * (qxqz - qwqy);
  434:Core/Inc/Fusion/FusionMath.h ****     matrix.element.zy = 2.0f * (qyqz + qwqx);
@@ -1558,9 +1568,6 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  436:Core/Inc/Fusion/FusionMath.h ****     return matrix;
  437:Core/Inc/Fusion/FusionMath.h **** #undef Q
  438:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/cc6ZXLtF.s 			page 27
-
-
  439:Core/Inc/Fusion/FusionMath.h **** 
  440:Core/Inc/Fusion/FusionMath.h **** /**
  441:Core/Inc/Fusion/FusionMath.h ****  * @brief Converts a quaternion to ZYX Euler angles in degrees.
@@ -1573,304 +1580,276 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
  448:Core/Inc/Fusion/FusionMath.h ****     FusionEuler euler;
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.roll = FusionRadiansToDegrees(atan2f(Q.w * Q.x + Q.y * Q.z, halfMinusQySquared - Q.
  450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 568              		.loc 2 450 23 view .LVU141
- 569 0078 0DF1C009 		add	r9, sp, #192
- 570 007c 3190     		str	r0, [sp, #196]	@ float
+ 562              		.loc 2 450 23 view .LVU141
+ 563 006c 0DF1C009 		add	r9, sp, #192
+ 564 0070 3190     		str	r0, [sp, #196]	@ float
  451:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 571              		.loc 2 451 5 is_stmt 1 view .LVU142
- 572              		.loc 2 451 57 is_stmt 0 view .LVU143
- 573 007e 2146     		mov	r1, r4
- 574 0080 4046     		mov	r0, r8
- 575 0082 FFF7FEFF 		bl	__aeabi_fmul
- 576              	.LVL41:
- 577 0086 8046     		mov	r8, r0
- 578              		.loc 2 451 69 view .LVU144
- 579 0088 3146     		mov	r1, r6
- 580 008a 2846     		mov	r0, r5
- 581 008c FFF7FEFF 		bl	__aeabi_fmul
- 582              	.LVL42:
- 583 0090 0546     		mov	r5, r0
- 584              		.loc 2 451 101 view .LVU145
- 585 0092 2146     		mov	r1, r4
- 586 0094 2046     		mov	r0, r4
- 587 0096 FFF7FEFF 		bl	__aeabi_fmul
- 588              	.LVL43:
- 589 009a 0146     		mov	r1, r0
- 590              		.loc 2 451 23 view .LVU146
- 591 009c 3846     		mov	r0, r7
- 592 009e FFF7FEFF 		bl	__aeabi_fsub
- 593              	.LVL44:
- 594 00a2 0446     		mov	r4, r0
- 595 00a4 2946     		mov	r1, r5
- 596 00a6 4046     		mov	r0, r8
- 597 00a8 FFF7FEFF 		bl	__aeabi_fadd
- 598              	.LVL45:
- 599 00ac 2146     		mov	r1, r4
- 600 00ae FFF7FEFF 		bl	atan2f
- 601              	.LVL46:
- 602              	.LBB68:
- 603              	.LBI68:
+ 565              		.loc 2 451 5 is_stmt 1 view .LVU142
+ 566              		.loc 2 451 57 is_stmt 0 view .LVU143
+ 567 0072 2146     		mov	r1, r4
+ 568 0074 4046     		mov	r0, r8
+ 569 0076 FFF7FEFF 		bl	__aeabi_fmul
+ 570              	.LVL41:
+ 571 007a 8046     		mov	r8, r0
+ 572              		.loc 2 451 69 view .LVU144
+ 573 007c 3146     		mov	r1, r6
+ 574 007e 2846     		mov	r0, r5
+ 575 0080 FFF7FEFF 		bl	__aeabi_fmul
+ 576              	.LVL42:
+ 577 0084 0546     		mov	r5, r0
+ 578              		.loc 2 451 101 view .LVU145
+ 579 0086 2146     		mov	r1, r4
+ 580 0088 2046     		mov	r0, r4
+ 581 008a FFF7FEFF 		bl	__aeabi_fmul
+ 582              	.LVL43:
+ 583 008e 0146     		mov	r1, r0
+ 584              		.loc 2 451 23 view .LVU146
+ 585 0090 3846     		mov	r0, r7
+ 586 0092 FFF7FEFF 		bl	__aeabi_fsub
+ 587              	.LVL44:
+ 588 0096 0446     		mov	r4, r0
+ 589 0098 2946     		mov	r1, r5
+ 590 009a 4046     		mov	r0, r8
+ 591 009c FFF7FEFF 		bl	__aeabi_fadd
+ 592              	.LVL45:
+ 593 00a0 2146     		mov	r1, r4
+ 594 00a2 FFF7FEFF 		bl	atan2f
+ 595              	.LVL46:
+ 596              	.LBB68:
+ 597              	.LBI68:
  136:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
- 604              		.loc 2 136 21 is_stmt 1 view .LVU147
- 605              	.LBB69:
- 137:Core/Inc/Fusion/FusionMath.h **** }
- 606              		.loc 2 137 5 view .LVU148
- 137:Core/Inc/Fusion/FusionMath.h **** }
- 607              		.loc 2 137 20 is_stmt 0 view .LVU149
- 608 00b2 AB49     		ldr	r1, .L20
-ARM GAS  /tmp/cc6ZXLtF.s 			page 28
+ARM GAS  /tmp/ccP4y1SB.s 			page 28
 
 
- 609 00b4 FFF7FEFF 		bl	__aeabi_fmul
- 610              	.LVL47:
+ 598              		.loc 2 136 21 is_stmt 1 view .LVU147
+ 599              	.LBB69:
  137:Core/Inc/Fusion/FusionMath.h **** }
- 611              		.loc 2 137 20 view .LVU150
- 612              	.LBE69:
- 613              	.LBE68:
- 614              		.loc 2 451 21 view .LVU151
- 615 00b8 3290     		str	r0, [sp, #200]	@ float
+ 600              		.loc 2 137 5 view .LVU148
+ 137:Core/Inc/Fusion/FusionMath.h **** }
+ 601              		.loc 2 137 20 is_stmt 0 view .LVU149
+ 602 00a6 AD49     		ldr	r1, .L20
+ 603 00a8 FFF7FEFF 		bl	__aeabi_fmul
+ 604              	.LVL47:
+ 137:Core/Inc/Fusion/FusionMath.h **** }
+ 605              		.loc 2 137 20 view .LVU150
+ 606              	.LBE69:
+ 607              	.LBE68:
+ 608              		.loc 2 451 21 view .LVU151
+ 609 00ac 3290     		str	r0, [sp, #200]	@ float
  452:Core/Inc/Fusion/FusionMath.h ****     return euler;
- 616              		.loc 2 452 5 is_stmt 1 view .LVU152
- 617              		.loc 2 452 12 is_stmt 0 view .LVU153
- 618 00ba 2DAC     		add	r4, sp, #180
- 619 00bc 99E80700 		ldm	r9, {r0, r1, r2}
- 620 00c0 84E80700 		stm	r4, {r0, r1, r2}
- 621              	.LVL48:
- 622              		.loc 2 452 12 view .LVU154
- 623              	.LBE62:
- 624              	.LBE61:
- 168:Core/Src/main.c **** 
- 625              		.loc 3 168 5 is_stmt 1 view .LVU155
- 168:Core/Src/main.c **** 
- 626              		.loc 3 168 32 is_stmt 0 view .LVU156
- 627 00c4 46A9     		add	r1, sp, #280
- 628 00c6 39A8     		add	r0, sp, #228
- 629 00c8 FFF7FEFF 		bl	FusionAhrsGetEarthAcceleration
- 630              	.LVL49:
- 171:Core/Src/main.c **** 
- 631              		.loc 3 171 5 is_stmt 1 view .LVU157
- 171:Core/Src/main.c **** 
- 632              		.loc 3 171 114 is_stmt 0 view .LVU158
- 633 00cc 6668     		ldr	r6, [r4, #4]	@ float
- 171:Core/Src/main.c **** 
- 634              		.loc 3 171 133 view .LVU159
- 635 00ce A768     		ldr	r7, [r4, #8]	@ float
- 171:Core/Src/main.c **** 
- 636              		.loc 3 171 149 view .LVU160
- 637 00d0 DDF8E480 		ldr	r8, [sp, #228]	@ float
- 171:Core/Src/main.c **** 
- 638              		.loc 3 171 163 view .LVU161
- 639 00d4 DDF8E890 		ldr	r9, [sp, #232]	@ float
- 171:Core/Src/main.c **** 
- 640              		.loc 3 171 177 view .LVU162
- 641 00d8 DDF8ECA0 		ldr	r10, [sp, #236]	@ float
- 171:Core/Src/main.c **** 
- 642              		.loc 3 171 5 view .LVU163
- 643 00dc 2068     		ldr	r0, [r4]	@ float
- 644 00de FFF7FEFF 		bl	__aeabi_f2d
- 645              	.LVL50:
- 646 00e2 0446     		mov	r4, r0
- 647 00e4 0D46     		mov	r5, r1
- 648 00e6 5046     		mov	r0, r10
- 649 00e8 FFF7FEFF 		bl	__aeabi_f2d
- 650              	.LVL51:
- 651 00ec CDE90801 		strd	r0, [sp, #32]
- 652 00f0 4846     		mov	r0, r9
- 653 00f2 FFF7FEFF 		bl	__aeabi_f2d
- 654              	.LVL52:
-ARM GAS  /tmp/cc6ZXLtF.s 			page 29
+ 610              		.loc 2 452 5 is_stmt 1 view .LVU152
+ 611              		.loc 2 452 12 is_stmt 0 view .LVU153
+ 612 00ae 2DAB     		add	r3, sp, #180
+ 613 00b0 99E80700 		ldm	r9, {r0, r1, r2}
+ 614 00b4 83E80700 		stm	r3, {r0, r1, r2}
+ 615              	.LVL48:
+ 616              		.loc 2 452 12 view .LVU154
+ 617              	.LBE62:
+ 618              	.LBE61:
+ 172:Core/Src/main.c **** 
+ 619              		.loc 3 172 7 is_stmt 1 view .LVU155
+ 172:Core/Src/main.c **** 
+ 620              		.loc 3 172 98 is_stmt 0 view .LVU156
+ 621 00b8 5E68     		ldr	r6, [r3, #4]	@ float
+ 172:Core/Src/main.c **** 
+ 622              		.loc 3 172 117 view .LVU157
+ 623 00ba 9F68     		ldr	r7, [r3, #8]	@ float
+ 172:Core/Src/main.c **** 
+ 624              		.loc 3 172 16 view .LVU158
+ 625 00bc 1868     		ldr	r0, [r3]	@ float
+ 626 00be FFF7FEFF 		bl	__aeabi_f2d
+ 627              	.LVL49:
+ 628 00c2 0446     		mov	r4, r0
+ 629 00c4 0D46     		mov	r5, r1
+ 630 00c6 3846     		mov	r0, r7
+ 631 00c8 FFF7FEFF 		bl	__aeabi_f2d
+ 632              	.LVL50:
+ 633 00cc CDE90201 		strd	r0, [sp, #8]
+ 634 00d0 3046     		mov	r0, r6
+ 635 00d2 FFF7FEFF 		bl	__aeabi_f2d
+ 636              	.LVL51:
+ 637 00d6 CDE90001 		strd	r0, [sp]
+ 638 00da 2246     		mov	r2, r4
+ 639 00dc 2B46     		mov	r3, r5
+ 640 00de A049     		ldr	r1, .L20+4
+ 641 00e0 68A8     		add	r0, sp, #416
+ 642 00e2 FFF7FEFF 		bl	sprintf_
+ 643              	.LVL52:
+ 174:Core/Src/main.c **** 
+ 644              		.loc 3 174 7 is_stmt 1 view .LVU159
+ 645 00e6 4FF6FF73 		movw	r3, #65535
+ARM GAS  /tmp/ccP4y1SB.s 			page 29
 
 
- 655 00f6 CDE90601 		strd	r0, [sp, #24]
- 656 00fa 4046     		mov	r0, r8
- 657 00fc FFF7FEFF 		bl	__aeabi_f2d
- 658              	.LVL53:
- 659 0100 CDE90401 		strd	r0, [sp, #16]
- 660 0104 3846     		mov	r0, r7
- 661 0106 FFF7FEFF 		bl	__aeabi_f2d
- 662              	.LVL54:
- 663 010a CDE90201 		strd	r0, [sp, #8]
- 664 010e 3046     		mov	r0, r6
- 665 0110 FFF7FEFF 		bl	__aeabi_f2d
- 666              	.LVL55:
- 667 0114 CDE90001 		strd	r0, [sp]
- 668 0118 2246     		mov	r2, r4
- 669 011a 2B46     		mov	r3, r5
- 670 011c 9149     		ldr	r1, .L20+4
- 671 011e 6BA8     		add	r0, sp, #428
- 672 0120 FFF7FEFF 		bl	sprintf_
- 673              	.LVL56:
- 173:Core/Src/main.c ****     /* USER CODE END WHILE */
- 674              		.loc 3 173 5 is_stmt 1 view .LVU164
- 675 0124 6422     		movs	r2, #100
- 676 0126 6BA9     		add	r1, sp, #428
- 677 0128 8F48     		ldr	r0, .L20+8
- 678 012a FFF7FEFF 		bl	HAL_UART_Transmit_IT
- 679              	.LVL57:
- 680              	.LBE60:
- 135:Core/Src/main.c ****     IMU_measure(&himu1);
- 681              		.loc 3 135 9 view .LVU165
- 682              	.LBB87:
- 161:Core/Src/main.c **** 
- 683              		.loc 3 161 23 is_stmt 0 view .LVU166
- 684 012e 119B     		ldr	r3, [sp, #68]
- 685 0130 1493     		str	r3, [sp, #80]
- 686              	.LVL58:
- 687              	.L13:
- 161:Core/Src/main.c **** 
- 688              		.loc 3 161 23 view .LVU167
- 689              	.LBE87:
- 135:Core/Src/main.c ****     IMU_measure(&himu1);
- 690              		.loc 3 135 3 is_stmt 1 discriminator 1 view .LVU168
- 691              	.LBB88:
- 136:Core/Src/main.c **** 
- 692              		.loc 3 136 5 discriminator 1 view .LVU169
- 693 0132 84A8     		add	r0, sp, #528
- 694 0134 FFF7FEFF 		bl	IMU_measure
- 695              	.LVL59:
- 139:Core/Src/main.c **** 
- 696              		.loc 3 139 5 discriminator 1 view .LVU170
- 139:Core/Src/main.c **** 
- 697              		.loc 3 139 17 is_stmt 0 discriminator 1 view .LVU171
- 698 0138 FFF7FEFF 		bl	HAL_GetTick
- 699              	.LVL60:
- 700 013c 1190     		str	r0, [sp, #68]
- 701              	.LVL61:
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 702              		.loc 3 141 5 is_stmt 1 discriminator 1 view .LVU172
-ARM GAS  /tmp/cc6ZXLtF.s 			page 30
+ 646 00ea 82B2     		uxth	r2, r0
+ 647 00ec 68A9     		add	r1, sp, #416
+ 648 00ee 9D48     		ldr	r0, .L20+8
+ 649              	.LVL53:
+ 174:Core/Src/main.c **** 
+ 650              		.loc 3 174 7 is_stmt 0 view .LVU160
+ 651 00f0 FFF7FEFF 		bl	HAL_UART_Transmit
+ 652              	.LVL54:
+ 176:Core/Src/main.c ****     }
+ 653              		.loc 3 176 7 is_stmt 1 view .LVU161
+ 176:Core/Src/main.c ****     }
+ 654              		.loc 3 176 16 is_stmt 0 view .LVU162
+ 655 00f4 119B     		ldr	r3, [sp, #68]
+ 656 00f6 1493     		str	r3, [sp, #80]
+ 657              	.LVL55:
+ 658              	.L13:
+ 176:Core/Src/main.c ****     }
+ 659              		.loc 3 176 16 view .LVU163
+ 660              	.LBE60:
+ 134:Core/Src/main.c ****     currPoll = HAL_GetTick();
+ 661              		.loc 3 134 3 is_stmt 1 view .LVU164
+ 135:Core/Src/main.c ****     
+ 662              		.loc 3 135 5 view .LVU165
+ 135:Core/Src/main.c ****     
+ 663              		.loc 3 135 16 is_stmt 0 view .LVU166
+ 664 00f8 FFF7FEFF 		bl	HAL_GetTick
+ 665              	.LVL56:
+ 666 00fc 1190     		str	r0, [sp, #68]
+ 667              	.LVL57:
+ 137:Core/Src/main.c ****       IMU_measure(&himu1);
+ 668              		.loc 3 137 5 is_stmt 1 view .LVU167
+ 669              	.LBB87:
+ 138:Core/Src/main.c **** 
+ 670              		.loc 3 138 7 view .LVU168
+ 671 00fe 86A8     		add	r0, sp, #536
+ 672              	.LVL58:
+ 138:Core/Src/main.c **** 
+ 673              		.loc 3 138 7 is_stmt 0 view .LVU169
+ 674 0100 FFF7FEFF 		bl	IMU_measure
+ 675              	.LVL59:
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 676              		.loc 3 140 7 is_stmt 1 view .LVU170
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 677              		.loc 3 140 20 is_stmt 0 view .LVU171
+ 678 0104 1BAD     		add	r5, sp, #108
+ 679 0106 899B     		ldr	r3, [sp, #548]	@ float
+ 680 0108 2B60     		str	r3, [r5]	@ float
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 681              		.loc 3 140 48 view .LVU172
+ 682 010a 8A9B     		ldr	r3, [sp, #552]	@ float
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 683              		.loc 3 140 20 view .LVU173
+ 684 010c 6B60     		str	r3, [r5, #4]	@ float
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ 685              		.loc 3 140 58 view .LVU174
+ 686 010e 8B9B     		ldr	r3, [sp, #556]	@ float
+ 140:Core/Src/main.c ****       FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
+ARM GAS  /tmp/ccP4y1SB.s 			page 30
 
 
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 703              		.loc 3 141 18 is_stmt 0 discriminator 1 view .LVU173
- 704 013e 1BAD     		add	r5, sp, #108
- 705 0140 879B     		ldr	r3, [sp, #540]	@ float
- 706 0142 2B60     		str	r3, [r5]	@ float
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 707              		.loc 3 141 46 discriminator 1 view .LVU174
- 708 0144 889B     		ldr	r3, [sp, #544]	@ float
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 709              		.loc 3 141 18 discriminator 1 view .LVU175
- 710 0146 6B60     		str	r3, [r5, #4]	@ float
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 711              		.loc 3 141 56 discriminator 1 view .LVU176
- 712 0148 899B     		ldr	r3, [sp, #548]	@ float
- 141:Core/Src/main.c ****     FusionVector accelerometer = {himu1.ax, himu1.ay, himu1.az}; // accelerometer data in g
- 713              		.loc 3 141 18 discriminator 1 view .LVU177
- 714 014a AB60     		str	r3, [r5, #8]	@ float
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 715              		.loc 3 142 5 is_stmt 1 discriminator 1 view .LVU178
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 716              		.loc 3 142 18 is_stmt 0 discriminator 1 view .LVU179
- 717 014c 1EAF     		add	r7, sp, #120
- 718 014e 849B     		ldr	r3, [sp, #528]	@ float
- 719 0150 1E93     		str	r3, [sp, #120]	@ float
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 720              		.loc 3 142 50 discriminator 1 view .LVU180
- 721 0152 859B     		ldr	r3, [sp, #532]	@ float
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 722              		.loc 3 142 18 discriminator 1 view .LVU181
- 723 0154 1F93     		str	r3, [sp, #124]	@ float
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 724              		.loc 3 142 60 discriminator 1 view .LVU182
- 725 0156 869B     		ldr	r3, [sp, #536]	@ float
- 142:Core/Src/main.c ****     FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary u
- 726              		.loc 3 142 18 discriminator 1 view .LVU183
- 727 0158 2093     		str	r3, [sp, #128]	@ float
- 143:Core/Src/main.c **** 
- 728              		.loc 3 143 5 is_stmt 1 discriminator 1 view .LVU184
- 143:Core/Src/main.c **** 
- 729              		.loc 3 143 18 is_stmt 0 discriminator 1 view .LVU185
- 730 015a 21AE     		add	r6, sp, #132
- 731 015c 8A9B     		ldr	r3, [sp, #552]	@ float
- 732 015e 3360     		str	r3, [r6]	@ float
- 143:Core/Src/main.c **** 
- 733              		.loc 3 143 49 discriminator 1 view .LVU186
- 734 0160 8B9B     		ldr	r3, [sp, #556]	@ float
- 143:Core/Src/main.c **** 
- 735              		.loc 3 143 18 discriminator 1 view .LVU187
- 736 0162 7360     		str	r3, [r6, #4]	@ float
- 143:Core/Src/main.c **** 
- 737              		.loc 3 143 59 discriminator 1 view .LVU188
- 738 0164 8C9B     		ldr	r3, [sp, #560]	@ float
- 143:Core/Src/main.c **** 
- 739              		.loc 3 143 18 discriminator 1 view .LVU189
- 740 0166 B360     		str	r3, [r6, #8]	@ float
- 146:Core/Src/main.c ****     accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, acceleromet
- 741              		.loc 3 146 5 is_stmt 1 discriminator 1 view .LVU190
-ARM GAS  /tmp/cc6ZXLtF.s 			page 31
+ 687              		.loc 3 140 20 view .LVU175
+ 688 0110 AB60     		str	r3, [r5, #8]	@ float
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 689              		.loc 3 141 7 is_stmt 1 view .LVU176
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 690              		.loc 3 141 20 is_stmt 0 view .LVU177
+ 691 0112 1EAE     		add	r6, sp, #120
+ 692 0114 869B     		ldr	r3, [sp, #536]	@ float
+ 693 0116 1E93     		str	r3, [sp, #120]	@ float
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 694              		.loc 3 141 52 view .LVU178
+ 695 0118 879B     		ldr	r3, [sp, #540]	@ float
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 696              		.loc 3 141 20 view .LVU179
+ 697 011a 1F93     		str	r3, [sp, #124]	@ float
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 698              		.loc 3 141 62 view .LVU180
+ 699 011c 889B     		ldr	r3, [sp, #544]	@ float
+ 141:Core/Src/main.c ****       FusionVector magnetometer = {himu1.mx, himu1.my, himu1.mz}; // magnetometer data in arbitrary
+ 700              		.loc 3 141 20 view .LVU181
+ 701 011e 2093     		str	r3, [sp, #128]	@ float
+ 142:Core/Src/main.c **** 
+ 702              		.loc 3 142 7 is_stmt 1 view .LVU182
+ 142:Core/Src/main.c **** 
+ 703              		.loc 3 142 20 is_stmt 0 view .LVU183
+ 704 0120 21AF     		add	r7, sp, #132
+ 705 0122 8C9B     		ldr	r3, [sp, #560]	@ float
+ 706 0124 2193     		str	r3, [sp, #132]	@ float
+ 142:Core/Src/main.c **** 
+ 707              		.loc 3 142 51 view .LVU184
+ 708 0126 8D9B     		ldr	r3, [sp, #564]	@ float
+ 142:Core/Src/main.c **** 
+ 709              		.loc 3 142 20 view .LVU185
+ 710 0128 2293     		str	r3, [sp, #136]	@ float
+ 142:Core/Src/main.c **** 
+ 711              		.loc 3 142 61 view .LVU186
+ 712 012a 8E9B     		ldr	r3, [sp, #568]	@ float
+ 142:Core/Src/main.c **** 
+ 713              		.loc 3 142 20 view .LVU187
+ 714 012c 2393     		str	r3, [sp, #140]	@ float
+ 145:Core/Src/main.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 715              		.loc 3 145 7 is_stmt 1 view .LVU188
+ 145:Core/Src/main.c ****       accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, accelerom
+ 716              		.loc 3 145 19 is_stmt 0 view .LVU189
+ 717 012e 8E4B     		ldr	r3, .L20+12
+ 718 0130 0DF13009 		add	r9, sp, #48
+ 719 0134 93E80700 		ldm	r3, {r0, r1, r2}
+ 720 0138 89E80700 		stm	r9, {r0, r1, r2}
+ 721 013c 8B4B     		ldr	r3, .L20+16
+ 722 013e 0DF12408 		add	r8, sp, #36
+ 723 0142 93E80700 		ldm	r3, {r0, r1, r2}
+ 724 0146 88E80700 		stm	r8, {r0, r1, r2}
+ 725 014a 6C46     		mov	r4, sp
+ 726 014c DFF820C2 		ldr	ip, .L20+20
+ 727 0150 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 728 0154 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 729 0156 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ARM GAS  /tmp/ccP4y1SB.s 			page 31
 
 
- 146:Core/Src/main.c ****     accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, acceleromet
- 742              		.loc 3 146 17 is_stmt 0 discriminator 1 view .LVU191
- 743 0168 804B     		ldr	r3, .L20+12
- 744 016a 0DF13009 		add	r9, sp, #48
- 745 016e 93E80700 		ldm	r3, {r0, r1, r2}
- 746              	.LVL62:
- 146:Core/Src/main.c ****     accelerometer = FusionCalibrationInertial(accelerometer, accelerometerMisalignment, acceleromet
- 747              		.loc 3 146 17 discriminator 1 view .LVU192
- 748 0172 89E80700 		stm	r9, {r0, r1, r2}
- 749 0176 7E4B     		ldr	r3, .L20+16
- 750 0178 0DF12408 		add	r8, sp, #36
- 751 017c 93E80700 		ldm	r3, {r0, r1, r2}
- 752 0180 88E80700 		stm	r8, {r0, r1, r2}
- 753 0184 6C46     		mov	r4, sp
- 754 0186 DFF8ECC1 		ldr	ip, .L20+20
- 755 018a BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 756 018e 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 757 0190 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 758 0194 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 759 0196 DCF80030 		ldr	r3, [ip]
- 760 019a 2360     		str	r3, [r4]
- 761 019c 95E80E00 		ldm	r5, {r1, r2, r3}
- 762 01a0 2846     		mov	r0, r5
- 763 01a2 FFF7FEFF 		bl	FusionCalibrationInertial
- 764              	.LVL63:
- 147:Core/Src/main.c ****     magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
- 765              		.loc 3 147 5 is_stmt 1 discriminator 1 view .LVU193
- 147:Core/Src/main.c ****     magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
- 766              		.loc 3 147 21 is_stmt 0 discriminator 1 view .LVU194
- 767 01a6 68AB     		add	r3, sp, #416
- 768 01a8 93E80700 		ldm	r3, {r0, r1, r2}
- 769 01ac 89E80700 		stm	r9, {r0, r1, r2}
- 770 01b0 714B     		ldr	r3, .L20+24
- 771 01b2 93E80700 		ldm	r3, {r0, r1, r2}
- 772 01b6 88E80700 		stm	r8, {r0, r1, r2}
- 773 01ba 6C46     		mov	r4, sp
- 774 01bc DFF8BCC1 		ldr	ip, .L20+28
- 775 01c0 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 776 01c4 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 777 01c6 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 778 01ca 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 779 01cc DCF80030 		ldr	r3, [ip]
- 780 01d0 2360     		str	r3, [r4]
- 781 01d2 97E80E00 		ldm	r7, {r1, r2, r3}
- 782 01d6 3846     		mov	r0, r7
- 783 01d8 FFF7FEFF 		bl	FusionCalibrationInertial
- 784              	.LVL64:
- 148:Core/Src/main.c **** 
- 785              		.loc 3 148 5 is_stmt 1 discriminator 1 view .LVU195
- 786 01dc 0DF1900E 		add	lr, sp, #144
- 787 01e0 96E80700 		ldm	r6, {r0, r1, r2}
- 788 01e4 8EE80700 		stm	lr, {r0, r1, r2}
- 789 01e8 0DF1C00B 		add	fp, sp, #192
- 790 01ec 5C46     		mov	r4, fp
- 791 01ee DFF890C1 		ldr	ip, .L20+32
- 792 01f2 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 793 01f6 0FC4     		stmia	r4!, {r0, r1, r2, r3}
-ARM GAS  /tmp/cc6ZXLtF.s 			page 32
-
-
- 794 01f8 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 795 01fc 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 796 01fe DCF80030 		ldr	r3, [ip]
- 797 0202 2360     		str	r3, [r4]
- 798 0204 65AB     		add	r3, sp, #404
- 799 0206 93E80700 		ldm	r3, {r0, r1, r2}
- 800 020a 27AC     		add	r4, sp, #156
- 801 020c 84E80700 		stm	r4, {r0, r1, r2}
- 802              	.LBB74:
- 803              	.LBI74:
+ 730 015a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 731 015c DCF80030 		ldr	r3, [ip]
+ 732 0160 2360     		str	r3, [r4]
+ 733 0162 95E80E00 		ldm	r5, {r1, r2, r3}
+ 734 0166 2846     		mov	r0, r5
+ 735 0168 FFF7FEFF 		bl	FusionCalibrationInertial
+ 736              	.LVL60:
+ 146:Core/Src/main.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 737              		.loc 3 146 7 is_stmt 1 view .LVU190
+ 146:Core/Src/main.c ****       magnetometer = FusionCalibrationMagnetic(magnetometer, softIronMatrix, hardIronOffset);
+ 738              		.loc 3 146 23 is_stmt 0 view .LVU191
+ 739 016c 814B     		ldr	r3, .L20+24
+ 740 016e 93E80700 		ldm	r3, {r0, r1, r2}
+ 741 0172 89E80700 		stm	r9, {r0, r1, r2}
+ 742 0176 804B     		ldr	r3, .L20+28
+ 743 0178 93E80700 		ldm	r3, {r0, r1, r2}
+ 744 017c 88E80700 		stm	r8, {r0, r1, r2}
+ 745 0180 6C46     		mov	r4, sp
+ 746 0182 DFF8F8C1 		ldr	ip, .L20+32
+ 747 0186 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 748 018a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 749 018c BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 750 0190 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 751 0192 DCF80030 		ldr	r3, [ip]
+ 752 0196 2360     		str	r3, [r4]
+ 753 0198 96E80E00 		ldm	r6, {r1, r2, r3}
+ 754 019c 3046     		mov	r0, r6
+ 755 019e FFF7FEFF 		bl	FusionCalibrationInertial
+ 756              	.LVL61:
+ 147:Core/Src/main.c **** 
+ 757              		.loc 3 147 7 is_stmt 1 view .LVU192
+ 758 01a2 0DF1900E 		add	lr, sp, #144
+ 759 01a6 97E80700 		ldm	r7, {r0, r1, r2}
+ 760 01aa 8EE80700 		stm	lr, {r0, r1, r2}
+ 761 01ae 0DF1C00B 		add	fp, sp, #192
+ 762 01b2 5C46     		mov	r4, fp
+ 763 01b4 DFF8C8C1 		ldr	ip, .L20+36
+ 764 01b8 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 765 01bc 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 766 01be BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 767 01c2 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 768 01c4 DCF80030 		ldr	r3, [ip]
+ 769 01c8 2360     		str	r3, [r4]
+ 770 01ca 65AB     		add	r3, sp, #404
+ 771 01cc 93E80700 		ldm	r3, {r0, r1, r2}
+ 772 01d0 27AC     		add	r4, sp, #156
+ 773 01d2 84E80700 		stm	r4, {r0, r1, r2}
+ 774              	.LBB74:
+ 775              	.LBI74:
   29:Core/Inc/Fusion/FusionCalibration.h **** 
   30:Core/Inc/Fusion/FusionCalibration.h **** /**
   31:Core/Inc/Fusion/FusionCalibration.h ****  * @brief Magnetometer calibration model.
@@ -1879,235 +1858,235 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   34:Core/Inc/Fusion/FusionCalibration.h ****  * @param hardIronOffset Hard-iron offset.
   35:Core/Inc/Fusion/FusionCalibration.h ****  * @return Calibrated measurement.
   36:Core/Inc/Fusion/FusionCalibration.h ****  */
+ARM GAS  /tmp/ccP4y1SB.s 			page 32
+
+
   37:Core/Inc/Fusion/FusionCalibration.h **** static inline FusionVector FusionCalibrationMagnetic(const FusionVector uncalibrated, const FusionM
- 804              		.loc 1 37 28 discriminator 1 view .LVU196
- 805              	.LBB75:
+ 776              		.loc 1 37 28 view .LVU193
+ 777              	.LBB75:
   38:Core/Inc/Fusion/FusionCalibration.h ****     return FusionVectorSubtract(FusionMatrixMultiplyVector(softIronMatrix, uncalibrated), hardIronO
- 806              		.loc 1 38 5 discriminator 1 view .LVU197
- 807 0210 39AC     		add	r4, sp, #228
- 808 0212 A446     		mov	ip, r4
- 809 0214 D846     		mov	r8, fp
- 810 0216 B8E80F00 		ldmia	r8!, {r0, r1, r2, r3}
- 811 021a ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 812 021e B8E80F00 		ldmia	r8!, {r0, r1, r2, r3}
- 813 0222 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 814 0226 D8F80030 		ldr	r3, [r8]
- 815 022a CCF80030 		str	r3, [ip]
- 816 022e 0DF1A809 		add	r9, sp, #168
- 817 0232 9EE80700 		ldm	lr, {r0, r1, r2}
- 818 0236 89E80700 		stm	r9, {r0, r1, r2}
- 819              	.LBB76:
- 820              	.LBI76:
+ 778              		.loc 1 38 5 view .LVU194
+ 779 01d6 39AC     		add	r4, sp, #228
+ 780 01d8 A446     		mov	ip, r4
+ 781 01da D846     		mov	r8, fp
+ 782 01dc B8E80F00 		ldmia	r8!, {r0, r1, r2, r3}
+ 783 01e0 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 784 01e4 B8E80F00 		ldmia	r8!, {r0, r1, r2, r3}
+ 785 01e8 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 786 01ec D8F80030 		ldr	r3, [r8]
+ 787 01f0 CCF80030 		str	r3, [ip]
+ 788 01f4 0DF1A809 		add	r9, sp, #168
+ 789 01f8 9EE80700 		ldm	lr, {r0, r1, r2}
+ 790 01fc 89E80700 		stm	r9, {r0, r1, r2}
+ 791              	.LBB76:
+ 792              	.LBI76:
  399:Core/Inc/Fusion/FusionMath.h **** #define R matrix.element
- 821              		.loc 2 399 28 discriminator 1 view .LVU198
- 822              	.LBB77:
+ 793              		.loc 2 399 28 view .LVU195
+ 794              	.LBB77:
  401:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = R.xx * vector.axis.x + R.xy * vector.axis.y + R.xz * vector.axis.z;
- 823              		.loc 2 401 5 discriminator 1 view .LVU199
+ 795              		.loc 2 401 5 view .LVU196
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 824              		.loc 2 402 5 discriminator 1 view .LVU200
+ 796              		.loc 2 402 5 view .LVU197
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 825              		.loc 2 402 39 is_stmt 0 discriminator 1 view .LVU201
- 826 023a D9F80020 		ldr	r2, [r9]	@ float
+ 797              		.loc 2 402 39 is_stmt 0 view .LVU198
+ 798 0200 D9F80020 		ldr	r2, [r9]	@ float
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 827              		.loc 2 402 26 discriminator 1 view .LVU202
- 828 023e 1292     		str	r2, [sp, #72]	@ float
- 829 0240 1146     		mov	r1, r2
- 830 0242 2068     		ldr	r0, [r4]	@ float
- 831 0244 FFF7FEFF 		bl	__aeabi_fmul
- 832              	.LVL65:
- 833 0248 8046     		mov	r8, r0
+ 799              		.loc 2 402 26 view .LVU199
+ 800 0204 1292     		str	r2, [sp, #72]	@ float
+ 801 0206 1146     		mov	r1, r2
+ 802 0208 2068     		ldr	r0, [r4]	@ float
+ 803 020a FFF7FEFF 		bl	__aeabi_fmul
+ 804              	.LVL62:
+ 805 020e 8046     		mov	r8, r0
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 834              		.loc 2 402 62 discriminator 1 view .LVU203
-ARM GAS  /tmp/cc6ZXLtF.s 			page 33
+ 806              		.loc 2 402 62 view .LVU200
+ 807 0210 D9F804A0 		ldr	r10, [r9, #4]	@ float
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 808              		.loc 2 402 49 view .LVU201
+ 809 0214 5146     		mov	r1, r10
+ 810 0216 6068     		ldr	r0, [r4, #4]	@ float
+ 811 0218 FFF7FEFF 		bl	__aeabi_fmul
+ 812              	.LVL63:
+ 813 021c 0146     		mov	r1, r0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 814              		.loc 2 402 42 view .LVU202
+ 815 021e 4046     		mov	r0, r8
+ 816 0220 FFF7FEFF 		bl	__aeabi_fadd
+ 817              	.LVL64:
+ 818 0224 8046     		mov	r8, r0
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ 819              		.loc 2 402 85 view .LVU203
+ 820 0226 D9F808C0 		ldr	ip, [r9, #8]	@ float
+ 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
+ARM GAS  /tmp/ccP4y1SB.s 			page 33
 
 
- 835 024a D9F804A0 		ldr	r10, [r9, #4]	@ float
+ 821              		.loc 2 402 72 view .LVU204
+ 822 022a CDF84CC0 		str	ip, [sp, #76]	@ float
+ 823 022e 6146     		mov	r1, ip
+ 824 0230 A068     		ldr	r0, [r4, #8]	@ float
+ 825 0232 FFF7FEFF 		bl	__aeabi_fmul
+ 826              	.LVL65:
+ 827 0236 0146     		mov	r1, r0
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 836              		.loc 2 402 49 discriminator 1 view .LVU204
- 837 024e 5146     		mov	r1, r10
- 838 0250 6068     		ldr	r0, [r4, #4]	@ float
- 839 0252 FFF7FEFF 		bl	__aeabi_fmul
- 840              	.LVL66:
- 841 0256 0146     		mov	r1, r0
+ 828              		.loc 2 402 65 view .LVU205
+ 829 0238 4046     		mov	r0, r8
+ 830 023a FFF7FEFF 		bl	__aeabi_fadd
+ 831              	.LVL66:
  402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 842              		.loc 2 402 42 discriminator 1 view .LVU205
- 843 0258 4046     		mov	r0, r8
- 844 025a FFF7FEFF 		bl	__aeabi_fadd
- 845              	.LVL67:
- 846 025e 8046     		mov	r8, r0
- 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 847              		.loc 2 402 85 discriminator 1 view .LVU206
- 848 0260 D9F808C0 		ldr	ip, [r9, #8]	@ float
- 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 849              		.loc 2 402 72 discriminator 1 view .LVU207
- 850 0264 CDF84CC0 		str	ip, [sp, #76]	@ float
- 851 0268 6146     		mov	r1, ip
- 852 026a A068     		ldr	r0, [r4, #8]	@ float
- 853 026c FFF7FEFF 		bl	__aeabi_fmul
- 854              	.LVL68:
- 855 0270 0146     		mov	r1, r0
- 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 856              		.loc 2 402 65 discriminator 1 view .LVU208
- 857 0272 4046     		mov	r0, r8
- 858 0274 FFF7FEFF 		bl	__aeabi_fadd
- 859              	.LVL69:
- 402:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = R.yx * vector.axis.x + R.yy * vector.axis.y + R.yz * vector.axis.z;
- 860              		.loc 2 402 19 discriminator 1 view .LVU209
- 861 0278 0DF1B408 		add	r8, sp, #180
- 862 027c 2D90     		str	r0, [sp, #180]	@ float
+ 832              		.loc 2 402 19 view .LVU206
+ 833 023e 0DF1B408 		add	r8, sp, #180
+ 834 0242 2D90     		str	r0, [sp, #180]	@ float
  403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 863              		.loc 2 403 5 is_stmt 1 discriminator 1 view .LVU210
+ 835              		.loc 2 403 5 is_stmt 1 view .LVU207
  403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 864              		.loc 2 403 26 is_stmt 0 discriminator 1 view .LVU211
- 865 027e E168     		ldr	r1, [r4, #12]	@ float
- 866 0280 1298     		ldr	r0, [sp, #72]	@ float
- 867 0282 FFF7FEFF 		bl	__aeabi_fmul
- 868              	.LVL70:
- 869 0286 1590     		str	r0, [sp, #84]	@ float
+ 836              		.loc 2 403 26 is_stmt 0 view .LVU208
+ 837 0244 E168     		ldr	r1, [r4, #12]	@ float
+ 838 0246 1298     		ldr	r0, [sp, #72]	@ float
+ 839 0248 FFF7FEFF 		bl	__aeabi_fmul
+ 840              	.LVL67:
+ 841 024c 1590     		str	r0, [sp, #84]	@ float
  403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 870              		.loc 2 403 49 discriminator 1 view .LVU212
- 871 0288 2169     		ldr	r1, [r4, #16]	@ float
- 872 028a 5046     		mov	r0, r10
- 873 028c FFF7FEFF 		bl	__aeabi_fmul
- 874              	.LVL71:
- 875 0290 0146     		mov	r1, r0
+ 842              		.loc 2 403 49 view .LVU209
+ 843 024e 2169     		ldr	r1, [r4, #16]	@ float
+ 844 0250 5046     		mov	r0, r10
+ 845 0252 FFF7FEFF 		bl	__aeabi_fmul
+ 846              	.LVL68:
+ 847 0256 0146     		mov	r1, r0
  403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 876              		.loc 2 403 42 discriminator 1 view .LVU213
- 877 0292 1598     		ldr	r0, [sp, #84]	@ float
- 878 0294 FFF7FEFF 		bl	__aeabi_fadd
- 879              	.LVL72:
- 880 0298 1590     		str	r0, [sp, #84]	@ float
+ 848              		.loc 2 403 42 view .LVU210
+ 849 0258 1598     		ldr	r0, [sp, #84]	@ float
+ 850 025a FFF7FEFF 		bl	__aeabi_fadd
+ 851              	.LVL69:
+ 852 025e 1590     		str	r0, [sp, #84]	@ float
  403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
-ARM GAS  /tmp/cc6ZXLtF.s 			page 34
+ 853              		.loc 2 403 72 view .LVU211
+ 854 0260 6169     		ldr	r1, [r4, #20]	@ float
+ 855 0262 1398     		ldr	r0, [sp, #76]	@ float
+ 856 0264 FFF7FEFF 		bl	__aeabi_fmul
+ 857              	.LVL70:
+ 858 0268 0146     		mov	r1, r0
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 859              		.loc 2 403 65 view .LVU212
+ 860 026a 1598     		ldr	r0, [sp, #84]	@ float
+ 861 026c FFF7FEFF 		bl	__aeabi_fadd
+ 862              	.LVL71:
+ 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
+ 863              		.loc 2 403 19 view .LVU213
+ 864 0270 2E90     		str	r0, [sp, #184]	@ float
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 865              		.loc 2 404 5 is_stmt 1 view .LVU214
+ 404:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 866              		.loc 2 404 26 is_stmt 0 view .LVU215
+ARM GAS  /tmp/ccP4y1SB.s 			page 34
 
 
- 881              		.loc 2 403 72 discriminator 1 view .LVU214
- 882 029a 6169     		ldr	r1, [r4, #20]	@ float
- 883 029c 1398     		ldr	r0, [sp, #76]	@ float
- 884 029e FFF7FEFF 		bl	__aeabi_fmul
- 885              	.LVL73:
- 886 02a2 0146     		mov	r1, r0
- 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 887              		.loc 2 403 65 discriminator 1 view .LVU215
- 888 02a4 1598     		ldr	r0, [sp, #84]	@ float
- 889 02a6 FFF7FEFF 		bl	__aeabi_fadd
- 890              	.LVL74:
- 403:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = R.zx * vector.axis.x + R.zy * vector.axis.y + R.zz * vector.axis.z;
- 891              		.loc 2 403 19 discriminator 1 view .LVU216
- 892 02aa 2E90     		str	r0, [sp, #184]	@ float
+ 867 0272 A169     		ldr	r1, [r4, #24]	@ float
+ 868 0274 1298     		ldr	r0, [sp, #72]	@ float
+ 869 0276 FFF7FEFF 		bl	__aeabi_fmul
+ 870              	.LVL72:
+ 871 027a 1290     		str	r0, [sp, #72]	@ float
  404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 893              		.loc 2 404 5 is_stmt 1 discriminator 1 view .LVU217
+ 872              		.loc 2 404 49 view .LVU216
+ 873 027c E169     		ldr	r1, [r4, #28]	@ float
+ 874 027e 5046     		mov	r0, r10
+ 875 0280 FFF7FEFF 		bl	__aeabi_fmul
+ 876              	.LVL73:
+ 877 0284 0146     		mov	r1, r0
  404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 894              		.loc 2 404 26 is_stmt 0 discriminator 1 view .LVU218
- 895 02ac A169     		ldr	r1, [r4, #24]	@ float
- 896 02ae 1298     		ldr	r0, [sp, #72]	@ float
- 897 02b0 FFF7FEFF 		bl	__aeabi_fmul
- 898              	.LVL75:
- 899 02b4 1290     		str	r0, [sp, #72]	@ float
+ 878              		.loc 2 404 42 view .LVU217
+ 879 0286 1298     		ldr	r0, [sp, #72]	@ float
+ 880 0288 FFF7FEFF 		bl	__aeabi_fadd
+ 881              	.LVL74:
+ 882 028c 8246     		mov	r10, r0
  404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 900              		.loc 2 404 49 discriminator 1 view .LVU219
- 901 02b6 E169     		ldr	r1, [r4, #28]	@ float
- 902 02b8 5046     		mov	r0, r10
- 903 02ba FFF7FEFF 		bl	__aeabi_fmul
- 904              	.LVL76:
- 905 02be 0146     		mov	r1, r0
+ 883              		.loc 2 404 72 view .LVU218
+ 884 028e 216A     		ldr	r1, [r4, #32]	@ float
+ 885 0290 1398     		ldr	r0, [sp, #76]	@ float
+ 886 0292 FFF7FEFF 		bl	__aeabi_fmul
+ 887              	.LVL75:
+ 888 0296 0146     		mov	r1, r0
  404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 906              		.loc 2 404 42 discriminator 1 view .LVU220
- 907 02c0 1298     		ldr	r0, [sp, #72]	@ float
- 908 02c2 FFF7FEFF 		bl	__aeabi_fadd
- 909              	.LVL77:
- 910 02c6 8246     		mov	r10, r0
+ 889              		.loc 2 404 65 view .LVU219
+ 890 0298 5046     		mov	r0, r10
+ 891 029a FFF7FEFF 		bl	__aeabi_fadd
+ 892              	.LVL76:
  404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 911              		.loc 2 404 72 discriminator 1 view .LVU221
- 912 02c8 216A     		ldr	r1, [r4, #32]	@ float
- 913 02ca 1398     		ldr	r0, [sp, #76]	@ float
- 914 02cc FFF7FEFF 		bl	__aeabi_fmul
- 915              	.LVL78:
- 916 02d0 0146     		mov	r1, r0
- 404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 917              		.loc 2 404 65 discriminator 1 view .LVU222
- 918 02d2 5046     		mov	r0, r10
- 919 02d4 FFF7FEFF 		bl	__aeabi_fadd
- 920              	.LVL79:
- 404:Core/Inc/Fusion/FusionMath.h ****     return result;
- 921              		.loc 2 404 19 discriminator 1 view .LVU223
- 922 02d8 2F90     		str	r0, [sp, #188]	@ float
+ 893              		.loc 2 404 19 view .LVU220
+ 894 029e 2F90     		str	r0, [sp, #188]	@ float
  405:Core/Inc/Fusion/FusionMath.h **** #undef R
- 923              		.loc 2 405 5 is_stmt 1 discriminator 1 view .LVU224
+ 895              		.loc 2 405 5 is_stmt 1 view .LVU221
  405:Core/Inc/Fusion/FusionMath.h **** #undef R
- 924              		.loc 2 405 12 is_stmt 0 discriminator 1 view .LVU225
- 925 02da 91AB     		add	r3, sp, #580
- 926 02dc 98E80700 		ldm	r8, {r0, r1, r2}
-ARM GAS  /tmp/cc6ZXLtF.s 			page 35
-
-
- 927 02e0 83E80700 		stm	r3, {r0, r1, r2}
- 928 02e4 27AA     		add	r2, sp, #156
- 929 02e6 07CA     		ldm	r2, {r0, r1, r2}
- 930 02e8 89E80700 		stm	r9, {r0, r1, r2}
- 931              	.LBE77:
- 932              	.LBE76:
- 933              	.LBB78:
- 934              	.LBI78:
+ 896              		.loc 2 405 12 is_stmt 0 view .LVU222
+ 897 02a0 93AB     		add	r3, sp, #588
+ 898 02a2 98E80700 		ldm	r8, {r0, r1, r2}
+ 899 02a6 83E80700 		stm	r3, {r0, r1, r2}
+ 900 02aa 27AA     		add	r2, sp, #156
+ 901 02ac 07CA     		ldm	r2, {r0, r1, r2}
+ 902 02ae 89E80700 		stm	r9, {r0, r1, r2}
+ 903              	.LBE77:
+ 904              	.LBE76:
+ 905              	.LBB78:
+ 906              	.LBI78:
  215:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
- 935              		.loc 2 215 28 is_stmt 1 discriminator 1 view .LVU226
- 936              	.LBB79:
+ 907              		.loc 2 215 28 is_stmt 1 view .LVU223
+ 908              	.LBB79:
  216:Core/Inc/Fusion/FusionMath.h ****     result.axis.x = vectorA.axis.x - vectorB.axis.x;
- 937              		.loc 2 216 5 discriminator 1 view .LVU227
+ 909              		.loc 2 216 5 view .LVU224
  217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
- 938              		.loc 2 217 5 discriminator 1 view .LVU228
+ 910              		.loc 2 217 5 view .LVU225
  217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
- 939              		.loc 2 217 36 is_stmt 0 discriminator 1 view .LVU229
- 940 02ec D9F80010 		ldr	r1, [r9]	@ float
- 941 02f0 D8F80000 		ldr	r0, [r8]	@ float
- 942 02f4 FFF7FEFF 		bl	__aeabi_fsub
- 943              	.LVL80:
- 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
- 944              		.loc 2 217 19 discriminator 1 view .LVU230
- 945 02f8 2060     		str	r0, [r4]	@ float
- 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
- 946              		.loc 2 218 5 is_stmt 1 discriminator 1 view .LVU231
- 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
- 947              		.loc 2 218 36 is_stmt 0 discriminator 1 view .LVU232
- 948 02fa D9F80410 		ldr	r1, [r9, #4]	@ float
- 949 02fe D8F80400 		ldr	r0, [r8, #4]	@ float
- 950 0302 FFF7FEFF 		bl	__aeabi_fsub
- 951              	.LVL81:
- 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
- 952              		.loc 2 218 19 discriminator 1 view .LVU233
- 953 0306 6060     		str	r0, [r4, #4]	@ float
- 219:Core/Inc/Fusion/FusionMath.h ****     return result;
- 954              		.loc 2 219 5 is_stmt 1 discriminator 1 view .LVU234
- 219:Core/Inc/Fusion/FusionMath.h ****     return result;
- 955              		.loc 2 219 36 is_stmt 0 discriminator 1 view .LVU235
- 956 0308 D9F80810 		ldr	r1, [r9, #8]	@ float
- 957 030c D8F80800 		ldr	r0, [r8, #8]	@ float
- 958 0310 FFF7FEFF 		bl	__aeabi_fsub
- 959              	.LVL82:
- 219:Core/Inc/Fusion/FusionMath.h ****     return result;
- 960              		.loc 2 219 19 discriminator 1 view .LVU236
- 961 0314 A060     		str	r0, [r4, #8]	@ float
- 220:Core/Inc/Fusion/FusionMath.h **** }
- 962              		.loc 2 220 5 is_stmt 1 discriminator 1 view .LVU237
- 220:Core/Inc/Fusion/FusionMath.h **** }
- 963              		.loc 2 220 12 is_stmt 0 discriminator 1 view .LVU238
- 964 0316 94E80700 		ldm	r4, {r0, r1, r2}
- 965 031a 86E80700 		stm	r6, {r0, r1, r2}
- 966              	.LBE79:
- 967              	.LBE78:
- 968              	.LBE75:
- 969              	.LBE74:
- 151:Core/Src/main.c ****     accelerometer = FusionAxesSwap(accelerometer, FusionAxesAlignmentPYNXPZ);
-ARM GAS  /tmp/cc6ZXLtF.s 			page 36
+ 911              		.loc 2 217 36 is_stmt 0 view .LVU226
+ 912 02b2 D9F80010 		ldr	r1, [r9]	@ float
+ARM GAS  /tmp/ccP4y1SB.s 			page 35
 
 
- 970              		.loc 3 151 5 is_stmt 1 discriminator 1 view .LVU239
- 971 031e 95E80700 		ldm	r5, {r0, r1, r2}
- 972 0322 8BE80700 		stm	fp, {r0, r1, r2}
- 973              	.LVL83:
- 974              	.LBB80:
- 975              	.LBI80:
- 976              		.file 5 "Core/Inc/Fusion/FusionAxes.h"
+ 913 02b6 D8F80000 		ldr	r0, [r8]	@ float
+ 914 02ba FFF7FEFF 		bl	__aeabi_fsub
+ 915              	.LVL77:
+ 217:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y - vectorB.axis.y;
+ 916              		.loc 2 217 19 view .LVU227
+ 917 02be 2060     		str	r0, [r4]	@ float
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 918              		.loc 2 218 5 is_stmt 1 view .LVU228
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 919              		.loc 2 218 36 is_stmt 0 view .LVU229
+ 920 02c0 D9F80410 		ldr	r1, [r9, #4]	@ float
+ 921 02c4 D8F80400 		ldr	r0, [r8, #4]	@ float
+ 922 02c8 FFF7FEFF 		bl	__aeabi_fsub
+ 923              	.LVL78:
+ 218:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z - vectorB.axis.z;
+ 924              		.loc 2 218 19 view .LVU230
+ 925 02cc 6060     		str	r0, [r4, #4]	@ float
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 926              		.loc 2 219 5 is_stmt 1 view .LVU231
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 927              		.loc 2 219 36 is_stmt 0 view .LVU232
+ 928 02ce D9F80810 		ldr	r1, [r9, #8]	@ float
+ 929 02d2 D8F80800 		ldr	r0, [r8, #8]	@ float
+ 930 02d6 FFF7FEFF 		bl	__aeabi_fsub
+ 931              	.LVL79:
+ 219:Core/Inc/Fusion/FusionMath.h ****     return result;
+ 932              		.loc 2 219 19 view .LVU233
+ 933 02da A060     		str	r0, [r4, #8]	@ float
+ 220:Core/Inc/Fusion/FusionMath.h **** }
+ 934              		.loc 2 220 5 is_stmt 1 view .LVU234
+ 220:Core/Inc/Fusion/FusionMath.h **** }
+ 935              		.loc 2 220 12 is_stmt 0 view .LVU235
+ 936 02dc 94E80700 		ldm	r4, {r0, r1, r2}
+ 937 02e0 87E80700 		stm	r7, {r0, r1, r2}
+ 938              	.LBE79:
+ 939              	.LBE78:
+ 940              	.LBE75:
+ 941              	.LBE74:
+ 150:Core/Src/main.c ****       accelerometer = FusionAxesSwap(accelerometer, FusionAxesAlignmentPYNXPZ);
+ 942              		.loc 3 150 7 is_stmt 1 view .LVU236
+ 943 02e4 95E80700 		ldm	r5, {r0, r1, r2}
+ 944 02e8 8BE80700 		stm	fp, {r0, r1, r2}
+ 945              	.LVL80:
+ 946              	.LBB80:
+ 947              	.LBI80:
+ 948              		.file 5 "Core/Inc/Fusion/FusionAxes.h"
    1:Core/Inc/Fusion/FusionAxes.h **** /**
    2:Core/Inc/Fusion/FusionAxes.h ****  * @file FusionAxes.h
    3:Core/Inc/Fusion/FusionAxes.h ****  * @author Seb Madgwick
@@ -2119,6 +2098,9 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
    9:Core/Inc/Fusion/FusionAxes.h **** 
   10:Core/Inc/Fusion/FusionAxes.h **** //------------------------------------------------------------------------------
   11:Core/Inc/Fusion/FusionAxes.h **** // Includes
+ARM GAS  /tmp/ccP4y1SB.s 			page 36
+
+
   12:Core/Inc/Fusion/FusionAxes.h **** 
   13:Core/Inc/Fusion/FusionAxes.h **** #include "FusionMath.h"
   14:Core/Inc/Fusion/FusionAxes.h **** 
@@ -2158,9 +2140,6 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   48:Core/Inc/Fusion/FusionAxes.h ****     FusionAxesAlignmentNZPXNY, /* -Z+X-Y */
   49:Core/Inc/Fusion/FusionAxes.h **** } FusionAxesAlignment;
   50:Core/Inc/Fusion/FusionAxes.h **** 
-ARM GAS  /tmp/cc6ZXLtF.s 			page 37
-
-
   51:Core/Inc/Fusion/FusionAxes.h **** //------------------------------------------------------------------------------
   52:Core/Inc/Fusion/FusionAxes.h **** // Inline functions
   53:Core/Inc/Fusion/FusionAxes.h **** 
@@ -2171,14 +2150,17 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   58:Core/Inc/Fusion/FusionAxes.h ****  * @return Sensor axes aligned with the body axes.
   59:Core/Inc/Fusion/FusionAxes.h ****  */
   60:Core/Inc/Fusion/FusionAxes.h **** static inline FusionVector FusionAxesSwap(const FusionVector sensor, const FusionAxesAlignment alig
- 977              		.loc 5 60 28 discriminator 1 view .LVU240
- 978              	.LBB81:
+ 949              		.loc 5 60 28 view .LVU237
+ 950              	.LBB81:
   61:Core/Inc/Fusion/FusionAxes.h ****     FusionVector result;
- 979              		.loc 5 61 5 discriminator 1 view .LVU241
+ 951              		.loc 5 61 5 view .LVU238
   62:Core/Inc/Fusion/FusionAxes.h ****     switch (alignment) {
- 980              		.loc 5 62 5 discriminator 1 view .LVU242
+ 952              		.loc 5 62 5 view .LVU239
   63:Core/Inc/Fusion/FusionAxes.h ****         case FusionAxesAlignmentPXPYPZ:
   64:Core/Inc/Fusion/FusionAxes.h ****             break;
+ARM GAS  /tmp/ccP4y1SB.s 			page 37
+
+
   65:Core/Inc/Fusion/FusionAxes.h ****         case FusionAxesAlignmentPXNZPY:
   66:Core/Inc/Fusion/FusionAxes.h ****             result.axis.x = +sensor.axis.x;
   67:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.z;
@@ -2216,515 +2198,520 @@ ARM GAS  /tmp/cc6ZXLtF.s 			page 1
   99:Core/Inc/Fusion/FusionAxes.h ****             return result;
  100:Core/Inc/Fusion/FusionAxes.h ****         case FusionAxesAlignmentPYNXPZ:
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.x = +sensor.axis.y;
- 981              		.loc 5 101 13 discriminator 1 view .LVU243
- 982              		.loc 5 101 29 is_stmt 0 discriminator 1 view .LVU244
-ARM GAS  /tmp/cc6ZXLtF.s 			page 38
-
-
- 983 0326 DBF80430 		ldr	r3, [fp, #4]	@ float
- 984              		.loc 5 101 27 discriminator 1 view .LVU245
- 985 032a 2360     		str	r3, [r4]	@ float
+ 953              		.loc 5 101 13 view .LVU240
+ 954              		.loc 5 101 29 is_stmt 0 view .LVU241
+ 955 02ec DBF80430 		ldr	r3, [fp, #4]	@ float
+ 956              		.loc 5 101 27 view .LVU242
+ 957 02f0 2360     		str	r3, [r4]	@ float
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 986              		.loc 5 102 13 is_stmt 1 discriminator 1 view .LVU246
- 987              		.loc 5 102 41 is_stmt 0 discriminator 1 view .LVU247
- 988 032c DBF80030 		ldr	r3, [fp]	@ float
- 989              		.loc 5 102 29 discriminator 1 view .LVU248
- 990 0330 03F10043 		add	r3, r3, #-2147483648
- 991              		.loc 5 102 27 discriminator 1 view .LVU249
- 992 0334 6360     		str	r3, [r4, #4]	@ float
+ 958              		.loc 5 102 13 is_stmt 1 view .LVU243
+ 959              		.loc 5 102 41 is_stmt 0 view .LVU244
+ 960 02f2 DBF80030 		ldr	r3, [fp]	@ float
+ 961              		.loc 5 102 29 view .LVU245
+ 962 02f6 03F10043 		add	r3, r3, #-2147483648
+ 963              		.loc 5 102 27 view .LVU246
+ 964 02fa 6360     		str	r3, [r4, #4]	@ float
  103:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 993              		.loc 5 103 13 is_stmt 1 discriminator 1 view .LVU250
- 994              		.loc 5 103 29 is_stmt 0 discriminator 1 view .LVU251
- 995 0336 DBF80830 		ldr	r3, [fp, #8]	@ float
- 996              		.loc 5 103 27 discriminator 1 view .LVU252
- 997 033a A360     		str	r3, [r4, #8]	@ float
+ 965              		.loc 5 103 13 is_stmt 1 view .LVU247
+ 966              		.loc 5 103 29 is_stmt 0 view .LVU248
+ 967 02fc DBF80830 		ldr	r3, [fp, #8]	@ float
+ 968              		.loc 5 103 27 view .LVU249
+ 969 0300 A360     		str	r3, [r4, #8]	@ float
  104:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 998              		.loc 5 104 13 is_stmt 1 discriminator 1 view .LVU253
- 999              		.loc 5 104 20 is_stmt 0 discriminator 1 view .LVU254
- 1000 033c 94E80700 		ldm	r4, {r0, r1, r2}
- 1001 0340 85E80700 		stm	r5, {r0, r1, r2}
- 1002              	.LVL84:
- 1003              		.loc 5 104 20 discriminator 1 view .LVU255
- 1004              	.LBE81:
- 1005              	.LBE80:
- 152:Core/Src/main.c ****     magnetometer = FusionAxesSwap(magnetometer, FusionAxesAlignmentPYNXPZ);
- 1006              		.loc 3 152 5 is_stmt 1 discriminator 1 view .LVU256
- 1007 0344 97E80700 		ldm	r7, {r0, r1, r2}
- 1008 0348 8BE80700 		stm	fp, {r0, r1, r2}
- 1009              	.LVL85:
- 1010              	.LBB82:
- 1011              	.LBI82:
+ARM GAS  /tmp/ccP4y1SB.s 			page 38
+
+
+ 970              		.loc 5 104 13 is_stmt 1 view .LVU250
+ 971              		.loc 5 104 20 is_stmt 0 view .LVU251
+ 972 0302 94E80700 		ldm	r4, {r0, r1, r2}
+ 973 0306 85E80700 		stm	r5, {r0, r1, r2}
+ 974              	.LVL81:
+ 975              		.loc 5 104 20 view .LVU252
+ 976              	.LBE81:
+ 977              	.LBE80:
+ 151:Core/Src/main.c ****       magnetometer = FusionAxesSwap(magnetometer, FusionAxesAlignmentPYNXPZ);
+ 978              		.loc 3 151 7 is_stmt 1 view .LVU253
+ 979 030a 96E80700 		ldm	r6, {r0, r1, r2}
+ 980 030e 8BE80700 		stm	fp, {r0, r1, r2}
+ 981              	.LVL82:
+ 982              	.LBB82:
+ 983              	.LBI82:
   60:Core/Inc/Fusion/FusionAxes.h ****     FusionVector result;
- 1012              		.loc 5 60 28 discriminator 1 view .LVU257
- 1013              	.LBB83:
+ 984              		.loc 5 60 28 view .LVU254
+ 985              	.LBB83:
   61:Core/Inc/Fusion/FusionAxes.h ****     switch (alignment) {
- 1014              		.loc 5 61 5 discriminator 1 view .LVU258
+ 986              		.loc 5 61 5 view .LVU255
   62:Core/Inc/Fusion/FusionAxes.h ****         case FusionAxesAlignmentPXPYPZ:
- 1015              		.loc 5 62 5 discriminator 1 view .LVU259
+ 987              		.loc 5 62 5 view .LVU256
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1016              		.loc 5 101 13 discriminator 1 view .LVU260
+ 988              		.loc 5 101 13 view .LVU257
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1017              		.loc 5 101 29 is_stmt 0 discriminator 1 view .LVU261
- 1018 034c DBF80430 		ldr	r3, [fp, #4]	@ float
+ 989              		.loc 5 101 29 is_stmt 0 view .LVU258
+ 990 0312 DBF80430 		ldr	r3, [fp, #4]	@ float
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1019              		.loc 5 101 27 discriminator 1 view .LVU262
- 1020 0350 2360     		str	r3, [r4]	@ float
+ 991              		.loc 5 101 27 view .LVU259
+ 992 0316 2360     		str	r3, [r4]	@ float
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1021              		.loc 5 102 13 is_stmt 1 discriminator 1 view .LVU263
+ 993              		.loc 5 102 13 is_stmt 1 view .LVU260
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1022              		.loc 5 102 41 is_stmt 0 discriminator 1 view .LVU264
- 1023 0352 DBF80030 		ldr	r3, [fp]	@ float
+ 994              		.loc 5 102 41 is_stmt 0 view .LVU261
+ 995 0318 DBF80030 		ldr	r3, [fp]	@ float
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1024              		.loc 5 102 29 discriminator 1 view .LVU265
- 1025 0356 03F10043 		add	r3, r3, #-2147483648
+ 996              		.loc 5 102 29 view .LVU262
+ 997 031c 03F10043 		add	r3, r3, #-2147483648
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
-ARM GAS  /tmp/cc6ZXLtF.s 			page 39
+ 998              		.loc 5 102 27 view .LVU263
+ 999 0320 6360     		str	r3, [r4, #4]	@ float
+ 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
+ 1000              		.loc 5 103 13 is_stmt 1 view .LVU264
+ 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
+ 1001              		.loc 5 103 29 is_stmt 0 view .LVU265
+ 1002 0322 DBF80830 		ldr	r3, [fp, #8]	@ float
+ 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
+ 1003              		.loc 5 103 27 view .LVU266
+ 1004 0326 A360     		str	r3, [r4, #8]	@ float
+ 1005              		.loc 5 104 13 is_stmt 1 view .LVU267
+ 1006              		.loc 5 104 20 is_stmt 0 view .LVU268
+ 1007 0328 94E80700 		ldm	r4, {r0, r1, r2}
+ 1008 032c 86E80700 		stm	r6, {r0, r1, r2}
+ 1009              	.LVL83:
+ 1010              		.loc 5 104 20 view .LVU269
+ 1011              	.LBE83:
+ 1012              	.LBE82:
+ARM GAS  /tmp/ccP4y1SB.s 			page 39
 
 
- 1026              		.loc 5 102 27 discriminator 1 view .LVU266
- 1027 035a 6360     		str	r3, [r4, #4]	@ float
- 1028 035c 12E0     		b	.L21
- 1029              	.L22:
- 1030 035e 00BF     		.align	2
- 1031              	.L20:
- 1032 0360 E02E6542 		.word	1113927392
- 1033 0364 00000000 		.word	.LC1
- 1034 0368 00000000 		.word	huart3
- 1035 036c 00000000 		.word	.LANCHOR1
- 1036 0370 00000000 		.word	.LANCHOR2
- 1037 0374 00000000 		.word	.LANCHOR3
- 1038 0378 00000000 		.word	.LANCHOR4
- 1039 037c 00000000 		.word	.LANCHOR5
- 1040 0380 00000000 		.word	.LANCHOR6
- 1041              	.L21:
- 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1042              		.loc 5 103 13 is_stmt 1 discriminator 1 view .LVU267
- 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1043              		.loc 5 103 29 is_stmt 0 discriminator 1 view .LVU268
- 1044 0384 DBF80830 		ldr	r3, [fp, #8]	@ float
- 103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1045              		.loc 5 103 27 discriminator 1 view .LVU269
- 1046 0388 A360     		str	r3, [r4, #8]	@ float
- 1047              		.loc 5 104 13 is_stmt 1 discriminator 1 view .LVU270
- 1048              		.loc 5 104 20 is_stmt 0 discriminator 1 view .LVU271
- 1049 038a 94E80700 		ldm	r4, {r0, r1, r2}
- 1050 038e 87E80700 		stm	r7, {r0, r1, r2}
- 1051              	.LVL86:
- 1052              		.loc 5 104 20 discriminator 1 view .LVU272
- 1053              	.LBE83:
- 1054              	.LBE82:
- 153:Core/Src/main.c **** 
- 1055              		.loc 3 153 5 is_stmt 1 discriminator 1 view .LVU273
- 1056 0392 96E80700 		ldm	r6, {r0, r1, r2}
- 1057 0396 8BE80700 		stm	fp, {r0, r1, r2}
- 1058              	.LVL87:
- 1059              	.LBB84:
- 1060              	.LBI84:
+ 152:Core/Src/main.c **** 
+ 1013              		.loc 3 152 7 is_stmt 1 view .LVU270
+ 1014 0330 97E80700 		ldm	r7, {r0, r1, r2}
+ 1015 0334 8BE80700 		stm	fp, {r0, r1, r2}
+ 1016              	.LVL84:
+ 1017              	.LBB84:
+ 1018              	.LBI84:
   60:Core/Inc/Fusion/FusionAxes.h ****     FusionVector result;
- 1061              		.loc 5 60 28 discriminator 1 view .LVU274
- 1062              	.LBB85:
+ 1019              		.loc 5 60 28 view .LVU271
+ 1020              	.LBB85:
   61:Core/Inc/Fusion/FusionAxes.h ****     switch (alignment) {
- 1063              		.loc 5 61 5 discriminator 1 view .LVU275
+ 1021              		.loc 5 61 5 view .LVU272
   62:Core/Inc/Fusion/FusionAxes.h ****         case FusionAxesAlignmentPXPYPZ:
- 1064              		.loc 5 62 5 discriminator 1 view .LVU276
+ 1022              		.loc 5 62 5 view .LVU273
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1065              		.loc 5 101 13 discriminator 1 view .LVU277
+ 1023              		.loc 5 101 13 view .LVU274
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1066              		.loc 5 101 29 is_stmt 0 discriminator 1 view .LVU278
- 1067 039a DBF80430 		ldr	r3, [fp, #4]	@ float
+ 1024              		.loc 5 101 29 is_stmt 0 view .LVU275
+ 1025 0338 DBF80430 		ldr	r3, [fp, #4]	@ float
  101:Core/Inc/Fusion/FusionAxes.h ****             result.axis.y = -sensor.axis.x;
- 1068              		.loc 5 101 27 discriminator 1 view .LVU279
- 1069 039e 2360     		str	r3, [r4]	@ float
+ 1026              		.loc 5 101 27 view .LVU276
+ 1027 033c 2360     		str	r3, [r4]	@ float
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1070              		.loc 5 102 13 is_stmt 1 discriminator 1 view .LVU280
+ 1028              		.loc 5 102 13 is_stmt 1 view .LVU277
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
-ARM GAS  /tmp/cc6ZXLtF.s 			page 40
-
-
- 1071              		.loc 5 102 41 is_stmt 0 discriminator 1 view .LVU281
- 1072 03a0 DBF80030 		ldr	r3, [fp]	@ float
+ 1029              		.loc 5 102 41 is_stmt 0 view .LVU278
+ 1030 033e DBF80030 		ldr	r3, [fp]	@ float
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1073              		.loc 5 102 29 discriminator 1 view .LVU282
- 1074 03a4 03F10043 		add	r3, r3, #-2147483648
+ 1031              		.loc 5 102 29 view .LVU279
+ 1032 0342 03F10043 		add	r3, r3, #-2147483648
  102:Core/Inc/Fusion/FusionAxes.h ****             result.axis.z = +sensor.axis.z;
- 1075              		.loc 5 102 27 discriminator 1 view .LVU283
- 1076 03a8 6360     		str	r3, [r4, #4]	@ float
+ 1033              		.loc 5 102 27 view .LVU280
+ 1034 0346 6360     		str	r3, [r4, #4]	@ float
  103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1077              		.loc 5 103 13 is_stmt 1 discriminator 1 view .LVU284
+ 1035              		.loc 5 103 13 is_stmt 1 view .LVU281
  103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1078              		.loc 5 103 29 is_stmt 0 discriminator 1 view .LVU285
- 1079 03aa DBF80830 		ldr	r3, [fp, #8]	@ float
+ 1036              		.loc 5 103 29 is_stmt 0 view .LVU282
+ 1037 0348 DBF80830 		ldr	r3, [fp, #8]	@ float
  103:Core/Inc/Fusion/FusionAxes.h ****             return result;
- 1080              		.loc 5 103 27 discriminator 1 view .LVU286
- 1081 03ae A360     		str	r3, [r4, #8]	@ float
- 1082              		.loc 5 104 13 is_stmt 1 discriminator 1 view .LVU287
- 1083              		.loc 5 104 20 is_stmt 0 discriminator 1 view .LVU288
- 1084 03b0 94E80700 		ldm	r4, {r0, r1, r2}
- 1085 03b4 86E80700 		stm	r6, {r0, r1, r2}
- 1086              	.LVL88:
- 1087              		.loc 5 104 20 discriminator 1 view .LVU289
- 1088              	.LBE85:
- 1089              	.LBE84:
- 156:Core/Src/main.c **** 
- 1090              		.loc 3 156 5 is_stmt 1 discriminator 1 view .LVU290
- 156:Core/Src/main.c **** 
- 1091              		.loc 3 156 17 is_stmt 0 discriminator 1 view .LVU291
- 1092 03b8 0DF15808 		add	r8, sp, #88
- 1093 03bc AB68     		ldr	r3, [r5, #8]
- 1094 03be 0093     		str	r3, [sp]
- 1095 03c0 95E80C00 		ldm	r5, {r2, r3}
- 1096 03c4 5FA9     		add	r1, sp, #380
- 1097 03c6 4046     		mov	r0, r8
- 1098 03c8 FFF7FEFF 		bl	FusionOffsetUpdate
- 1099              	.LVL89:
- 1100 03cc 98E80700 		ldm	r8, {r0, r1, r2}
- 1101 03d0 85E80700 		stm	r5, {r0, r1, r2}
- 159:Core/Src/main.c **** 
- 1102              		.loc 3 159 5 is_stmt 1 discriminator 1 view .LVU292
- 159:Core/Src/main.c **** 
- 1103              		.loc 3 159 29 is_stmt 0 discriminator 1 view .LVU293
- 1104 03d4 119B     		ldr	r3, [sp, #68]
- 1105 03d6 149A     		ldr	r2, [sp, #80]
- 1106 03d8 981A     		subs	r0, r3, r2
- 1107 03da FFF7FEFF 		bl	__aeabi_ui2f
- 1108              	.LVL90:
- 159:Core/Src/main.c **** 
- 1109              		.loc 3 159 17 discriminator 1 view .LVU294
- 1110 03de 3549     		ldr	r1, .L23
- 1111 03e0 FFF7FEFF 		bl	__aeabi_fdiv
- 1112              	.LVL91:
- 161:Core/Src/main.c **** 
- 1113              		.loc 3 161 5 is_stmt 1 discriminator 1 view .LVU295
- 164:Core/Src/main.c **** 
- 1114              		.loc 3 164 5 discriminator 1 view .LVU296
- 1115 03e4 0690     		str	r0, [sp, #24]	@ float
-ARM GAS  /tmp/cc6ZXLtF.s 			page 41
+ 1038              		.loc 5 103 27 view .LVU283
+ 1039 034c A360     		str	r3, [r4, #8]	@ float
+ 1040              		.loc 5 104 13 is_stmt 1 view .LVU284
+ 1041              		.loc 5 104 20 is_stmt 0 view .LVU285
+ 1042 034e 94E80700 		ldm	r4, {r0, r1, r2}
+ 1043 0352 87E80700 		stm	r7, {r0, r1, r2}
+ 1044              	.LVL85:
+ 1045              		.loc 5 104 20 view .LVU286
+ 1046              	.LBE85:
+ 1047              	.LBE84:
+ 155:Core/Src/main.c **** 
+ 1048              		.loc 3 155 7 is_stmt 1 view .LVU287
+ 155:Core/Src/main.c **** 
+ 1049              		.loc 3 155 19 is_stmt 0 view .LVU288
+ 1050 0356 16AF     		add	r7, sp, #88
+ 1051 0358 14E0     		b	.L21
+ 1052              	.L22:
+ 1053 035a 00BF     		.align	2
+ARM GAS  /tmp/ccP4y1SB.s 			page 40
 
 
- 1116 03e6 03AB     		add	r3, sp, #12
- 1117 03e8 96E80700 		ldm	r6, {r0, r1, r2}
- 1118              	.LVL92:
- 164:Core/Src/main.c **** 
- 1119              		.loc 3 164 5 is_stmt 0 discriminator 1 view .LVU297
- 1120 03ec 83E80700 		stm	r3, {r0, r1, r2}
- 1121 03f0 97E80700 		ldm	r7, {r0, r1, r2}
- 1122 03f4 8DE80700 		stm	sp, {r0, r1, r2}
- 1123 03f8 95E80E00 		ldm	r5, {r1, r2, r3}
- 1124 03fc 46A8     		add	r0, sp, #280
- 1125 03fe FFF7FEFF 		bl	FusionAhrsUpdate
- 1126              	.LVL93:
- 167:Core/Src/main.c ****     const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
- 1127              		.loc 3 167 5 is_stmt 1 discriminator 1 view .LVU298
- 167:Core/Src/main.c ****     const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
- 1128              		.loc 3 167 31 is_stmt 0 discriminator 1 view .LVU299
- 1129 0402 8DAD     		add	r5, sp, #564
- 1130 0404 46A9     		add	r1, sp, #280
- 1131 0406 2846     		mov	r0, r5
- 1132 0408 FFF7FEFF 		bl	FusionAhrsGetQuaternion
- 1133              	.LVL94:
- 1134 040c 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 1135 0410 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 1136              	.LBB86:
- 1137              	.LBI61:
+ 1054              	.L20:
+ 1055 035c E02E6542 		.word	1113927392
+ 1056 0360 00000000 		.word	.LC1
+ 1057 0364 00000000 		.word	huart3
+ 1058 0368 00000000 		.word	.LANCHOR1
+ 1059 036c 00000000 		.word	.LANCHOR2
+ 1060 0370 00000000 		.word	.LANCHOR3
+ 1061 0374 00000000 		.word	.LANCHOR4
+ 1062 0378 00000000 		.word	.LANCHOR5
+ 1063 037c 00000000 		.word	.LANCHOR6
+ 1064 0380 00000000 		.word	.LANCHOR7
+ 1065              	.L21:
+ 1066 0384 AB68     		ldr	r3, [r5, #8]
+ 1067 0386 0093     		str	r3, [sp]
+ 1068 0388 95E80C00 		ldm	r5, {r2, r3}
+ 1069 038c 5FA9     		add	r1, sp, #380
+ 1070 038e 3846     		mov	r0, r7
+ 1071 0390 FFF7FEFF 		bl	FusionOffsetUpdate
+ 1072              	.LVL86:
+ 1073 0394 97E80700 		ldm	r7, {r0, r1, r2}
+ 1074 0398 85E80700 		stm	r5, {r0, r1, r2}
+ 158:Core/Src/main.c **** 
+ 1075              		.loc 3 158 7 is_stmt 1 view .LVU289
+ 158:Core/Src/main.c **** 
+ 1076              		.loc 3 158 31 is_stmt 0 view .LVU290
+ 1077 039c 119B     		ldr	r3, [sp, #68]
+ 1078 039e 149A     		ldr	r2, [sp, #80]
+ 1079 03a0 981A     		subs	r0, r3, r2
+ 1080 03a2 FFF7FEFF 		bl	__aeabi_ui2f
+ 1081              	.LVL87:
+ 158:Core/Src/main.c **** 
+ 1082              		.loc 3 158 19 view .LVU291
+ 1083 03a6 3249     		ldr	r1, .L23
+ 1084 03a8 FFF7FEFF 		bl	__aeabi_fdiv
+ 1085              	.LVL88:
+ 163:Core/Src/main.c **** 
+ 1086              		.loc 3 163 7 is_stmt 1 view .LVU292
+ 1087 03ac 0390     		str	r0, [sp, #12]	@ float
+ 1088 03ae 96E80700 		ldm	r6, {r0, r1, r2}
+ 1089              	.LVL89:
+ 163:Core/Src/main.c **** 
+ 1090              		.loc 3 163 7 is_stmt 0 view .LVU293
+ 1091 03b2 8DE80700 		stm	sp, {r0, r1, r2}
+ 1092 03b6 95E80E00 		ldm	r5, {r1, r2, r3}
+ 1093 03ba 46A8     		add	r0, sp, #280
+ 1094 03bc FFF7FEFF 		bl	FusionAhrsUpdateNoMagnetometer
+ 1095              	.LVL90:
+ 166:Core/Src/main.c ****       // const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
+ 1096              		.loc 3 166 7 is_stmt 1 view .LVU294
+ 166:Core/Src/main.c ****       // const FusionVector earth = FusionAhrsGetEarthAcceleration(&ahrs);
+ 1097              		.loc 3 166 33 is_stmt 0 view .LVU295
+ 1098 03c0 8FAD     		add	r5, sp, #572
+ 1099 03c2 46A9     		add	r1, sp, #280
+ 1100 03c4 2846     		mov	r0, r5
+ 1101 03c6 FFF7FEFF 		bl	FusionAhrsGetQuaternion
+ 1102              	.LVL91:
+ 1103 03ca 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ARM GAS  /tmp/ccP4y1SB.s 			page 41
+
+
+ 1104 03ce 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 1105              	.LBB86:
+ 1106              	.LBI61:
  445:Core/Inc/Fusion/FusionMath.h **** #define Q quaternion.element
- 1138              		.loc 2 445 27 is_stmt 1 discriminator 1 view .LVU300
- 1139              	.LBB73:
+ 1107              		.loc 2 445 27 is_stmt 1 view .LVU296
+ 1108              	.LBB73:
  447:Core/Inc/Fusion/FusionMath.h ****     FusionEuler euler;
- 1140              		.loc 2 447 5 discriminator 1 view .LVU301
+ 1109              		.loc 2 447 5 view .LVU297
  447:Core/Inc/Fusion/FusionMath.h ****     FusionEuler euler;
- 1141              		.loc 2 447 46 is_stmt 0 discriminator 1 view .LVU302
- 1142 0414 A568     		ldr	r5, [r4, #8]	@ float
+ 1110              		.loc 2 447 46 is_stmt 0 view .LVU298
+ 1111 03d2 A568     		ldr	r5, [r4, #8]	@ float
  447:Core/Inc/Fusion/FusionMath.h ****     FusionEuler euler;
- 1143              		.loc 2 447 49 discriminator 1 view .LVU303
- 1144 0416 2946     		mov	r1, r5
- 1145 0418 2846     		mov	r0, r5
- 1146 041a FFF7FEFF 		bl	__aeabi_fmul
- 1147              	.LVL95:
- 1148 041e 0146     		mov	r1, r0
+ 1112              		.loc 2 447 49 view .LVU299
+ 1113 03d4 2946     		mov	r1, r5
+ 1114 03d6 2846     		mov	r0, r5
+ 1115 03d8 FFF7FEFF 		bl	__aeabi_fmul
+ 1116              	.LVL92:
+ 1117 03dc 0146     		mov	r1, r0
  447:Core/Inc/Fusion/FusionMath.h ****     FusionEuler euler;
- 1149              		.loc 2 447 17 discriminator 1 view .LVU304
- 1150 0420 4FF07C50 		mov	r0, #1056964608
- 1151 0424 FFF7FEFF 		bl	__aeabi_fsub
- 1152              	.LVL96:
- 1153 0428 0746     		mov	r7, r0
- 1154              	.LVL97:
+ 1118              		.loc 2 447 17 view .LVU300
+ 1119 03de 4FF07C50 		mov	r0, #1056964608
+ 1120 03e2 FFF7FEFF 		bl	__aeabi_fsub
+ 1121              	.LVL93:
+ 1122 03e6 0746     		mov	r7, r0
+ 1123              	.LVL94:
  448:Core/Inc/Fusion/FusionMath.h ****     euler.angle.roll = FusionRadiansToDegrees(atan2f(Q.w * Q.x + Q.y * Q.z, halfMinusQySquared - Q.
- 1155              		.loc 2 448 5 is_stmt 1 discriminator 1 view .LVU305
+ 1124              		.loc 2 448 5 is_stmt 1 view .LVU301
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1156              		.loc 2 449 5 discriminator 1 view .LVU306
+ 1125              		.loc 2 449 5 view .LVU302
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1157              		.loc 2 449 55 is_stmt 0 discriminator 1 view .LVU307
- 1158 042a D4F80080 		ldr	r8, [r4]	@ float
+ 1126              		.loc 2 449 55 is_stmt 0 view .LVU303
+ 1127 03e8 D4F80080 		ldr	r8, [r4]	@ float
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1159              		.loc 2 449 61 discriminator 1 view .LVU308
- 1160 042e 6668     		ldr	r6, [r4, #4]	@ float
-ARM GAS  /tmp/cc6ZXLtF.s 			page 42
+ 1128              		.loc 2 449 61 view .LVU304
+ 1129 03ec 6668     		ldr	r6, [r4, #4]	@ float
+ 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
+ 1130              		.loc 2 449 58 view .LVU305
+ 1131 03ee 3146     		mov	r1, r6
+ 1132 03f0 4046     		mov	r0, r8
+ 1133              	.LVL95:
+ 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
+ 1134              		.loc 2 449 58 view .LVU306
+ 1135 03f2 FFF7FEFF 		bl	__aeabi_fmul
+ 1136              	.LVL96:
+ 1137 03f6 8246     		mov	r10, r0
+ 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
+ 1138              		.loc 2 449 73 view .LVU307
+ 1139 03f8 E468     		ldr	r4, [r4, #12]	@ float
+ 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
+ 1140              		.loc 2 449 70 view .LVU308
+ 1141 03fa 2146     		mov	r1, r4
+ 1142 03fc 2846     		mov	r0, r5
+ 1143 03fe FFF7FEFF 		bl	__aeabi_fmul
+ 1144              	.LVL97:
+ 1145 0402 1290     		str	r0, [sp, #72]	@ float
+ 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
+ 1146              		.loc 2 449 102 view .LVU309
+ARM GAS  /tmp/ccP4y1SB.s 			page 42
 
 
+ 1147 0404 3146     		mov	r1, r6
+ 1148 0406 3046     		mov	r0, r6
+ 1149 0408 FFF7FEFF 		bl	__aeabi_fmul
+ 1150              	.LVL98:
+ 1151 040c 0146     		mov	r1, r0
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1161              		.loc 2 449 58 discriminator 1 view .LVU309
- 1162 0430 3146     		mov	r1, r6
- 1163 0432 4046     		mov	r0, r8
- 1164              	.LVL98:
- 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1165              		.loc 2 449 58 discriminator 1 view .LVU310
- 1166 0434 FFF7FEFF 		bl	__aeabi_fmul
- 1167              	.LVL99:
- 1168 0438 8246     		mov	r10, r0
- 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1169              		.loc 2 449 73 discriminator 1 view .LVU311
- 1170 043a E468     		ldr	r4, [r4, #12]	@ float
- 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1171              		.loc 2 449 70 discriminator 1 view .LVU312
- 1172 043c 2146     		mov	r1, r4
- 1173 043e 2846     		mov	r0, r5
- 1174 0440 FFF7FEFF 		bl	__aeabi_fmul
- 1175              	.LVL100:
- 1176 0444 1290     		str	r0, [sp, #72]	@ float
- 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1177              		.loc 2 449 102 discriminator 1 view .LVU313
- 1178 0446 3146     		mov	r1, r6
- 1179 0448 3046     		mov	r0, r6
- 1180 044a FFF7FEFF 		bl	__aeabi_fmul
- 1181              	.LVL101:
- 1182 044e 0146     		mov	r1, r0
- 449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
- 1183              		.loc 2 449 24 discriminator 1 view .LVU314
- 1184 0450 3846     		mov	r0, r7
- 1185 0452 FFF7FEFF 		bl	__aeabi_fsub
- 1186              	.LVL102:
- 1187 0456 8146     		mov	r9, r0
- 1188 0458 1299     		ldr	r1, [sp, #72]	@ float
- 1189 045a 5046     		mov	r0, r10
- 1190 045c FFF7FEFF 		bl	__aeabi_fadd
- 1191              	.LVL103:
- 1192 0460 4946     		mov	r1, r9
- 1193 0462 FFF7FEFF 		bl	atan2f
- 1194              	.LVL104:
- 1195              	.LBB70:
- 1196              	.LBI70:
+ 1152              		.loc 2 449 24 view .LVU310
+ 1153 040e 3846     		mov	r0, r7
+ 1154 0410 FFF7FEFF 		bl	__aeabi_fsub
+ 1155              	.LVL99:
+ 1156 0414 8146     		mov	r9, r0
+ 1157 0416 1299     		ldr	r1, [sp, #72]	@ float
+ 1158 0418 5046     		mov	r0, r10
+ 1159 041a FFF7FEFF 		bl	__aeabi_fadd
+ 1160              	.LVL100:
+ 1161 041e 4946     		mov	r1, r9
+ 1162 0420 FFF7FEFF 		bl	atan2f
+ 1163              	.LVL101:
+ 1164              	.LBB70:
+ 1165              	.LBI70:
  136:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
- 1197              		.loc 2 136 21 is_stmt 1 discriminator 1 view .LVU315
- 1198              	.LBB71:
+ 1166              		.loc 2 136 21 is_stmt 1 view .LVU311
+ 1167              	.LBB71:
  137:Core/Inc/Fusion/FusionMath.h **** }
- 1199              		.loc 2 137 5 discriminator 1 view .LVU316
+ 1168              		.loc 2 137 5 view .LVU312
  137:Core/Inc/Fusion/FusionMath.h **** }
- 1200              		.loc 2 137 20 is_stmt 0 discriminator 1 view .LVU317
- 1201 0466 1449     		ldr	r1, .L23+4
- 1202 0468 FFF7FEFF 		bl	__aeabi_fmul
- 1203              	.LVL105:
+ 1169              		.loc 2 137 20 is_stmt 0 view .LVU313
+ 1170 0424 1349     		ldr	r1, .L23+4
+ 1171 0426 FFF7FEFF 		bl	__aeabi_fmul
+ 1172              	.LVL102:
  137:Core/Inc/Fusion/FusionMath.h **** }
- 1204              		.loc 2 137 20 discriminator 1 view .LVU318
- 1205              	.LBE71:
- 1206              	.LBE70:
+ 1173              		.loc 2 137 20 view .LVU314
+ 1174              	.LBE71:
+ 1175              	.LBE70:
  449:Core/Inc/Fusion/FusionMath.h ****     euler.angle.pitch = FusionRadiansToDegrees(FusionAsin(2.0f * (Q.w * Q.y - Q.z * Q.x)));
-ARM GAS  /tmp/cc6ZXLtF.s 			page 43
+ 1176              		.loc 2 449 22 view .LVU315
+ 1177 042a CBF80000 		str	r0, [fp]	@ float
+ 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
+ 1178              		.loc 2 450 5 is_stmt 1 view .LVU316
+ 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
+ 1179              		.loc 2 450 71 is_stmt 0 view .LVU317
+ 1180 042e 4146     		mov	r1, r8
+ 1181 0430 2846     		mov	r0, r5
+ 1182 0432 FFF7FEFF 		bl	__aeabi_fmul
+ 1183              	.LVL103:
+ 1184 0436 8146     		mov	r9, r0
+ 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
+ 1185              		.loc 2 450 83 view .LVU318
+ 1186 0438 2146     		mov	r1, r4
+ 1187 043a 3046     		mov	r0, r6
+ 1188 043c FFF7FEFF 		bl	__aeabi_fmul
+ 1189              	.LVL104:
+ 1190 0440 0146     		mov	r1, r0
+ 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
+ 1191              		.loc 2 450 77 view .LVU319
+ 1192 0442 4846     		mov	r0, r9
+ 1193 0444 FFF7FEFF 		bl	__aeabi_fsub
+ARM GAS  /tmp/ccP4y1SB.s 			page 43
 
 
- 1207              		.loc 2 449 22 discriminator 1 view .LVU319
- 1208 046c CBF80000 		str	r0, [fp]	@ float
+ 1194              	.LVL105:
+ 1195 0448 0146     		mov	r1, r0
  450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 1209              		.loc 2 450 5 is_stmt 1 discriminator 1 view .LVU320
- 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 1210              		.loc 2 450 71 is_stmt 0 discriminator 1 view .LVU321
- 1211 0470 4146     		mov	r1, r8
- 1212 0472 2846     		mov	r0, r5
- 1213 0474 FFF7FEFF 		bl	__aeabi_fmul
- 1214              	.LVL106:
- 1215 0478 8146     		mov	r9, r0
- 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 1216              		.loc 2 450 83 discriminator 1 view .LVU322
- 1217 047a 2146     		mov	r1, r4
- 1218 047c 3046     		mov	r0, r6
- 1219 047e FFF7FEFF 		bl	__aeabi_fmul
- 1220              	.LVL107:
- 1221 0482 0146     		mov	r1, r0
- 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 1222              		.loc 2 450 77 discriminator 1 view .LVU323
- 1223 0484 4846     		mov	r0, r9
- 1224 0486 FFF7FEFF 		bl	__aeabi_fsub
- 1225              	.LVL108:
- 1226 048a 0146     		mov	r1, r0
- 450:Core/Inc/Fusion/FusionMath.h ****     euler.angle.yaw = FusionRadiansToDegrees(atan2f(Q.w * Q.z + Q.x * Q.y, halfMinusQySquared - Q.z
- 1227              		.loc 2 450 25 discriminator 1 view .LVU324
- 1228 048c FFF7FEFF 		bl	__aeabi_fadd
- 1229              	.LVL109:
- 1230 0490 8146     		mov	r9, r0
- 1231              	.LVL110:
- 1232              	.LBB72:
- 1233              	.LBI63:
+ 1196              		.loc 2 450 25 view .LVU320
+ 1197 044a FFF7FEFF 		bl	__aeabi_fadd
+ 1198              	.LVL106:
+ 1199 044e 8146     		mov	r9, r0
+ 1200              	.LVL107:
+ 1201              	.LBB72:
+ 1202              	.LBI63:
  148:Core/Inc/Fusion/FusionMath.h ****     if (value <= -1.0f) {
- 1234              		.loc 2 148 21 is_stmt 1 discriminator 1 view .LVU325
- 1235              	.LBB65:
+ 1203              		.loc 2 148 21 is_stmt 1 view .LVU321
+ 1204              	.LBB65:
  149:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / -2.0f;
- 1236              		.loc 2 149 5 discriminator 1 view .LVU326
+ 1205              		.loc 2 149 5 view .LVU322
  149:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / -2.0f;
- 1237              		.loc 2 149 8 is_stmt 0 discriminator 1 view .LVU327
- 1238 0492 0A49     		ldr	r1, .L23+8
- 1239 0494 FFF7FEFF 		bl	__aeabi_fcmple
- 1240              	.LVL111:
+ 1206              		.loc 2 149 8 is_stmt 0 view .LVU323
+ 1207 0450 0949     		ldr	r1, .L23+8
+ 1208 0452 FFF7FEFF 		bl	__aeabi_fcmple
+ 1209              	.LVL108:
  149:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / -2.0f;
- 1241              		.loc 2 149 8 discriminator 1 view .LVU328
- 1242 0498 48B9     		cbnz	r0, .L14
+ 1210              		.loc 2 149 8 view .LVU324
+ 1211 0456 48B9     		cbnz	r0, .L14
  152:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / 2.0f;
- 1243              		.loc 2 152 5 is_stmt 1 view .LVU329
+ 1212              		.loc 2 152 5 is_stmt 1 view .LVU325
  152:Core/Inc/Fusion/FusionMath.h ****         return (float) M_PI / 2.0f;
- 1244              		.loc 2 152 8 is_stmt 0 view .LVU330
- 1245 049a 4FF07E51 		mov	r1, #1065353216
- 1246 049e 4846     		mov	r0, r9
- 1247 04a0 FFF7FEFF 		bl	__aeabi_fcmpge
- 1248              	.LVL112:
- 1249 04a4 0028     		cmp	r0, #0
- 1250 04a6 3FF4E1AD 		beq	.L17
+ 1213              		.loc 2 152 8 is_stmt 0 view .LVU326
+ 1214 0458 4FF07E51 		mov	r1, #1065353216
+ 1215 045c 4846     		mov	r0, r9
+ 1216 045e FFF7FEFF 		bl	__aeabi_fcmpge
+ 1217              	.LVL109:
+ 1218 0462 0028     		cmp	r0, #0
+ 1219 0464 3FF4FCAD 		beq	.L17
  153:Core/Inc/Fusion/FusionMath.h ****     }
- 1251              		.loc 2 153 29 view .LVU331
-ARM GAS  /tmp/cc6ZXLtF.s 			page 44
-
-
- 1252 04aa 0548     		ldr	r0, .L23+12
- 1253 04ac E1E5     		b	.L12
- 1254              	.L14:
+ 1220              		.loc 2 153 29 view .LVU327
+ 1221 0468 0448     		ldr	r0, .L23+12
+ 1222 046a FCE5     		b	.L12
+ 1223              	.L14:
  150:Core/Inc/Fusion/FusionMath.h ****     }
- 1255              		.loc 2 150 29 view .LVU332
- 1256 04ae 0548     		ldr	r0, .L23+16
- 1257 04b0 DFE5     		b	.L12
- 1258              	.L24:
- 1259 04b2 00BF     		.align	2
- 1260              	.L23:
- 1261 04b4 00007A44 		.word	1148846080
- 1262 04b8 E02E6542 		.word	1113927392
- 1263 04bc 000080BF 		.word	-1082130432
- 1264 04c0 DB0FC93F 		.word	1070141403
- 1265 04c4 DB0FC9BF 		.word	-1077342245
- 1266              	.LBE65:
- 1267              	.LBE72:
- 1268              	.LBE73:
- 1269              	.LBE86:
- 1270              	.LBE88:
- 1271              		.cfi_endproc
- 1272              	.LFE89:
- 1274              		.section	.rodata
- 1275              		.align	2
- 1276              		.set	.LANCHOR0,. + 0
- 1277              	.LC0:
- 1278 0000 0000003F 		.word	1056964608
- 1279 0004 00002041 		.word	1092616192
- 1280 0008 0000A041 		.word	1101004800
- 1281 000c F4010000 		.word	500
- 1282              		.section	.rodata.accelerometerMisalignment.3,"a"
- 1283              		.align	2
- 1284              		.set	.LANCHOR5,. + 0
- 1287              	accelerometerMisalignment.3:
- 1288 0000 0000803F 		.word	1065353216
- 1289 0004 00000000 		.word	0
- 1290 0008 00000000 		.word	0
- 1291 000c 00000000 		.word	0
- 1292 0010 0000803F 		.word	1065353216
- 1293 0014 00000000 		.word	0
- 1294 0018 00000000 		.word	0
- 1295 001c 00000000 		.word	0
- 1296 0020 0000803F 		.word	1065353216
- 1297              		.section	.rodata.accelerometerSensitivity.4,"a"
- 1298              		.align	2
- 1299              		.set	.LANCHOR4,. + 0
- 1302              	accelerometerSensitivity.4:
- 1303 0000 0000803F 		.word	1065353216
- 1304 0004 0000803F 		.word	1065353216
- 1305 0008 0000803F 		.word	1065353216
- 1306              		.section	.rodata.gyroscopeMisalignment.0,"a"
- 1307              		.align	2
- 1308              		.set	.LANCHOR3,. + 0
- 1311              	gyroscopeMisalignment.0:
- 1312 0000 0000803F 		.word	1065353216
- 1313 0004 00000000 		.word	0
- 1314 0008 00000000 		.word	0
-ARM GAS  /tmp/cc6ZXLtF.s 			page 45
+ 1224              		.loc 2 150 29 view .LVU328
+ 1225 046c 0448     		ldr	r0, .L23+16
+ 1226 046e FAE5     		b	.L12
+ 1227              	.L24:
+ 1228              		.align	2
+ 1229              	.L23:
+ 1230 0470 00007A44 		.word	1148846080
+ 1231 0474 E02E6542 		.word	1113927392
+ 1232 0478 000080BF 		.word	-1082130432
+ 1233 047c DB0FC93F 		.word	1070141403
+ 1234 0480 DB0FC9BF 		.word	-1077342245
+ 1235              	.LBE65:
+ 1236              	.LBE72:
+ 1237              	.LBE73:
+ 1238              	.LBE86:
+ 1239              	.LBE87:
+ 1240              		.cfi_endproc
+ 1241              	.LFE89:
+ARM GAS  /tmp/ccP4y1SB.s 			page 44
 
 
- 1315 000c 00000000 		.word	0
- 1316 0010 0000803F 		.word	1065353216
- 1317 0014 00000000 		.word	0
- 1318 0018 00000000 		.word	0
- 1319 001c 00000000 		.word	0
- 1320 0020 0000803F 		.word	1065353216
- 1321              		.section	.rodata.gyroscopeOffset.2,"a"
- 1322              		.align	2
- 1323              		.set	.LANCHOR1,. + 0
- 1326              	gyroscopeOffset.2:
- 1327 0000 0000D0C1 		.word	-1043333120
- 1328 0004 5C8F9A40 		.word	1083871068
- 1329 0008 1F85AB3F 		.word	1068205343
- 1330              		.section	.rodata.gyroscopeSensitivity.1,"a"
- 1331              		.align	2
- 1332              		.set	.LANCHOR2,. + 0
- 1335              	gyroscopeSensitivity.1:
- 1336 0000 0000803F 		.word	1065353216
- 1337 0004 0000803F 		.word	1065353216
- 1338 0008 0000803F 		.word	1065353216
- 1339              		.section	.rodata.softIronMatrix.5,"a"
- 1340              		.align	2
- 1341              		.set	.LANCHOR6,. + 0
- 1344              	softIronMatrix.5:
- 1345 0000 0000803F 		.word	1065353216
- 1346 0004 00000000 		.word	0
- 1347 0008 00000000 		.word	0
- 1348 000c 00000000 		.word	0
- 1349 0010 0000803F 		.word	1065353216
- 1350 0014 00000000 		.word	0
- 1351 0018 00000000 		.word	0
- 1352 001c 00000000 		.word	0
- 1353 0020 0000803F 		.word	1065353216
- 1354              		.text
- 1355              	.Letext0:
- 1356              		.file 6 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
- 1357              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 1358              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 1359              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
- 1360              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
- 1361              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 1362              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 1363              		.file 13 "Core/Inc/mpu_9250.h"
- 1364              		.file 14 "Core/Inc/Fusion/FusionAhrs.h"
- 1365              		.file 15 "Core/Inc/Fusion/FusionOffset.h"
- 1366              		.file 16 "Core/Inc/usart.h"
- 1367              		.file 17 "/usr/include/newlib/math.h"
- 1368              		.file 18 "Core/Inc/printf.h"
- 1369              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 1370              		.file 20 "Core/Inc/gpio.h"
- 1371              		.file 21 "Core/Inc/i2c.h"
- 1372              		.file 22 "<built-in>"
-ARM GAS  /tmp/cc6ZXLtF.s 			page 46
+ 1243              		.section	.rodata
+ 1244              		.align	2
+ 1245              		.set	.LANCHOR0,. + 0
+ 1246              	.LC0:
+ 1247 0000 0000803F 		.word	1065353216
+ 1248 0004 00002041 		.word	1092616192
+ 1249 0008 0000A041 		.word	1101004800
+ 1250 000c F4010000 		.word	500
+ 1251              		.section	.rodata.accelerometerMisalignment.3,"a"
+ 1252              		.align	2
+ 1253              		.set	.LANCHOR6,. + 0
+ 1256              	accelerometerMisalignment.3:
+ 1257 0000 0000803F 		.word	1065353216
+ 1258 0004 00000000 		.word	0
+ 1259 0008 00000000 		.word	0
+ 1260 000c 00000000 		.word	0
+ 1261 0010 0000803F 		.word	1065353216
+ 1262 0014 00000000 		.word	0
+ 1263 0018 00000000 		.word	0
+ 1264 001c 00000000 		.word	0
+ 1265 0020 0000803F 		.word	1065353216
+ 1266              		.section	.rodata.accelerometerOffset.5,"a"
+ 1267              		.align	2
+ 1268              		.set	.LANCHOR4,. + 0
+ 1271              	accelerometerOffset.5:
+ 1272 0000 0AD7A3BB 		.word	-1146890486
+ 1273 0004 CDCCCC3C 		.word	1020054733
+ 1274 0008 295C8FBD 		.word	-1114678231
+ 1275              		.section	.rodata.accelerometerSensitivity.4,"a"
+ 1276              		.align	2
+ 1277              		.set	.LANCHOR5,. + 0
+ 1280              	accelerometerSensitivity.4:
+ 1281 0000 0000803F 		.word	1065353216
+ 1282 0004 0000803F 		.word	1065353216
+ 1283 0008 0000803F 		.word	1065353216
+ 1284              		.section	.rodata.gyroscopeMisalignment.0,"a"
+ 1285              		.align	2
+ 1286              		.set	.LANCHOR3,. + 0
+ 1289              	gyroscopeMisalignment.0:
+ 1290 0000 0000803F 		.word	1065353216
+ 1291 0004 00000000 		.word	0
+ 1292 0008 00000000 		.word	0
+ 1293 000c 00000000 		.word	0
+ 1294 0010 0000803F 		.word	1065353216
+ 1295 0014 00000000 		.word	0
+ 1296 0018 00000000 		.word	0
+ 1297 001c 00000000 		.word	0
+ 1298 0020 0000803F 		.word	1065353216
+ 1299              		.section	.rodata.gyroscopeOffset.2,"a"
+ 1300              		.align	2
+ 1301              		.set	.LANCHOR1,. + 0
+ 1304              	gyroscopeOffset.2:
+ 1305 0000 295CD141 		.word	1104239657
+ 1306 0004 CDCC14C1 		.word	-1055601459
+ 1307 0008 000040C0 		.word	-1069547520
+ 1308              		.section	.rodata.gyroscopeSensitivity.1,"a"
+ 1309              		.align	2
+ARM GAS  /tmp/ccP4y1SB.s 			page 45
+
+
+ 1310              		.set	.LANCHOR2,. + 0
+ 1313              	gyroscopeSensitivity.1:
+ 1314 0000 0000803F 		.word	1065353216
+ 1315 0004 0000803F 		.word	1065353216
+ 1316 0008 0000803F 		.word	1065353216
+ 1317              		.section	.rodata.softIronMatrix.6,"a"
+ 1318              		.align	2
+ 1319              		.set	.LANCHOR7,. + 0
+ 1322              	softIronMatrix.6:
+ 1323 0000 0000803F 		.word	1065353216
+ 1324 0004 00000000 		.word	0
+ 1325 0008 00000000 		.word	0
+ 1326 000c 00000000 		.word	0
+ 1327 0010 0000803F 		.word	1065353216
+ 1328 0014 00000000 		.word	0
+ 1329 0018 00000000 		.word	0
+ 1330 001c 00000000 		.word	0
+ 1331 0020 0000803F 		.word	1065353216
+ 1332              		.text
+ 1333              	.Letext0:
+ 1334              		.file 6 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ 1335              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1336              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1337              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 1338              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 1339              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1340              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 1341              		.file 13 "Core/Inc/mpu_9250.h"
+ 1342              		.file 14 "Core/Inc/Fusion/FusionAhrs.h"
+ 1343              		.file 15 "Core/Inc/Fusion/FusionOffset.h"
+ 1344              		.file 16 "Core/Inc/usart.h"
+ 1345              		.file 17 "/usr/include/newlib/math.h"
+ 1346              		.file 18 "Core/Inc/printf.h"
+ 1347              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 1348              		.file 20 "Core/Inc/gpio.h"
+ 1349              		.file 21 "Core/Inc/i2c.h"
+ 1350              		.file 22 "<built-in>"
+ARM GAS  /tmp/ccP4y1SB.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/cc6ZXLtF.s:19     .text.FusionCalibrationInertial:0000000000000000 $t
-     /tmp/cc6ZXLtF.s:26     .text.FusionCalibrationInertial:0000000000000000 FusionCalibrationInertial
-     /tmp/cc6ZXLtF.s:272    .text.Error_Handler:0000000000000000 $t
-     /tmp/cc6ZXLtF.s:279    .text.Error_Handler:0000000000000000 Error_Handler
-     /tmp/cc6ZXLtF.s:312    .text.SystemClock_Config:0000000000000000 $t
-     /tmp/cc6ZXLtF.s:319    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/cc6ZXLtF.s:429    .rodata.main.str1.4:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:434    .text.main:0000000000000000 $t
-     /tmp/cc6ZXLtF.s:441    .text.main:0000000000000000 main
-     /tmp/cc6ZXLtF.s:538    .text.main:0000000000000064 $d
-     /tmp/cc6ZXLtF.s:549    .text.main:000000000000006c $t
-     /tmp/cc6ZXLtF.s:1032   .text.main:0000000000000360 $d
-     /tmp/cc6ZXLtF.s:1044   .text.main:0000000000000384 $t
-     /tmp/cc6ZXLtF.s:1261   .text.main:00000000000004b4 $d
-     /tmp/cc6ZXLtF.s:1275   .rodata:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1283   .rodata.accelerometerMisalignment.3:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1287   .rodata.accelerometerMisalignment.3:0000000000000000 accelerometerMisalignment.3
-     /tmp/cc6ZXLtF.s:1298   .rodata.accelerometerSensitivity.4:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1302   .rodata.accelerometerSensitivity.4:0000000000000000 accelerometerSensitivity.4
-     /tmp/cc6ZXLtF.s:1307   .rodata.gyroscopeMisalignment.0:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1311   .rodata.gyroscopeMisalignment.0:0000000000000000 gyroscopeMisalignment.0
-     /tmp/cc6ZXLtF.s:1322   .rodata.gyroscopeOffset.2:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1326   .rodata.gyroscopeOffset.2:0000000000000000 gyroscopeOffset.2
-     /tmp/cc6ZXLtF.s:1331   .rodata.gyroscopeSensitivity.1:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1335   .rodata.gyroscopeSensitivity.1:0000000000000000 gyroscopeSensitivity.1
-     /tmp/cc6ZXLtF.s:1340   .rodata.softIronMatrix.5:0000000000000000 $d
-     /tmp/cc6ZXLtF.s:1344   .rodata.softIronMatrix.5:0000000000000000 softIronMatrix.5
+     /tmp/ccP4y1SB.s:19     .text.FusionCalibrationInertial:0000000000000000 $t
+     /tmp/ccP4y1SB.s:26     .text.FusionCalibrationInertial:0000000000000000 FusionCalibrationInertial
+     /tmp/ccP4y1SB.s:272    .text.Error_Handler:0000000000000000 $t
+     /tmp/ccP4y1SB.s:279    .text.Error_Handler:0000000000000000 Error_Handler
+     /tmp/ccP4y1SB.s:312    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/ccP4y1SB.s:319    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/ccP4y1SB.s:429    .rodata.main.str1.4:0000000000000000 $d
+     /tmp/ccP4y1SB.s:433    .text.main:0000000000000000 $t
+     /tmp/ccP4y1SB.s:440    .text.main:0000000000000000 main
+     /tmp/ccP4y1SB.s:533    .text.main:000000000000005c $d
+     /tmp/ccP4y1SB.s:543    .text.main:0000000000000060 $t
+     /tmp/ccP4y1SB.s:1055   .text.main:000000000000035c $d
+     /tmp/ccP4y1SB.s:1066   .text.main:0000000000000384 $t
+     /tmp/ccP4y1SB.s:1230   .text.main:0000000000000470 $d
+     /tmp/ccP4y1SB.s:1244   .rodata:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1252   .rodata.accelerometerMisalignment.3:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1256   .rodata.accelerometerMisalignment.3:0000000000000000 accelerometerMisalignment.3
+     /tmp/ccP4y1SB.s:1267   .rodata.accelerometerOffset.5:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1271   .rodata.accelerometerOffset.5:0000000000000000 accelerometerOffset.5
+     /tmp/ccP4y1SB.s:1276   .rodata.accelerometerSensitivity.4:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1280   .rodata.accelerometerSensitivity.4:0000000000000000 accelerometerSensitivity.4
+     /tmp/ccP4y1SB.s:1285   .rodata.gyroscopeMisalignment.0:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1289   .rodata.gyroscopeMisalignment.0:0000000000000000 gyroscopeMisalignment.0
+     /tmp/ccP4y1SB.s:1300   .rodata.gyroscopeOffset.2:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1304   .rodata.gyroscopeOffset.2:0000000000000000 gyroscopeOffset.2
+     /tmp/ccP4y1SB.s:1309   .rodata.gyroscopeSensitivity.1:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1313   .rodata.gyroscopeSensitivity.1:0000000000000000 gyroscopeSensitivity.1
+     /tmp/ccP4y1SB.s:1318   .rodata.softIronMatrix.6:0000000000000000 $d
+     /tmp/ccP4y1SB.s:1322   .rodata.softIronMatrix.6:0000000000000000 softIronMatrix.6
 
 UNDEFINED SYMBOLS
 __aeabi_fsub
@@ -2748,15 +2735,14 @@ FusionAhrsInitialise
 FusionAhrsSetSettings
 asinf
 atan2f
-FusionAhrsGetEarthAcceleration
 sprintf_
-HAL_UART_Transmit_IT
-IMU_measure
+HAL_UART_Transmit
 HAL_GetTick
-ARM GAS  /tmp/cc6ZXLtF.s 			page 47
+ARM GAS  /tmp/ccP4y1SB.s 			page 47
 
 
+IMU_measure
 huart3
 FusionOffsetUpdate
-FusionAhrsUpdate
+FusionAhrsUpdateNoMagnetometer
 FusionAhrsGetQuaternion

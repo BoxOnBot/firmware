@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc2Py4oB.s 			page 1
+ARM GAS  /tmp/cc9hGk6L.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34 0000 82B0     		sub	sp, sp, #8
   35              	.LCFI0:
-ARM GAS  /tmp/cc2Py4oB.s 			page 2
+ARM GAS  /tmp/cc9hGk6L.s 			page 2
 
 
   36              		.cfi_def_cfa_offset 8
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
   22:Core/Inc/Fusion/FusionMath.h ****  */
   23:Core/Inc/Fusion/FusionMath.h **** typedef union {
   24:Core/Inc/Fusion/FusionMath.h ****     float array[3];
-ARM GAS  /tmp/cc2Py4oB.s 			page 3
+ARM GAS  /tmp/cc9hGk6L.s 			page 3
 
 
   25:Core/Inc/Fusion/FusionMath.h **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
   79:Core/Inc/Fusion/FusionMath.h **** } FusionEuler;
   80:Core/Inc/Fusion/FusionMath.h **** 
   81:Core/Inc/Fusion/FusionMath.h **** /**
-ARM GAS  /tmp/cc2Py4oB.s 			page 4
+ARM GAS  /tmp/cc9hGk6L.s 			page 4
 
 
   82:Core/Inc/Fusion/FusionMath.h ****  * @brief Vector of zeros.
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  136:Core/Inc/Fusion/FusionMath.h **** static inline float FusionRadiansToDegrees(const float radians) {
  137:Core/Inc/Fusion/FusionMath.h ****     return radians * (180.0f / (float) M_PI);
  138:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/cc2Py4oB.s 			page 5
+ARM GAS  /tmp/cc9hGk6L.s 			page 5
 
 
  139:Core/Inc/Fusion/FusionMath.h **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  193:Core/Inc/Fusion/FusionMath.h **** }
  194:Core/Inc/Fusion/FusionMath.h **** 
  195:Core/Inc/Fusion/FusionMath.h **** /**
-ARM GAS  /tmp/cc2Py4oB.s 			page 6
+ARM GAS  /tmp/cc9hGk6L.s 			page 6
 
 
  196:Core/Inc/Fusion/FusionMath.h ****  * @brief Returns the sum of two vectors.
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  250:Core/Inc/Fusion/FusionMath.h ****  * @return Hadamard product.
  251:Core/Inc/Fusion/FusionMath.h ****  */
  252:Core/Inc/Fusion/FusionMath.h **** static inline FusionVector FusionVectorHadamardProduct(const FusionVector vectorA, const FusionVect
-ARM GAS  /tmp/cc2Py4oB.s 			page 7
+ARM GAS  /tmp/cc9hGk6L.s 			page 7
 
 
  253:Core/Inc/Fusion/FusionMath.h ****     FusionVector result;
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  101 0056 4846     		mov	r0, r9
  102 0058 FFF7FEFF 		bl	__aeabi_fmul
  103              	.LVL3:
-ARM GAS  /tmp/cc2Py4oB.s 			page 8
+ARM GAS  /tmp/cc9hGk6L.s 			page 8
 
 
  104 005c 8346     		mov	fp, r0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  280:Core/Inc/Fusion/FusionMath.h ****  * @param vector Vector.
  281:Core/Inc/Fusion/FusionMath.h ****  * @return Vector magnitude squared.
  282:Core/Inc/Fusion/FusionMath.h ****  */
-ARM GAS  /tmp/cc2Py4oB.s 			page 9
+ARM GAS  /tmp/cc9hGk6L.s 			page 9
 
 
  283:Core/Inc/Fusion/FusionMath.h **** static inline float FusionVectorMagnitudeSquared(const FusionVector vector) {
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  254:Core/Inc/Fusion/FusionMath.h ****     result.axis.y = vectorA.axis.y * vectorB.axis.y;
  175              		.loc 2 254 19 view .LVU35
  176 00bc 1390     		str	r0, [sp, #76]	@ float
-ARM GAS  /tmp/cc2Py4oB.s 			page 10
+ARM GAS  /tmp/cc9hGk6L.s 			page 10
 
 
  255:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vectorA.axis.z * vectorB.axis.z;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  218              	.LBE51:
  219              	.LBE50:
  220              	.LBE47:
-ARM GAS  /tmp/cc2Py4oB.s 			page 11
+ARM GAS  /tmp/cc9hGk6L.s 			page 11
 
 
  221              	.LBE46:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  307:Core/Inc/Fusion/FusionMath.h ****     return FusionVectorMultiplyScalar(vector, magnitudeReciprocal);
  262              		.loc 2 307 5 is_stmt 1 view .LVU61
  263              	.LBB54:
-ARM GAS  /tmp/cc2Py4oB.s 			page 12
+ARM GAS  /tmp/cc9hGk6L.s 			page 12
 
 
  264              	.LBI54:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
   29:Core/Src/Fusion/FusionCompass.c ****     const FusionVector magneticNorth = FusionVectorNormalise(FusionVectorCrossProduct(magneticWest,
  302              		.loc 1 29 5 is_stmt 1 view .LVU76
  303 0144 0DF1340C 		add	ip, sp, #52
-ARM GAS  /tmp/cc2Py4oB.s 			page 13
+ARM GAS  /tmp/cc9hGk6L.s 			page 13
 
 
  304 0148 8CE80700 		stm	ip, {r0, r1, r2}
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  344              		.loc 2 271 25 view .LVU90
  345 0184 4146     		mov	r1, r8
  346 0186 4846     		mov	r0, r9
-ARM GAS  /tmp/cc2Py4oB.s 			page 14
+ARM GAS  /tmp/cc9hGk6L.s 			page 14
 
 
  347 0188 FFF7FEFF 		bl	__aeabi_fmul
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  390              	.LBE56:
  391              	.LBB58:
  392              	.LBI58:
-ARM GAS  /tmp/cc2Py4oB.s 			page 15
+ARM GAS  /tmp/cc9hGk6L.s 			page 15
 
 
  301:Core/Inc/Fusion/FusionMath.h **** #ifdef FUSION_USE_NORMAL_SQRT
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  433              	.LVL36:
  434 01fc 0746     		mov	r7, r0
  256:Core/Inc/Fusion/FusionMath.h ****     return result;
-ARM GAS  /tmp/cc2Py4oB.s 			page 16
+ARM GAS  /tmp/cc9hGk6L.s 			page 16
 
 
  435              		.loc 2 256 19 view .LVU116
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  476 0222 FFF7FEFF 		bl	__aeabi_fmul
  477              	.LVL39:
  178:Core/Inc/Fusion/FusionMath.h **** }
-ARM GAS  /tmp/cc2Py4oB.s 			page 17
+ARM GAS  /tmp/cc9hGk6L.s 			page 17
 
 
  478              		.loc 2 178 52 view .LVU130
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  520 0252 3846     		mov	r0, r7
  521 0254 FFF7FEFF 		bl	__aeabi_fmul
  522              	.LVL46:
-ARM GAS  /tmp/cc2Py4oB.s 			page 18
+ARM GAS  /tmp/cc9hGk6L.s 			page 18
 
 
  241:Core/Inc/Fusion/FusionMath.h ****     result.axis.z = vector.axis.z * scalar;
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  562              		.loc 1 33 1 view .LVU157
  563 027c 29B0     		add	sp, sp, #164
  564              	.LCFI3:
-ARM GAS  /tmp/cc2Py4oB.s 			page 19
+ARM GAS  /tmp/cc9hGk6L.s 			page 19
 
 
  565              		.cfi_def_cfa_offset 44
@@ -1114,14 +1114,14 @@ ARM GAS  /tmp/cc2Py4oB.s 			page 1
  596              	.Letext0:
  597              		.file 3 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
  598              		.file 4 "/usr/include/newlib/math.h"
-ARM GAS  /tmp/cc2Py4oB.s 			page 20
+ARM GAS  /tmp/cc9hGk6L.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 FusionCompass.c
-     /tmp/cc2Py4oB.s:19     .text.FusionCompassCalculateHeading:0000000000000000 $t
-     /tmp/cc2Py4oB.s:27     .text.FusionCompassCalculateHeading:0000000000000000 FusionCompassCalculateHeading
-     /tmp/cc2Py4oB.s:588    .text.FusionCompassCalculateHeading:0000000000000288 $d
+     /tmp/cc9hGk6L.s:19     .text.FusionCompassCalculateHeading:0000000000000000 $t
+     /tmp/cc9hGk6L.s:27     .text.FusionCompassCalculateHeading:0000000000000000 FusionCompassCalculateHeading
+     /tmp/cc9hGk6L.s:588    .text.FusionCompassCalculateHeading:0000000000000288 $d
 
 UNDEFINED SYMBOLS
 __aeabi_fmul
